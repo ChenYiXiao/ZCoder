@@ -44,10 +44,9 @@ body {
 }
 
 #mainContent {
-	margin-bottom:5px;
-	background-color: #FFF;
-	height: auto;
-	padding: 5px;
+    margin-bottom: 5px;
+
+    position: relative;
 }
 #footer {
 	height:60px;
@@ -168,4 +167,36 @@ h3 {
 	color: #FFF;
 	border: 1px solid #448DD0;
 	border-radius: 3px 3px 3px 3px;
+}
+.zleft
+{
+    float: left;
+    background-color:white;
+    border-radius: 3px 3px 3px 3px;
+}
+.zTextBox
+{
+    height: 20px;
+    padding: 5px;
+    border: 1px solid #CCCCCC;
+    width: 220px;
+    margin-bottom: 0px;
+    border-radius: 3px 3px 3px 3px;
+}
+.zright
+{
+    float: right;
+    border-radius: 3px 3px 3px 3px;
+}
+.zRadioRec
+{
+    
+    text-align: center;
+	vertical-align: bottom;
+    border-radius: 3px 3px 3px 3px;
+    color:White;
+}
+.zUserName 
+{
+    placeholder:"用户名";
 }

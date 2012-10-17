@@ -20,7 +20,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <div>
+    <div style=" background-color:white; padding:20px">
         <table border="0" width="100%" style="margin: auto">
             <tr>
                 <td colspan="3">

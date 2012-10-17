@@ -4,6 +4,7 @@
     <link href="layout.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <div style="background-color:White; padding:20px">
     <h3 align="center">请稍等，正在跳转中...</h3>
 
     <asp:ScriptManager ID="ScriptManager1" runat="server">
@@ -19,6 +20,6 @@
           </p>
         </ContentTemplate>
     </asp:UpdatePanel>
-    
+    </div>
 </asp:Content>
 

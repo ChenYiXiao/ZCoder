@@ -9,7 +9,7 @@ public partial class LoginPanel : System.Web.UI.UserControl
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-            if (Session["uid"] != null)
+            if (UserOperation.CheckLoged(Session))
             {
                 Label2.Text = "<a href='user.aspx'>" + Session["userName"] + "</a> <font color='#CCCCCC'>|</font>  <a href='logout.aspx?url="+Request.Url+"'>注销</a>";
                 Panel1.Visible = false;

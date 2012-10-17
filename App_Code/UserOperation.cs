@@ -58,6 +58,10 @@ public class UserOperation
 
     public static bool Login(System.Web.SessionState.HttpSessionState Session, string userName, string password)
     {
+        if (userName == "" || password == "")
+        {
+            return false;
+        }
         DataBase db = new DataBase();
         DataSet result=db.RunProcReturn("select * from tb_user where username=@username and password=@password", new SqlParameter[] {
         db.MakeInParam("username",System.Data.SqlDbType.VarChar,20,userName),
@@ -74,5 +78,10 @@ public class UserOperation
         {
             return false;
         }
+    }
+    public static bool CheckLoged(System.Web.SessionState.HttpSessionState Session)
+    {
+        return !(Session["uid"]==null);
+
     }
 }

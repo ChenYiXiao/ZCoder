@@ -10,6 +10,7 @@
 <link href="layout.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<div style="background-color:White;">
     <table class="style1">
         <tr>
             <td colspan="2">
@@ -65,5 +66,6 @@
                 &nbsp;</td>
         </tr>
     </table>
+    </div>
 </asp:Content>
 
