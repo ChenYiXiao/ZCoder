@@ -65,7 +65,7 @@
                 &nbsp;</td>
             <td height="60">
                 <asp:Button ID="Log" runat="server" CssClass="zbutton" Text="登陆" 
-                    onclick="Button1_Click" />
+                    onclick="Log_Click" />
             </td>
             <td width="40%">
                 &nbsp;</td>
