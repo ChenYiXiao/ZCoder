@@ -1,0 +1,202 @@
+﻿/*本模板是由标准之路(www.aa25.cn)的×××制作完成*/
+/*本人水平有限，使用自愿，不对因使用此模板造成的任何后果负任何责任*/
+/*如果您想转载此资源，请保留“<a href="http://www.aa25.cn">标准之路www.aa25.cn</a>”的链接及版权标识*/
+/*如有更好的建议或意见，请到www.aa25.cn留言，本人尽力解决*/
+/*2008-8-28*/
+body {
+	font-family:Verdana;wadawd
+	font-size:14px;
+	margin:0;
+	background-color: #f5f5f5;
+}
+
+#container {
+	width:960px;
+	margin-top: 0;
+	margin-right: auto;
+	margin-bottom: 0;dwadwaf
+	margin-left: auto;
+}
+#header {
+	background: none repeat scroll 0% 0% rgb(72, 143, 206);
+	display: block;
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	height:53px;
+	z-index: 10;
+	left: 0px;
+}fwawf
+#menu {
+	height:30px;
+	margin-bottom:5px;
+	margin-top: 40px;
+	background-color: #FFF;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #d4d4d4;
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-right-color: #F6F6F6;
+	border-left-color: #F6F6F6;
+}eaweaw
+
+#mainContent {
+    margin-bottom: 5px;
+
+    position: relative;
+}
+#footer {
+	height:60px;
+	padding: 15px;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-top-color: #CCC;xczxczc
+	border-right-color: #CCC;
+	border-bottom-color: #CCC;
+	border-left-color: #CCC;
+}
+#navhead {
+	width: 960px;
+	margin: auto;
+	padding:0;
+	min-height: 53px;
+	vertical-align: middle;
+
+}
+#ulhead {
+	height: 40px;
+	float: left;
+	list-style-type: none;
+	margin-top: auto;
+	margin-bottom: auto;
+	padding-top: 14px;adawdawd
+	margin-left: 10px;
+
+
+}
+#ulhead li a {
+    color: rgb(255, 255, 255);
+    display: block;
+    float: left;
+    line-height: 28px;
+    height: 28px;
+    font-size: 14px;
+    padding: 0px 12px;
+}
+adawd
+#ulhead li {
+	
+ float: left;
+
+}
+
+#menuhead {
+	height: 40px;
+	float: left;
+	list-style-type: none;
+	margin-top: auto;
+	margin-bottom: auto;
+	padding-top: 2px;
+	margin-left: 10px;
+
+
+}
+#menuhead li a {
+    color: #666666;
+    display: block;
+    float: left;
+    line-height: 25px;
+    height: 25px;
+    font-size: 12px;
+    padding: 0px 12px;
+}
+
+#menuhead li {
+	
+ float: left;
+
+}
+#menuhead li a:hover {
+	color:#FFFFFF;
+	background: none repeat scroll 0% 0% #aaaaaa;
+    border-radius: 3px 3px 3px 3px;
+}
+#logo {
+	float: left;
+}
+a {
+	color: #FFF;
+	text-decoration: none;
+}
+#li_active {
+	color: rgb(255, 255, 255);
+    background: none repeat scroll 0% 0% rgb(47, 106, 160);
+    border-radius: 3px 3px 3px 3px;
+
+}
+#li_active:hover{
+	color: rgb(255, 255, 255);
+    background: none repeat scroll 0% 0% rgb(47, 106, 160);
+    border-radius: 3px 3px 3px 3px;
+
+}
+#ulhead li a:hover {
+	color:#ffea00;
+}
+ul {
+	list-style-type: none;
+}
+h3 {
+	font-size: 18px;
+	color: #555555;
+}
+.zbutton {
+	line-height: 30px;
+	background-color: #39F;
+	text-align: center;
+	vertical-align: bottom;
+	height: 36px;
+	width: 150px;
+	font-size: 14px;
+	color: #FFF;
+	border: 1px solid #448DD0;
+	border-radius: 3px 3px 3px 3px;
+}
+.zleft
+{
+    float: left;
+    background-color:white;
+    border-radius: 3px 3px 3px 3px;
+}
+.zTextBox
+{
+    height: 20px;
+    padding: 5px;
+    border: 1px solid #CCCCCC;
+    width: 220px;
+    margin-bottom: 0px;
+    border-radius: 3px 3px 3px 3px;
+}
+.zright
+{
+    float: right;
+    border-radius: 3px 3px 3px 3px;
+}
+.zRadioRec
+{
+    
+    text-align: center;
+	vertical-align: bottom;
+    border-radius: 3px 3px 3px 3px;
+    color:White;
+}
+.zUserName 
+{
+    placeholder:"用户名";
+}
