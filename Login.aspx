@@ -6,6 +6,10 @@
         {
             width: 100%;
         }
+        .style2
+        {
+            height: 60px;
+        }
     </style>
 <link href="layout.css" rel="stylesheet" type="text/css" />
 </asp:Content>
@@ -26,14 +30,15 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td align="right" width="110px">
+            <td align="right" width="110px" class="style2" dir="ltr">
                 用户名：</td>
-            <td height="60">
+            <td class="style2">
                 &nbsp;&nbsp;&nbsp;
-                <asp:TextBox ID="tb_UserName" runat="server"></asp:TextBox>
+                <asp:TextBox ID="tb_UserName" runat="server" 
+                    ontextchanged="tb_UserName_TextChanged"></asp:TextBox>
             </td>
-            <td width="40%">
-                &nbsp;</td>
+            <td width="40%" class="style2">
+                </td>
         </tr>
         <tr>
             <td align="right" width="110px">
@@ -59,7 +64,7 @@
             <td>
                 &nbsp;</td>
             <td height="60">
-                <asp:Button ID="Button1" runat="server" CssClass="zbutton" Text="登陆" 
+                <asp:Button ID="Log" runat="server" CssClass="zbutton" Text="登陆" 
                     onclick="Button1_Click" />
             </td>
             <td width="40%">
