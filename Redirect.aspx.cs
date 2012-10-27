@@ -12,6 +12,7 @@ public partial class Redirect : System.Web.UI.Page
     static string url = "";
     protected void Page_Load(object sender, EventArgs e)
     {
+        url = url.Replace("~", "");
         if (!IsPostBack)
         {
             try
