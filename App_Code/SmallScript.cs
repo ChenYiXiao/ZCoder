@@ -34,6 +34,6 @@ public class SmallScript
     public static void goRedirect(HttpResponse response, System.Web.SessionState.HttpSessionState session, string tip, string url)
     {
         session.Add("tip", tip);
-        response.Redirect("redirect.aspx?url="+url);
+        response.Redirect("~/redirect.aspx?url="+url);
     }
 }
