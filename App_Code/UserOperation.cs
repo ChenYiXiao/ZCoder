@@ -72,6 +72,7 @@ public class UserOperation
             Session.Add("username", userName);
             Session.Add("password", password);
             Session.Add("uid", result.Tables[0].Rows[0]["id"].ToString());
+            Session.Add("isadmin", result.Tables[0].Rows[0]["isadmin"]);
             return true;
         }
         else
