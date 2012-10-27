@@ -15,6 +15,8 @@ public partial class BigLogin : System.Web.UI.UserControl
 
             Panel1.Visible = false;
             hlUserName.Text = Session["userName"].ToString();
+            if (UserOperation.CheckIsAdmin(Session))
+                hlAdmin.Visible = true;
             Panel2.Visible = true;
             return;
         }
