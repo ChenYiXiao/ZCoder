@@ -22,6 +22,7 @@
                 <li><a>注释管理</a></li>
                 <li><a>评论管理</a></li>
                 <li><a>用户管理</a></li>
+                <li><a href="/default.aspx">前台首页</a></li>
             </ul>
             <div style="float: right; margin-top: 15px; font-size: 12px">
                 <uc1:LoginPanel ID="LoginPanel1" runat="server" />
@@ -33,6 +34,7 @@
     </div>
     <div id="container">
         <div id="menu">
+        <div style="float:left; line-height: 28px; vertical-align: middle; font-size: 12px; font-weight: bold; color: #999999; clip: rect(auto, auto, auto, auto); margin-left: 40px;">快捷操作</div>
             <ul id="menuhead">
                 <li></li>
                 <li><a id="menu_active" href="#">首页</a></li>
