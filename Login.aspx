@@ -34,8 +34,7 @@
                 用户名：</td>
             <td class="style2">
                 &nbsp;&nbsp;&nbsp;
-                <asp:TextBox ID="tb_UserName" runat="server" 
-                    ontextchanged="tb_UserName_TextChanged"></asp:TextBox>
+                <asp:TextBox ID="tb_UserName" runat="server"></asp:TextBox>
             </td>
             <td width="40%" class="style2">
                 </td>
