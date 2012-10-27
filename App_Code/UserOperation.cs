@@ -40,7 +40,7 @@ public class UserOperation
         }
         else
         {
-            
+
             return true;
         }
     }
@@ -63,13 +63,13 @@ public class UserOperation
             return false;
         }
         DataBase db = new DataBase(); /*实例化一个数据库。*/
-        DataSet result=db.RunProcReturn("select * from tb_user where username=@username and password=@password", new SqlParameter[] {
+        DataSet result = db.RunProcReturn("select * from tb_user where username=@username and password=@password", new SqlParameter[] {
         db.MakeInParam("username",System.Data.SqlDbType.VarChar,20,userName),
         db.MakeInParam("password",System.Data.SqlDbType.VarChar,50,password)
-        },"tb_user");     /*查询数据库中与输入的用户名密码相同的集。*/
-        if (result.Tables[0].Rows.Count != 0)    /*  如数据库中有用户名密码与输入的用户名密码相同，则将username和password、uid放入session中。*/ 
+        }, "tb_user");     /*查询数据库中与输入的用户名密码相同的集。*/
+        if (result.Tables[0].Rows.Count != 0)    /*  如数据库中有用户名密码与输入的用户名密码相同，则将username和password、uid放入session中。*/
         {
-            Session.Add("username", userName);  
+            Session.Add("username", userName);
             Session.Add("password", password);
             Session.Add("uid", result.Tables[0].Rows[0]["id"].ToString());
             return true;
@@ -81,7 +81,20 @@ public class UserOperation
     }
     public static bool CheckLoged(System.Web.SessionState.HttpSessionState Session)
     {
-        return !(Session["uid"]==null);
+        return !(Session["uid"] == null);
 
+    }
+    public static bool CheckIsAdmin(System.Web.SessionState.HttpSessionState Session)
+    {
+
+        if (CheckLoged(Session))
+        {
+            if (Session["isadmin"] != null)
+                if (bool.Parse(Session["isadmin"].ToString()) == true)
+                {
+                    return true;
+                }
+        }
+        return false;
     }
 }
