@@ -1,20 +1,62 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="admin_MasterPage" %>
 
+<%@ Register Src="../LoginPanel.ascx" TagName="LoginPanel" TagPrefix="uc1" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-    <asp:ContentPlaceHolder id="head" runat="server">
+<head id="Head1" runat="server">
+    <title>ZCoder社会化代码注释系统</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <link href="../layout.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="images/jquery.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server">
-    <div style="height: 147px">
-        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
-        
-        </asp:ContentPlaceHolder>
+    <div id="header">
+        <div id="navhead">
+            <img id="logo" src="../images/logo.png" />
+            <ul id="ulhead">
+                <li></li>
+                <li><a id="li_active" href="default.aspx">后台首页</a></li>
+                <li><a>源码管理</a></li>
+                <li><a>注释管理</a></li>
+                <li><a>评论管理</a></li>
+                <li><a>用户管理</a></li>
+                <li><a href="/default.aspx">前台首页</a></li>
+            </ul>
+            <div style="float: right; margin-top: 15px; font-size: 12px">
+                <uc1:LoginPanel ID="LoginPanel1" runat="server" />
+            </div>
+        </div>
     </div>
-    </form>
+    <div id="LoginPanel1_Panel2">
+        <span id="LoginPanel1_Label2">Label">Label</span>
+    </div>
+    <div id="container">
+        <div id="menu">
+        <div style="float:left; line-height: 28px; vertical-align: middle; font-size: 12px; font-weight: bold; color: #999999; clip: rect(auto, auto, auto, auto); margin-left: 40px;">快捷操作</div>
+            <ul id="menuhead">
+                <li></li>
+                <li><a id="menu_active" href="#">首页</a></li>
+                <li><a>源码</a></li>
+                <li><a>注释</a></li>
+                <li><a>评论</a></li>
+                <li><a>帮助</a></li>
+                <li><a href="about.jsp">关于</a></li>
+            </ul>
+        </div>
+        <div id="mainContent">
+            <form id="form1" runat="server">
+            <div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            </form>
+        </div>
+        <div id="footer">
+            <p align="center" style="font-size: 12px; color: #666666;">
+                帮助中心 | 加入我们 | 联系我们 | 手机浏览 | 网站导航</br></br><font size="1"> Powered by RJ1001</font></p>
+        </div>
+    </div>
 </body>
 </html>
