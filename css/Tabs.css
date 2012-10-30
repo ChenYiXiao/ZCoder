@@ -1,0 +1,189 @@
+﻿body, div, ul, li
+{
+    margin: 0 auto;
+    padding: 0;
+}
+body
+{
+    font: 12px "宋体";
+    text-align: center;
+}
+
+ul
+{
+    list-style: none;
+}
+.main
+{
+    clear: both;
+    padding: 8px;
+    text-align: center;
+}
+/*第一种形式*/
+#tabs0
+{
+    height: 200px;
+    width: 400px;
+    border: 1px solid #cbcbcb;
+    background-color: #f2f6fb;
+}
+.menu0
+{
+    width: 400px;
+}
+.menu0 li
+{
+    display: block;
+    float: left;
+    padding: 4px 0;
+    width: 100px;
+    text-align: center;
+    cursor: pointer;
+    background: #FFFFff;
+}
+.menu0 li.hover
+{
+    background: #f2f6fb;
+}
+#main0 ul
+{
+    display: none;
+}
+#main0 ul.block
+{
+    display: block;
+}
+/*第二种形式*/
+#tabs1
+{
+    text-align: left;
+    width: 400px;
+}
+.menu1box
+{
+    position: relative;
+    overflow: hidden;
+    height: 22px;
+    width: 400px;
+    text-align: left;
+    background-color: #0066FF;
+}
+#menu1
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+#menu1 li
+{
+    float: left;
+    display: block;
+    cursor: pointer;
+    width: 72px;
+    text-align: center;
+    line-height: 21px;
+    height: 21px;
+}
+#menu1 li.hover
+{
+    background: #fff;
+    border-left: 1px solid #333;
+    border-top: 1px solid #333;
+    border-right: 1px solid #333;
+    color: #0066FF;
+}
+.main1box
+{
+    clear: both;
+    margin-top: -1px;
+    border: 1px solid #333;
+    height: 181px;
+    width: 400px;
+}
+#main1 ul
+{
+    display: none;
+}
+#main1 ul.block
+{
+    display: block;
+}
+/*第三种形式*/
+.menu2box
+{
+    position: relative;
+    overflow: hidden;
+    height: 40px;
+    width: 400px;
+    text-align: left;
+    color: #FFFFFF;
+    border-radius: 3px 3px 3px 3px;
+}
+#tabs2
+{
+    height: 200px;
+    width: 400px;
+    background-color: #f2f6fb;
+}
+#tip2
+{
+    display: block;
+    float: left;
+    width: 100px;
+    border-radius: 3px 3px 0px 0px;
+    background: #4791d0;
+    line-height: 28px;
+    cursor: pointer;
+    color: black;
+}
+#menu2
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+#menu2 li
+{
+    display: block;
+    float: left;
+    width: 100px;
+        line-height: 28px;
+    text-align: center;
+    border-radius: 3px 3px 3px 3px;
+    background: white;
+
+    cursor: pointer;
+}
+#menu2 li:hover
+{
+    display: block;
+    float: left;
+    width: 100px;
+    line-height: 28px;
+    border-radius: 3px 3px 0px 0px;
+    background: #4791d0;
+    
+    cursor: pointer;
+    color: White;
+}
+.tTab
+{
+    font-weight: bold;
+    line-height: 48px;
+    color:Black;
+}
+#menu2 li a
+{
+    color:Blue;
+    width: 100px;
+        line-height: 28px;
+}
+
+#menu2 li a:hover
+{
+    color:white;
+    width: 100px;
+        line-height: 28px;
+}

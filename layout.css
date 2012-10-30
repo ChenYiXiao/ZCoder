@@ -1,4 +1,8 @@
-
+/*本模板是由标准之路(www.aa25.cn)的×××制作完成*/
+/*本人水平有限，使用自愿，不对因使用此模板造成的任何后果负任何责任*/
+/*如果您想转载此资源，请保留“<a href="http://www.aa25.cn">标准之路www.aa25.cn</a>”的链接及版权标识*/
+/*如有更好的建议或意见，请到www.aa25.cn留言，本人尽力解决*/
+/*2008-8-28*/
 body {
 	font-family:Verdana;
 	font-size:14px;
@@ -41,6 +45,8 @@ body {
 
 #mainContent {
     margin-bottom: 5px;
+
+    position: relative;
 }
 #footer {
 	height:60px;
@@ -125,8 +131,8 @@ body {
 	float: left;
 }
 a {
-    color: #FFFFFF;
-    text-decoration: none;
+	color: #FFF;
+	text-decoration: none;
 }
 #li_active {
 	color: rgb(255, 255, 255);
@@ -193,45 +199,4 @@ h3 {
 .zUserName 
 {
     placeholder:"用户名";
-}
-.zTable
-{
-    border-collapse: collapse;
-    border: 1px solid #999999;
-    padding: 5px;
-    margin: 10px;
-}
-.zTbTh
-{
-    background-color: #EEEEEE;
-    font-size: medium;
-    padding: 5px;
-    line-height: 28px;
-    border: 1px solid #CCCCCC;
-}
-.zTbTd
-{
-    line-height: 28px;
-    border: 1px solid #CCCCCC;
-}
-ul a
-{
-    color: #808080;
-    line-height: 28px;
-}
-h2
-{
-    font-size: large;
-    font-weight: bold;
-    color: #999999;
-    text-align: center;
-    margin: 10px;
-}
-.ZCenter
-{
-    margin: auto;
-}
-.za
-{
-    color: #999999;
 }
