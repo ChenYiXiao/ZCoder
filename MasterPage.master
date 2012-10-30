@@ -22,7 +22,7 @@
                 <li><a>注释</a></li>
                 <li><a>评论</a></li>
                 <li><a>帮助</a></li>
-                <li><a href="about.jsp">关于</a></li>
+                <li><a href="About.aspx">关于</a></li>
             </ul>
             <div style="float: right; margin-top: 15px; font-size: 12px">
                 <uc1:LoginPanel ID="LoginPanel1" runat="server" />
@@ -33,8 +33,8 @@
         <span id="LoginPanel1_Label2">Label</span>
     </div>
     <div id="container">
-        <div id="menu">
-            <ul id="menuhead">
+        <div id="menu" style="visibility: hidden">
+            <ul id="menuhead" >
                 <li></li>
                 <li><a id="menu_active" href="#">首页</a></li>
                 <li><a>源码</a></li>
