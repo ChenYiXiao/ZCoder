@@ -10,14 +10,7 @@ using System.Data;
 /// </summary>
 public class UserOperation
 {
-    int id = -1;
-    string userName = "";
-    string password = "";
-    string email = "";
-    string qq = "";
-    bool sex = true;
-    bool isadmin = false;
-    DateTime regTime = DateTime.Now;
+
     public UserOperation()
     {
         //
