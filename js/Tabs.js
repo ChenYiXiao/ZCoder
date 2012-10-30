@@ -1,16 +1,15 @@
-﻿function setTab(m, n) {
-    var tli = document.getElementById("menu" + m).getElementsByTagName("li");
-    var mli = document.getElementById("main" + m).getElementsByTagName("ul");
-    for (i = 0; i < tli.length; i++) {
-        tli[i].className = i == n ? "hover" : "";
-        mli[i].style.display = i == n ? "block" : "none";
-    }
-}
-/*第三种形式 利用一个背景层定位*/
-var m3 = { 0: "", 1: "评论内容", 2: "技术内容", 3: "点评内容" }
-function nowtab(m, n) {
-    m3[1] = document.getElementById("news").innerHTML;
-    if (n != 0 && m3[0] == "") m3[0] = document.getElementById("projects").innerHTML;
-    document.getElementById("tip" + m).style.left = n * 100 + 'px';
-    document.getElementById("main2").innerHTML = m3[n];
-}  
+﻿$(function () {
+    var $div_li = $("div.tab_menu ul li");
+    $div_li.click(function () {
+        $(this).addClass("selected")            //当前<li>元素高亮
+				   .siblings().removeClass("selected");  //去掉其它同辈<li>元素的高亮
+        var index = $div_li.index(this);  // 获取当前点击的<li>元素 在 全部li元素中的索引。
+        $("div.tab_box > div")   	//选取子节点。不选取子节点的话，会引起错误。如果里面还有div 
+					.eq(index).show()   //显示 <li>元素对应的<div>元素
+					.siblings().hide(); //隐藏其它几个同辈的<div>元素
+    }).hover(function () {
+        $(this).addClass("hover");
+    }, function () {
+        $(this).removeClass("hover");
+    })
+})
