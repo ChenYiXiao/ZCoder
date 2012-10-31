@@ -200,3 +200,12 @@ h3 {
 {
     placeholder:"用户名";
 }
+.zA
+{
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+    border-color: #666666;
+    padding: 5px;
+    color: #666666;
+    line-height: 28px;
+}
