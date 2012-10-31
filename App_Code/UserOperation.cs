@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
 using System.Data;
+using System.Web.UI;
 
 /// <summary>
 ///UserOperation 的摘要说明
@@ -110,24 +111,32 @@ public class UserOperation
             return true;
         }
     }
+    public static void DelUser(String id)
+    {
+        DataBase db = new DataBase();
+        string sql = "delete from dbo.tb_user where id=" + id + "";
+        db.ExCommandNoBack(sql);
+
+    }
+
     public static UserEntity GetUser(string userId)
     {
         DataBase db = new DataBase();
-        DataSet rs = db.RunProcReturn("select * from tb_user where id=" + userId ,"tb_user");
-        if(rs.Tables[0].Rows.Count>0)
+        DataSet rs = db.RunProcReturn("select * from tb_user where id=" + userId, "tb_user");
+        if (rs.Tables[0].Rows.Count > 0)
         {
-            UserEntity ue=new UserEntity();
-            ue.UserName= rs.Tables[0].Rows[0]["userName"].ToString();
+            UserEntity ue = new UserEntity();
+            ue.UserName = rs.Tables[0].Rows[0]["userName"].ToString();
             ue.Password = rs.Tables[0].Rows[0]["password"].ToString();
             ue.Qq = rs.Tables[0].Rows[0]["qq"].ToString();
-            ue.RegTime = DateTime.Parse( rs.Tables[0].Rows[0]["regtime"].ToString());
+            ue.RegTime = DateTime.Parse(rs.Tables[0].Rows[0]["regtime"].ToString());
             ue.Sex = bool.Parse(rs.Tables[0].Rows[0]["sex"].ToString());
             ue.Isadmin = bool.Parse(rs.Tables[0].Rows[0]["isadmin"].ToString());
-            ue.Id =int.Parse( rs.Tables[0].Rows[0]["id"].ToString());
+            ue.Id = int.Parse(rs.Tables[0].Rows[0]["id"].ToString());
             ue.Email = rs.Tables[0].Rows[0]["email"].ToString();
             return ue;
         }
         return null;
     }
-             
+
 }
