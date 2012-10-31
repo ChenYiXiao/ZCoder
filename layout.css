@@ -238,3 +238,12 @@ h3
     border: 1px ridge #C0C0C0;
     text-align:center;
 }
+.layPaddingAndCenter
+{
+    padding: 5px;
+    text-align: center;
+}
+.layPadding
+{
+    padding: 5px;
+}

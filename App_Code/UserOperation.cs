@@ -124,6 +124,7 @@ public class UserOperation
             ue.Sex = bool.Parse(rs.Tables[0].Rows[0]["sex"].ToString());
             ue.Isadmin = bool.Parse(rs.Tables[0].Rows[0]["isadmin"].ToString());
             ue.Id =int.Parse( rs.Tables[0].Rows[0]["id"].ToString());
+            ue.Email = rs.Tables[0].Rows[0]["email"].ToString();
             return ue;
         }
         return null;
