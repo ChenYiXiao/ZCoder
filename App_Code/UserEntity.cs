@@ -44,7 +44,9 @@ public class UserEntity
         set { qq = value; }
     }
     bool sex = true;
-
+    /// <summary>
+    /// 男是flase，0，女是true，1
+    /// </summary>
     public bool Sex
     {
         get { return sex; }

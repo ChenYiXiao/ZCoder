@@ -1,33 +1,107 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/MasterPage.master" AutoEventWireup="true" CodeFile="EditUser.aspx.cs" Inherits="admin_EditUser" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/Master_User.master" AutoEventWireup="true" CodeFile="EditUser.aspx.cs" Inherits="admin_EditUser" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <asp:Label ID="Label1" runat="server" Text="新用户名："></asp:Label>
-    <asp:TextBox ID="tb_UserName" runat="server"></asp:TextBox>
+<asp:Content ID="Content1" ContentPlaceHolderID="Ct1" Runat="Server">
+    </asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="Ct2" Runat="Server">
+    <h2>&nbsp;编辑用户</h2>
+    <hr />
     <br />
-    <asp:Label ID="Label2" runat="server" Text="新密码："></asp:Label>
-    <asp:TextBox ID="tb_PassWord" runat="server"></asp:TextBox>
-    <br />
-    <asp:Label ID="Label3" runat="server" Text="新邮箱："></asp:Label>
-    <asp:TextBox ID="tb_Email" runat="server"></asp:TextBox>
-    <br />
-    <asp:Label ID="Label4" runat="server" Text="新QQ："></asp:Label>
-    <asp:TextBox ID="tb_QQ" runat="server"></asp:TextBox>
-    <br />
-    <asp:Label ID="Label6" runat="server" Text="新性别："></asp:Label>
+    <table style="margin: auto" width="80%">
+        <tr>
+            <td align="center">
+                <asp:Label ID="Label7" runat="server" Text="用户ID："></asp:Label>
+            </td>
+            <td>
+                <asp:Label ID="lb_ID" runat="server"></asp:Label>
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+    <asp:Label ID="Label1" runat="server" Text="用户名："></asp:Label>
+            </td>
+            <td>
+                <br />
+    <asp:TextBox ID="tb_UserName" runat="server" CssClass="zTextBox"></asp:TextBox>
+                <br />
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+    <asp:Label ID="Label2" runat="server" Text="密码："></asp:Label>
+            </td>
+            <td>
+    <asp:TextBox ID="tb_PassWord" runat="server" CssClass="zTextBox"></asp:TextBox>
+                <br />
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+    <asp:Label ID="Label3" runat="server" Text="邮箱："></asp:Label>
+            </td>
+            <td>
+    <asp:TextBox ID="tb_Email" runat="server" CssClass="zTextBox"></asp:TextBox>
+                <br />
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+    <asp:Label ID="Label4" runat="server" Text="QQ："></asp:Label>
+            </td>
+            <td>
+    <asp:TextBox ID="tb_QQ" runat="server" CssClass="zTextBox"></asp:TextBox>
+                <br />
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+    <asp:Label ID="Label6" runat="server" Text="性别："></asp:Label>
+            </td>
+            <td>
     <asp:RadioButtonList ID="rb_Sex" runat="server" RepeatDirection="Horizontal">
         <asp:ListItem Value="man">男</asp:ListItem>
         <asp:ListItem Value="woman">女</asp:ListItem>
     </asp:RadioButtonList>
-    <br />
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
     <asp:Label ID="Label5" runat="server" Text="权限："></asp:Label>
-    <asp:CheckBox ID="tb_CheckBox" runat="server" Text="管理员" />
+            </td>
+            <td>
+    <asp:CheckBox ID="cb_IsAdmin" runat="server" Text="管理员" />
+                <br />
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td align="center">
+                <asp:Label ID="Label8" runat="server" Text="注册日期："></asp:Label>
+            </td>
+            <td>
+                <asp:Label ID="lb_RegTime" runat="server"></asp:Label>
+                <br />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                </td>
+            <td>
+                <br />
+    <asp:Button ID="btnEdit" runat="server" onclick="btnEdit_Click" 
+         Text="修改" CssClass="zbutton" />
+                <br />
+            </td>
+        </tr>
+    </table>
     <br />
     <br />
     <br />
-    <asp:Button ID="Button1" runat="server" onclick="Button1_Click" 
-        style="height: 21px" Text="修改" />
+    <br />
     <br />
 </asp:Content>
 
