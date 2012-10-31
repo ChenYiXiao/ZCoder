@@ -45,7 +45,7 @@ public class UserEntity
     }
     bool sex = true;
     /// <summary>
-    /// 男是flase，0，女是true，1
+    /// 男是true，0，女是false，1
     /// </summary>
     public bool Sex
     {

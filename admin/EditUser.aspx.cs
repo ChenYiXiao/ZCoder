@@ -47,7 +47,7 @@ public partial class admin_EditUser : System.Web.UI.Page
         string UserName = tb_UserName.Text;
         string PassWord = tb_PassWord.Text;
         string Email = tb_Email.Text;
-        bool Sex = (rb_Sex.SelectedIndex == 1);
+        bool Sex = (rb_Sex.SelectedIndex == 0);
         string QQ = tb_QQ.Text;
         bool IsAdmin = cb_IsAdmin.Checked;
         string sql = "UPDATE tb_user SET userName ='" + UserName + "', password ='" + PassWord + "', email ='" + Email + "', sex =" + (Sex ? 1 : 0).ToString() + ", qq ='" + QQ + "', isadmin=" + (IsAdmin ? 1 : 0).ToString() + " where id=" + ID.ToString();
