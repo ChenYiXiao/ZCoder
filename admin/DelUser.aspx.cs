@@ -14,10 +14,11 @@ public partial class admin_DelUser : System.Web.UI.Page
             UserEntity ue = UserOperation.GetUser(Request.QueryString["id"].ToString());
             if (ue != null)
             {
+                //在表单中显示数据
                 lb_UserName.Text = ue.UserName;
                 lb_Id.Text = ue.Id.ToString();
                 lb_Email.Text = ue.Email;
-                lb_Sex.Text = ue.Sex?"男":"女";
+                lb_Sex.Text = ue.Sex ? "男" : "女";
                 lb_IsAdmin.Text = ue.Isadmin ? "管理员" : "用户";
             }
         }
@@ -28,14 +29,15 @@ public partial class admin_DelUser : System.Web.UI.Page
     }
     protected void Button1_Click(object sender, EventArgs e)
     {
-        DataBase db = new DataBase();
-        string sql = "delete from dbo.tb_user where id=" + lb_Id.Text + "";
         try
         {
-            db.ExCommandNoBack(sql);
-            SmallScript.goRedirect(Response,Session,"删除成功!","~/admin/userlist.aspx");
+            //调用UserOperation类里的userDel方法，通过传入id，进行删除操作
+            UserOperation.DelUser(Request.QueryString["id"].ToString());
+            SmallScript.goRedirect(Response, Session, "删除成功!", "~/admin/userlist.aspx");
         }
-        catch {
+        catch
+        {
+            //删除失败提示
             SmallScript.MessageBox(Page, "删除失败!");
         }
     }

@@ -14,18 +14,22 @@ public partial class admin_AddUser: System.Web.UI.Page
     protected void A_Button1_Click(object sender, EventArgs e)
     {
         DataBase db = new DataBase();
+        //从表单中取出数据
         string userName = A_TB1.Text;
         string password = A_TB2.Text;
         string email = A_TB4.Text;
         bool isAdmin = false;
         isAdmin = A_CB1.Checked;
+        //新增用户的数据库操作
         if (UserOperation.Reg(userName, password, email, "", true, isAdmin, DateTime.Now))
         {
+            //添加成功后显示
             SmallScript.MessageBox(Page, "添加用户成功。");
             return;
         }
         else
         {
+            //失败后显示信息
             SmallScript.MessageBox(Page, "添加用户失败。");
             return;
         }
