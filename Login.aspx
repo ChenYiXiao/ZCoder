@@ -34,7 +34,7 @@
                 用户名：</td>
             <td class="style2">
                 &nbsp;&nbsp;&nbsp;
-                <asp:TextBox ID="tb_UserName" runat="server"></asp:TextBox>
+                <asp:TextBox ID="tb_UserName" runat="server" CssClass="zTextBox"></asp:TextBox>
             </td>
             <td width="40%" class="style2">
                 </td>
@@ -44,7 +44,8 @@
                 密码：</td>
             <td height="60">
                 &nbsp;&nbsp;&nbsp;
-                <asp:TextBox ID="tb_Password" runat="server" TextMode="Password"></asp:TextBox>
+                <asp:TextBox ID="tb_Password" runat="server" TextMode="Password" 
+                    CssClass="zTextBox"></asp:TextBox>
             </td>
             <td width="40%">
                 &nbsp;</td>

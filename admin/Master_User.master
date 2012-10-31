@@ -6,10 +6,8 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="Ct3" runat="Server">
     <ul>
-        <li><a href="AddUser.aspx">新增用户</a></li>
-        <li><a href="AddUser.aspx">用户列表</a></li>
-        <li><a>编辑用户</a></li>
-        <li><a>删除用户</a></li>
+        <li><a href="AddUser.aspx" class="zA">新增用户</a></li>
+        <li><a href="UserList.aspx" class="zA">用户列表</a></li>
     </ul>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Ct2" Runat="Server">
