@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class admin_AddUser :System.Web.UI.Page
+public partial class admin_AddUser: System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -18,7 +18,7 @@ public partial class admin_AddUser :System.Web.UI.Page
         string password = A_TB2.Text;
         string email = A_TB4.Text;
         bool isAdmin = false;
-        isAdmin =A_CB1.Checked;
+        isAdmin = A_CB1.Checked;
         if (UserOperation.Reg(userName, password, email, "", true, isAdmin, DateTime.Now))
         {
             SmallScript.MessageBox(Page, "添加用户成功。");

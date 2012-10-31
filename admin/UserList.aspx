@@ -1,9 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/Master_User.master" AutoEventWireup="true"
-    CodeFile="AddUser.aspx.cs" Inherits="admin_UserList" %>
+    CodeFile="UserList.aspx.cs" Inherits="admin_UserList" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Ct1" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Ct2" runat="Server">
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:masterConnectionString %>"
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:db_ConnectionString %>"
+        
         SelectCommand="SELECT [userName], [email], [qq], [sex], [isadmin], [regTime], [id] FROM [tb_user]">
     </asp:SqlDataSource>
     <table width="100%">
