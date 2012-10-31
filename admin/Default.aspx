@@ -8,23 +8,33 @@
     <div style="background-color: #FFFFFF">
     <h2>
         &nbsp;</h2>
-        <h2>
-        欢迎使用ZCoder后台管理系统。</h2>
         <table style="margin: auto" width="80%">
+            <tr>
+                <td width="44%" align="center" colspan="2" 
+                    style="font-weight: bold; font-size: medium">
+
+        欢迎使用ZCoder后台管理系统。</td>
+            </tr>
+            <tr>
+                <td width="44%" colspan="2">
+
+                    <hr />
+                </td>
+            </tr>
             <tr>
                 <td width="44%">
 
-&nbsp; 后台地图：
+                    后台地图：
                 </td>
                 <td>
-                    &nbsp;&nbsp;当前统计信息：</td>
+                    当前统计信息：</td>
             </tr>
             <tr>
                 <td width="44%">
                     <table class="zTable" width="400px">
                         <tr>
                             <td class="zTbTd">
-                                <a href="AddUser.aspx" class="za">+用户管理</a><br />
+                                <a href="AddUser.aspx" class="za" style="color: #666666">+用户管理</a><br />
                                 &nbsp;&nbsp; -新增用户<br />
                                 &nbsp;&nbsp; -用户列表<br />
                                 &nbsp;&nbsp; -编辑用户<br />
