@@ -63,14 +63,14 @@
                             <td class="zTbTd" style="background-color: #FFFFFF" width="40%" align="center">
                                 代码数</td>
                             <td class="zTbTd" width="80%" align="center">
-                                $code
+                                <asp:Label ID="code_num" runat="server" Text=" "></asp:Label>
                             </td>
                         </tr>
                         <tr class="zTbTd">
                             <td class="zTbTd" width="40%" align="center">
                                 注释数</td>
                             <td class="zTbTd" width="80%" align="center">
-                                $note
+                                <asp:Label ID="note_num" runat="server" Text=" "></asp:Label>
                             </td>
                         </tr>
                         <tr class="zTbTd">
@@ -78,7 +78,7 @@
                                 评论数 
                             </td>
                             <td class="zTbTd" width="80%" align="center">
-                                $comment
+                                &nbsp;<asp:Label ID="comment_num" runat="server" Text=" "></asp:Label>
                             </td>
                         </tr>
                         <tr class="zTbTd">
@@ -86,7 +86,7 @@
                                 用户数 
                             </td>
                             <td class="zTbTd" width="80%" align="center">
-                                $user
+                                <asp:Label ID="user_num" runat="server" Text=" "></asp:Label>
                             </td>
                         </tr>
                     </table>
