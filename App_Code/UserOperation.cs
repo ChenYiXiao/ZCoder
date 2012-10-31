@@ -91,11 +91,11 @@ public class UserOperation
         }
         return false;
     }
-    public static bool userAlert(string password, string email, string qq, bool sex)
+    public static bool userAlert(string password, string email, string qq)
     {
         DataBase db = new DataBase();
 
-        if (db.RunProc("UPDATE  tb_user SET password =, email =, qq =, sex =WHERE   (userName = @userName) AND (password = @password) AND (email = @email) AND (qq = @qq) AND (sex = @sex)",
+        if (db.RunProc("UPDATE  tb_user SET password =, email =, qq =WHERE (password = @password) AND (email = @email) AND (qq = @qq) ",
              new SqlParameter[]{
                  db.MakeInParam("password",System.Data.SqlDbType.VarChar,50,password),
           db.MakeInParam("email",System.Data.SqlDbType.VarChar,50,email),
