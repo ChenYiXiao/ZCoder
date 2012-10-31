@@ -166,7 +166,7 @@ public class DataBase
     /// </summary>
     /// <param name="procName">命令文本</param>
     /// <param name="tbName">数据表名称</param>
-    /// <returns>DataSet</returns>
+    /// <returns>DataSet数据集</returns>
     public DataSet RunProcReturn(string procName, string tbName)
     {
         SqlDataAdapter dap = CreateDataAdaper(procName, null);
@@ -185,7 +185,7 @@ public class DataBase
     /// </summary>
     /// <param name="procName">命令文本</param>
     /// <param name="prams">参数对象</param>
-    /// <returns></returns>
+    /// <returns>DataSet数据集</returns>
     private SqlDataAdapter CreateDataAdaper(string procName, SqlParameter[] prams)
     {
         this.Open();
@@ -210,7 +210,7 @@ public class DataBase
     /// 创建一个SqlCommand对象以此来执行命令文本
     /// </summary>
     /// <param name="procName">命令文本</param>
-    /// <param name="prams"命令文本所需参数</param>
+    /// <param name="prams">命令文本所需参数</param>
     /// <returns>返回SqlCommand对象</returns>
     private SqlCommand CreateCommand(string procName, SqlParameter[] prams)
     {
@@ -236,6 +236,11 @@ public class DataBase
     #endregion
 
     #region 执行Sql命令返回数据集
+    /// <summary>
+    /// 执行命令，并返回DataSet数据集
+    /// </summary>
+    /// <param name="P_str_sql">Sql语句</param>
+    /// <returns></returns>
     public DataSet ExCommand(string P_str_sql)
     {
         Open();
@@ -250,6 +255,10 @@ public class DataBase
     }
    
     #endregion
+    /// <summary>
+    /// 执行Sql语句，但无返回值
+    /// </summary>
+    /// <param name="P_str_sql">Sql语句</param>
     public void ExCommandNoBack(string P_str_sql)
     {
         Open();
