@@ -11,4 +11,28 @@ public partial class admin_UserList : System.Web.UI.Page
     {
 
     }
+    protected void fixAdmin(object sender, EventArgs e)
+    {
+        Label lb=(Label)sender;
+        if (lb.Text == "True")
+        {
+            lb.Text = "管理员";
+        }
+        else
+        {
+            lb.Text = "会员";
+        }
+    }
+    protected void fixSex(object sender, EventArgs e)
+    {
+        Label lb = (Label)sender;
+        if (lb.Text == "True")
+        {
+            lb.Text = "男";
+        }
+        else
+        {
+            lb.Text = "女";
+        }
+    }
 }
