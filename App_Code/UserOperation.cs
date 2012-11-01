@@ -18,6 +18,17 @@ public class UserOperation
         //TODO: 在此处添加构造函数逻辑
         //
     }
+    /// <summary>
+    /// 注册用户方法
+    /// </summary>
+    /// <param name="userName">注册名</param>
+    /// <param name="password">密码</param>
+    /// <param name="email">电子邮箱</param>
+    /// <param name="qq">QQ</param>
+    /// <param name="sex">性别，true为男，false为女</param>
+    /// <param name="isadmin">是否管理员</param>
+    /// <param name="regTime">注册日期</param>
+    /// <returns></returns>
     public static bool Reg(string userName, string password, string email, string qq, bool sex, bool isadmin, DateTime regTime)
     {
         DataBase db = new DataBase();
@@ -38,7 +49,11 @@ public class UserOperation
             return true;
         }
     }
-
+    /// <summary>
+    /// 检查用户是否存在
+    /// </summary>
+    /// <param name="userName">用户名</param>
+    /// <returns>注册成功为true,失败为false</returns>
     public static bool CheckUser(string userName)    /* 用户名密码验证  */
     {
         DataBase db = new DataBase();
@@ -49,7 +64,13 @@ public class UserOperation
         else
         { return false; }
     }
-
+    /// <summary>
+    /// 登陆
+    /// </summary>
+    /// <param name="Session">Session</param>
+    /// <param name="userName">用户名</param>
+    /// <param name="password">密码</param>
+    /// <returns>成功为true,失败为false</returns>
     public static bool Login(System.Web.SessionState.HttpSessionState Session, string userName, string password)
     {
         if (userName == "" || password == "")
@@ -74,11 +95,21 @@ public class UserOperation
             return false;
         }
     }
+    /// <summary>
+    /// 检查是否已登陆
+    /// </summary>
+    /// <param name="Session">Session</param>
+    /// <returns>true已登陆，false未登陆</returns>
     public static bool CheckLoged(System.Web.SessionState.HttpSessionState Session)
     {
         return !(Session["uid"] == null);
 
     }
+    /// <summary>
+    /// 检查是否为管理员
+    /// </summary>
+    /// <param name="Session">Session</param>
+    /// <returns>是返回true,否返回false</returns>
     public static bool CheckIsAdmin(System.Web.SessionState.HttpSessionState Session)
     {
 
@@ -92,6 +123,7 @@ public class UserOperation
         }
         return false;
     }
+
     public static bool userAlert(string password, string email, string qq, bool sex)
     {
         DataBase db = new DataBase();
@@ -111,6 +143,10 @@ public class UserOperation
             return true;
         }
     }
+    /// <summary>
+    /// 删除用户
+    /// </summary>
+    /// <param name="id">删除ID</param>
     public static void DelUser(String id)
     {
         DataBase db = new DataBase();
@@ -118,7 +154,11 @@ public class UserOperation
         db.ExCommandNoBack(sql);
 
     }
-
+    /// <summary>
+    /// 获取用户信息
+    /// </summary>
+    /// <param name="userId">用户ID</param>
+    /// <returns>返回UserEntity对象，可以读取用户信息</returns>
     public static UserEntity GetUser(string userId)
     {
         DataBase db = new DataBase();
