@@ -60,7 +60,8 @@
         </div>
         <div id="footer">
             <p align="center" style="font-size: 12px; color: #666666;">
-                帮助中心 | 加入我们 | 联系我们 | 手机浏览 | 网站导航</br></br><font size="1"> Powered by RJ1001</font></p>
+                帮助中心 | 加入我们 | 联系我们 |<a href="../doc/style.htm" 
+                    style="color: #0066FF; font-weight: bold;">代码风格</a></br></br><font size="1"> Powered by RJ1001</font></p>
         </div>
     </div>
 </body>
