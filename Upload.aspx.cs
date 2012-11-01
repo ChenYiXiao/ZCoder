@@ -34,14 +34,17 @@ if (!empty($_FILES) && $_POST['token'] == $verifyToken) {
         string targetFolder = AppConfiger.GetSiteSetting(Server, "projectsz");
         HttpPostedFile file = Request.Files["FileData"];
         string uploadpath = Server.MapPath(targetFolder + "\\");
+        
         if (file != null)
         {
             if (!Directory.Exists(uploadpath))
             {
                 Directory.CreateDirectory(uploadpath);
             }
-            file.SaveAs(uploadpath + file.FileName);
-            Response.Write("文件已成功保存至： " + uploadpath + file.FileName);
+            string savePath = uploadpath + DateTime.Now.ToFileTime() + ".zip";
+            file.SaveAs(savePath);
+            Session["savePath"] = savePath;
+           
         }
         else
         {

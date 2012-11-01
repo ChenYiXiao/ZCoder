@@ -10,11 +10,13 @@
             $('#file_upload').uploadify({
                 'swf': '/js/uploadify.swf',
                 'uploader': '/upload.aspx',
+                'uploadLimit' : 1,
              'removeCompleted' : false,
                 'fileTypeDesc': '选择zip',
                 'fileTypeExts': '*.zip',
                 'formData': { 'ASPSESSID':<%=  Request.Cookies[FormsAuthentication.FormsCookieName]==null ? "''" : Request.Cookies[FormsAuthentication.FormsCookieName].Value %>, 'AUTHID':'<%= Session.SessionID %>'},
                 'multi': false,
+
                 'buttonText':'上传工程'
                 // Put your options here
             });
@@ -46,6 +48,21 @@
                 <td class="layPadding">
                     *工程名称，必填项
                 </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Label ID="Label4" runat="server" Text="工程分类："></asp:Label>
+                </td>
+                <td class="layPadding">
+                    <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="sds_Types" 
+                        DataTextField="typeName" DataValueField="id" Height="35px" Width="235px">
+                    </asp:DropDownList>
+                    <asp:SqlDataSource ID="sds_Types" runat="server" 
+                        ConnectionString="<%$ ConnectionStrings:db_ConnectionString %>" 
+                        SelectCommand="SELECT [typeName], [id] FROM [tb_type]"></asp:SqlDataSource>
+                </td>
+                <td class="layPadding">
+                    &nbsp;</td>
             </tr>
             <tr>
                 <td>
