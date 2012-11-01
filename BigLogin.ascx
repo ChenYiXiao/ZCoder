@@ -20,19 +20,33 @@
     <p>
         <asp:Button ID="Button1" runat="server" BackColor="#0099FF" BorderStyle="Solid" 
             BorderWidth="0px" CssClass="zRadioRec" Font-Bold="True" Font-Strikeout="False" 
-            Height="30px" onclick="Button1_Click" Text="登陆" Width="100px" />
+            Height="30px" onclick="Button1_Click" Text="登陆" Width="100px" 
+            ForeColor="White" />
         &nbsp;&nbsp;&nbsp;
         <asp:Button ID="Button2" runat="server" BackColor="#FF9900" BorderStyle="Solid" 
             BorderWidth="0px" CssClass="zRadioRec" Font-Bold="True" Font-Strikeout="False" 
-            Height="30px" Text="立即注册" Width="100px" />
+            Height="30px" Text="立即注册" Width="100px" ForeColor="White" />
     </p>
     <br>
+    <br>
     <br></br>
+    <br>
+    <br></br>
+    <br>
+    <br>
+    <br></br>
+    <br>
     <br></br>
     <br>
     <br></br>
     <br></br>
     <br></br>
+    <br></br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
     </br>
     </br>
     </br>
