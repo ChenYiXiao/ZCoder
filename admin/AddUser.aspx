@@ -29,7 +29,7 @@
         <td>
             <br />
 &nbsp;&nbsp;
-    <asp:TextBox ID="A_TB1" runat="server" OnTextChanged="A_TB1_TextChanged" 
+    <asp:TextBox ID="tb_UserName" runat="server" OnTextChanged="A_TB1_TextChanged" 
                 CssClass="zTextBox"></asp:TextBox>
         </td>
     </tr>
@@ -40,7 +40,7 @@
         <td>
             <br />
 &nbsp;&nbsp;
-    <asp:TextBox ID="A_TB2" runat="server" CssClass="zTextBox"></asp:TextBox>
+    <asp:TextBox ID="tb_Password" runat="server" CssClass="zTextBox"></asp:TextBox>
         </td>
     </tr>
     <tr>
@@ -50,7 +50,7 @@
         <td>
             <br />
 &nbsp;&nbsp;
-    <asp:TextBox ID="A_TB4" runat="server" CssClass="zTextBox"></asp:TextBox>
+    <asp:TextBox ID="tb_Email" runat="server" CssClass="zTextBox"></asp:TextBox>
         </td>
     </tr>
     <tr>
@@ -60,7 +60,7 @@
         <td>
             <br />
 &nbsp;&nbsp;
-    <asp:CheckBox ID="A_CB1" runat="server" Text="管理员" />
+    <asp:CheckBox ID="cb_IsAdmin" runat="server" Text="管理员" />
         </td>
     </tr>
     <tr>
@@ -69,7 +69,7 @@
         <td>
             <br />
 &nbsp;&nbsp;
-    <asp:Button ID="A_Button1" runat="server" OnClick="A_Button1_Click" Text="确定" 
+    <asp:Button ID="btn_OK" runat="server" OnClick="A_Button1_Click" Text="确定" 
         CssClass="zbutton" />
             <br />
             <br />

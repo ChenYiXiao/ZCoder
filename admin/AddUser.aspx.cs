@@ -15,11 +15,11 @@ public partial class admin_AddUser: System.Web.UI.Page
     {
         DataBase db = new DataBase();
         //从表单中取出数据
-        string userName = A_TB1.Text;
-        string password = A_TB2.Text;
-        string email = A_TB4.Text;
+        string userName = tb_UserName.Text;
+        string password = tb_Password.Text;
+        string email = tb_Email.Text;
         bool isAdmin = false;
-        isAdmin = A_CB1.Checked;
+        isAdmin = cb_IsAdmin.Checked;
         //新增用户的数据库操作
         if (UserOperation.Reg(userName, password, email, "", true, isAdmin, DateTime.Now))
         {

@@ -92,7 +92,7 @@
                 </td>
             <td>
                 <br />
-    <asp:Button ID="btnEdit" runat="server" onclick="btnEdit_Click" 
+    <asp:Button ID="btn_Edit" runat="server" onclick="btnEdit_Click" 
          Text="修改" CssClass="zbutton" />
                 <br />
             </td>
