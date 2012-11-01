@@ -1,0 +1,1031 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0066)http://10.21.244.56/www/data/upload/1/201209/2911295403366o4i.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="cn" xml:lang="cn"><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>程序书写规范</title>
+
+<meta name="generator" content="Org-mode">
+<meta name="generated" content="2009-02-11 星期三">
+<meta name="author" content="英佰德科技">
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style><style type="text/css">
+<!--/*--><![CDATA[/*><!--*/
+  html {
+	font-family: "微软雅黑", "新宋体";
+	font-size: 12pt;
+        line-height: 25px;
+   }
+  .title {
+        text-align: center;
+	line-height: normal;
+   }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color:lightblue; font-weight:normal }
+  .target { }
+  .timestamp { color: grey }
+  .timestamp-kwd { color: CadetBlue }
+  p.verse { margin-left: 3% }
+  p {
+	text-indent: 2em;
+	margin-left: 20px;
+  }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #FFC;
+	padding: 5pt;
+	font-family: Monaco, Consolas, "Courier New", monospace, "微软雅黑";
+	font-size: 90%;
+	overflow:auto;
+        line-height: normal;
+        width:96%;
+  }
+  .outline-3 {
+	margin-left: 20px;
+  }
+  .outline-2 {
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*/-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">程序书写规范</h1>
+
+
+<div id="table-of-contents">
+<h2>目录</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="http://10.21.244.56/www/data/upload/1/201209/2911295403366o4i.html#sec-1">1 总述 </a></li>
+<li><a href="http://10.21.244.56/www/data/upload/1/201209/2911295403366o4i.html#sec-2">2 缩进 </a></li>
+<li><a href="http://10.21.244.56/www/data/upload/1/201209/2911295403366o4i.html#sec-3">3 代码宽度 </a></li>
+<li><a href="http://10.21.244.56/www/data/upload/1/201209/2911295403366o4i.html#sec-4">4 代码格式 </a>
+<ul>
+<li><a href="http://10.21.244.56/www/data/upload/1/201209/2911295403366o4i.html#sec-4.1">4.1 if-else语句 </a></li>
+<li><a href="http://10.21.244.56/www/data/upload/1/201209/2911295403366o4i.html#sec-4.2">4.2 switch-case语句 </a></li>
+<li><a href="http://10.21.244.56/www/data/upload/1/201209/2911295403366o4i.html#sec-4.3">4.3 while语句,do语句与for语句 </a></li>
+<li><a href="http://10.21.244.56/www/data/upload/1/201209/2911295403366o4i.html#sec-4.4">4.4 空格的添加 </a></li>
+<li><a href="http://10.21.244.56/www/data/upload/1/201209/2911295403366o4i.html#sec-4.5">4.5 长语句的换行方式 </a></li>
+<li><a href="http://10.21.244.56/www/data/upload/1/201209/2911295403366o4i.html#sec-4.6">4.6 其他 </a></li>
+</ul>
+</li>
+<li><a href="http://10.21.244.56/www/data/upload/1/201209/2911295403366o4i.html#sec-5">5 注释 </a>
+<ul>
+<li><a href="http://10.21.244.56/www/data/upload/1/201209/2911295403366o4i.html#sec-5.1">5.1 总述 </a></li>
+<li><a href="http://10.21.244.56/www/data/upload/1/201209/2911295403366o4i.html#sec-5.2">5.2 文件头部注释 </a></li>
+<li><a href="http://10.21.244.56/www/data/upload/1/201209/2911295403366o4i.html#sec-5.3">5.3 函数头部注释 </a></li>
+<li><a href="http://10.21.244.56/www/data/upload/1/201209/2911295403366o4i.html#sec-5.4">5.4 代码分隔注释 </a></li>
+<li><a href="http://10.21.244.56/www/data/upload/1/201209/2911295403366o4i.html#sec-5.5">5.5 代码块末尾注释 </a></li>
+</ul>
+</li>
+<li><a href="http://10.21.244.56/www/data/upload/1/201209/2911295403366o4i.html#sec-6">6 命名规则 </a>
+<ul>
+<li><a href="http://10.21.244.56/www/data/upload/1/201209/2911295403366o4i.html#sec-6.1">6.1 工程名 </a></li>
+<li><a href="http://10.21.244.56/www/data/upload/1/201209/2911295403366o4i.html#sec-6.2">6.2 工程目录结构 </a></li>
+<li><a href="http://10.21.244.56/www/data/upload/1/201209/2911295403366o4i.html#sec-6.3">6.3 文件的命名 </a></li>
+<li><a href="http://10.21.244.56/www/data/upload/1/201209/2911295403366o4i.html#sec-6.4">6.4 宏的定义 </a></li>
+<li><a href="http://10.21.244.56/www/data/upload/1/201209/2911295403366o4i.html#sec-6.5">6.5 函数与全局变量的命名 </a></li>
+<li><a href="http://10.21.244.56/www/data/upload/1/201209/2911295403366o4i.html#sec-6.6">6.6 局部变量的命名 </a></li>
+</ul>
+</li>
+<li><a href="http://10.21.244.56/www/data/upload/1/201209/2911295403366o4i.html#sec-7">7 参考文献 </a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> 总述 </h2>
+<div class="outline-text-2" id="text-1">
+
+<p>程序书写规范应建立于一项工程之初， 且该规范应贯穿整个工程之始终。 采用一些规范有助于提高劳动生产率， 并使工程软件便于维护。
+好的书写风格无非是希望达到以下目的：
+</p><ul>
+<li>
+可移植性好
+</li>
+<li>
+兼容性好
+</li>
+<li>
+干净整齐
+</li>
+<li>
+易于维护
+</li>
+<li>
+易看懂
+</li>
+<li>
+简明扼要
+</li>
+<li>
+降低错误的产生
+</li>
+</ul>
+
+
+<p>
+以下所总结的是日常工作中遇到的容易产生分歧的各种情况。我们力争制定出一个大家都能够遵守的书写规范。其中的某些规定或许不是最好的，但这样规定是有其充足的理由的。它们或许不符合您多年的编程习惯，但请适应它，因为，一个人是很容易做到使用两个以上的编程风格同时开发不同的工程。但是，它们并不是金科玉律，只是一个建议，却是一个强烈的建议。在遇到本文没有提到的情况时，可以根据实际情况和需要调整缩进。归根结底是为了更加清晰和正确地反映出代码的逻辑结构。
+本文仅仅是在程序的代码格式层次进行了规定，这仅仅是冰山一角。还有大量的与代码逻辑结构涉及方面的问题，由于其内容过于零散和复杂，我们暂时无力总结,还请大家平时注意积累。
+</p></div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> 缩进 </h2>
+<div class="outline-text-2" id="text-2">
+
+<p>Tab长度为4，缩进长度为4。一律使用4个空格代替Tab符号进行缩进，不允许在代码中出现Tab符号。同一层次的缩进必须严格对齐。
+花括号的左右括号需处在单独的一行，其所包含的语句要进行缩进。  
+</p></div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> 代码宽度 </h2>
+<div class="outline-text-2" id="text-3">
+
+<p>为了便于代码的阅读，将代码的最大宽度为限定为100列。即每行代码的长度尽量不要超过100个字符，否则要对长语句换行。
+</p></div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> 代码格式 </h2>
+<div class="outline-text-2" id="text-4">
+
+<p>此处规定的代码格式是在ANSI和GNU风格的基础上进行的少量修改而形成的。
+</p>
+</div>
+
+<div id="outline-container-4.1" class="outline-3">
+<h3 id="sec-4.1"><span class="section-number-3">4.1</span> if-else语句 </h3>
+<div class="outline-text-3" id="text-4.1">
+
+
+
+
+<pre class="src src-c"><span style="color: #d02090; font-weight: bold;">if</span> (time.second &lt; 50) 
+{   
+    <span style="color: #a020f0; font-weight: bold;">/*</span><span style="color: #a020f0; font-weight: bold;">开花括号前后均要加换行符</span><span style="color: #a020f0; font-weight: bold;">*/</span>
+    time.second = 50;
+}
+<span style="color: #d02090; font-weight: bold;">else</span> <span style="color: #a020f0; font-weight: bold;">/*</span><span style="color: #a020f0; font-weight: bold;">else关键字的前后都要加换行符</span><span style="color: #a020f0; font-weight: bold;">*/</span>
+{ 
+    TimeDecAddMinute(&amp;time, 1);
+    time.second = 50;
+}
+</pre>
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-4.2" class="outline-3">
+<h3 id="sec-4.2"><span class="section-number-3">4.2</span> switch-case语句 </h3>
+<div class="outline-text-3" id="text-4.2">
+
+
+
+
+<pre class="src src-c"><span style="color: #d02090; font-weight: bold;">switch </span>(expression)
+{
+    <span style="color: #d02090; font-weight: bold;">case</span> label1:   <span style="color: #a020f0; font-weight: bold;">/*</span><span style="color: #a020f0; font-weight: bold;">switch中的case语句要进行缩进</span><span style="color: #a020f0; font-weight: bold;">*/</span>
+        <span style="color: #d02090; font-weight: bold;">break</span>;     <span style="color: #a020f0; font-weight: bold;">/*</span><span style="color: #a020f0; font-weight: bold;">case语句中的子语句要进行缩进</span><span style="color: #a020f0; font-weight: bold;">*/</span>
+    <span style="color: #d02090; font-weight: bold;">case</span> label2:
+        <span style="color: #d02090; font-weight: bold;">return</span> 0;  <span style="color: #a020f0; font-weight: bold;">/*</span><span style="color: #a020f0; font-weight: bold;">若在case与break语句之间出现了continue,return,goto等跳出
+                     switch语句的命令，需使用//对break语句进行注释，不准删除
+                     break语句</span><span style="color: #a020f0; font-weight: bold;">*/</span>
+        <span style="color: #a020f0; font-weight: bold;">//</span><span style="color: #a020f0; font-weight: bold;">break; 
+</span>        ...
+    <span style="color: #d02090; font-weight: bold;">default</span>:       <span style="color: #a020f0; font-weight: bold;">/*</span><span style="color: #a020f0; font-weight: bold;">必须存在default语句</span><span style="color: #a020f0; font-weight: bold;">*/</span>
+        <span style="color: #d02090; font-weight: bold;">break</span>;
+}
+</pre>
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-4.3" class="outline-3">
+<h3 id="sec-4.3"><span class="section-number-3">4.3</span> while语句,do语句与for语句 </h3>
+<div class="outline-text-3" id="text-4.3">
+
+
+
+
+<pre class="src src-c"><span style="color: #d02090; font-weight: bold;">while</span> (TRUE)
+{
+    <span style="color: #a020f0; font-weight: bold;">/*</span><span style="color: #a020f0; font-weight: bold;">在开花括号前后都加换行符</span><span style="color: #a020f0; font-weight: bold;">*/</span>
+    a = 1;
+}
+
+<span style="color: #d02090; font-weight: bold;">do</span>
+{
+    a = 1;
+} <span style="color: #d02090; font-weight: bold;">while</span> (FALSE); <span style="color: #a020f0; font-weight: bold;">/*</span><span style="color: #a020f0; font-weight: bold;">while关键字与闭花括号处在同一行,在while关键字前后都要加空格</span><span style="color: #a020f0; font-weight: bold;">*/</span>
+
+<span style="color: #d02090; font-weight: bold;">for</span> (i = 0; i &lt; 5; i++)
+{
+    printf(<span style="color: #008b00;">"%d\n"</span>, i);
+}
+</pre>
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-4.4" class="outline-3">
+<h3 id="sec-4.4"><span class="section-number-3">4.4</span> 空格的添加 </h3>
+<div class="outline-text-3" id="text-4.4">
+
+<ol>
+<li>
+在分支语句的if,switch关键字和循环语句的while,for关键字后面添加一个空格。示例如上所示。
+</li>
+<li>
+双元运算符与两个操作数之间至少有一个空格。双元运算符包括：
+<ul>
+<li>
+算数运算符: +, -, *, /, %。
+</li>
+<li>
+逻辑运算符: ==, ！=, &amp;&amp;, ||。
+</li>
+<li>
+位操作符: <a name="," class="target">, </a> , &amp;, |, ^。
+</li>
+</ul>
+
+<p>例如：
+</p></li>
+</ol>
+
+
+
+
+<pre class="src src-c">a + b / 2 + c % 10 + 1 &lt;&lt; 3
+</pre>
+
+
+
+<ol>
+<li>
+单元运算符与操作数之间不能有空格。单目运算符包括：
+<ul>
+<li>
+数组下标[], 函数调用(), 结构与联合的成员"."和-&gt;。
+</li>
+<li>
+自增++, 自减–。
+</li>
+<li>
+取地址符&amp;和间接寻址符*。
+</li>
+<li>
+按位取反~, 逻辑非!。
+</li>
+<li>
+一元正号和一元负号+, -。
+</li>
+</ul>
+</li>
+<li>
+赋值符与变量和表达式之间至少有一个空格。赋值符包括:
+=, *=, /=, &amp;=, +=, -=, <a name="=," class="target">=, </a> =, &amp;=, ^=, ^=, |=
+</li>
+<li>
+在小括号与变量、表达式之间不准有空格。例如：
+</li>
+</ol>
+
+
+
+
+<pre class="src src-c">us = TimeSubTimeBcd(*start_time, task-&gt;CollectStartTime);
+<span style="color: #d02090; font-weight: bold;">switch</span> (part)
+{
+    ...
+}
+</pre>
+
+
+
+<ol>
+<li>
+在逗号","前面不准加空格，后面必须添加一个空格。例如： 
+</li>
+</ol>
+
+
+
+
+<pre class="src src-c"><span style="color: #d02090; font-weight: bold;">if</span> (GPIO_ReadBit(key-&gt;GPIOx, key-&gt;Port_Pins))
+{
+    <span style="color: #d02090; font-weight: bold;">return</span>;
+}
+LCD_DisplayPageArea((<span style="color: #4682b4; font-weight: bold;">u8</span>*)SignalPlans[GprsQuality], 16, 7, 112);
+</pre>
+
+
+
+<ol>
+<li>
+for语句中的分号";"前面不能有空格，后面只能有一个空格。例如
+</li>
+</ol>
+
+
+
+
+<pre class="src src-c"><span style="color: #d02090; font-weight: bold;">for</span> (i = 0; i &lt; 10; ++i)
+{
+    n += i;
+}
+</pre>
+
+
+
+<ol>
+<li>
+注释符号和注释内容之间没有空格。
+</li>
+</ol>
+
+
+
+
+<pre class="src src-c"><span style="color: #a020f0; font-weight: bold;">/*</span><span style="color: #a020f0; font-weight: bold;">注释内容</span><span style="color: #a020f0; font-weight: bold;">*/</span>
+<span style="color: #a020f0; font-weight: bold;">/*</span><span style="color: #a020f0; font-weight: bold;">comment</span><span style="color: #a020f0; font-weight: bold;">*/</span>
+</pre>
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-4.5" class="outline-3">
+<h3 id="sec-4.5"><span class="section-number-3">4.5</span> 长语句的换行方式 </h3>
+<div class="outline-text-3" id="text-4.5">
+
+<p>当一条语句很长时，我们需要根据代码宽度(100列)对长语句进行换行。换行以后的部分，要相对于原语句缩进一部分。
+在换行时，我们通常在一个变量或者常量之前换行，把逗号之类的分隔符、运算符留在前一行的行尾,相似的变量或运算符进行对齐，以保持美观。
+</p>
+
+
+<pre class="src src-c"><span style="color: #a020f0; font-weight: bold;">/*</span><span style="color: #a020f0; font-weight: bold;">这是一条很长的语句</span><span style="color: #a020f0; font-weight: bold;">*/</span>
+myvar = myvar1  + myvar2 + myvar3  - myvar4  - myvar5  * myvar6  * myvar7  +
+        myvar8  / myvar9 + myvar10 + myvar11 - myvar12 - myvar13 * myvar14 *
+        myvar15 / myvar16;  <span style="color: #a020f0; font-weight: bold;">/*</span><span style="color: #a020f0; font-weight: bold;">myvar1、myvar8和myvar15保持垂直对齐，"+"、"-"、"*"保持垂直对齐</span><span style="color: #a020f0; font-weight: bold;">*/</span>
+<span style="color: #a020f0; font-weight: bold;">/* </span><span style="color: #a020f0; font-weight: bold;">后面的语句恢复正常的缩进位置</span><span style="color: #a020f0; font-weight: bold;">*/</span>
+</pre>
+
+
+
+<p>
+函数调用和定义时， 如果参数个数很多， 或者要传递的表达式写起来很长，那么也会涉及到长语句换行问题，最基本的原则是：尽可能地在参数与参数之间换行，并将逗号保留在上一行行末：
+</p>
+
+
+<pre class="src src-c"><span style="color: #a020f0; font-weight: bold;">/*</span><span style="color: #a020f0; font-weight: bold;">在参数与参数之间换行</span><span style="color: #a020f0; font-weight: bold;">*/</span>
+printf(<span style="color: #008b00;">"This function call has many parameters. %d %d %d %d\n"</span>, myvar1,
+       myvar2, myvar3, myvar4);
+</pre>
+
+
+
+<p>
+在一些必要的情况下，我们为了清晰地列出函数的每一个参数，可以采取类似结构声明的写法：
+</p>
+
+
+<pre class="src src-c"><span style="color: #a020f0; font-weight: bold;">/*</span><span style="color: #a020f0; font-weight: bold;">每个参数分行</span><span style="color: #a020f0; font-weight: bold;">*/</span>
+printf(<span style="color: #008b00;">"This function call has many parameters. %d %d %d %d\n"</span>,
+       myvar1,
+       myvar2,
+       myvar3,
+       myvar4
+       );
+</pre>
+
+
+
+<p>
+当传入的表达式较为复杂时，这种写法会显得格外地清晰。类似地，在同时声明多个同一类型的变量时，必须如此书写：
+</p>
+
+
+<pre class="src src-c"><span style="color: #4682b4; font-weight: bold;">u16</span> <span style="color: #8b008b;">myvar1</span>;
+<span style="color: #4682b4; font-weight: bold;">u16</span> <span style="color: #8b008b;">myvar2</span>;
+<span style="color: #4682b4; font-weight: bold;">u16</span> <span style="color: #8b008b;">myvar3</span>;
+<span style="color: #4682b4; font-weight: bold;">u16</span> <span style="color: #8b008b;">myvar4</span>;
+</pre>
+
+
+
+<p>
+它的主要目的是便于对单个变量进行注释，如：
+</p>
+
+
+<pre class="src src-c"><span style="color: #4682b4; font-weight: bold;">u8</span> <span style="color: #8b008b;">username</span>[MAXN];  <span style="color: #a020f0; font-weight: bold;">/*</span><span style="color: #a020f0; font-weight: bold;">用户名</span><span style="color: #a020f0; font-weight: bold;">*/</span>
+<span style="color: #4682b4; font-weight: bold;">u8</span> <span style="color: #8b008b;">password</span>[MAXN];  <span style="color: #a020f0; font-weight: bold;">/*</span><span style="color: #a020f0; font-weight: bold;">密码</span><span style="color: #a020f0; font-weight: bold;">*/</span>
+<span style="color: #4682b4; font-weight: bold;">u8</span> <span style="color: #8b008b;">desc</span>[MAXN];      <span style="color: #a020f0; font-weight: bold;">/*</span><span style="color: #a020f0; font-weight: bold;">描述</span><span style="color: #a020f0; font-weight: bold;">*/</span>
+</pre>
+
+
+
+<p>
+对于较长表达式， 可以采用如下风格：
+</p>
+
+
+<pre class="src src-c"><span style="color: #d02090; font-weight: bold;">if</span> ( <span style="color: #a020f0; font-weight: bold;">/*</span><span style="color: #a020f0; font-weight: bold;">圆括号缩进2个空格</span><span style="color: #a020f0; font-weight: bold;">*/</span>
+     (electricity_time-&gt;year  != time.year)  || 
+     (electricity_time-&gt;month != time.month) ||
+     (electricity_time-&gt;day   != time.day)   || <span style="color: #a020f0; font-weight: bold;">/*</span><span style="color: #a020f0; font-weight: bold;">类似于!=和||的运算符要添加额外空格实现上下对齐</span><span style="color: #a020f0; font-weight: bold;">*/</span>
+     ((electricity_time-&gt;hour / 3) != (time.hour / 3))
+    ) <span style="color: #a020f0; font-weight: bold;">/*</span><span style="color: #a020f0; font-weight: bold;">右圆括号在处在单独一行， 与其所匹配的左括号处在同一列</span><span style="color: #a020f0; font-weight: bold;">*/</span>
+{
+    memset(ElectricityGetBuf, 0xFF, PER_METER_SIZE);
+}
+</pre>
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-4.6" class="outline-3">
+<h3 id="sec-4.6"><span class="section-number-3">4.6</span> 其他 </h3>
+<div class="outline-text-3" id="text-4.6">
+
+<ol>
+<li>
+即使分支和循环语句只包含一条语句，也要将该语句放到一对花括号中。例如
+</li>
+</ol>
+
+
+
+
+<pre class="src src-c"><span style="color: #d02090; font-weight: bold;">if</span> (y != 0)
+{
+    <span style="color: #d02090; font-weight: bold;">if</span> (x != 0)
+    {   <span style="color: #a020f0; font-weight: bold;">/*</span><span style="color: #a020f0; font-weight: bold;">这样做既使代码清晰易读， 又减少了错误的发生(如将单语句改为复合语句却忘记将其放入花括号中)</span><span style="color: #a020f0; font-weight: bold;">*/</span>
+        result = x / y;
+    }
+}
+<span style="color: #d02090; font-weight: bold;">else</span> <span style="color: #a020f0; font-weight: bold;">/*</span><span style="color: #a020f0; font-weight: bold;">也避免了"悬空else"的问题</span><span style="color: #a020f0; font-weight: bold;">*/</span>
+{
+    printf(<span style="color: #008b00;">"Error: y is equal to 0\n"</span>);
+}
+</pre>
+
+
+
+<ol>
+<li>
+不推荐嵌套层数过多的条件语句。   
+</li>
+</ol>
+
+
+
+
+<pre class="src src-c"><span style="color: #a020f0; font-weight: bold;">/*</span><span style="color: #a020f0; font-weight: bold;">不推荐</span><span style="color: #a020f0; font-weight: bold;">*/</span>
+<span style="color: #d02090; font-weight: bold;">if</span> (x != 0)
+{
+    <span style="color: #d02090; font-weight: bold;">while</span> (y != 0)
+    {
+        <span style="color: #d02090; font-weight: bold;">if</span> (z != 0)
+        {
+            <span style="color: #d02090; font-weight: bold;">for</span> (i = 0; i &lt; 10; i++)
+            {
+                fun3(i);
+            }
+            fun2(z);
+        }
+        fun1(y);
+    }
+}
+</pre>
+
+
+
+<ol>
+<li>
+推荐变量在声明同时初始化。
+</li>
+<li>
+建议一条声明语句只声明一个变量。不推荐具有相同类型的变量在一条声明语句中声明。严禁在一条声明语句中声明不同类型的变量。例如：
+</li>
+</ol>
+
+
+
+
+<pre class="src src-c"><span style="color: #a020f0; font-weight: bold;">/*</span><span style="color: #a020f0; font-weight: bold;">推荐如下声明方式</span><span style="color: #a020f0; font-weight: bold;">*/</span>
+<span style="color: #4682b4; font-weight: bold;">u32</span> <span style="color: #8b008b;">index_a</span>;
+<span style="color: #4682b4; font-weight: bold;">u32</span> <span style="color: #8b008b;">index_b</span>;
+<span style="color: #4682b4; font-weight: bold;">u32</span> <span style="color: #8b008b;">index_c</span>;
+<span style="color: #a020f0; font-weight: bold;">/*</span><span style="color: #a020f0; font-weight: bold;">不推荐如下声明方式</span><span style="color: #a020f0; font-weight: bold;">*/</span>
+<span style="color: #4682b4; font-weight: bold;">u8</span> <span style="color: #8b008b;">arr1</span>, <span style="color: #8b008b;">arr2</span>, <span style="color: #8b008b;">arr3</span>;
+<span style="color: #a020f0; font-weight: bold;">/*</span><span style="color: #a020f0; font-weight: bold;">严禁如下声明方式</span><span style="color: #a020f0; font-weight: bold;">*/</span>
+<span style="color: #4682b4; font-weight: bold;">u8</span> <span style="color: #8b008b;">i</span>, *<span style="color: #8b008b;">p1</span>; <span style="color: #a020f0; font-weight: bold;">/*</span><span style="color: #a020f0; font-weight: bold;">i的类型是u8, p1的类型是u8* </span><span style="color: #a020f0; font-weight: bold;">*/</span>
+<span style="color: #4682b4; font-weight: bold;">u8</span>* <span style="color: #8b008b;">p1</span>, <span style="color: #8b008b;">i</span>; <span style="color: #a020f0; font-weight: bold;">/*</span><span style="color: #a020f0; font-weight: bold;">p1的类型是u8*, i的类型是u8。有人可能错误地希望使用该语句声明类型为u8*的两个变量p1和i</span><span style="color: #a020f0; font-weight: bold;">*/</span>
+</pre>
+
+
+
+<ol>
+<li>
+严禁连续赋值。例如：
+</li>
+</ol>
+
+
+
+
+<pre class="src src-c"><span style="color: #a020f0; font-weight: bold;">/*</span><span style="color: #a020f0; font-weight: bold;">严禁</span><span style="color: #a020f0; font-weight: bold;">*/</span>
+a = b = c;
+</pre>
+
+
+
+<ol>
+<li>
+相对独立的代码块之间使用空行分割。
+</li>
+<li>
+不要吝惜你的圆括号。除了加减乘除外，建议使用圆括号分隔具有不同优先级的表达式。
+</li>
+<li>
+行尾无空格，文件末尾至少保留一个空行。
+</li>
+</ol>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> 注释 </h2>
+<div class="outline-text-2" id="text-5">
+
+
+</div>
+
+<div id="outline-container-5.1" class="outline-3">
+<h3 id="sec-5.1"><span class="section-number-3">5.1</span> 总述 </h3>
+<div class="outline-text-3" id="text-5.1">
+
+<ol>
+<li>
+注释尽量使用C风格的/* */, 也可以少量使用C++风格的//, 原则上规定使用/**/注释文字，使用//注释代码。
+</li>
+<li>
+一定要为非临时的宏、全局变量和局部变量添加注释。
+</li>
+<li>
+养成随时为编写的代码书写注释的习惯。
+</li>
+<li>
+严禁仅仅自动生成了注释框架而不填写其中内容的行为。
+</li>
+<li>
+在函数头部注释和文件头部注释中详细记录对代码的更改记录。
+</li>
+<li>
+修改代码的同时不要忘记修改相应的注释。
+</li>
+<li>
+注意在源文件和头文件中相同函数的头部注释保持一致。
+</li>
+</ol>
+</div>
+
+</div>
+
+<div id="outline-container-5.2" class="outline-3">
+<h3 id="sec-5.2"><span class="section-number-3">5.2</span> 文件头部注释 </h3>
+<div class="outline-text-3" id="text-5.2">
+
+
+
+
+<pre class="src src-c"> <span style="color: #a020f0; font-weight: bold;">/***************************************************************************************************</span><span style="color: #a020f0; font-weight: bold;">
+ *                    (c) Copyright 1992-2009 Embedded Products Research Center
+ *                                       All Rights Reserved
+ *
+ *\File          usdl_xxx.h
+ *\Description   XXXXXXXXXXXXX
+ *\Log           2008.XX.XX    Ver 1.0    张三
+ *               创建文件。
+ **************************************************************************************************</span><span style="color: #a020f0; font-weight: bold;">*/</span>
+</pre>
+
+
+
+<p>
+注意：由于技术原因，在上例中每行的开始处添加了一个多余的空格，请在复制代码时手动删除。
+</p>
+<ol>
+<li>
+注释：文件头注释必须位于文件第一行，不得添加规定项目外的任何文字。该注释作用文件包括：.c .h .s等项目中的手动编码文件。
+</li>
+<li>
+框架：顶端、底端边框宽度为100个字符（包括："*"、"/"），每行第一个字节用"*"占位，表示左边框。
+</li>
+<li>
+注释分为注释命令和注释内容两部分，注释命令为File，Description等，以\开始，紧跟开头的*，所有注释内容要求按Tab对齐，即列号col=4*n+1, n是自然数。在这里n = 4。
+</li>
+<li>
+版权：Copyright起始位置与每项内容对齐。
+</li>
+<li>
+折行：每行长度不得超过注释框右边界，超过则折行。折行后，第N行起始位置不得左于注释内容的起始位置。"File"、版权项目不允许折行。
+</li>
+<li>
+\File命令：文件名、扩展名（小写）与源文件一致。
+</li>
+<li>
+\Description命令：文件描述。推荐填写模块名称+功能（如：XXX模块。用作XX。）。必须以全角句号结尾
+</li>
+<li>
+\Node：用于描述备注或标注的注解。该项中编号使用半角符号。编号暂限制为两级：一级编号使用数字（如：1、2、5），二级编号使用小写字母（如：a、b、c）。二级编号起始位置比一级编号右移两个字符。内容紧跟")"填写，折行后起始位置与上一行内容对齐、不得左于编号。必须以全角句号结尾。
+</li>
+<li>
+在注释中的换行在生成的文档中均被忽略。若希望强制换行，有两种方法：1. 重新开始一个新的\Note命令；2. 使用\n命令。
+</li>
+<li>
+\Log：格式：日期+间隔+版本+间隔+作者+换行+备注。其中日期、版本、作者中的间隔使用四个空格；备注换行书写，起始位置第一行对齐。备注必须以全角句号结尾。日期须填写完整，使用半角"."分隔；版本格式为："Ver"+一个空格+版本号，版本号中只允许存在一个"."。
+</li>
+<li>
+全角：除注释命令、英文描述外，所有中文描述均使用全角（如：句号使用"。"、括号使用"（"）。
+</li>
+<li>
+注解：当某项存在过长或无法简捷表达的内容时，可以使用"（见 Note 1）"标注，并在\Note中添加注解。
+</li>
+<li>
+修改：当代码发生重要改动后，须修改对应项，并在Log项中记录，同时适当更新版本（版本号可以跳增或不变）。
+</li>
+<li>
+头文件：头文件可以描述为"XX模块接口文件"。
+</li>
+</ol>
+</div>
+
+</div>
+
+<div id="outline-container-5.3" class="outline-3">
+<h3 id="sec-5.3"><span class="section-number-3">5.3</span> 函数头部注释 </h3>
+<div class="outline-text-3" id="text-5.3">
+
+
+
+
+<pre class="src src-c"> <span style="color: #a020f0; font-weight: bold;">/***************************************************************************************************</span><span style="color: #a020f0; font-weight: bold;">
+ *\Function      GenerateCRC16_IBM
+ *\Description   根据以src起始长len的串生成16位CRC-IBM校验值
+ *\Parameter     src     源数据
+ *\Parameter     len     数据长度
+ *\Parameter     seed    初始值
+ *\Return        u16
+ *\Note          CRC16-IBM = X16 + X15 + X2 + 1
+ *\Log           2008.09.19    Ver 1.0    xxxxxx
+ *               创建函数。
+ **************************************************************************************************</span><span style="color: #a020f0; font-weight: bold;">*/</span>
+</pre>
+
+
+
+<p>
+注意：由于技术原因，在上例中每行的开始处添加了一个多余的空格，请在复制代码时手动删除。
+</p>
+<ol>
+<li>
+注释：函数头注释与函数声明（或定义）之间不许添加空行。注释与上方代码至少预留一行。
+</li>
+<li>
+框架：顶端、底端边框宽度为100个字符（包括："*"、"/"），每行第一个字节用"*"占位，表示左边框。
+</li>
+<li>
+注释分为注释命令和注释内容两部分，注释命令为File，Description等，以\开始，紧跟开头的*。所有注释内容的起始位置要求按Tab对齐，即列号col=4*n+1, n是自然数。
+</li>
+<li>
+折行：每行长度不得超过注释框右边界，超过则折行。折行后，第N行起始位置不得左于第一行起始位置。
+</li>
+<li>
+\Function：函数名称，该项只填写函数名称，不包括返回值、参数等信息。
+</li>
+<li>
+\Description：函数功能描述。必须以全角句号结尾。
+</li>
+<li>
+\Parameter：一项只能填写一个参数。格式：参数名+空格+说明。参数不填写类型，参数说明起始位置按Tab对齐，具体见3)。若函数无参数则填写void。若说明不构成整句，可以不使用句号结尾。若说明不构成整句，可以不使用句号结尾。
+</li>
+<li>
+\Return：填写返回值类型及对返回值的描述，无返回值则填写"void"。
+</li>
+<li>
+\Note：用于描述备注或标注的注解。该项中编号使用半角符号。编号暂限制为两级：一级编号使用数字（如：1、2、5），二级编号使用小写字母（如：a、b、c）。二级编号起始位置比一级编号右移两个字符。内容紧跟")"填写，折行后起始位置与上一行内容对齐、不得左于编号。必须以全角句号结尾。
+</li>
+<li>
+在注释中的换行在生成的文档中均被忽略。若希望强制换行，有两种方法：1. 重新开始一个新的\Note命令；2. 使用\n符号。
+</li>
+<li>
+\Log：格式：日期+间隔+版本+间隔+作者+换行+备注。其中日期、版本、作者中的间隔使用四个空格；备注换行书写，起始位置第一行对齐。备注必须以全角句号结尾。日期须填写完整，使用半角"."分隔；版本格式为："Ver"+一个空格+版本号，版本号中只允许存在一个"."。
+</li>
+<li>
+注解：当某项存在过长或无法简捷表达的内容时，可以使用"（见 Note 1）"标注，并在\Note中添加注解。
+</li>
+<li>
+修改：当代码发生重要改动后，须修改对应项，并在Log项中记录，同时适当更新版本（版本号可以跳增或不变）。
+</li>
+<li>
+头文件：头文件中的函数声明注释必须与函数定义注释相同。
+</li>
+</ol>
+</div>
+
+</div>
+
+<div id="outline-container-5.4" class="outline-3">
+<h3 id="sec-5.4"><span class="section-number-3">5.4</span> 代码分隔注释 </h3>
+<div class="outline-text-3" id="text-5.4">
+
+
+
+
+<pre class="src src-c"> <span style="color: #a020f0; font-weight: bold;">/***************************************************************************************************</span><span style="color: #a020f0; font-weight: bold;">
+ *公共宏定义块 起始
+ **************************************************************************************************</span><span style="color: #a020f0; font-weight: bold;">*/</span>
+<span style="color: #0000cd; font-weight: bold;"> #define</span> <span style="color: #8b008b;">NUM_ONE</span>     0x01
+<span style="color: #0000cd; font-weight: bold;"> #define</span> <span style="color: #8b008b;">NUM_TWO</span>     0x02
+<span style="color: #0000cd; font-weight: bold;"> #define</span> <span style="color: #8b008b;">NUM_THREE</span>   0x03
+ <span style="color: #a020f0; font-weight: bold;">/***************************************************************************************************</span><span style="color: #a020f0; font-weight: bold;">
+ *公共宏定义块 结束
+ **************************************************************************************************</span><span style="color: #a020f0; font-weight: bold;">*/</span>
+</pre>
+
+
+
+<ol>
+<li>
+作用：分隔带既可以用来将同一类代码包括成一块，也可以用来将代码分割成上下两区。
+</li>
+<li>
+框架：顶端、底端边框宽度为100个字符（包括："*"、"/"），描述行第一个字节用"*"占位，表示左边框。建议描述行为一行。
+</li>
+<li>
+折行：每行长度不得超过注释框右边界，超过则折行。
+</li>
+<li>
+描述：若描述内容构成整句则必须以全角句号结尾。
+</li>
+<li>
+块分隔：若分隔带用来将同一类代码包括成一块，则必须明确表明块的上、下界（起始、结束分隔带）。建议上、下界两侧至少保留一个空行。
+</li>
+<li>
+空分隔：如果不需要填写分隔描述，可以只保留顶端、底端边框。
+</li>
+</ol>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-5.5" class="outline-3">
+<h3 id="sec-5.5"><span class="section-number-3">5.5</span> 代码块末尾注释 </h3>
+<div class="outline-text-3" id="text-5.5">
+
+<p>建议在占据较多行数语句的右花括号的后面添加注释标明其所结束的语句。如
+</p>
+
+
+<pre class="src src-c"><span style="color: #a020f0; font-weight: bold;">/*</span><span style="color: #a020f0; font-weight: bold;">初始化即时电量</span><span style="color: #a020f0; font-weight: bold;">*/</span>
+<span style="color: #d02090; font-weight: bold;">for</span> ( i = 0; i &lt; 4; i++ )
+{
+    MeterBlock-&gt;CurrentElectricity [index][i] = 0xFF;
+    MeterBlock-&gt;CurrentElectricity1[index][i] = 0xFF;
+    MeterBlock-&gt;CurrentElectricity2[index][i] = 0xFF;
+    MeterBlock-&gt;CurrentElectricity3[index][i] = 0xFF;
+    MeterBlock-&gt;CurrentElectricity4[index][i] = 0xFF;
+} <span style="color: #a020f0; font-weight: bold;">/*</span><span style="color: #a020f0; font-weight: bold;">end of for</span><span style="color: #a020f0; font-weight: bold;">*/</span>
+</pre>
+
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> 命名规则 </h2>
+<div class="outline-text-2" id="text-6">
+
+<p>符号的命名要简短且有意义。尽量使用英文单词及其常用缩略语，不要使用汉语拼音及其缩写。
+</p>
+</div>
+
+<div id="outline-container-6.1" class="outline-3">
+<h3 id="sec-6.1"><span class="section-number-3">6.1</span> 工程名 </h3>
+<div class="outline-text-3" id="text-6.1">
+
+<p>工程名是由以下划线"_"分隔的描述其属性的关键字组成， 其中的字母必须是大写形式。如DW708J_DW912CMAINB080605_旧居民规约。
+</p></div>
+
+</div>
+
+<div id="outline-container-6.2" class="outline-3">
+<h3 id="sec-6.2"><span class="section-number-3">6.2</span> 工程目录结构 </h3>
+<div class="outline-text-3" id="text-6.2">
+
+<p>目录名以小写字母命名。
+头文件要放到inc文件夹下， 源文件要放到src文件夹下。
+</p></div>
+
+</div>
+
+<div id="outline-container-6.3" class="outline-3">
+<h3 id="sec-6.3"><span class="section-number-3">6.3</span> 文件的命名 </h3>
+<div class="outline-text-3" id="text-6.3">
+
+<p>文件名由小写字母和下划线组成， 使用下划线分隔文件名的不同组成部分，如app_meter_manage.c, app_device_manage.h等。
+</p></div>
+
+</div>
+
+<div id="outline-container-6.4" class="outline-3">
+<h3 id="sec-6.4"><span class="section-number-3">6.4</span> 宏的定义 </h3>
+<div class="outline-text-3" id="text-6.4">
+
+<p>宏名一律全部使用大写字母，使用下划线连接多个单词：
+#define 标识符(x1, x2, …,xn) 替换列表
+对于宏定义中的圆括号，有两条规则要遵循:
+</p><ul>
+<li>
+如果宏的替换列表中有运算符， 那么始终要将替换列表放在括号中，例如：
+#define TWO_MINUTE   (60 * 2）
+</li>
+<li>
+如果宏有参数， 每次参数在替换列表中出现时都要放在园括号中。
+#define SCALE(x) ((x) * 10)
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-6.5" class="outline-3">
+<h3 id="sec-6.5"><span class="section-number-3">6.5</span> 函数与全局变量的命名 </h3>
+<div class="outline-text-3" id="text-6.5">
+
+<p>以驼峰的形式命名，即每个单词的首字母要大写，单词之间紧密相连。如：
+</p>
+
+
+<pre class="src src-c"><span style="color: #d02090; font-weight: bold;">const</span> <span style="color: #4682b4; font-weight: bold;">u16</span> <span style="color: #8b008b;">CrctableIBMRefl</span>;
+<span style="color: #4682b4; font-weight: bold;">void</span> <span style="color: #0000ff; font-weight: bold;">BitPointSet</span>( <span style="color: #4682b4; font-weight: bold;">void</span>* <span style="color: #8b008b;">src</span>, <span style="color: #4682b4; font-weight: bold;">u8</span> <span style="color: #8b008b;">pos</span>, <span style="color: #4682b4; font-weight: bold;">u8</span> <span style="color: #8b008b;">width</span> )
+{
+}
+</pre>
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-6.6" class="outline-3">
+<h3 id="sec-6.6"><span class="section-number-3">6.6</span> 局部变量的命名 </h3>
+<div class="outline-text-3" id="text-6.6">
+
+<p>局部变量使用小写字母加下划线连接命令。局部变量的声明要统一放在函数的起始处，并对其初始化。
+变量命名尽量简洁且有意义，且能够反映变量的类型，但也允许适度使用循环变量i、j、k以及临时变量tmp等进行命名。例如：
+</p>
+
+
+<pre class="src src-c"><span style="color: #4682b4; font-weight: bold;">u8</span> <span style="color: #8b008b;">i</span> = 0;
+<span style="color: #4682b4; font-weight: bold;">u8</span> <span style="color: #8b008b;">temp</span> = 0;
+<span style="color: #4682b4; font-weight: bold;">u16</span> <span style="color: #8b008b;">current_element</span> = 0;
+</pre>
+
+
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> 参考文献 </h2>
+<div class="outline-text-2" id="text-7">
+
+<ol>
+<li>
+(美)K.N.King 著.C语言程序设计现代方法.C Programming: A modern Approach.吕秀锋 译 
+</li>
+<li>
+谈谈代码缩进. <a href="http://blog.csdn.net/richardbao2000/archive/2006/09/24/1270083.aspx">http://blog.csdn.net/richardbao2000/archive/2006/09/24/1270083.aspx</a>
+</li>
+<li>
+嵌入式实时操作系统uc/OS-II
+</li>
+<li>
+Doxygen Documents
+</li>
+</ol>
+</div>
+</div>
+<div id="postamble">
+<p class="author"> 作者: 英佰德科技
+<a href="mailto:gf@dareway.com.cn">&lt;gf@dareway.com.cn&gt;</a>
+</p>
+<p class="date"> 日期: 2009-02-11 星期三</p>
+<p class="creator">HTML generated by org-mode 6.24 in emacs 23</p>
+</div>
+</div>
+
+
+</body><link rel="stylesheet" type="text/css" href="data:text/css,"></html>
