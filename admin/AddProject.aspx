@@ -10,7 +10,7 @@
             $('#file_upload').uploadify({
                 'swf': '/js/uploadify.swf',
                 'uploader': '/upload.aspx',
-             
+             'removeCompleted' : false,
                 'fileTypeDesc': '选择zip',
                 'fileTypeExts': '*.zip',
                 'formData': { 'ASPSESSID':<%=  Request.Cookies[FormsAuthentication.FormsCookieName]==null ? "''" : Request.Cookies[FormsAuthentication.FormsCookieName].Value %>, 'AUTHID':'<%= Session.SessionID %>'},
@@ -64,7 +64,7 @@
                 <td>
                     <asp:Label ID="Label3" runat="server" Text="快速上传："></asp:Label>
                 </td>
-                <td class="layPadding">
+                <td class="layPaddingAndCenter" align="center">
                     <input type="file" name="file_upload" id="file_upload" />
                 </td>
                 <td class="layPadding">
