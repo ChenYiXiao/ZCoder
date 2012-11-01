@@ -2,28 +2,7 @@
     CodeFile="AddProject.aspx.cs" Inherits="admin_AddProject" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Ct1" runat="Server">
-    <link rel="Stylesheet" href="../js/uploadify.css" />
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-    <script type="text/javascript" src="/js/jquery.uploadify.min.js"></script>
-    <script type="text/javascript">
-        $(function () {
-            $('#file_upload').uploadify({
-                'swf': '/js/uploadify.swf',
-                'uploader': '/upload.aspx',
-                'uploadLimit' : 1,
-             'removeCompleted' : false,
-                'fileTypeDesc': '选择zip',
-                'fileTypeExts': '*.zip',
-                'formData': { 'ASPSESSID':<%=  Request.Cookies[FormsAuthentication.FormsCookieName]==null ? "''" : Request.Cookies[FormsAuthentication.FormsCookieName].Value %>, 'AUTHID':'<%= Session.SessionID %>'},
-                'multi': false,
-
-                'buttonText':'上传工程'
-                // Put your options here
-            });
-            
-
-        });
-    </script>
+    
     <style type="text/css">
         .style1
         {
@@ -42,7 +21,7 @@
                     <asp:Label ID="Label1" runat="server" Text="工程名："></asp:Label>
                 </td>
                 <td class="layPadding">
-                    <asp:TextBox ID="TextBox1" runat="server" CssClass="zTextBox"></asp:TextBox>
+                    <asp:TextBox ID="tb_ProjectName" runat="server" CssClass="zTextBox"></asp:TextBox>
                     <br />
                 </td>
                 <td class="layPadding">
@@ -54,7 +33,7 @@
                     <asp:Label ID="Label4" runat="server" Text="工程分类："></asp:Label>
                 </td>
                 <td class="layPadding">
-                    <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="sds_Types" 
+                    <asp:DropDownList ID="ddl_Type" runat="server" DataSourceID="sds_Types" 
                         DataTextField="typeName" DataValueField="id" Height="35px" Width="235px">
                     </asp:DropDownList>
                     <asp:SqlDataSource ID="sds_Types" runat="server" 
@@ -69,7 +48,8 @@
                     <asp:Label ID="Label2" runat="server" Text="工程介绍："></asp:Label>
                 </td>
                 <td class="layPadding">
-                    <asp:TextBox ID="TextBox2" runat="server" CssClass="zTextBox" Height="100px" TextMode="MultiLine"></asp:TextBox>
+                    <asp:TextBox ID="tb_Description" runat="server" CssClass="zTextBox" 
+                        Height="100px" TextMode="MultiLine"></asp:TextBox>
                     <br />
                 </td>
                 <td class="layPadding">
@@ -77,18 +57,7 @@
                     不允许使用Html标签。
                 </td>
             </tr>
-            <tr>
-                <td>
-                    <asp:Label ID="Label3" runat="server" Text="快速上传："></asp:Label>
-                </td>
-                <td class="layPaddingAndCenter" align="center">
-                    <input type="file" name="file_upload" id="file_upload" />
-                </td>
-                <td class="layPadding">
-                    请将整个项目打包成一个zip压缩文件。<br />
-                    目前只支持*.zip格式
-                </td>
-            </tr>
+            
             <tr>
                 <td>
                     &nbsp;
