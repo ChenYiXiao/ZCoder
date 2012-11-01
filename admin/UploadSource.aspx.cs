@@ -32,6 +32,10 @@ public partial class admin_UploadSource : System.Web.UI.Page
             UnPackHelper uph = new UnPackHelper(zipPath, UnzipPath);
             uph.DoUnPack();
             AddInfo( "工程压缩包解压完成，开始整理代码。");
+
+            //以上为工程设置部分
+            //以下为代码入库部分
+            ProjectManager.GetLangs();
         }
         else
         {

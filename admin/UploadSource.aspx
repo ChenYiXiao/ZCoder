@@ -51,8 +51,7 @@
                 </td>
                 <td class="layPadding">
                     <asp:DropDownList ID="ddl_Project" runat="server" CssClass="zTextBox" DataSourceID="sds_Project"
-                        DataTextField="projectName" DataValueField="id" Height="35px" 
-                        Width="235px">
+                        DataTextField="projectName" DataValueField="id" Height="35px" Width="235px">
                     </asp:DropDownList>
                     <asp:SqlDataSource ID="sds_Project" runat="server" ConnectionString="<%$ ConnectionStrings:db_ConnectionString %>"
                         SelectCommand="SELECT [id], [projectName] FROM [tb_project]"></asp:SqlDataSource>
@@ -75,19 +74,20 @@
             </tr>
             <tr>
                 <td class="layPadding">
-                    是否清空原工程：</td>
+                    是否清空原工程：
+                </td>
                 <td class="layPadding" align="center">
-                    <asp:CheckBox ID="cb_Clear" runat="server" Font-Bold="True" ForeColor="Red" 
-                        Text="清空原工程！" />
+                    <asp:CheckBox ID="cb_Clear" runat="server" Font-Bold="True" ForeColor="Red" Text="清空原工程！" />
                 </td>
                 <td class="layPadding">
-                    选中后原工程中的所有文件将被删除！请注意！</td>
+                    选中后原工程中的所有文件将被删除！请注意！
+                </td>
             </tr>
             <tr>
                 <td class="layPadding">
-                    上传进度：</td>
-                <td class="layPadding" align="center" 
-                    style="border: 1px solid #999999; background-color: #F5F5F5">
+                    上传进度：
+                </td>
+                <td class="layPadding" align="center" style="border: 1px solid #999999; background-color: #F5F5F5">
                     <asp:ScriptManager ID="ScriptManager1" runat="server">
                     </asp:ScriptManager>
                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
@@ -95,25 +95,42 @@
                             <asp:Label ID="lb_Progess" runat="server" Text="准备就绪."></asp:Label>
                             <br />
                             <br />
-                            <asp:Button ID="btn_OK" runat="server" CssClass="zbutton" 
-                                onclick="btn_OK_Click" Text="开始上传" />
+                            <asp:Button ID="btn_OK" runat="server" CssClass="zbutton" OnClick="btn_OK_Click"
+                                Text="开始上传" />
                         </ContentTemplate>
                     </asp:UpdatePanel>
                 </td>
                 <td class="layPadding">
-                    &nbsp;</td>
-            </tr>
-            <tr>
-                <td class="layPadding">
-                    &nbsp;
-                </td>
-                <td class="layPadding" align="center">
-                    &nbsp;
-                    </td>
-                <td class="layPadding">
-                    &nbsp;
-                </td>
-            </tr>
+                    已支持的语言：
+                    <table style="margin:auto;">
+                    <tr><th>语言</th><th>扩展名</th></tr>
+                        <asp:Repeater ID="Repeater1" runat="server" DataSourceID="sds_Langs">
+                            <ItemTemplate>
+                                <tr>
+                                    <td>
+                                        <asp:Label ID="name" runat="server" Text='<%# Eval("name") %>'></asp:Label>
+                                    </td>
+                                    <td>
+                                        <asp:Label ID="Label1" runat="server" Text='<%#  Eval("ext") %>'></asp:Label>
+                                    </td>
+                                </tr>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                        <asp:SqlDataSource ID="sds_Langs" runat="server" ConnectionString="<%$ ConnectionStrings:db_ConnectionString %>"
+                            SelectCommand="SELECT [name], [ext] FROM [tb_lang]"></asp:SqlDataSource>
+                    </table>
+        </td> </tr>
+        <tr>
+            <td class="layPadding">
+                &nbsp;
+            </td>
+            <td class="layPadding" align="center">
+                &nbsp;
+            </td>
+            <td class="layPadding">
+                &nbsp;
+            </td>
+        </tr>
         </table>
     </div>
 </asp:Content>
