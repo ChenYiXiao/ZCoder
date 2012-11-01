@@ -1,4 +1,12 @@
-﻿using System;
+﻿/***************************************************************************************************
+*
+*\File          Redirect.aspx
+*\Description   跳转功能实现
+*\Log           2012.11.01    Ver 1.0    陈斌
+*               创建文件。
+***************************************************************************************************/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -28,6 +36,15 @@ public partial class Redirect : System.Web.UI.Page
             }
         }
     }
+/***************************************************************************************************
+*\Function      Timer1_Tick
+*\Description   通过传入两个系统默认参数进行页面跳转。
+*\Parameter     url 目标页面的链接
+*\Return        void
+*\Note          无
+*\Log           2012.11.01    Ver 1.0    陈斌
+*               创建函数。
+***************************************************************************************************/
     protected void Timer1_Tick(object sender, EventArgs e)
     {
         try

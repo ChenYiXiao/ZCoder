@@ -124,29 +124,40 @@ public class UserOperation
         return false;
     }
 
-    public static bool userAlert(string password, string email, string qq, bool sex)
+    /***************************************************************************************************
+    *\Function      EditUser
+    *\Description   用于后台用户信息的修改
+    *\Parameter     src     源数据
+    *\Parameter     len     数据长度
+    *\Parameter     UserName 新用户名
+    *\Parameter     PassWord 新密码
+    *\Parameter     Email 新邮箱
+    *\Parameter     Sex 用户性别
+    *\Parameter     QQ 用户新QQ信息
+    *\Parameter     IsAdmin 用户权限
+    *\Return        void
+    *\Note          无
+    *\Log           2012.11.01    Ver 1.0    陈斌
+    *               创建函数。
+    ***************************************************************************************************/
+    
+    public static void EditUser(string UserName, string PassWord, string Email,bool Sex,string QQ,bool IsAdmin,int ID)
     {
         DataBase db = new DataBase();
-
-        if (db.RunProc("UPDATE  tb_user SET password =, email =, qq =, sex =WHERE   (userName = @userName) AND (password = @password) AND (email = @email) AND (qq = @qq) AND (sex = @sex)",
-             new SqlParameter[]{
-                 db.MakeInParam("password",System.Data.SqlDbType.VarChar,50,password),
-          db.MakeInParam("email",System.Data.SqlDbType.VarChar,50,email),
-        db.MakeInParam("qq",System.Data.SqlDbType.VarChar,15,qq)
-             }) == 0)
-        {
-            return false;
-        }
-        else
-        {
-
-            return true;
-        }
+        string sql = "UPDATE tb_user SET userName ='" + UserName + "', password ='" + PassWord + "', email ='" + Email + "', sex =" + (Sex ? 1 : 0).ToString() + ", qq ='" + QQ + "', isadmin=" + (IsAdmin ? 1 : 0).ToString() + " where id=" + ID.ToString();
+        db.ExCommandNoBack(sql);
     }
-    /// <summary>
-    /// 删除用户
-    /// </summary>
-    /// <param name="id">删除ID</param>
+    
+    /***************************************************************************************************
+     *\Function      DelUser
+     *\Description   用于后台删除用户
+     *\Parameter     id  用户ID
+     *\Return        void
+     *\Note          无
+     *\Log           2012.11.01    Ver 1.0   陈斌
+     *               创建函数。
+     ***************************************************************************************************/
+    
     public static void DelUser(String id)
     {
         DataBase db = new DataBase();
