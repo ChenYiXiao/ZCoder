@@ -14,7 +14,7 @@
             <tr>
                 <td align="right" class="style1">
                     &nbsp;性别：</td>
-                <td  align="right">
+                <td  align="center">
                     <br />
                  <asp:RadioButtonList ID="rb_Sex" runat="server" RepeatDirection="Horizontal" 
                         style="color: #999999">
