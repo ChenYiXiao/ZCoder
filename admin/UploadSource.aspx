@@ -75,6 +75,16 @@
             </tr>
             <tr>
                 <td class="layPadding">
+                    是否清空原工程：</td>
+                <td class="layPadding" align="center">
+                    <asp:CheckBox ID="cb_Clear" runat="server" Font-Bold="True" ForeColor="Red" 
+                        Text="清空原工程！" />
+                </td>
+                <td class="layPadding">
+                    选中后原工程中的所有文件将被删除！请注意！</td>
+            </tr>
+            <tr>
+                <td class="layPadding">
                     上传进度：</td>
                 <td class="layPadding" align="center" 
                     style="border: 1px solid #999999; background-color: #F5F5F5">
