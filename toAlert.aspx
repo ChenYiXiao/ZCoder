@@ -12,28 +12,23 @@
      <table>
             <tr>
                 <td align="right">
-                    密 码：
-                </td>
+                    &nbsp;</td>
                 <td  align="right" >
-                    <asp:TextBox ID="tb_Password" runat="server" TextMode="Password" TabIndex="2" ></asp:TextBox>
-                </td>
+                    &nbsp;</td>
                 <td >
                     &nbsp;</td>
             </tr>
             <tr>
                 <td align="right">
-                    确认密码：
-                </td>
+                    &nbsp;性别：</td>
                 <td  align="right">
-                    <asp:TextBox ID="tb_ConfirmPwd" runat="server" TextMode="Password" TabIndex="3"></asp:TextBox>
-                </td>
+                 <asp:RadioButtonList ID="rb_Sex" runat="server" RepeatDirection="Horizontal">
+        <asp:ListItem Value="man">男</asp:ListItem>
+        <asp:ListItem Value="woman">女</asp:ListItem>
+    </asp:RadioButtonList>
+                    &nbsp;</td>
                 <td height="60">
-                    &nbsp;<asp:CompareValidator ID="CompareValidator1" 
-                        runat="server" ControlToCompare="tb_Password"
-                        ControlToValidate="tb_ConfirmPwd" 
-                        ErrorMessage="&lt;img src=&quot;/images/regwrong.png&quot;&gt;两次输入的密码不一致。" 
-                        ValidationGroup="a"></asp:CompareValidator>
-                </td>
+                    &nbsp;</td>
                 <td >
                     &nbsp;</td>
             </tr>
@@ -71,7 +66,7 @@
                 <td colspan="3" style="height:80">
                     <div align="center">
                         <asp:Button ID="btn_Submit" runat="server" CssClass="zbutton" Text="修改" 
-                            OnClick="btn_Submit_Click" ValidationGroup="a" />
+                             ValidationGroup="a" onclick="btnEdit_Click" />
                         &nbsp;</div>
                 </td>
             </tr>

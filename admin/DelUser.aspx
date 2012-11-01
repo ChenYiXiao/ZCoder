@@ -55,8 +55,7 @@
         </tr>
         <tr>
             <td align="center" class="layPadding">
-                <asp:Button ID="Button1" runat="server" CssClass="zbutton" Text="是" 
-                    onclick="Button1_Click" />
+                <asp:Button ID="Button1" runat="server" CssClass="zbutton" Text="是" />
             </td>
             <td class="layPadding">
                 <asp:Button ID="Button2" runat="server" CssClass="zbutton" 

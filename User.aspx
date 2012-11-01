@@ -2,5 +2,5 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <p>
-        建设中</p>
+        &nbsp;</p>
 </asp:Content>

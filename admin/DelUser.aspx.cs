@@ -26,17 +26,4 @@ public partial class admin_DelUser : System.Web.UI.Page
     {
         Response.Redirect("~/admin/userlist.aspx");
     }
-    protected void Button1_Click(object sender, EventArgs e)
-    {
-        DataBase db = new DataBase();
-        string sql = "delete from dbo.tb_user where id=" + lb_Id.Text + "";
-        try
-        {
-            db.ExCommandNoBack(sql);
-            SmallScript.goRedirect(Response,Session,"删除成功!","~/admin/userlist.aspx");
-        }
-        catch {
-            SmallScript.MessageBox(Page, "删除失败!");
-        }
-    }
 }
