@@ -9,35 +9,45 @@ using System.Web;
 public class UserEntity
 {
     int id = -1;
-
+    /// <summary>
+    /// 用户ID
+    /// </summary>
     public int Id
     {
         get { return id; }
         set { id = value; }
     }
     string userName = "";
-
+    /// <summary>
+    /// 用户名
+    /// </summary>
     public string UserName
     {
         get { return userName; }
         set { userName = value; }
     }
     string password = "";
-
+    /// <summary>
+    /// 密码
+    /// </summary>
     public string Password
     {
         get { return password; }
         set { password = value; }
     }
     string email = "";
-
+    /// <summary>
+    /// 电子邮箱
+    /// </summary>
     public string Email
     {
         get { return email; }
         set { email = value; }
     }
     string qq = "";
-
+    /// <summary>
+    /// QQ
+    /// </summary>
     public string Qq
     {
         get { return qq; }
@@ -53,14 +63,18 @@ public class UserEntity
         set { sex = value; }
     }
     bool isadmin = false;
-
+    /// <summary>
+    /// 是否管理员
+    /// </summary>
     public bool Isadmin
     {
         get { return isadmin; }
         set { isadmin = value; }
     }
     DateTime regTime = DateTime.Now;
-
+    /// <summary>
+    /// 注册日期
+    /// </summary>
     public DateTime RegTime
     {
         get { return regTime; }

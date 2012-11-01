@@ -13,6 +13,7 @@ public partial class admin_EditUser : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
+            //判断是否存在该id的用户
             UserEntity ue = UserOperation.GetUser(Request.QueryString["id"].ToString());
             if (ue == null)
             {
@@ -22,6 +23,7 @@ public partial class admin_EditUser : System.Web.UI.Page
             }
             else
             {
+                //在表单中显示数据
                 tb_UserName.Text = ue.UserName;
                 tb_QQ.Text = ue.Qq;
                 tb_PassWord.Text = ue.Password;
@@ -42,6 +44,7 @@ public partial class admin_EditUser : System.Web.UI.Page
     }
     protected void btnEdit_Click(object sender, EventArgs e)
     {
+        //修改用户信息
         DataBase db1 = new DataBase();
         int ID = int.Parse(Request.QueryString["id"].ToString());
         string UserName = tb_UserName.Text;
