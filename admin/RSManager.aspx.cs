@@ -9,6 +9,6 @@ public partial class admin_RSManager : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        this.RSManager1.Dir = Server.MapPath( AppConfiger.GetProjectsDir(Server)+"\\1");
+        this.RSManager1.Dir =  AppConfiger.GetProjectsDir(Server)+"\\1";
     }
 }

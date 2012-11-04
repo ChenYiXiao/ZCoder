@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="RSManager.ascx.cs" Inherits="admin_RSManager_RSManager" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="RSManager.ascx.cs" Inherits="admin_RSManager_RSManager"  %>
 <style type="text/css">
     .style1
     {
@@ -27,8 +27,10 @@
     <asp:Repeater ID="rpt_Objets" runat="server">
         <ItemTemplate>
             <tr>
-                <td>
-                    <asp:Label ID="Label1" runat="server" Text='<%# Eval("name") %>'></asp:Label>
+                <td align="left">
+                    <asp:Image ID="imgType" runat="server" ImageUrl="~/admin/RSManager/images/dir.png" />
+                    <asp:HyperLink ID="hlName" runat="server" Text='<%# Eval("name", "{0}") %>' NavigateUrl='<%# Eval("name", "{0}") %>' OnDataBinding="FixUrl" ForeColor="#000"></asp:HyperLink>
+              
                 </td>
                 <td>
                     <asp:Label ID="idLabel" runat="server" Text='<%# Eval("size") %>' />

@@ -21,6 +21,10 @@ public partial class admin_RSManager_RSManager : System.Web.UI.UserControl
     private List<RSObject> RSObjects = null;
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Request.QueryString["dir"] != null)
+        {
+            Dir = Request.QueryString["dir"].ToString();
+        }
         rpt_Objets.DataSource = GetDataSource();
         rpt_Objets.DataBind();
     }
@@ -43,6 +47,13 @@ public partial class admin_RSManager_RSManager : System.Web.UI.UserControl
         dt.Columns.Add("size");
         dt.Columns.Add("mTime");
         dt.Columns.Add("type");
+
+        DataRow Fdr = dt.NewRow();
+        Fdr["name"] = "..";
+        Fdr["size"] = 0;
+        Fdr["mTime"] = "";
+        Fdr["type"] = "";
+        dt.Rows.Add(Fdr);
         foreach (RSObject ro in RSObjects)
         {
             DataRow dr = dt.NewRow();
@@ -58,7 +69,9 @@ public partial class admin_RSManager_RSManager : System.Web.UI.UserControl
     private void GetList()
     {
         List<RSObject> list = new List<RSObject>();
-        foreach (string di in Directory.GetDirectories(Dir, "*", SearchOption.TopDirectoryOnly))
+        string RealDir=Server.MapPath(Dir);
+
+        foreach (string di in Directory.GetDirectories(RealDir, "*", SearchOption.TopDirectoryOnly))
         {
             RSObject dirObj = new RSObject();
             dirObj.Name = di.Substring(di.LastIndexOf("\\") + 1, di.Length - di.LastIndexOf("\\") - 1);
@@ -67,7 +80,7 @@ public partial class admin_RSManager_RSManager : System.Web.UI.UserControl
             dirObj.Type = "";
             list.Add(dirObj);
         }
-        foreach (string fi in Directory.GetFiles(Dir, "*", SearchOption.TopDirectoryOnly))
+        foreach (string fi in Directory.GetFiles(RealDir, "*", SearchOption.TopDirectoryOnly))
         {
             RSObject fileObject = new RSObject();
             fileObject.Name = fi.Substring(fi.LastIndexOf("\\") + 1, fi.Length - fi.LastIndexOf("\\") - 1);
@@ -80,6 +93,47 @@ public partial class admin_RSManager_RSManager : System.Web.UI.UserControl
         RSObjects = list;
         return;
     }
+    protected void FixUrl(object sender, EventArgs e)
+    {
+        HyperLink hl = (HyperLink)sender;
+        if (hl.NavigateUrl == "..")
+        {
+            string tempDir = Dir.Substring(0, Dir.LastIndexOf("\\") + 1);
+            if (tempDir == AppConfiger.GetProjectsDir(Server))
+            {
+                hl.NavigateUrl = "";
+            }
+            else
+            {
+                hl.NavigateUrl = Request.Url.AbsolutePath + "?dir=" + tempDir;
+            }
+        }
+        else
+        {
+            hl.NavigateUrl = Request.Url.AbsolutePath + "?dir=" + Dir + "\\" + hl.NavigateUrl;
+        }
+        
+        
+        /*
+        if (btn.Text == "..")
+        {
+            string tempDir = Dir.Substring(0, Dir.LastIndexOf("\\") + 1);
+            if (tempDir == Server.MapPath(AppConfiger.GetProjectsDir(Server)))
+            {
+                return;
+            }
+            else
+            {
+                this.Dir = tempDir;
+            }
+        }
+        else
+        {
+            this.Dir = dir + "\\" + btn.Text;
+        }
+        */
+    }
+
 }
 class RSObject
 {
