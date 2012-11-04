@@ -30,4 +30,12 @@ public class AppConfiger
             return "";
         }
     }
+    public static string GetProjectsDir(HttpServerUtility server)
+    {
+        return GetSiteSetting(server, "projects");
+    }
+    public static string GetProjectsZDir(HttpServerUtility server)
+    {
+        return GetSiteSetting(server, "projectsz");
+    }
 }
