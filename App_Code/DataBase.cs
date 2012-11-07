@@ -2,9 +2,9 @@
  *                    (c) Copyright 1992-2009 Embedded Products Research Center
  *                                       All Rights Reserved
  *
- *\File          usdl_xxx.h
- *\Description   XXXXXXXXXXXXX
- *\Log           2008.XX.XX    Ver 1.0    张三
+ *\File          DataBase.cs
+ *\Description   基础数据库操作类
+ *\Log           2012.11.5    Ver 1.0    陈一枭
  *               创建文件。
  ***************************************************************************************************/
 using System;
@@ -19,17 +19,14 @@ using System.Web.UI.HtmlControls;
 using System.Data.SqlClient;
 
 /// <summary>
-/// DataBase 的摘要说明
+/// 数据库基础类
 /// </summary>
 public class DataBase
 {
     public DataBase()
     {
-        //
-        // TODO: 在此处添加构造函数逻辑
-        //
     }
-
+    /*连接字符串*/
     private SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["db_ConnectionString"].ConnectionString);  //创建连接对象
 
     #region   打开数据库连接

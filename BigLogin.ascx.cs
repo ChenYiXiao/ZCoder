@@ -1,10 +1,8 @@
 ﻿/***************************************************************************************************
- *                    (c) Copyright 1992-2009 Embedded Products Research Center
- *                                       All Rights Reserved
  *
- *\File          usdl_xxx.h
- *\Description   XXXXXXXXXXXXX
- *\Log           2008.XX.XX    Ver 1.0    张三
+ *\File          BigLogin.ascx.cs
+ *\Description   用于快捷登陆的面板
+ *\Log           2012.11.5    Ver 1.0    陈一枭
  *               创建文件。
  ***************************************************************************************************/
 using System;
@@ -18,26 +16,35 @@ public partial class BigLogin : System.Web.UI.UserControl
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        /*检查是否已登陆*/
         if (UserOperation.CheckLoged(Session))
         {
-
-            Panel1.Visible = false;
+            /*设置登陆面板不可见*/
+            pnl_Login.Visible = false;
+            /*读出用户名*/
             hlUserName.Text = Session["userName"].ToString();
+            /*检查是否是管理员*/
             if (UserOperation.CheckIsAdmin(Session))
+            {
+                /*管理后台链接标签可视*/
                 hlAdmin.Visible = true;
-            Panel2.Visible = true;
+            }
+            /*用户面板可见*/
+            pnl_User.Visible = true;
             return;
         }
         else
         {
-            Panel1.Visible = true;
-            Panel2.Visible = false;
+            /*登陆面板可见，用户面板不可见*/
+            pnl_Login.Visible = true;
+            pnl_User.Visible = false;
         }
     }
-    protected void Button1_Click(object sender, EventArgs e)
+    protected void btn_Login_Click(object sender, EventArgs e)
     {
-        UserOperation.Login(Session, tbUserName.Text, tbPassword.Text);
+        /*注册*/
+        UserOperation.Login(Session, tb_UserName.Text, tb_Password.Text);
+        /*重新跳转*/
         Response.Redirect(Request.Url.AbsoluteUri);
     }
 }

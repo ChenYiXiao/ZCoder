@@ -1,10 +1,8 @@
 ﻿/***************************************************************************************************
- *                    (c) Copyright 1992-2009 Embedded Products Research Center
- *                                       All Rights Reserved
  *
- *\File          usdl_xxx.h
- *\Description   XXXXXXXXXXXXX
- *\Log           2008.XX.XX    Ver 1.0    张三
+ *\File          Upload.aspx
+ *\Description   用于上传文件的页面，该也不显示任何内容，只用于处理上传JS脚本。
+ *\Log           2012.11.5    Ver 1.0    陈一枭
  *               创建文件。
  ***************************************************************************************************/
 using System;
@@ -17,46 +15,35 @@ using System.IO;
 
 public partial class admin_Upload : System.Web.UI.Page
 {
-    /*$targetFolder = '/uploads'; // Relative to the root
-
-$verifyToken = md5('unique_salt' . $_POST['timestamp']);
-
-if (!empty($_FILES) && $_POST['token'] == $verifyToken) {
-	$tempFile = $_FILES['Filedata']['tmp_name'];
-	$targetPath = $_SERVER['DOCUMENT_ROOT'] . $targetFolder;
-	$targetFile = rtrim($targetPath,'/') . '/' . $_FILES['Filedata']['name'];
-	
-	// Validate the file type
-	$fileTypes = array('jpg','jpeg','gif','png'); // File extensions
-	$fileParts = pathinfo($_FILES['Filedata']['name']);
-	
-	if (in_array($fileParts['extension'],$fileTypes)) {
-		move_uploaded_file($tempFile,$targetFile);
-		echo '1';
-	} else {
-		echo 'Invalid file type.';
-	}
-}*/
     protected void Page_Load(object sender, EventArgs e)
     {
+        /*用于保持Session，解决发置换Session的问题*/
         SessionRest.Rest(Request.Form["AUTHID"].ToString(), Response.Cookies);
+        /*获取配置项中目录*/
         string targetFolder = AppConfiger.GetSiteSetting(Server, "projectsz");
+        /*读出文件*/
         HttpPostedFile file = Request.Files["FileData"];
+        /*获得上传目录*/
         string uploadpath = Server.MapPath(targetFolder + "\\");
-        
+        /*判断文件是否为空*/
         if (file != null)
         {
+            /*判断目录是否存在*/
             if (!Directory.Exists(uploadpath))
             {
+                /*创建目录*/
                 Directory.CreateDirectory(uploadpath);
             }
+            /*保存文件*/
             string savePath = uploadpath + DateTime.Now.ToFileTime() + ".zip";
             file.SaveAs(savePath);
+            /*在Session中存入保存文件路径*/
             Session["savePath"] = savePath;
            
         }
         else
         {
+            /*输出失败*/
             Response.Write("0");
         }
     }

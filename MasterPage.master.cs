@@ -1,10 +1,8 @@
 ﻿/***************************************************************************************************
- *                    (c) Copyright 1992-2009 Embedded Products Research Center
- *                                       All Rights Reserved
  *
- *\File          usdl_xxx.h
- *\Description   XXXXXXXXXXXXX
- *\Log           2008.XX.XX    Ver 1.0    张三
+ *\File          MasterPage.master.cs
+ *\Description   所有前台页面的母版页
+ *\Log           2012.11.5    Ver 1.0    陈一枭
  *               创建文件。
  ***************************************************************************************************/
 using System;
