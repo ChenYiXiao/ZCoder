@@ -1,4 +1,13 @@
-﻿using System;
+﻿/***************************************************************************************************
+ *                    (c) Copyright 1992-2009 Embedded Products Research Center
+ *                                       All Rights Reserved
+ *
+ *\File          Login.aspx.cs
+ *\Description   用户登录
+ *\Log           2012.11.04    Ver 1.0    肖骏涛
+ *               创建文件。
+ ***************************************************************************************************/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,9 +22,9 @@ public partial class Login : System.Web.UI.Page
     }
     protected void Log_Click(object sender, EventArgs e)
     {
-        if (UserOperation.Login(Session, tb_UserName.Text, tb_Password.Text))  /* 对用户名密码和数据库中的用户名密码进行对比验证*/
+        if (UserOperation.Login(Session, tb_UserName.Text, tb_Password.Text))            /* 对用户名密码和数据库中的用户名密码进行对比验证*/
         {
-            SmallScript.goRedirect(Response, Session, "登陆成功！", "default.aspx");/* 登录成功，跳转到登录成功界面 */
+            SmallScript.goRedirect(Response, Session, "登陆成功！", "default.aspx");     /* 登录成功，跳转到登录成功界面 */
         }
         else
         {
