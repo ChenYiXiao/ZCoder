@@ -1,4 +1,13 @@
-﻿using System;
+﻿/***************************************************************************************************
+ *                    (c) Copyright 1992-2009 Embedded Products Research Center
+ *                                       All Rights Reserved
+ *
+ *\File         LoginPanel.ascx.cs
+ *\Description   用户登录功能
+ *\Log           2012.11.04    Ver 1.0    肖骏涛
+ *               创建文件。
+ ***************************************************************************************************/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;

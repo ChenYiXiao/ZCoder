@@ -1,4 +1,11 @@
-﻿using System;
+﻿/***************************************************************************************************
+*
+*\File          DelUser.aspx
+*\Description   后台管理模块。用于后台删除用户。
+*\Log           2012.11.01    Ver 1.0    陈斌
+*               创建文件。
+***************************************************************************************************/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -31,7 +38,7 @@ public partial class admin_DelUser : System.Web.UI.Page
     {
         try
         {
-            //调用UserOperation类里的userDel方法，通过传入id，进行删除操作
+            //调用UserOperation类里的DelUser方法，通过传入id，进行删除操作
             UserOperation.DelUser(Request.QueryString["id"].ToString());
             SmallScript.goRedirect(Response, Session, "删除成功!", "~/admin/userlist.aspx");
         }

@@ -1,4 +1,11 @@
-﻿using System;
+﻿/***************************************************************************************************
+*
+*\File          EditUser.aspx
+*\Description   后台管理模块。用于后台修改用户个人信息。
+*\Log           2012.11.01    Ver 1.0    陈斌
+*               创建文件。
+***************************************************************************************************/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -45,7 +52,6 @@ public partial class admin_EditUser : System.Web.UI.Page
     protected void btnEdit_Click(object sender, EventArgs e)
     {
         //修改用户信息
-        DataBase db1 = new DataBase();
         int ID = int.Parse(Request.QueryString["id"].ToString());
         string UserName = tb_UserName.Text;
         string PassWord = tb_PassWord.Text;
@@ -53,10 +59,9 @@ public partial class admin_EditUser : System.Web.UI.Page
         bool Sex = (rb_Sex.SelectedIndex == 0);
         string QQ = tb_QQ.Text;
         bool IsAdmin = cb_IsAdmin.Checked;
-        string sql = "UPDATE tb_user SET userName ='" + UserName + "', password ='" + PassWord + "', email ='" + Email + "', sex =" + (Sex ? 1 : 0).ToString() + ", qq ='" + QQ + "', isadmin=" + (IsAdmin ? 1 : 0).ToString() + " where id=" + ID.ToString();
         try
         {
-            db1.ExCommandNoBack(sql);
+            UserOperation.EditUser(UserName, PassWord, Email, Sex, QQ, IsAdmin, ID);
         }
         catch
         {
@@ -65,6 +70,7 @@ public partial class admin_EditUser : System.Web.UI.Page
         }
 
         SmallScript.MessageBox(Page, "修改用户成功。");
+        SmallScript.goRedirect(Response,Session,"跳转到用户列表 ","~/admin/UserList.aspx");
         return;
     }
 }
