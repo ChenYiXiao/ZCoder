@@ -1,39 +1,26 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="RSManager.ascx.cs" Inherits="admin_RSManager_RSManager"  %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="RSManager.ascx.cs" Inherits="admin_RSManager_RSManager" %>
 <style type="text/css">
-    .style1
-    {
-        width: 100%;
-    }
+    
 </style>
-<link href="images/RSManager.css" rel="stylesheet" type="text/css" />
-<table class="style1">
+<link href="/admin/RSManager/images/RSManager.css" rel="stylesheet" type="text/css" />
+<table class="RSTable" width="95%">
     <tr>
-        <th>
-            文件名
-        </th>
-        <th>
-            大小
-        </th>
-        <th>
-            修改日期
-        </th>
-        <th>
-            文件类型
-        </th>
-        <th>
-            操作
-        </th>
+        <td colspan="6" align="left">
+            工程名：XX
+        </td>
     </tr>
     <asp:Repeater ID="rpt_Objets" runat="server">
         <ItemTemplate>
-            <tr>
+            <tr class="RSTableTR">
+                <td width="20px">
+                    <asp:Image ID="imgType" runat="server" ImageUrl='<%# Eval("type") %>' OnDataBinding="FixIcon" />
+                </td>
                 <td align="left">
-                    <asp:Image ID="imgType" runat="server" ImageUrl='<%# Eval("type") %>' OnDataBinding="FixIcon"  />
-                    <asp:HyperLink ID="hlName" runat="server" Text='<%# Eval("name", "{0}") %>' NavigateUrl='<%# Eval("name", "{0}") %>' OnDataBinding="FixUrl" ForeColor="#000"></asp:HyperLink>
-              
+                    <asp:HyperLink ID="hlName" runat="server" Text='<%# Eval("name", "{0}") %>' NavigateUrl='<%# Eval("name", "{0}") %>'
+                        OnDataBinding="FixUrl" ForeColor="#000"></asp:HyperLink>
                 </td>
                 <td>
-                    <asp:Label ID="idLabel" runat="server" Text='<%# Eval("size") %>' />
+                    <asp:Label ID="idLabel" runat="server" Text='<%# Eval("size","{0} B") %>' />
                 </td>
                 <td>
                     <asp:Label ID="Label2" runat="server" Text='<%# Eval("mTime") %>' />

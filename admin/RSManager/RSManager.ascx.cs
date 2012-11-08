@@ -123,7 +123,14 @@ public partial class admin_RSManager_RSManager : System.Web.UI.UserControl
         }
         else
         {
-            hl.NavigateUrl = Request.Url.AbsolutePath + "?dir=" + Dir + "\\" + hl.NavigateUrl;
+            if (hl.NavigateUrl.IndexOf(".") == -1)
+            {
+                hl.NavigateUrl = Request.Url.AbsolutePath + "?dir=" + Dir + "\\" + hl.NavigateUrl;
+            }
+            else
+            {
+                hl.NavigateUrl = "";
+            }
         }
         
         
