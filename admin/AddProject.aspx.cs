@@ -27,6 +27,7 @@ public partial class admin_AddProject : System.Web.UI.Page
         pe.Tid =int.Parse( ddl_Type.SelectedValue);
         pe.Uid =int.Parse( Session["uid"].ToString());
         pe.UpTime = DateTime.Now;
+        pe.Description = tb_Description.Text;
         /*添加工程，并返回是否成功*/
         if (ProjectOperation.AddProject(pe) == true)
         {
