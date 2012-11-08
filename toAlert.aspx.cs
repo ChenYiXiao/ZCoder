@@ -2,9 +2,9 @@
  *                    (c) Copyright 1992-2009 Embedded Products Research Center
  *                                       All Rights Reserved
  *
- *\File          usdl_xxx.h
- *\Description   XXXXXXXXXXXXX
- *\Log           2008.XX.XX    Ver 1.0    张三
+ *\File          toAlert.aspx.cs
+ *\Description   用户个人资料的修改。
+ *\Log           2012.11.07    Ver 1.0    王晓晴
  *               创建文件。
  ***************************************************************************************************/
 using System;
@@ -54,7 +54,7 @@ public partial class Default2 : System.Web.UI.Page
         bool Sex = (rb_Sex.SelectedIndex == 0);
         string Email = tb_Email.Text;
         string QQ = tb_QQ.Text;
-
+        /*将修改好的个人资料录入数据库*/
         string sql = "UPDATE tb_user SET  email ='" + Email + "', sex =" + (Sex ? 1 : 0).ToString() + ",  qq ='" + QQ + "' where id=" + ID.ToString();
         try
         {

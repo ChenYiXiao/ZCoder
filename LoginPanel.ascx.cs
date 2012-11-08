@@ -1,6 +1,4 @@
 ﻿/***************************************************************************************************
- *                    (c) Copyright 1992-2009 Embedded Products Research Center
- *                                       All Rights Reserved
  *
  *\File         LoginPanel.ascx.cs
  *\Description   用户登录功能
@@ -18,6 +16,7 @@ public partial class LoginPanel : System.Web.UI.UserControl
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+            /*检验用户是否已登陆*/
             if (UserOperation.CheckLoged(Session))
             {
                 Label2.Text = "<a href='/toAlert.aspx'>" + Session["userName"] + "</a> <font color='#CCCCCC'>|</font>  <a href='/logout.aspx?url="+Request.Url+"'>注销</a>";
