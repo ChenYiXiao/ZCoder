@@ -27,6 +27,12 @@ public partial class Default2 : System.Web.UI.Page
         
         if (!IsPostBack)
         {
+            if (Session["uid"] == null)
+            {
+                SmallScript.MessageBox(Page, "不存在该用户！点击返回！");
+                SmallScript.GoBack(Page);
+                return;
+            }
             UserEntity ue = UserOperation.GetUser(Session["uid"].ToString());  /*获取用户ID*/
             if (ue == null)  /*用户id为空返回*/
             {
@@ -61,12 +67,9 @@ public partial class Default2 : System.Web.UI.Page
         bool Sex = (rb_Sex.SelectedIndex == 0);
         string Email = tb_Email.Text;
         string QQ = tb_QQ.Text;
-<<<<<<< HEAD
-        string sql = "UPDATE tb_user SET  email ='" + Email + "', sex =" + (Sex ? 1 : 0).ToString() + ",  qq ='" + QQ + "' where id=" + ID.ToString(); /*执行数据库更新语句*/
-=======
+        /*执行数据库更新语句*/
         /*将修改好的个人资料录入数据库*/
         string sql = "UPDATE tb_user SET  email ='" + Email + "', sex =" + (Sex ? 1 : 0).ToString() + ",  qq ='" + QQ + "' where id=" + ID.ToString();
->>>>>>> 95591acbefed59f0ee52ca13fce0374407032732
         try
         {
             db1.ExCommandNoBack(sql);
