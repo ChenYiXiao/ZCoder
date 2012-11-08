@@ -2,9 +2,15 @@
  *                    (c) Copyright 1992-2009 Embedded Products Research Center
  *                                       All Rights Reserved
  *
+<<<<<<< HEAD
  *\File          usdl_xxx.h
  *\Description   XXXXXXXXXXXXX
  *\Log           2008.XX.XX    Ver 1.0    王晓晴
+=======
+ *\File          toAlert.aspx.cs
+ *\Description   用户个人资料的修改。
+ *\Log           2012.11.07    Ver 1.0    王晓晴
+>>>>>>> 95591acbefed59f0ee52ca13fce0374407032732
  *               创建文件。
  ***************************************************************************************************/
 using System;
@@ -55,7 +61,12 @@ public partial class Default2 : System.Web.UI.Page
         bool Sex = (rb_Sex.SelectedIndex == 0);
         string Email = tb_Email.Text;
         string QQ = tb_QQ.Text;
+<<<<<<< HEAD
         string sql = "UPDATE tb_user SET  email ='" + Email + "', sex =" + (Sex ? 1 : 0).ToString() + ",  qq ='" + QQ + "' where id=" + ID.ToString(); /*执行数据库更新语句*/
+=======
+        /*将修改好的个人资料录入数据库*/
+        string sql = "UPDATE tb_user SET  email ='" + Email + "', sex =" + (Sex ? 1 : 0).ToString() + ",  qq ='" + QQ + "' where id=" + ID.ToString();
+>>>>>>> 95591acbefed59f0ee52ca13fce0374407032732
         try
         {
             db1.ExCommandNoBack(sql);
