@@ -28,7 +28,7 @@
         <ItemTemplate>
             <tr>
                 <td align="left">
-                    <asp:Image ID="imgType" runat="server" ImageUrl="~/admin/RSManager/images/dir.png" />
+                    <asp:Image ID="imgType" runat="server" ImageUrl='<%# Eval("type") %>' OnDataBinding="FixIcon"  />
                     <asp:HyperLink ID="hlName" runat="server" Text='<%# Eval("name", "{0}") %>' NavigateUrl='<%# Eval("name", "{0}") %>' OnDataBinding="FixUrl" ForeColor="#000"></asp:HyperLink>
               
                 </td>

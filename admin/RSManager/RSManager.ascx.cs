@@ -93,6 +93,19 @@ public partial class admin_RSManager_RSManager : System.Web.UI.UserControl
         RSObjects = list;
         return;
     }
+
+    protected void FixIcon(object sender, EventArgs e)
+    {
+        Image img = (Image)sender;
+        if (img.ImageUrl != "")
+        {
+            img.ImageUrl = "~/admin/RSManager/images/dir.png";
+        }
+        else
+        {
+            img.ImageUrl = "~/admin/RSManager/images/file.png";
+        }
+    }
     protected void FixUrl(object sender, EventArgs e)
     {
         HyperLink hl = (HyperLink)sender;
