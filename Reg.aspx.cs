@@ -1,10 +1,14 @@
 ﻿/***************************************************************************************************
- *                    (c) Copyright 1992-2009 Embedded Products Research Center
- *                                       All Rights Reserved
  *
+<<<<<<< HEAD
  *\File          usdl_xxx.h
  *\Description   XXXXXXXXXXXXX
- *\Log           2008.XX.XX    Ver 1.0    张三
+ *\Log           2008.XX.XX    Ver 1.0    王晓晴
+=======
+ *\File          Reg.aspx.cs
+ *\Description   用户注册。
+ *\Log           2012.11.07    Ver 1.0    王晓晴
+>>>>>>> 95591acbefed59f0ee52ca13fce0374407032732
  *               创建文件。
  ***************************************************************************************************/
 using System;
@@ -25,27 +29,27 @@ public partial class Reg : System.Web.UI.Page
 
         }
     }
-    protected void btn_Submit_Click(object sender, EventArgs e)
+    protected void btn_Submit_Click(object sender, EventArgs e) //对用户点击注册按钮后进行信息验证
     {
         Validate();
-        if (!Page.IsValid)
+        if (!Page.IsValid)  //如果页面验证没通过则返回
         {
             return;
         }
-        if (!cb_Agree.Checked)
+        if (!cb_Agree.Checked) /*对是否同意用户协议验证*/
         {
-            SmallScript.MessageBox(Page, "您必须同意用户协议！");
+            SmallScript.MessageBox(Page, "您必须同意用户协议！");  /*未同意协议返回注册页面*/
             return;
         }
-        if (UserOperation.Reg(tb_UserName.Text, tb_Password.Text, tb_Email.Text, tb_QQ.Text, true, false, DateTime.Now))
+        if (UserOperation.Reg(tb_UserName.Text, tb_Password.Text, tb_Email.Text, tb_QQ.Text, true, false, DateTime.Now)) /*验证通过*/
         {
-            UserOperation.Login(Session, tb_UserName.Text, tb_Password.Text);
-            SmallScript.goRedirect(Response, Session, "注册成功！", "default.aspx");
+            UserOperation.Login(Session, tb_UserName.Text, tb_Password.Text); /*注册成功则直接登录*/
+            SmallScript.goRedirect(Response, Session, "注册成功！", "default.aspx"); /*跳转到跳转界面显示*/
         }
     }
-    protected void tb_UserName_TextChanged(object sender, EventArgs e)
+    protected void tb_UserName_TextChanged(object sender, EventArgs e) /*判断用户名是否存在*/
     {
-        if (UserOperation.CheckUser(tb_UserName.Text) == true)
+        if (UserOperation.CheckUser(tb_UserName.Text) == true) 
         {
             lb_CkTip.Text = "<img src=\"/images/regwrong.png\">用户名已存在。";
         }
@@ -58,11 +62,11 @@ public partial class Reg : System.Web.UI.Page
     {
        
     }
-    protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
+    protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args) /*对密码长度判断，要求密码在6到18位之间*/
     {
         if (args.Value.Length >= 6 && (args.Value.Length <= 18))
         {
-            args.IsValid = true;
+            args.IsValid = true; 
         }
         else
         {
