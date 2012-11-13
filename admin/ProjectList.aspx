@@ -3,12 +3,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Ct1" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Ct2" Runat="Server">
- <h2>用户列表</h2>
+    <h2>用户列表</h2>
     <hr />
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:db_ConnectionString %>"
         
         
-        SelectCommand="SELECT tb_type.typeName, tb_project.projectName, tb_project.uid, tb_project.id, tb_project.description, tb_project.upTime, tb_user.userName FROM tb_type INNER JOIN tb_project ON tb_type.id = tb_project.tid INNER JOIN tb_user ON tb_project.uid = tb_user.id" 
+        
+        SelectCommand="SELECT tb_type.typeName, tb_project.projectName, tb_project.uid, tb_project.id, tb_project.description, tb_project.upTime, tb_user.userName FROM tb_type INNER JOIN tb_project ON tb_type.id = tb_project.tid INNER JOIN tb_user ON tb_project.uid = tb_user.id" onselecting="SqlDataSource1_Selecting" 
         >
     </asp:SqlDataSource>
     <br />
