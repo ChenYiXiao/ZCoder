@@ -92,11 +92,13 @@
                     </asp:ScriptManager>
                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                         <ContentTemplate>
-                            <asp:Label ID="lb_Progess" runat="server" Text="准备就绪."></asp:Label>
-                            <br />
                             <br />
                             <asp:Button ID="btn_OK" runat="server" CssClass="zbutton" OnClick="btn_OK_Click"
                                 Text="开始上传" />
+                            <br />
+                            <br />
+                            <asp:Label ID="lb_Progess" runat="server" Text="准备就绪."></asp:Label>
+                            <br />
                         </ContentTemplate>
                     </asp:UpdatePanel>
                 </td>

@@ -74,6 +74,7 @@ using Microsoft.Win32;
                 //开始解压
                 process.Start();
                 //进程终止
+                
                 if (process.HasExited)
                 {
                     int exitCode = process.ExitCode;
@@ -91,7 +92,10 @@ using Microsoft.Win32;
             finally
             {
                 //释放资源
-                process.Close();
+              //  process.Close();
+                process.CloseMainWindow();
+                process.WaitForExit();
+             //  
             }
         }
 
