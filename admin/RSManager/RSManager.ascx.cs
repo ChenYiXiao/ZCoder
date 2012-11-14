@@ -123,7 +123,7 @@ public partial class admin_RSManager_RSManager : System.Web.UI.UserControl
         }
         else
         {
-            if (hl.NavigateUrl.IndexOf(".") == -1)
+            if (Directory.Exists(Server.MapPath(Dir + "\\" + hl.NavigateUrl)))
             {
                 hl.NavigateUrl = Request.Url.AbsolutePath + "?dir=" + Dir + "\\" + hl.NavigateUrl;
             }
