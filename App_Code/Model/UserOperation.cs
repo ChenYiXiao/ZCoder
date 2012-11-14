@@ -179,7 +179,7 @@ public class UserOperation
     /// </summary>
     /// <param name="userId">用户ID</param>
     /// <returns>返回UserEntity对象，可以读取用户信息</returns>
-    public static UserEntity GetUser(string userId)
+    public static UserEntity GetUser(int userId)
     {
         DataBase db = new DataBase();
         DataSet rs = db.RunProcReturn("select * from tb_user where id=" + userId, "tb_user");

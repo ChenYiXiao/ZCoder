@@ -21,7 +21,7 @@ public partial class admin_EditUser : System.Web.UI.Page
         if (!IsPostBack)
         {
             //判断是否存在该id的用户
-            UserEntity ue = UserOperation.GetUser(Request.QueryString["id"].ToString());
+            UserEntity ue = UserOperation.GetUser(int.Parse(Request.QueryString["id"].ToString()));
             if (ue == null)
             {
                 SmallScript.MessageBox(Page, "不存在该用户！点击返回！");

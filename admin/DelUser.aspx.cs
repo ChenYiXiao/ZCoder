@@ -18,7 +18,7 @@ public partial class admin_DelUser : System.Web.UI.Page
     {
         if (!IsPostBack)
         {
-            UserEntity ue = UserOperation.GetUser(Request.QueryString["id"].ToString());
+            UserEntity ue = UserOperation.GetUser(int.Parse(Request.QueryString["id"].ToString()));
             if (ue != null)
             {
                 //在表单中显示数据
