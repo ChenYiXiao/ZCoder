@@ -86,7 +86,7 @@
                 ForeColor="Black">[hlUserName]</asp:HyperLink>
             <br />
             <asp:HyperLink ID="hlAdmin" runat="server" ForeColor="#999999" 
-                NavigateUrl="~/admin/Default.aspx" Target="_blank" Visible="False">管理后台</asp:HyperLink>
+                NavigateUrl="~/admin/Default.aspx" Visible="False">管理后台</asp:HyperLink>
             <br />
             <asp:Label ID="Label1" runat="server" Font-Size="12px" ForeColor="#999999" 
                 Text="级别:小学生"></asp:Label>
