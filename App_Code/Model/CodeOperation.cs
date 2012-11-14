@@ -20,12 +20,39 @@ public class CodeOperation
         DataBase db = new DataBase();
         DataSet ds = db.ExCommand("select * from tb_code where id=" + id.ToString());
         CodeEntity ce = new CodeEntity();
-        ce.Id = (int)ds.Tables[0].Rows[0]["id"];
-        ce.Pid = int.Parse(ds.Tables[0].Rows[0]["pid"].ToString());
-        ce.UpTime = DateTime.Parse(ds.Tables[0].Rows[0]["uptime"].ToString());
-        ce.Uid = int.Parse(ds.Tables[0].Rows[0]["uid"].ToString());
-        ce.Lid = int.Parse(ds.Tables[0].Rows[0]["lid"].ToString());
-        ce.Path = ds.Tables[0].Rows[0]["path"].ToString();
-        return ce;
+        try
+        {
+            ce.Id = (int)ds.Tables[0].Rows[0]["id"];
+            ce.Pid = int.Parse(ds.Tables[0].Rows[0]["pid"].ToString());
+            ce.UpTime = DateTime.Parse(ds.Tables[0].Rows[0]["uptime"].ToString());
+            ce.Uid = int.Parse(ds.Tables[0].Rows[0]["uid"].ToString());
+            ce.Lid = int.Parse(ds.Tables[0].Rows[0]["lid"].ToString());
+            ce.Path = ds.Tables[0].Rows[0]["path"].ToString();
+            return ce;
+        }
+        catch
+        {
+            return null;
+        }
+    }
+    public static CodeEntity GetCodeFromPath(string path)
+    {
+        DataBase db = new DataBase();
+        DataSet ds = db.ExCommand("select * from tb_code where path='" + path.ToString() + "'");
+        CodeEntity ce = new CodeEntity();
+        try
+        {
+            ce.Id = (int)ds.Tables[0].Rows[0]["id"];
+            ce.Pid = int.Parse(ds.Tables[0].Rows[0]["pid"].ToString());
+            ce.UpTime = DateTime.Parse(ds.Tables[0].Rows[0]["uptime"].ToString());
+            ce.Uid = int.Parse(ds.Tables[0].Rows[0]["uid"].ToString());
+            ce.Lid = int.Parse(ds.Tables[0].Rows[0]["lid"].ToString());
+            ce.Path = ds.Tables[0].Rows[0]["path"].ToString();
+            return ce;
+        }
+        catch
+        {
+            return null;
+        }
     }
 }

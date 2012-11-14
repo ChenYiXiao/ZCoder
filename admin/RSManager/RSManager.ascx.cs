@@ -69,7 +69,7 @@ public partial class admin_RSManager_RSManager : System.Web.UI.UserControl
     private void GetList()
     {
         List<RSObject> list = new List<RSObject>();
-        string RealDir=Server.MapPath(Dir);
+        string RealDir = Server.MapPath(Dir);
 
         foreach (string di in Directory.GetDirectories(RealDir, "*", SearchOption.TopDirectoryOnly))
         {
@@ -122,18 +122,33 @@ public partial class admin_RSManager_RSManager : System.Web.UI.UserControl
             }
         }
         else
-        {
+        {/*如果是是文件夹*/
             if (Directory.Exists(Server.MapPath(Dir + "\\" + hl.NavigateUrl)))
             {
                 hl.NavigateUrl = Request.Url.AbsolutePath + "?dir=" + Dir + "\\" + hl.NavigateUrl;
             }
             else
             {
-                hl.NavigateUrl = "";
+                /*如果是普通文件*/
+                dir = Request.QueryString["dir"].ToString();
+                dir = dir.Replace(AppConfiger.GetProjectsDir(Server), "");
+                CodeEntity ce = CodeOperation.GetCodeFromPath(dir + "\\" + hl.NavigateUrl);
+                /*如果该文件已经登记在案*/
+                if (ce != null)
+                {
+                    /*指向*/
+                    hl.NavigateUrl = "/Viewer.aspx?id=" + ce.Id.ToString();
+                }
+                else
+                {
+                    hl.ForeColor = System.Drawing.Color.Gray;
+                    hl.NavigateUrl = "";
+                }
+
             }
         }
-        
-        
+
+
         /*
         if (btn.Text == "..")
         {

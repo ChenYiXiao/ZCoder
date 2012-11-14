@@ -18,8 +18,8 @@ public partial class Viewer : System.Web.UI.Page
         {
             ce= CodeOperation.GetCode(int.Parse(id));
             le = LangOperation.GetLang(ce.Lid);
-            Pre+="<pre class=\"brush: "+le.BrushAliases+";\">";
-            Pre+=File.ReadAllText(Server.MapPath(AppConfiger.GetProjectsDir(Server)+ce.Path),System.Text.Encoding.Unicode);
+            Pre += "<pre class=\"brush: " + le.BrushAliases + ";toolbar: false;\">";
+            Pre+=File.ReadAllText(Server.MapPath(AppConfiger.GetProjectsDir(Server)+ce.Path),System.Text.Encoding.GetEncoding("GBK"));
             Pre += "</pre>";
         }
         catch { }
