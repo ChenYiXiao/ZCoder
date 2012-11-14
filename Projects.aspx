@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="U_P_List.aspx.cs" Inherits="U_P_List" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="Projects.aspx.cs" Inherits="U_P_List" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -6,8 +6,9 @@
     <asp:Label ID="Label1" runat="server" Text="工程列表"></asp:Label>
     <br />
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-        ConnectionString="<%$ ConnectionStrings:masterConnectionString %>" 
-        SelectCommand="SELECT * FROM [tb_project]"></asp:SqlDataSource>
+        ConnectionString="<%$ ConnectionStrings:db_ConnectionString %>" 
+        
+        SelectCommand="SELECT tb_type.typeName, tb_project.projectName, tb_project.uid, tb_project.id, tb_project.description, tb_project.upTime, tb_user.userName FROM tb_type INNER JOIN tb_project ON tb_type.id = tb_project.tid INNER JOIN tb_user ON tb_project.uid = tb_user.id"></asp:SqlDataSource>
     <br />
     <table width="95%" class="zTable" style="margin: auto">
         <tr>
@@ -28,7 +29,6 @@
             <th>
                 上传日期
             </th>
-            <th align="center" width="70px">操作</th>
         </tr>
         <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
             <ItemTemplate>
@@ -51,7 +51,7 @@
                     <td>
                         <asp:Label ID="regTimeLabel" runat="server" Text='<%# Eval("upTime") %>' />
                     </td>
-                    <td> <asp:HyperLink ID="hlEdit" runat="server" Text="编辑" NavigateUrl='<%# Eval("id", "edituser.aspx?id={0}") %>' ForeColor="#666666"></asp:HyperLink> <asp:HyperLink ID="HyperLink1" runat="server" Text="删除"  NavigateUrl='<%# Eval("id", "deluser.aspx?id={0}") %>' ForeColor="#666666"></asp:HyperLink></td>
+                   
                 </tr>
             </ItemTemplate>
         </asp:Repeater>
