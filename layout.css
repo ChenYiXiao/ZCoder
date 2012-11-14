@@ -200,7 +200,6 @@ h3
 }
 .zRadioRec
 {
-    
     border-radius: 3px 3px 3px 3px;
     background-color: #FFFFFF;
 }
@@ -221,7 +220,6 @@ h3
 {
     border-collapse: collapse;
     border: 1px ridge #C0C0C0;
-
 }
 .zTable th
 {
@@ -235,7 +233,7 @@ h3
     padding: 5px;
     color: #666666;
     border: 1px ridge #C0C0C0;
-    text-align:center;
+    text-align: center;
 }
 .layPaddingAndCenter
 {

@@ -10,7 +10,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="zRadioRec">
-        <table width="50%">
+        <br />
+        <table width="80%" style="margin: auto">
             <tr>
                 <td width="20%">
                     源码文件名:
@@ -25,16 +26,7 @@
                     <%= langEntity.Name %>
                 </td>
             </tr>
-            <tr>
-                <td width="20%">
-                    语言简介：
-                </td>
-                <td colspan="3">
-                    <%=langEntity.Description %>
-                </td>
-            </tr>
-           
-            <tr>
+             <tr>
                 <td width="20%">
                     上传用户:
                 </td>
@@ -45,7 +37,20 @@
                 <td>
                 </td>
             </tr>
+            <tr>
+                <td width="20%">
+                    语言简介：
+                </td>
+                <td colspan="3">
+                    <%=langEntity.Description %>
+                </td>
+            </tr>
+           
+           
         </table>
+     
+        <br />
+     
         <%=Pre %>
     </div>
 </asp:Content>

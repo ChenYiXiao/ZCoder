@@ -72,11 +72,8 @@
   white-space: pre !important;
 }
 .syntaxhighlighter table {
-  width: 100% !important;
-  padding: 1px 0 !important;
-}
-.syntaxhighlighter table caption {
-  text-align: left !important;
+  width: 100% !important;d
+nn: left !important;
   padding: .5em 0 0.5em 1em !important;
 }
 .syntaxhighlighter table td.code {
@@ -85,6 +82,9 @@
 .syntaxhighlighter table td.code .container {
   position: relative !important;
 }
+
+.syntaxhighlighter table td.code .container textarea {
+  box-sizing: border-box !impo}
 .syntaxhighlighter table td.code .container textarea {
   box-sizing: border-box !important;
   position: absolute !important;
@@ -326,11 +326,4 @@
 
 .syntaxhighlighter .keyword {
   font-weight: bold !important;
-}
-
-.syntaxhighlighter .line.alt1 {
- background-color: #eeeeee !important;/*这个表示奇数行颜色*/
-}
-.syntaxhighlighter .line.alt2 {
- background-color: #ffffff !important;/*这个表示偶数行颜色*/
 }
