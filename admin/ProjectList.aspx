@@ -41,7 +41,7 @@
                         <asp:Label ID="idLabel" runat="server" Text='<%# Eval("id") %>' />
                     </td>
                     <td>
-                        <asp:Label ID="userNameLabel" runat="server" Text='<%# Eval("projectname") %>' />
+                        <asp:HyperLink ID="userNameLabel" runat="server" Text='<%# Eval("projectname") %>'  NavigateUrl='<%# Eval("id") %>' OnDataBinding="FixNameUrl" ForeColor="#999999" />
                     </td>
                     <td>
                         <asp:Label ID="emailLabel" runat="server" Text='<%# Eval("typename") %>' />
