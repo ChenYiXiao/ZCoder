@@ -45,6 +45,28 @@ public class LangEntity
         get { return ext; }
         set { ext = value; }
     }
+
+    string brushName = "";
+
+    public string BrushName
+    {
+        get { return brushName; }
+        set { brushName = value; }
+    }
+    string brushAliases = "";
+
+    public string BrushAliases
+    {
+        get { return brushAliases; }
+        set { brushAliases = value; }
+    }
+    string brushFile = "";
+
+    public string BrushFile
+    {
+        get { return brushFile; }
+        set { brushFile = value; }
+    }
     /// <summary>
     /// 扩展名列表
     /// </summary>

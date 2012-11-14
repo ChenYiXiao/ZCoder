@@ -39,6 +39,9 @@ public class ProjectManager
             le.Name = ds.Tables[0].Rows[i]["name"].ToString();
             le.Description = ds.Tables[0].Rows[i]["description"].ToString();
             le.Ext = ds.Tables[0].Rows[i]["ext"].ToString();
+            le.BrushName = ds.Tables[0].Rows[i]["brushname"].ToString();
+            le.BrushFile = ds.Tables[0].Rows[i]["brushfile"].ToString();
+            le.BrushAliases = ds.Tables[0].Rows[i]["brushaliases"].ToString();
             langs.Add(le);
         }
         return langs;
