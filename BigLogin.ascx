@@ -25,12 +25,20 @@
         &nbsp;&nbsp;&nbsp;
         <asp:Button ID="btn_Reg" runat="server" BackColor="#FF9900" BorderStyle="Solid" 
             BorderWidth="0px" CssClass="zRadioRec" Font-Bold="True" Font-Strikeout="False" 
-            Height="30px" Text="立即注册" Width="100px" ForeColor="White" />
+            Height="30px" Text="立即注册" Width="100px" ForeColor="White" 
+            onclick="btn_Reg_Click" PostBackUrl="~/Reg.aspx" />
     </p>
     <br>
     <br>
     <br>
+    <br>
     <br></br>
+    <br>
+    <br>
+    <br>
+    <br></br>
+    <br>
+    <br>
     <br>
     <br>
     <br></br>
@@ -40,6 +48,13 @@
     <br></br>
     <br>
     <br>
+    <br>
+    <br></br>
+    <br>
+    <br>
+    <br></br>
+    <br>
+    <br>
     <br></br>
     <br>
     <br>
@@ -50,6 +65,15 @@
     <br></br>
     <br>
     <br></br>
+    <br>
+    <br></br>
+    <br>
+    <br></br>
+    <br>
+    <br></br>
+    <br>
+    <br></br>
+    <br>
     <br></br>
     <br></br>
     <br></br>
@@ -58,6 +82,31 @@
     <br></br>
     <br></br>
     <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
     </br>
     </br>
     </br>

@@ -42,9 +42,13 @@ public partial class BigLogin : System.Web.UI.UserControl
     }
     protected void btn_Login_Click(object sender, EventArgs e)
     {
-        /*注册*/
+        /*登陆*/
         UserOperation.Login(Session, tb_UserName.Text, tb_Password.Text);
         /*重新跳转*/
         Response.Redirect(Request.Url.AbsoluteUri);
+    }
+    protected void btn_Reg_Click(object sender, EventArgs e)
+    {
+
     }
 }
