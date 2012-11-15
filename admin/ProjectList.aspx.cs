@@ -1,10 +1,8 @@
 ﻿/***************************************************************************************************
- *                    (c) Copyright 1992-2009 Embedded Products Research Center
- *                                       All Rights Reserved
  *
- *\File          usdl_xxx.h
- *\Description   XXXXXXXXXXXXX
- *\Log           2008.XX.XX    Ver 1.0    张三
+ *\File          ProjectList.aspx.cs
+ *\Description   工程列表
+ *\Log           2012.11.12   Ver 1.0    陈一枭
  *               创建文件。
  ***************************************************************************************************/
 using System;
@@ -24,6 +22,7 @@ public partial class admin_ProjectList : System.Web.UI.Page
     {
 
     }
+    /*修正链接*/
     protected void FixNameUrl(object sender, EventArgs e)
     {
         HyperLink hl = (HyperLink)sender;

@@ -1,4 +1,11 @@
-﻿using System;
+﻿/***************************************************************************************************
+ *
+ *\File          UploadSource.aspx.cs
+ *\Description   工程资源管理器
+ *\Log           2012.11.12   Ver 1.0    陈一枭
+ *               创建文件。
+ ***************************************************************************************************/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
