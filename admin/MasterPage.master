@@ -17,7 +17,7 @@
             <ul id="ulhead">
                 <li></li>
                 <li><a id="li_active" href="default.aspx">后台首页</a></li>
-                <li><a href="projectlist.aspx">源码管理</a></li>
+                <li><a href="projectlist.aspx">工程管理</a></li>
                 <li><a href="Notelist.aspx">注释管理</a></li>
                 <li><a>评论管理</a></li>
                 <li><a href="userlist.aspx">用户管理</a></li>

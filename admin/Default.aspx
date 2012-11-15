@@ -60,46 +60,7 @@
                     </table>
                 </td>
                 <td style="vertical-align: top">
-                   <table class="zTable" width="400px">
-                        <tr class="zTbTh">
-                            <th class="zTbTh" width="40%">
-                                统计项 
-                            </th>
-                            <th class="zTbTh" width="80%">
-                                统计值 
-                            </th>
-                        </tr>
-                        <tr class="zTbTd">
-                            <td class="zTbTd" style="background-color: #FFFFFF" width="40%" align="center">
-                                代码数</td>
-                            <td class="zTbTd" width="80%" align="center">
-                                <asp:Label ID="code_num" runat="server" Text=" "></asp:Label>
-                            </td>
-                        </tr>
-                        <tr class="zTbTd">
-                            <td class="zTbTd" width="40%" align="center">
-                                注释数</td>
-                            <td class="zTbTd" width="80%" align="center">
-                                <asp:Label ID="note_num" runat="server" Text=" "></asp:Label>
-                            </td>
-                        </tr>
-                        <tr class="zTbTd">
-                            <td class="zTbTd" width="40%" align="center">
-                                评论数 
-                            </td>
-                            <td class="zTbTd" width="80%" align="center">
-                                &nbsp;<asp:Label ID="comment_num" runat="server" Text=" "></asp:Label>
-                            </td>
-                        </tr>
-                        <tr class="zTbTd">
-                            <td class="zTbTd" width="40%" align="center">
-                                用户数 
-                            </td>
-                            <td class="zTbTd" width="80%" align="center">
-                                <asp:Label ID="user_num" runat="server" Text=" "></asp:Label>
-                            </td>
-                        </tr>
-                    </table>
+                  
                 </td>
             </tr>
         </table>
