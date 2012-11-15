@@ -24,6 +24,10 @@ public partial class admin_RSManager_RSManager : System.Web.UI.UserControl
         if (Request.QueryString["dir"] != null)
         {
             Dir = Request.QueryString["dir"].ToString();
+            if (!Directory.Exists(Server.MapPath(Dir)))
+            {
+                Directory.CreateDirectory(Server.MapPath(Dir));
+            }
         }
         rpt_Objets.DataSource = GetDataSource();
         rpt_Objets.DataBind();
