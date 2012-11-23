@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/Master_User.master" AutoEventWireup="true"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/MasterPage.master" AutoEventWireup="true"
     CodeFile="AddUser.aspx.cs" Inherits="admin_AddUser" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Ct1" runat="Server">
@@ -30,7 +30,7 @@
             <br />
 &nbsp;&nbsp;
     <asp:TextBox ID="tb_UserName" runat="server" OnTextChanged="A_TB1_TextChanged" 
-                CssClass="zTextBox"></asp:TextBox>
+                CssClass="inputbox"></asp:TextBox>
         </td>
     </tr>
     <tr>
@@ -40,7 +40,7 @@
         <td>
             <br />
 &nbsp;&nbsp;
-    <asp:TextBox ID="tb_Password" runat="server" CssClass="zTextBox"></asp:TextBox>
+    <asp:TextBox ID="tb_Password" runat="server" CssClass="inputbox"></asp:TextBox>
         </td>
     </tr>
     <tr>
@@ -50,7 +50,7 @@
         <td>
             <br />
 &nbsp;&nbsp;
-    <asp:TextBox ID="tb_Email" runat="server" CssClass="zTextBox"></asp:TextBox>
+    <asp:TextBox ID="tb_Email" runat="server" CssClass="inputbox"></asp:TextBox>
         </td>
     </tr>
     <tr>
@@ -69,8 +69,9 @@
         <td>
             <br />
 &nbsp;&nbsp;
-    <asp:Button ID="btn_OK" runat="server" OnClick="A_Button1_Click" Text="确定" 
-        CssClass="zbutton" />
+   <asp:Button ID="btn_OK" runat="server" 
+          OnClick="A_Button1_Click" Text="确定" 
+        CssClass="searchbtn" />
             <br />
             <br />
         </td>

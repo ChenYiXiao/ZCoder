@@ -26,6 +26,6 @@ public partial class admin_ProjectList : System.Web.UI.Page
     protected void FixNameUrl(object sender, EventArgs e)
     {
         HyperLink hl = (HyperLink)sender;
-        hl.NavigateUrl ="RSManager.aspx?dir=" +AppConfiger.GetProjectsDir(Server) + "\\" + hl.NavigateUrl;
+        hl.NavigateUrl ="RSManager.aspx?dir=" +AppConfiger.GetProjectsDir(Server) + "\\" + hl.NavigateUrl+"&projectName="+ hl.Text;
     }
 }

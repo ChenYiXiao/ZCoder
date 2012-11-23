@@ -129,7 +129,8 @@ public partial class admin_RSManager_RSManager : System.Web.UI.UserControl
         {/*如果是是文件夹*/
             if (Directory.Exists(Server.MapPath(Dir + "\\" + hl.NavigateUrl)))
             {
-                hl.NavigateUrl = Request.Url.AbsolutePath + "?dir=" + Dir + "\\" + hl.NavigateUrl;
+                hl.NavigateUrl = Request.Url.AbsolutePath + "?dir=" + Dir + "\\" + hl.NavigateUrl+
+                    (Request.QueryString["projectname"]!=null? "&projectname="+Request.QueryString["projectname"].ToString():"");
             }
             else
             {

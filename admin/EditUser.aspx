@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/Master_User.master" AutoEventWireup="true" CodeFile="EditUser.aspx.cs" Inherits="admin_EditUser" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/MasterPage.master" AutoEventWireup="true" CodeFile="EditUser.aspx.cs" Inherits="admin_EditUser" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Ct1" Runat="Server">
     </asp:Content>
@@ -93,7 +93,7 @@
             <td>
                 <br />
     <asp:Button ID="btn_Edit" runat="server" onclick="btnEdit_Click" 
-         Text="修改" CssClass="zbutton" />
+         Text="修改" CssClass="searchbtn" />
                 <br />
             </td>
         </tr>

@@ -1,6 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/Master_User.master" AutoEventWireup="true" CodeFile="DelUser.aspx.cs" Inherits="admin_DelUser" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/MasterPage.master" AutoEventWireup="true" CodeFile="DelUser.aspx.cs" Inherits="admin_DelUser" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Ct1" Runat="Server">
+    <style type="text/css">
+        .style1
+        {
+            font-size: large;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Ct2" Runat="Server">
     <h2>
@@ -9,12 +15,12 @@
     <br />
     <table style="margin: auto" width="95%">
         <tr>
-            <td align="center" class="layPadding" colspan="2">
-                确定删除该用户？<br />
-            </td>
+            <th align="center" class="layPadding" colspan="2" width="200px">
+                <span class="style1"><strong>确定删除该用户？</strong></span><br />
+            </th>
         </tr>
         <tr>
-            <td align="center" class="layPadding">
+            <td align="center" class="layPadding" width="200px">
                 <asp:Label ID="Label1" runat="server" Text="ID："></asp:Label>
             </td>
             <td align="left" class="layPadding">
@@ -22,7 +28,7 @@
             </td>
         </tr>
         <tr>
-            <td align="center" class="layPadding">
+            <td align="center" class="layPadding" width="200px">
                 <asp:Label ID="Label2" runat="server" Text="用户名："></asp:Label>
             </td>
             <td align="left" class="layPadding">
@@ -30,7 +36,7 @@
             </td>
         </tr>
         <tr>
-            <td align="center" class="layPadding">
+            <td align="center" class="layPadding" width="200px">
                 <asp:Label ID="Label3" runat="server" Text="邮箱："></asp:Label>
             </td>
             <td align="left" class="layPadding">
@@ -38,7 +44,7 @@
             </td>
         </tr>
         <tr>
-            <td align="center" class="layPadding">
+            <td align="center" class="layPadding" width="200px">
                 <asp:Label ID="Label4" runat="server" Text="性别"></asp:Label>
             </td>
             <td align="left" class="layPadding">
@@ -46,7 +52,7 @@
             </td>
         </tr>
         <tr>
-            <td align="center" class="layPadding">
+            <td align="center" class="layPadding" width="200px">
                 <asp:Label ID="Label5" runat="server" Text="用户类型："></asp:Label>
             </td>
             <td align="left" class="layPadding">
@@ -54,17 +60,18 @@
             </td>
         </tr>
         <tr>
-            <td align="center" class="layPadding">
-                <asp:Button ID="btn_OK" runat="server" CssClass="zbutton" Text="是" 
+            <td align="center" class="layPadding" width="200px">
+                <asp:Button ID="btn_OK" runat="server" CssClass="searchbtn" Text="是" 
                     onclick="Button1_Click" />
-            </td>
-            <td class="layPadding">
-                <asp:Button ID="btn_Cancel" runat="server" CssClass="zbutton" 
+            &nbsp;&nbsp;&nbsp;
+                <asp:Button ID="btn_Cancel" runat="server" CssClass="searchbtn" 
                     onclick="Button2_Click" Text="否" />
             </td>
+            <td class="layPadding">
+                &nbsp;</td>
         </tr>
         <tr>
-            <td>
+            <td width="200px">
                 &nbsp;</td>
             <td>
                 &nbsp;</td>

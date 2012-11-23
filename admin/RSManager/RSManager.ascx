@@ -5,9 +5,9 @@
 <link href="/admin/RSManager/images/RSManager.css" rel="stylesheet" type="text/css" />
 <table class="RSTable" width="95%">
     <tr>
-        <td colspan="6" align="left">
-            工程名：XX
-        </td>
+        <th colspan="6" align="left">
+            <%=Request.QueryString["projectName"]!=null?"工程名："+Request.QueryString["projectName"]:"资源管理器" %>
+        </th>
     </tr>
     <asp:Repeater ID="rpt_Objets" runat="server">
         <ItemTemplate>

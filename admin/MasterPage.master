@@ -6,63 +6,23 @@
 <head id="Head1" runat="server">
     <title>ZCoder社会化代码注释系统</title>
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-    <link href="../layout.css" rel="stylesheet" type="text/css" />
-    <asp:ContentPlaceHolder ID="head" runat="server">
+    <link href="styles/layout.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="Ct1" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body>
-    <div id="header">
-        <div id="navhead">
-            <img alt="Logo" id="logo" src="../images/logo.png" />
-            <ul id="ulhead">
-                <li></li>
-                <li><a id="li_active" href="default.aspx">后台首页</a></li>
-                <li><a href="projectlist.aspx">工程管理</a></li>
-                <li><a href="Notelist.aspx">注释管理</a></li>
-                <li><a>评论管理</a></li>
-                <li><a href="userlist.aspx">用户管理</a></li>
-                <li><a href="/default.aspx">前台首页</a></li>
-            </ul>
-            <div style="float: right; margin-top: 15px; font-size: 12px">
-                <uc1:LoginPanel ID="LoginPanel1" runat="server" />
-            </div>
-        </div>
-    </div>
-    <div id="LoginPanel1_Panel2">
-        <span id="LoginPanel1_Label2">Label">Label</span>
-    </div>
-    <div id="container">
-        <div id="menu">
-            <div style="float: left; line-height: 28px; vertical-align: middle; font-size: 12px;
-                font-weight: bold; color: #999999; clip: rect(auto, auto, auto, auto); margin-left: 40px;">
-                快捷操作</div>
-            <ul id="menuhead">
-                <li></li>
-                <li><a href="AddUser.aspx">新增用户</a></li>
-                <li><a href="AddProject.aspx">新建工程</a></li>
-                <li><a href="RSManager.aspx">资源管理器</a></li>
-                <li><a>评论</a></li>
-                <li><a>帮助</a></li>
-                <li><a href="about.aspx">关于</a></li>
-            </ul>
-        </div>
+<body style="background:; background-image:none;" >
+   
         <div>
-            <div id="mainContent"  >
+            <div>
                 <form id="form1" runat="server">
                 <div>
-                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    <asp:ContentPlaceHolder ID="Ct2" runat="server">
                     </asp:ContentPlaceHolder>
                 </div>
                 </form>
             </div>
         </div>
-        <div style="clear: both">
         </div>
-        <div id="footer">
-            <p align="center" style="font-size: 12px; color: #666666;">
-                帮助中心 | 加入我们 | 联系我们 |<a href="../doc/style.htm" 
-                    style="color: #0066FF; font-weight: bold;">代码风格</a></br></br><font size="1"> Powered by RJ1001</font></p>
-        </div>
-    </div>
+   
 </body>
 </html>

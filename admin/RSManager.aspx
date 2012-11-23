@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/Master_Source.master" AutoEventWireup="true" CodeFile="RSManager.aspx.cs" Inherits="admin_RSManager"  %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/MasterPage.master" AutoEventWireup="true" CodeFile="RSManager.aspx.cs" Inherits="admin_RSManager"  %>
 
 <%@ Register src="RSManager/RSManager.ascx" tagname="RSManager" tagprefix="uc1" %>
 
