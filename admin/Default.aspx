@@ -60,7 +60,7 @@
                 <p class="username">
                     <%=Session["username"].ToString() %></p>
                 <p class="userbtn">
-                    <a href="#" title="">切换</a></p>
+                    <a href="/" title="" target="_blank">前台</a></p>
                 <p class="userbtn">
                     <a href="#" title="">注销</a></p>
             </div>
