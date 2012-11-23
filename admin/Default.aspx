@@ -39,9 +39,9 @@
                 <li>
                     <img src="img/icons/icon_breadcrumb.png" alt="当前位置" /></li>
                 <li><strong>当前位置:</strong></li>
-                <li id="li_Parent"><a href="#" title="">工程管理</a></li>
+                <li id="li_Parent"><a href="#" title="">后台管理</a></li>
                 <li>/</li>
-                <li class="current" id="li_Current">新增工程</li>
+                <li class="current" id="li_Current">首页</li>
             </ul>
         </div>
         <!-- 顶部面包屑结束 -->
