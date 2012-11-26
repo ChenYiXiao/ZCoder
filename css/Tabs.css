@@ -1,6 +1,5 @@
 ﻿.tab
 {
-    width: 650px;
     margin: 10px;
 }
 .tab_menu
@@ -46,4 +45,115 @@
 .hide
 {
     display: none;
+}
+.zLoginBtn
+{
+-webkit-appearance: none;
+-webkit-box-align: center;
+background-attachment: scroll;
+background-clip: border-box;
+background-color: #3B7DC3;
+background-image: url(/images/btn.png);
+background-origin: padding-box;
+background-position: 0px -120px;
+border-bottom-color: #0C497C;
+border-bottom-left-radius: 2px;
+border-bottom-right-radius: 2px;
+border-bottom-style: solid;
+border-bottom-width: 1px;
+border-left-color: #0E6191;
+border-left-style: solid;
+border-left-width: 1px;
+border-right-color: #0E6191;
+border-right-style: solid;
+border-right-width: 1px;
+border-top-color: #0F75A4;
+border-top-left-radius: 2px;
+border-top-right-radius: 2px;
+border-top-style: solid;
+border-top-width: 1px;
+box-sizing: border-box;
+color: white;
+cursor: pointer;
+display: inline-block;
+font-family: Arial;
+font-size: 14px;
+font-style: normal;
+font-variant: normal;
+font-weight: 800;
+height: 30px;
+letter-spacing: normal;
+line-height: normal;
+margin-bottom: 0px;
+margin-left: 0px;
+margin-right: 10px;
+margin-top: 0px;
+overflow-x: visible;
+overflow-y: visible;
+padding-bottom: 6px;
+padding-left: 18px;
+padding-right: 18px;
+padding-top: 6px;
+text-align: center;
+text-decoration: none;
+text-indent: 0px;
+text-shadow: rgba(0, 0, 0, 0.246094) 0px -1px 0px;
+text-transform: none;
+vertical-align: middle;
+white-space: nowrap;
+width: 100px;
+word-spacing: 0px;
+zoom: 1;
+}
+.zRegBtn
+{
+    background-attachment: scroll;
+background-clip: border-box;
+background-color: #F29407;
+background-image: url(/images/btn.png);
+background-origin: padding-box;
+background-position: 0px -400px;
+border-bottom-color: #BC650A;
+border-bottom-left-radius: 2px;
+border-bottom-right-radius: 2px;
+border-bottom-style: solid;
+border-bottom-width: 1px;
+border-left-color: #CB7D09;
+border-left-style: solid;
+border-left-width: 1px;
+border-right-color: #CB7D09;
+border-right-style: solid;
+border-right-width: 1px;
+border-top-color: #DA9608;
+border-top-left-radius: 2px;
+border-top-right-radius: 2px;
+border-top-style: solid;
+border-top-width: 1px;
+color: white;
+cursor: pointer;
+display: inline-block;
+font-family: Arial;
+font-size: 14px;
+font-style: normal;
+font-variant: normal;
+font-weight: 800;
+height: 16px;
+line-height: normal;
+margin-bottom: 0px;
+margin-left: 0px;
+margin-right: 0px;
+margin-top: 0px;
+overflow-x: visible;
+overflow-y: visible;
+padding-bottom: 6px;
+padding-left: 18px;
+padding-right: 18px;
+padding-top: 6px;
+text-align: center;
+text-decoration: none;
+text-shadow: rgba(0, 0, 0, 0.148438) 0px -1px 0px;
+vertical-align: middle;
+white-space: nowrap;
+width: 90px;
+zoom: 1;
 }

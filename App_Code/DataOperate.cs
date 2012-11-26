@@ -200,7 +200,7 @@ public class DataOperate
     /// <param name="lbtnBack">最后一页</param>
     /// <param name="lbtnOne">第一页</param>
     /// <param name="dl">DataList控件对象</param>
-    public static  void dlBind(int intCount, DataSet ds, Label labPage, Label labTPage, LinkButton lbtnUp, LinkButton lbtnNext, LinkButton lbtnBack, LinkButton lbtnOne, DataList dl)
+    public static  void dlBind(int intCount, DataSet ds, Label labPage, Label labTPage, LinkButton lbtnUp, LinkButton lbtnNext, LinkButton lbtnBack, LinkButton lbtnOne, Repeater dl)
     {
         int curpage = Convert.ToInt32(labPage.Text);
         PagedDataSource ps = new PagedDataSource();
@@ -208,23 +208,28 @@ public class DataOperate
         ps.AllowPaging = true; //是否可以分页
         ps.PageSize = intCount; //显示的数量
         ps.CurrentPageIndex = curpage - 1; //取得当前页的页码
-        lbtnUp.Enabled = true;
+
+        lbtnNext.Visible = true;
+        lbtnOne.Visible = true;
+        lbtnBack.Visible = true;
+        lbtnUp.Visible = true;
+
         lbtnNext.Enabled = true;
         lbtnBack.Enabled = true;
         lbtnOne.Enabled = true;
         if (curpage == 1)
         {
-            lbtnOne.Enabled = false;//不显示第一页按钮
-            lbtnUp.Enabled = false;//不显示上一页按钮
+            lbtnOne.Visible = false;//不显示第一页按钮
+            lbtnUp.Visible = false;//不显示上一页按钮
         }
         if (curpage == ps.PageCount)
         {
-            lbtnNext.Enabled = false;//不显示下一页
-            lbtnBack.Enabled = false;//不显示最后一页
+            lbtnNext.Visible = false;//不显示下一页
+            lbtnBack.Visible = false;//不显示最后一页
         }
         labTPage.Text = Convert.ToString(ps.PageCount);
         dl.DataSource = ps;
-        dl.DataKeyField = "ID";
+       // dl.DataKeyField = "ID";
         dl.DataBind();
     }
     #endregion

@@ -19,18 +19,15 @@
     </p>
     <p>
         <asp:Button ID="btn_Login" runat="server" BackColor="#0099FF" BorderStyle="Solid" 
-            BorderWidth="0px" CssClass="zRadioRec" Font-Bold="True" Font-Strikeout="False" 
+            BorderWidth="0px" CssClass="zLoginBtn" Font-Bold="True" Font-Strikeout="False" 
             Height="30px" onclick="btn_Login_Click" Text="登陆" Width="100px" 
             ForeColor="White" />
         &nbsp;&nbsp;&nbsp;
         <asp:Button ID="btn_Reg" runat="server" BackColor="#FF9900" BorderStyle="Solid" 
-            BorderWidth="0px" CssClass="zRadioRec" Font-Bold="True" Font-Strikeout="False" 
+            BorderWidth="0px" CssClass="zRegBtn" Font-Bold="True" Font-Strikeout="False" 
             Height="30px" Text="立即注册" Width="100px" ForeColor="White" 
             onclick="btn_Reg_Click" PostBackUrl="~/Reg.aspx" />
     </p>
-    </br>
-
-
 </asp:Panel>
 
 <asp:Panel ID="pnl_User" runat="server">

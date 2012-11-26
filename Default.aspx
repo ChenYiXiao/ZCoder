@@ -10,7 +10,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div>
-        <div class="zleft" style="width: 670px;">
+        <div class="zBlockLeft" style="width: 636px; float: left;">
             <div class="tab">
                 <div class="tab_menu">
                     <ul>
@@ -24,15 +24,15 @@
                         <uc2:LatestProjects ID="LatestProjects1" runat="server" />
                     </div>
                     <div class="hide">
-                        最新</div>
+                        最新注释尚待完成</div>
                     <div class="hide">
-                        最新</div>
+                        最新评论尚待完成</div>
                 </div>
             </div>
        
         </div>
-        <div class="zleft" 
-            style="width: 240px; margin-left: 20px; padding: 15px; height:184px">
+        <div class="zBlockLeft" 
+            style="width: 240px; margin-left: 20px; padding: 15px; ">
             <uc1:BigLogin ID="BigLogin1" runat="server" />
         </div>
         <div style="clear: both">

@@ -1,8 +1,4 @@
-/*本模板是由标准之路(www.aa25.cn)的×××制作完成*/
-/*本人水平有限，使用自愿，不对因使用此模板造成的任何后果负任何责任*/
-/*如果您想转载此资源，请保留“<a href="http://www.aa25.cn">标准之路www.aa25.cn</a>”的链接及版权标识*/
-/*如有更好的建议或意见，请到www.aa25.cn留言，本人尽力解决*/
-/*2008-8-28*/
+
 body
 {
     font-family: Verdana;
@@ -21,14 +17,27 @@ body
 }
 #header
 {
-    background: none repeat scroll 0% 0% rgb(72, 143, 206);
-    display: block;
-    position: fixed;
-    top: 0px;
-    width: 100%;
-    height: 53px;
-    z-index: 10;
-    left: 0px;
+    background-attachment: scroll;
+background-clip: border-box;
+background-color: #488FCE;
+background-image: none;
+background-origin: padding-box;
+box-shadow: rgba(0, 0, 0, 0.296875) 0px 1px 3px 0px;
+color: #333;
+display: block;
+font-family: Arial;
+font-size: 12px;
+font-style: normal;
+font-variant: normal;
+font-weight: normal;
+height: 45px;
+left: 0px;
+line-height: 18px;
+padding-top: 0px;
+position: fixed;
+top: 0px;
+width: 1351px;
+z-index: 10;
 }
 #menu
 {
@@ -83,21 +92,28 @@ body
     margin-bottom: auto;
     padding-top: 14px;
     margin-left: 10px;
+    height: 45px;
 }
 #ulhead li a
 {
     color: rgb(255, 255, 255);
     display: block;
     float: left;
-    line-height: 28px;
-    height: 28px;
+    height: 45px;
     font-size: 14px;
     padding: 0px 12px;
+    vertical-align: middle; 
+text-align: center; 
+line-height: 45px;
 }
 
 #ulhead li
 {
     float: left;
+    height: 17px;
+    vertical-align: middle; 
+text-align: center; 
+line-height: 50px;
 }
 
 #menuhead
@@ -107,7 +123,6 @@ body
     list-style-type: none;
     margin-top: auto;
     margin-bottom: auto;
-    padding-top: 2px;
     margin-left: 10px;
 }
 #menuhead li a
@@ -130,6 +145,7 @@ body
     color: #FFFFFF;
     background: none repeat scroll 0% 0% #aaaaaa;
     border-radius: 3px 3px 3px 3px;
+    text-decoration: underline;
 }
 #logo
 {
@@ -154,11 +170,12 @@ a
 }
 #ulhead li a:hover
 {
-    color: #ffea00;
+    
 }
 ul
 {
     list-style-type: none;
+    margin-left: 1px;
 }
 h3
 {
@@ -167,16 +184,64 @@ h3
 }
 .zbutton
 {
-    line-height: 30px;
-    background-color: #39F;
-    text-align: center;
-    vertical-align: bottom;
-    height: 36px;
-    width: 150px;
-    font-size: 14px;
-    color: #FFF;
-    border: 1px solid #448DD0;
-    border-radius: 3px 3px 3px 3px;
+   -webkit-appearance: none;
+button - button user agent stylesheet
+-webkit-box-align: center;
+background-attachment: scroll;
+background-clip: border-box;
+background-color: #3B7DC3;
+background-image: url(http://tiyan.phpwind.net/themes/site/default/images/common/btn.png);
+background-origin: padding-box;
+background-position: 0px -120px;
+border-bottom-color: #0C497C;
+border-bottom-left-radius: 2px;
+border-bottom-right-radius: 2px;
+border-bottom-style: solid;
+border-bottom-width: 1px;
+border-left-color: #0E6191;
+border-left-style: solid;
+border-left-width: 1px;
+border-right-color: #0E6191;
+border-right-style: solid;
+border-right-width: 1px;
+border-top-color: #0F75A4;
+border-top-left-radius: 2px;
+border-top-right-radius: 2px;
+border-top-style: solid;
+border-top-width: 1px;
+box-sizing: border-box;
+color: white;
+cursor: pointer;
+display: inline-block;
+font-family: Arial;
+font-size: 14px;
+font-style: normal;
+font-variant: normal;
+font-weight: normal;
+height: 30px;
+letter-spacing: normal;
+line-height: normal;
+margin-bottom: 0px;
+margin-left: 0px;
+margin-right: 20px;
+margin-top: 0px;
+overflow-x: visible;
+overflow-y: visible;
+padding-bottom: 6px;
+padding-left: 25px;
+padding-right: 25px;
+padding-top: 6px;
+position: relative;
+text-align: center;
+text-decoration: none;
+text-indent: 0px;
+text-shadow: rgba(0, 0, 0, 0.246094) 0px -1px 0px;
+text-transform: none;
+vertical-align: middle;
+white-space: nowrap;
+width: 80px;
+word-spacing: 0px;
+zoom: 1;
 }
 .zleft
 {
@@ -243,4 +308,273 @@ h3
 .layPadding
 {
     padding: 5px;
+}
+.zPageBtn
+{
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: #F8F8F8;
+    background-image: url(http://tiyan.phpwind.net/themes/site/default/images/common/btn.png);
+    background-origin: padding-box;
+    border-bottom-color: #B0B0B0;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color: #BDBDBD;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-color: #BDBDBD;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-color: #C9C9C9;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    color: #666;
+    cursor: auto;
+    display: inline-block;
+    font-family: Arial;
+    font-size: 12px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    height: 13px;
+    line-height: 13px;
+    margin-right: 3px;
+    padding-bottom: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 6px;
+    text-decoration: none;
+    vertical-align: top;
+}
+.zPageBtn:hover
+{
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: #488FCF;
+    background-image: none;
+    background-origin: padding-box;
+    border-bottom-color: #488FCF;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color: #488FCF;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-color: #488FCF;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-color: #2470B5;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    color: white;
+    cursor: auto;
+    display: inline-block;
+    font-family: Arial;
+    font-size: 12px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    height: 13px;
+    line-height: 13px;
+    margin-right: 3px;
+    padding-bottom: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 6px;
+    text-decoration: none;
+    vertical-align: top;
+}
+.zBlockLeft
+{
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: white;
+    background-image: none;
+    background-origin: padding-box;
+    border-bottom-color: lightGrey;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color: #EFEFEF;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-color: #EFEFEF;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-color: white;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    box-shadow: rgba(0, 0, 0, 0.0195313) 0px 1px 1px 0px;
+    color: #333;
+    float: left;
+    font-family: Arial;
+    font-size: 12px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 18px;
+    margin-bottom: 15px;
+    padding-top: 0px;
+    word-break: break-all;
+    word-wrap: break-word;
+    padding: 15px;
+}
+.zBorderPanel
+{
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: white;
+    background-image: none;
+    background-origin: padding-box;
+    border-bottom-color: lightGrey;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color: #EFEFEF;
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-color: #EFEFEF;
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-color: white;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    box-shadow: rgba(0, 0, 0, 0.0195313) 0px 1px 1px 0px;
+    color: #333;
+    display: block;
+    font-family: Arial;
+    font-size: 12px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 18px;
+    margin-bottom: 15px;
+    padding-top: 0px;
+    word-break: break-all;
+    word-wrap: break-word;
+    padding: 15px;
+}
+.zTitle
+{
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: transparent;
+    background-image: none;
+    background-origin: padding-box;
+    color: #333;
+    display: inline;
+    font-family: Arial;
+    font-size: 14px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bold;
+    height: auto;
+    line-height: 21px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 15px;
+    margin-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    width: auto;
+}
+
+.zBroadcast
+{
+    background-position: 2px 9px;
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: transparent;
+    background-image: url(images/speaker.png);
+    background-repeat: no-repeat;
+    background-origin: padding-box;
+    color: #333;
+    display: list-item;
+    float: left;
+    font-family: Arial;
+    font-size: 12px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 28px;
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-left: 18px;
+    padding-top: 0px;
+    text-align: -webkit-auto;
+    width: 253px;
+    margin-left: 10px;
+    color: Gray;
+}
+.zMenuSelected
+{
+   background-attachment: scroll;
+background-clip: border-box;
+background-color: transparent;
+background-image: none;
+background-origin: padding-box;
+color: #333;
+display: list-item;
+float: left;
+font-family: Arial;
+font-size: 12px;
+font-style: normal;
+font-variant: normal;
+font-weight: normal;
+height: 45px;
+line-height: 50px;
+list-style-image: none;
+list-style-position: outside;
+list-style-type: none;
+padding-top: 0px;
+text-align: -webkit-auto;
+width: 52px;
+}
+.zMenuSeletcedA
+{
+    background-attachment: scroll;
+background-clip: border-box;
+background-color: #3B7FC4;
+background-image: none;
+background-origin: padding-box;
+color: white;
+cursor: auto;
+display: block;
+float: left;
+font-family: Arial;
+font-size: 14px;
+font-style: normal;
+font-variant: normal;
+font-weight: normal;
+height: 45px;
+line-height: 50px;
+list-style-image: none;
+list-style-position: outside;
+list-style-type: none;
+padding-bottom: 0px;
+padding-left: 12px;
+padding-right: 12px;
+padding-top: 0px;
+text-align: -webkit-auto;
+text-decoration: none;
+width: 28px;
+
 }
