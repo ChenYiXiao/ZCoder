@@ -84,6 +84,8 @@
                             所有工程</a></li>
                         <li><a href="AddProject.aspx" title="" onclick="setCurrent(this)" target="maincontent">
                             新增工程</a></li>
+                            <li><a href="UploadSource.aspx" title="" onclick="setCurrent(this)" target="maincontent">
+                            上传源码</a></li>
                     </ul>
                 </li>
                 <li><a class="collapsed heading">用户管理</a>

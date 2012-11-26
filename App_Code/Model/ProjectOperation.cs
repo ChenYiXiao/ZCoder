@@ -36,4 +36,16 @@ public class ProjectOperation
             return false;
         }
     }
+   /* public static ProjectEntity GetProject(int id)
+    {
+        DataBase db = new DataBase();
+        try
+        {
+          
+        }
+        catch
+        {
+            return null;
+        }
+    }*/
 }
