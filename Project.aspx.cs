@@ -13,12 +13,20 @@ public partial class Project : System.Web.UI.Page
 
         if (!IsPostBack)
         {
+            if (!Directory.Exists(Server.MapPath(AppConfiger.GetProjectsDir(Server) + "\\" + Request.QueryString["id"].ToString())))
+            {
+                Directory.CreateDirectory(Server.MapPath(AppConfiger.GetProjectsDir(Server) + "\\" + Request.QueryString["id"].ToString()));
+            }
             List<TreeNodeEntity> AllNodes = GetDirNode(Server.MapPath(AppConfiger.GetProjectsDir(Server) + "\\" + Request.QueryString["id"].ToString()));
             foreach (TreeNodeEntity node in AllNodes)
             {
                 ProjectNodes += node.ToString() + ",";
             }
-            ProjectNodes = ProjectNodes.Substring(0, ProjectNodes.Length - 1);
+            if (!(ProjectNodes.Length == 0))
+            {
+                ProjectNodes = ProjectNodes.Substring(0, ProjectNodes.Length - 1);
+            }
+            
         }
     }
     private List<TreeNodeEntity> GetDirNode(string dir)

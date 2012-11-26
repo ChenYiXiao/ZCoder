@@ -96,6 +96,6 @@ public partial class admin_UploadSource : System.Web.UI.Page
     /// <param name="info">信息</param>
     private void AddInfo(string info)
     {
-        lb_Progess.Text += "</br>" + info;
+        tb_Progess.Text += "\n" + info;
     }
 }

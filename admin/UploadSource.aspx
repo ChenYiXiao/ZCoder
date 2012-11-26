@@ -12,7 +12,7 @@
                 'uploader': '/upload.aspx',
                 'uploadLimit' : 1,
              'removeCompleted' : false,
-                'fileTypeDesc': '选择zip',
+                'fileTypeDesc': '选择压缩包',
                 'fileTypeExts': '*.zip',
                 'formData': { 'ASPSESSID':<%=  Request.Cookies[FormsAuthentication.FormsCookieName]==null ? "''" : Request.Cookies[FormsAuthentication.FormsCookieName].Value %>, 'AUTHID':'<%= Session.SessionID %>'},
                 'multi': false,
@@ -38,12 +38,10 @@
         <hr />
         <table class="style1">
             <tr>
-                <td class="layPadding">
-                    &nbsp;
-                </td>
-                <td class="layPadding">
-                    &nbsp;
-                </td>
+                <th colspan="3">
+                    请选择源码压缩包。暂时只支持rar,zip格式。
+                </th>
+                <th></th>
             </tr>
             <tr>
                 <td class="layPadding">
@@ -87,25 +85,29 @@
                 <td class="layPadding">
                     上传进度：
                 </td>
-                <td class="layPadding" align="center" style="border: 1px solid #999999; background-color: #F5F5F5">
+                <td align="center">
                     <asp:ScriptManager ID="ScriptManager1" runat="server">
                     </asp:ScriptManager>
                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                         <ContentTemplate>
+                            <asp:TextBox ID="tb_Progess" runat="server" CssClass="inputbox" Height="104px" TextMode="MultiLine"></asp:TextBox>
                             <br />
-                            <asp:Button ID="btn_OK" runat="server" CssClass="zbutton" OnClick="btn_OK_Click"
+                            <asp:Button ID="btn_OK" runat="server" CssClass="searchbtn" OnClick="btn_OK_Click"
                                 Text="开始上传" />
-                            <br />
-                            <br />
-                            <asp:Label ID="lb_Progess" runat="server" Text="准备就绪."></asp:Label>
-                            <br />
                         </ContentTemplate>
                     </asp:UpdatePanel>
                 </td>
-                <td class="layPadding">
-                    已支持的语言：
-                    <table style="margin:auto;">
-                    <tr><th>语言</th><th>扩展名</th></tr>
+                <td rowspan="2" align="left">
+                    已支持的语言： </br>
+                    <table style="margin: auto;" width="100%">
+                        <tr>
+                            <th>
+                                语言
+                            </th>
+                            <th>
+                                扩展名
+                            </th>
+                        </tr>
                         <asp:Repeater ID="Repeater1" runat="server" DataSourceID="sds_Langs">
                             <ItemTemplate>
                                 <tr>
@@ -121,18 +123,16 @@
                         <asp:SqlDataSource ID="sds_Langs" runat="server" ConnectionString="<%$ ConnectionStrings:db_ConnectionString %>"
                             SelectCommand="SELECT [name], [ext] FROM [tb_lang]"></asp:SqlDataSource>
                     </table>
-        </td> </tr>
-        <tr>
-            <td class="layPadding">
-                &nbsp;
-            </td>
-            <td class="layPadding" align="center">
-                &nbsp;
-            </td>
-            <td class="layPadding">
-                &nbsp;
-            </td>
-        </tr>
+                </td>
+            </tr>
+            <tr>
+                <td class="layPadding">
+                    &nbsp;
+                </td>
+                <td class="layPadding" align="center">
+                    &nbsp;
+                </td>
+            </tr>
         </table>
     </div>
 </asp:Content>
