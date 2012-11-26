@@ -200,7 +200,7 @@ public class DataOperate
     /// <param name="lbtnBack">最后一页</param>
     /// <param name="lbtnOne">第一页</param>
     /// <param name="dl">DataList控件对象</param>
-    public void dlBind(int intCount, DataSet ds, Label labPage, Label labTPage, LinkButton lbtnUp, LinkButton lbtnNext, LinkButton lbtnBack, LinkButton lbtnOne, DataList dl)
+    public static  void dlBind(int intCount, DataSet ds, Label labPage, Label labTPage, LinkButton lbtnUp, LinkButton lbtnNext, LinkButton lbtnBack, LinkButton lbtnOne, DataList dl)
     {
         int curpage = Convert.ToInt32(labPage.Text);
         PagedDataSource ps = new PagedDataSource();
