@@ -29,8 +29,8 @@ public partial class admin_DelProject : System.Web.UI.Page
                 + "tb_project.description, tb_project.upTime,  "
                 + "tb_project.projectName, tb_type.typeName, tb_project.id FROM tb_project INNER "
                 + "JOIN tb_type ON tb_project.tid = tb_type.id INNER JOIN tb_user ON tb_project.uid = tb_user.id  WHERE (tb_project.id ={0} ) ", id));
-                string User = sql.Tables[0].Rows[0][2].ToString();
-                string Type = sql.Tables[0].Rows[0][6].ToString();
+                string User = sql.Tables[0].Rows[0]["userName"].ToString();
+                string Type = sql.Tables[0].Rows[0]["typeName"].ToString();
                 //在表单中显示数据
                 lb_ProjectName.Text = pe.ProjectName;
                 lb_Id.Text = pe.Id.ToString();

@@ -66,7 +66,7 @@ FROM         tb_note INNER JOIN
                      <td>
                         <asp:Label ID="Label2" runat="server" Text='<%# Eval("disagree") %>' />
                     </td>
-                    <td> <asp:HyperLink ID="hlEdit" runat="server" Text="编辑" NavigateUrl='<%# Eval("id", "edituser.aspx?id={0}") %>' ForeColor="#666666"></asp:HyperLink> <asp:HyperLink ID="HyperLink1" runat="server" Text="删除"  NavigateUrl='<%# Eval("id", "deluser.aspx?id={0}") %>' ForeColor="#666666"></asp:HyperLink></td>
+                    <td> <asp:HyperLink ID="hlEdit" runat="server" Text="编辑" NavigateUrl='<%# Eval("id", "editnote.aspx?id={0}") %>' ForeColor="#666666"></asp:HyperLink> <asp:HyperLink ID="HyperLink1" runat="server" Text="删除"  NavigateUrl='<%# Eval("id", "delnote.aspx?id={0}") %>' ForeColor="#666666"></asp:HyperLink></td>
                 </tr>
             </ItemTemplate>
         </asp:Repeater>

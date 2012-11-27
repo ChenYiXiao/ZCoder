@@ -94,9 +94,9 @@
                         <li><a href="AddUser.aspx" onclick="setCurrent(this)" target="maincontent">新增用户</a></li>
                     </ul>
                 </li>
-                <li><a class="collapsed heading">源码管理</a>
+                <li><a class="collapsed heading">注释管理</a>
                     <ul class="navigation">
-                        <li><a href="NoteList.aspx" onclick="setCurrent(this)" target="maincontent">源码列表</a></li>
+                        <li><a href="NoteList.aspx" onclick="setCurrent(this)" target="maincontent">注释列表</a></li>
                     </ul>
                 </li>
                 <li><a class="collapsed heading">其他</a>
