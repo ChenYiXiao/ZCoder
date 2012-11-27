@@ -1,16 +1,18 @@
 ﻿/***************************************************************************************************
- *                    (c) Copyright 1992-2009 Embedded Products Research Center
- *                                       All Rights Reserved
+ *            
  *
- *\File          usdl_xxx.h
- *\Description   XXXXXXXXXXXXX
- *\Log           2008.XX.XX    Ver 1.0    张三
+ *\File          ProjectOperation
+ *\Description   工程的操作，包括工程的添加，工程的编辑，工程的删除。
+ *\Log           2012.11.27    Ver 1.0    
  *               创建文件。
  ***************************************************************************************************/
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data.SqlClient;
+using System.Data;
+using System.Web.UI;
 
 /// <summary>
 ///ProjectOperation 的摘要说明
@@ -35,5 +37,45 @@ public class ProjectOperation
         {
             return false;
         }
+    }
+
+
+
+    public static void EditProject(string ProjectName, string description, int type,int ID)
+    {
+        /*工程的修改*/
+        DataBase db = new DataBase();
+        string sql = "UPDATE tb_project SET projectName ='" + ProjectName + "',description ='" + description + "',Tid = "+ type +" where id=" + ID.ToString();
+        db.ExCommandNoBack(sql);
+    }
+
+   
+
+    public static void DelProject(String id)
+    {
+        /*删除工程*/
+        DataBase db = new DataBase();
+        string sql = "delete from dbo.tb_project where id=" + id + "";
+        db.ExCommandNoBack(sql);
+
+    }
+   
+    public static ProjectEntity GetProject(int projectId)
+    {
+        /*获取工程信息*/
+        DataBase db = new DataBase();
+        DataSet rs = db.RunProcReturn("select * from tb_project where id=" + projectId, "tb_project");
+        if (rs.Tables[0].Rows.Count > 0)
+        {
+            ProjectEntity pe = new ProjectEntity();
+            pe.ProjectName = rs.Tables[0].Rows[0]["projectName"].ToString();
+            pe.Uid = int.Parse(rs.Tables[0].Rows[0]["uid"].ToString());
+            pe.Tid = int.Parse(rs.Tables[0].Rows[0]["tid"].ToString());
+            pe.UpTime = DateTime.Parse(rs.Tables[0].Rows[0]["uptime"].ToString());
+            pe.Id = int.Parse(rs.Tables[0].Rows[0]["id"].ToString());
+            pe.Description = rs.Tables[0].Rows[0]["description"].ToString();
+            return pe;
+        }
+        return null;
     }
 }
