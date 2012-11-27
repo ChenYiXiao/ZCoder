@@ -56,9 +56,9 @@
                         <asp:Label ID="regTimeLabel" runat="server" Text='<%# Eval("upTime") %>' />
                     </td>
                     <td>
-                        <asp:HyperLink ID="hlEdit" runat="server" Text="编辑" NavigateUrl='<%# Eval("id", "edituser.aspx?id={0}") %>'
+                        <asp:HyperLink ID="hlEdit" runat="server" Text="编辑" NavigateUrl='<%# Eval("id", "EditProject.aspx?id={0}") %>'
                             ForeColor="#666666"></asp:HyperLink>
-                        <asp:HyperLink ID="HyperLink1" runat="server" Text="删除" NavigateUrl='<%# Eval("id", "deluser.aspx?id={0}") %>'
+                        <asp:HyperLink ID="HyperLink1" runat="server" Text="删除" NavigateUrl='<%# Eval("id", "DelProject.aspx?id={0}") %>'
                             ForeColor="#666666"></asp:HyperLink>
                     </td>
                 </tr>
