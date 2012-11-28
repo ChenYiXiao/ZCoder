@@ -1,7 +1,7 @@
 ﻿/***************************************************************************************************
  *            
  *
- *\File          ProjectOperation
+ *\File          ProjectOperation.cs
  *\Description   工程的操作，包括工程的添加，工程的编辑，工程的删除。
  *\Log           2012.11.27    Ver 1.0    
  *               创建文件。
@@ -26,6 +26,7 @@ public class ProjectOperation
 		//
 	}
     public static bool AddProject(ProjectEntity pe){
+        /*增加一个工程*/
         DataBase db = new DataBase();
         try
         {

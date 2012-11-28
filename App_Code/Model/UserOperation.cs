@@ -1,10 +1,8 @@
 ﻿/***************************************************************************************************
- *                    (c) Copyright 1992-2009 Embedded Products Research Center
- *                                       All Rights Reserved
- *
- *\File          usdl_xxx.h
- *\Description   XXXXXXXXXXXXX
- *\Log           2008.XX.XX    Ver 1.0    张三
+ * 
+ *\File          UserOperation.cs
+ *\Description   关于用户的一些操作，包括用户的添加，修改，删除，和获取用户信息。
+ *\Log           2012.11.01    Ver 1.0    
  *               创建文件。
  ***************************************************************************************************/
 using System;
