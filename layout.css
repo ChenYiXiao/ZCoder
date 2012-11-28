@@ -576,5 +576,11 @@ padding-top: 0px;
 text-align: -webkit-auto;
 text-decoration: none;
 width: 28px;
-
+}
+.numbtn
+{
+    background-color: #F0F0F0;
+    font-weight: bold;
+    border: 1px solid #CCCCCC;
+    color: #C0C0C0;
 }
