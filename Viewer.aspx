@@ -1,41 +1,55 @@
-﻿<%@ Page Title="" Language="C#" AutoEventWireup="true"
-    CodeFile="Viewer.aspx.cs" Inherits="Viewer" %>
+﻿<%@ Page Title="" Language="C#" AutoEventWireup="true" CodeFile="Viewer.aspx.cs"
+    Inherits="Viewer" %>
 
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/Viewer.js"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script type="text/javascript" src="scripts/XRegExp.js"></script>
     <script type="text/javascript" src="scripts/shCore.js"></script>
     <script type="text/javascript" src="scripts/<%=langEntity.BrushFile %>"></script>
-    <link type="text/css" rel="stylesheet" href="styles/shCoreDefault.css" />
-    <script type="text/javascript">        SyntaxHighlighter.all();</script>
-     <span style="font-size: small; color: #999999; font-weight: bold">源码文件名:<%=codeEntity.Path.Substring(codeEntity.Path.LastIndexOf("\\")+1,codeEntity.Path.Length-codeEntity.Path.LastIndexOf("\\")-1) %></span>
-     <hr />
-        <table width="100%" 
-            style="color: #999999font-size: small; margin: auto; font-size: 12px; color: #999999;">
-            <tr>
-                <td width="20%">
-                   上传用户:
-                </td>
-                <td>
-                </td>
-                <td>
-                    语言：
-                </td>
-                <td>
-                    <%= langEntity.Name %>
-                </td>
-            </tr>
-             <tr>
-                <td width="20%">
-                    
-                </td>
-                <td>
-                </td>
-                <td>
-                </td>
-                <td>
-                </td>
-            </tr>
-           
-           
-        </table>
-        <%=Pre %>
+    <link type="text/css" rel="stylesheet" href="styles/shCore.css" />
+    <link type="text/css" rel="stylesheet" href="styles/shThemeDefault.css" />
+    <script type="text/javascript">        SyntaxHighlighter.all();
+        var a = 51;
+    </script>
+</head>
+<body>
+    <span style="font-size: small; color: #999999; font-weight: bold">源码文件名:<%=codeEntity.Path.Substring(codeEntity.Path.LastIndexOf("\\")+1,codeEntity.Path.Length-codeEntity.Path.LastIndexOf("\\")-1) %></span>
+    <hr />
+    <table width="100%" style="color: #999999font-size: small; margin: auto; font-size: 12px;
+        color: #999999;">
+        <tr>
+            <td width="20%">
+                上传用户:
+            </td>
+            <td>
+            </td>
+            <td>
+                语言：
+            </td>
+            <td>
+                <%= langEntity.Name %>
+            </td>
+        </tr>
+        <tr>
+            <td width="20%">
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+        </tr>
+    </table>
+    <script type="syntaxhighlighter" class="brush: <%=langEntity.BrushAliases %>;"><![CDATA[
+<%=Pre %>
+]]></script>
+    <script type="text/javascript">
+      
+    </script>
+</body>
+</html>

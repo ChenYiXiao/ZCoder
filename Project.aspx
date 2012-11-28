@@ -36,6 +36,7 @@
                 var win = obj;
                 if (document.getElementById) {
                     if (win && !window.opera) {
+                        win.height = 0;
                         if (win.contentDocument && win.contentDocument.body.offsetHeight)
                             win.height = win.contentDocument.body.offsetHeight + 20;
                         else if (win.Document && win.Document.body.scrollHeight)

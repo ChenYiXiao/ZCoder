@@ -27,9 +27,9 @@ public partial class Viewer : System.Web.UI.Page
             codeEntity= CodeOperation.GetCode(int.Parse(id));
             langEntity = LangOperation.GetLang(codeEntity.Lid);
             userEntity = UserOperation.GetUser(codeEntity.Uid);
-            Pre += "<pre style=\"margin:auto;\" class=\"brush: " + langEntity.BrushAliases + ";toolbar: false;\">";
+            /*Pre += "<pre style=\"margin:auto;\" class=\"brush: " + langEntity.BrushAliases + ";toolbar: false;\">";*/
             Pre+=File.ReadAllText(Server.MapPath(AppConfiger.GetProjectsDir(Server)+codeEntity.Path),System.Text.Encoding.GetEncoding("GBK"));
-            Pre += "</pre>";
+           /* Pre += "</pre>";*/
         }
         catch { }
     }

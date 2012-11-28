@@ -1,7 +1,23 @@
+/**
+* SyntaxHighlighter
+* http://alexgorbatchev.com/SyntaxHighlighter
+*
+* SyntaxHighlighter is donationware. If you are using it, please donate.
+* http://alexgorbatchev.com/SyntaxHighlighter/donate.html
+*
+* @version
+* 3.0.83 (July 02 2010)
+* 
+* @copyright
+* Copyright (C) 2004-2010 Alex Gorbatchev.
+*
+* @license
+* Dual licensed under the MIT and GPL licenses.
+*/
 //
 // Begin anonymous function. This is used to contain local scope variables without polutting global scope.
 //
-if (typeof (SyntaxHighlighter) == 'undefined') var SyntaxHighlighter = function () {
+var SyntaxHighlighter = function () {
 
     // CommonJS
     if (typeof (require) != 'undefined' && typeof (XRegExp) == 'undefined') {
@@ -58,8 +74,6 @@ if (typeof (SyntaxHighlighter) == 'undefined') var SyntaxHighlighter = function 
             /** Gets or sets light mode. Equavalent to turning off gutter and toolbar. */
             'light': false,
 
-            'unindent': true,
-
             'html-script': false
         },
 
@@ -85,7 +99,7 @@ if (typeof (SyntaxHighlighter) == 'undefined') var SyntaxHighlighter = function 
                 brushNotHtmlScript: 'Brush wasn\'t configured for html-script option: ',
 
                 // this is populated by the build script
-                aboutDialog: '@ABOUT@'
+                aboutDialog: '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>About SyntaxHighlighter</title></head><body style="font-family:Geneva,Arial,Helvetica,sans-serif;background-color:#fff;color:#000;font-size:1em;text-align:center;"><div style="text-align:center;margin-top:1.5em;"><div style="font-size:xx-large;">SyntaxHighlighter</div><div style="font-size:.75em;margin-bottom:3em;"><div>version 3.0.83 (July 02 2010)</div><div><a href="http://alexgorbatchev.com/SyntaxHighlighter" target="_blank" style="color:#005896">http://alexgorbatchev.com/SyntaxHighlighter</a></div><div>JavaScript code syntax highlighter.</div><div>Copyright 2004-2010 Alex Gorbatchev.</div></div><div>If you like this script, please <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2930402" style="color:#005896">donate</a> to <br/>keep development active!</div></div></body></html>'
             }
         },
 
@@ -108,15 +122,15 @@ if (typeof (SyntaxHighlighter) == 'undefined') var SyntaxHighlighter = function 
             multiLineDoubleQuotedString: new XRegExp('"([^\\\\"]|\\\\.)*"', 'gs'),
             multiLineSingleQuotedString: new XRegExp("'([^\\\\']|\\\\.)*'", 'gs'),
             xmlComments: /(&lt;|<)!--[\s\S]*?--(&gt;|>)/gm,
-            url: /\w+:\/\/[\w-.\/?%&=:@;#]*/g,
+            url: /\w+:\/\/[\w-.\/?%&=:@;]*/g,
 
             /** <?= ?> tags. */
-            phpScriptTags: { left: /(&lt;|<)\?(?:=|php)?/g, right: /\?(&gt;|>)/g, 'eof': true },
+            phpScriptTags: { left: /(&lt;|<)\?=?/g, right: /\?(&gt;|>)/g },
 
             /** <%= %> tags. */
             aspScriptTags: { left: /(&lt;|<)%=?/g, right: /%(&gt;|>)/g },
 
-            /** <script> tags. */
+            /** <script></script> tags. */
             scriptScriptTags: { left: /(&lt;|<)\s*script.*?(&gt;|>)/gi, right: /(&lt;|<)\/\s*script\s*(&gt;|>)/gi }
         },
 
@@ -344,6 +358,9 @@ if (typeof (SyntaxHighlighter) == 'undefined') var SyntaxHighlighter = function 
         }
     }; // end of sh
 
+    sh['all'] = sh.all;
+    sh['highlight'] = sh.highlight;
+
     /**
     * Checks if target DOM elements has specified CSS class.
     * @param {DOMElement} target Target DOM element to check.
@@ -394,7 +411,7 @@ if (typeof (SyntaxHighlighter) == 'undefined') var SyntaxHighlighter = function 
     * @return {Array} Returns array of lines.
     */
     function splitLines(block) {
-        return block.split(/\r?\n/);
+        return block.split('\n');
     }
 
     /**
@@ -629,7 +646,7 @@ if (typeof (SyntaxHighlighter) == 'undefined') var SyntaxHighlighter = function 
 
         result = sh.brushes[brushes[alias]];
 
-        if (result == null && showAlert)
+        if (result == null && showAlert != false)
             alert(sh.config.strings.noBrush + alias);
 
         return result;
@@ -646,8 +663,7 @@ if (typeof (SyntaxHighlighter) == 'undefined') var SyntaxHighlighter = function 
         for (var i = 0; i < lines.length; i++)
             lines[i] = callback(lines[i], i);
 
-        // include \r to enable copy-paste on windows (ie8) without getting everything on one line
-        return lines.join('\r\n');
+        return lines.join('\n');
     };
 
     /**
@@ -1059,9 +1075,6 @@ if (typeof (SyntaxHighlighter) == 'undefined') var SyntaxHighlighter = function 
         // using \r instead of \r or \r\n makes this work equally well on IE, FF and Webkit
         code = code.join('\r');
 
-        // For Webkit browsers, replace nbsp with a breaking space
-        code = code.replace(/\u00a0/g, " ");
-
         // inject <textarea/> tag
         textarea.appendChild(document.createTextNode(code));
         container.appendChild(textarea);
@@ -1301,7 +1314,7 @@ if (typeof (SyntaxHighlighter) == 'undefined') var SyntaxHighlighter = function 
             if (lineNumber == 0)
                 classes.push('break');
 
-            return '<div' + ' id="MyOn" class="' + classes.join(' ') + '">' + code + '</div>';
+            return '<div class="' + classes.join(' ') + '">' + code + '</div>';
         },
 
         /**
@@ -1327,12 +1340,12 @@ if (typeof (SyntaxHighlighter) == 'undefined') var SyntaxHighlighter = function 
 				code = lineNumber == 0 ? sh.config.space : padNumber(lineNumber, pad)
 				;
 
-                html += this.getLineHtml(i, lineNumber, code + '<input type="button" value="Z"  onclick="alert('+a+')" id="myhaha" />');
+                html += this.getLineHtml(i, lineNumber, code);
             }
 
             return html;
         },
-      
+
         /**
         * Splits block of text into individual DIV lines.
         * @param {String} code			Code to highlight.
@@ -1470,8 +1483,7 @@ if (typeof (SyntaxHighlighter) == 'undefined') var SyntaxHighlighter = function 
 			;
 
             // unindent code by the common indentation
-            if (this.getParam('unindent'))
-                code = unindent(code);
+            code = unindent(code);
 
             if (gutter)
                 lineNumbers = this.figureOutLineNumbers(code);
@@ -1579,18 +1591,13 @@ if (typeof (SyntaxHighlighter) == 'undefined') var SyntaxHighlighter = function 
         * @param {Object} regexGroup Object containing `left` and `right` regular expressions.
         */
         forHtmlScript: function (regexGroup) {
-            var regex = { 'end': regexGroup.right.source };
-
-            if (regexGroup.eof)
-                regex.end = "(?:(?:" + regex.end + ")|$)";
-
             this.htmlScript = {
                 left: { regex: regexGroup.left, css: 'script' },
                 right: { regex: regexGroup.right, css: 'script' },
                 code: new XRegExp(
 				"(?<left>" + regexGroup.left.source + ")" +
 				"(?<code>.*?)" +
-				"(?<right>" + regex.end + ")",
+				"(?<right>" + regexGroup.right.source + ")",
 				"sgi"
 				)
             };
@@ -1598,12 +1605,7 @@ if (typeof (SyntaxHighlighter) == 'undefined') var SyntaxHighlighter = function 
     }; // end of Highlighter
 
     return sh;
-} ();  // end of anonymous function
+} (); // end of anonymous function
 
 // CommonJS
-typeof(exports) != 'undefined' ? exports.SyntaxHighlighter = SyntaxHighlighter : null;
-$(function () {
-    $('#myhaha').mouseup(function () {
-        alert('haha');
-    });
-});
+typeof (exports) != 'undefined' ? exports['SyntaxHighlighter'] = SyntaxHighlighter : null;
