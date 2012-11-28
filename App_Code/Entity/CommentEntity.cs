@@ -18,45 +18,44 @@ public class CommentEntity
     int Id = -1;
     public int id {
         get { return id; }
-        set { id = value; }
     }
 
     String commentTitle = "";
     public String CommetTitle {
-        get { return CommetTitle; }
-        set { CommetTitle = value; }
+        get { return commentTitle; }
+        set { commentTitle = value; }
     }
 
     String conText = "";
     public String ConText {
-        get { return ConText; }
-        set { ConText = value; }
+        get { return conText; }
+        set { conText = value; }
     }
 
-    int Agree = -1;
-    public int agree {
+    int agree = -1;
+    public int Agree {
         get { return agree; }
         set { agree = value; }
     }
 
-    int Disagree = -1;
+    int disAgree = -1;
     public int DisAgree
     {
-        get { return DisAgree; }
-        set { DisAgree = value; }
+        get { return disAgree; }
+        set { disAgree = value; }
     }
 
     int Uid = -1;
     public int uid {
-        get { return uid; }
-        set { uid = value; }
+        get { return Uid; }
+        set { Uid = value; }
     }
 
     int Nid = -1;
     public int nid
     {
-        get { return nid; }
-        set { nid = value; }
+        get { return Nid; }
+        set { Nid = value; }
     }
 
     DateTime upTime = DateTime.Now;
