@@ -14,7 +14,7 @@
             <th>
                 ID
             </th>
-            <th>
+            <th class="style1">
                 工程名
             </th>
             <th>
@@ -68,3 +68,12 @@
     <br />
     <br />
 </asp:Content>
+<asp:Content ID="Content3" runat="server" contentplaceholderid="Ct1">
+    <style type="text/css">
+        .style1
+        {
+            width: 52px;
+        }
+    </style>
+</asp:Content>
+
