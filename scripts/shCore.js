@@ -1327,7 +1327,7 @@ if (typeof (SyntaxHighlighter) == 'undefined') var SyntaxHighlighter = function 
 				code = lineNumber == 0 ? sh.config.space : padNumber(lineNumber, pad)
 				;
 
-                html += this.getLineHtml(i, lineNumber, code + '<img src="/images/regright.png"  onclick="parent.popWindow=parent.OpenWindow(\'Works\');parent.ClickLineNum(' + lineNumber + '); " id="myhaha" />');
+                html += this.getLineHtml(i, lineNumber, code + '<img src="/images/regright.png"  onclick="parent.popWindow=parent.OpenWindow(\'Works\',null,null,event);parent.ClickLineNum(' + lineNumber + '); " id="myhaha" />');
             }
 
             return html;

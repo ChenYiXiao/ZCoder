@@ -3,12 +3,11 @@
 
 <%@ Register Src="admin/RSManager/RSManager.ascx" TagName="RSManager" TagPrefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-       <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
-
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
     <link rel="stylesheet" href="/Com/zTree/css/zTreeStyle/zTreeStyle.css" type="text/css">
     <script type="text/javascript" src="/Com/zTree/js/jquery-1.4.4.min.js"></script>
     <script type="text/javascript" src="/Com/zTree/js/jquery.ztree.core-3.5.js"></script>
-       <link rel="stylesheet" type="text/css" href="styles/_Window.css" />
+    <link rel="stylesheet" type="text/css" href="styles/_Window.css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="zBlockLeft" style="width: 235px">
@@ -33,7 +32,7 @@
             $.fn.zTree.init($("#treeDemo"), setting, zNodes);
         });
 		//-->
-	</script>
+        </script>
         <script language="javascript">
             function SetWinHeight(obj) {
                 var win = obj;
@@ -48,8 +47,8 @@
                 }
             } </script>
     </div>
-     <div id="Data" style="display: none;">
-        <div id="Works" >
+    <div id="Data" style="display: none;">
+        <div id="Works">
             <span id="startLine">起始行号：0</span> <span id="endLine">终止行号：0</span>
             <p id="tip">
                 请再次点击某个行号按钮获得终止行的行号。也可直接填写注释。</p>
@@ -93,5 +92,5 @@
 
             </script>
         </div>
-        </div>
+    </div>
 </asp:Content>

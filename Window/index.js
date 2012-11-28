@@ -42,7 +42,7 @@ function UseVistaInIE6(obj) {
 }
 
 var windows = new Array();
-windows["Works"] = { object: null, type: 0, title: "填写注释", features: "left=0,top=300,width=305,height=-1,button=OK|CANCEL", x: 80, y: 80 };
+windows["Works"] = { object: null, type: 0, title: "填写注释", features: "left=0,top=300,width=305,height=-1,button=OK|CANCEL", x:0, y:0  };
 windows["UpLoadClass"] = { object: null, type: 0, title: "风声 ASP 无组件上传类", features: "height=-1", x: 335, y: parseInt(Math.random() * 300) };
 windows["FonshenASP"] = { object: null, type: 0, title: "风声 ASP 上传组件", features: "height=-1", x: 335, y: parseInt(Math.random() * 300) };
 windows["ListPager"] = { object: null, type: 0, title: "风声 ASP 列表分页类", features: "height=-1", x: 335, y: parseInt(Math.random() * 300) };
@@ -55,12 +55,14 @@ windows["Welcome"] = { object: null, type: 2, title: "欢迎光临", features: "
 windows["url"] = { object: null, type: 0, title: "", features: "move=move-x,resize=resize-y,width=802,height=" + (document.documentElement.scrollHeight - 56), x: 170, y: 0 };
 var ieVersion = GetIeVersion();
 
-function OpenWindow(id, url, name) {
+function OpenWindow(id, url, name,obj) {
     var content, title, features;
     if (url) { id = "url"; content = "[url]" + url; title = name; }
     else { content = "[id]" + id; title = windows[id].title; }
+    
     features = windows[id].features;
-
+    windows[id].x = obj.clientX+150;
+    windows[id].y = obj.clientY;
     var win = windows[id].object, mode = 0;
     if (win) switch (win.status) {
         case 0: win.Show(); if (url) mode = 1; else mode = 2; break;
