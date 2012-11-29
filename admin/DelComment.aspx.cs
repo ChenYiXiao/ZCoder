@@ -17,18 +17,19 @@ public partial class admin_DelComment : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if(!IsPostBack){
-        int id = int.Parse(Request.QueryString["id"].ToString());
-        CommentEntity ce=CommentOperation.GetComment(id);
-            if(ce!=null){
-            lb_id.Text=ce.id.ToString();
-            lb_ct.Text=ce.CommetTitle;
-            lb_context.Text=ce.ConText;
-            lb_agree.Text=ce.Agree.ToString();
-            lb_disagree.Text=ce.DisAgree.ToString();
-            lb_nid.Text=ce.nid.ToString();
-            lb_uid.Text=ce.uid.ToString();
-            lb_uptime.Text=ce.UpTime.ToString();
+        if (!IsPostBack)
+        {
+            CommentEntity ce = CommentOperation.GetComment(int.Parse(Request.QueryString["id"].ToString()));
+            if (ce != null)
+            {
+                lb_id.Text = ce.Id.ToString();
+                lb_ct.Text = ce.CommetTitle;
+                lb_context.Text = ce.ConText;
+                lb_agree.Text = ce.Agree.ToString();
+                lb_disagree.Text = ce.DisAgree.ToString();
+                lb_nid.Text = ce.nid.ToString();
+                lb_uid.Text = ce.uid.ToString();
+                lb_uptime.Text = ce.UpTime.ToString();
             }
         }
     }
@@ -38,11 +39,11 @@ public partial class admin_DelComment : System.Web.UI.Page
     }
     protected void btn_ok_Click(object sender, EventArgs e)
     {
-           try
+        try
         {
             //调用CommentOperation类里的DelComment方法，通过传入id，进行删除操作
             CommentOperation.DelComment(Int32.Parse(Request.QueryString["id"]));
-            SmallScript.goRedirect(Response, Session, "删除成功!", "~/admin/CommentList.aspx");
+            SmallScript.goRedirect(Response, Session, "删除成功!", "admin/CommentList.aspx");
         }
         catch
         {
@@ -51,4 +52,4 @@ public partial class admin_DelComment : System.Web.UI.Page
         }
     }
 
-    }
+}

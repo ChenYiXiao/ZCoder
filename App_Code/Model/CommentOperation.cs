@@ -35,6 +35,7 @@ public class CommentOperation
         if (rs.Tables[0].Rows.Count > 0)
         {
             CommentEntity ce = new CommentEntity();
+            ce.Id = int.Parse(rs.Tables[0].Rows[0]["id"].ToString());
             ce.CommetTitle = rs.Tables[0].Rows[0]["commenttitle"].ToString();
             ce.ConText = rs.Tables[0].Rows[0]["context"].ToString();
             ce.Agree = int.Parse(rs.Tables[0].Rows[0]["agree"].ToString());

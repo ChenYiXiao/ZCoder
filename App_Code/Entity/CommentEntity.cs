@@ -15,9 +15,10 @@ using System.Web;
 /// </summary>
 public class CommentEntity
 {
-    int Id = -1;
-    public int id {
+    int id = -1;
+    public int Id {
         get { return id; }
+        set { id = value; }
     }
 
     String commentTitle = "";
