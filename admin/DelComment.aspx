@@ -30,10 +30,11 @@
     ：<asp:Label ID="lb_uptime" runat="server" CssClass="layPadding" Text="Label"></asp:Label>
     <br />
     <br />
-    <asp:Button ID="btn_ok" runat="server" onclick="btn_ok_Click" Text="是" />
+    <asp:Button ID="btn_ok" runat="server" onclick="btn_ok_Click" Text="是" 
+        CssClass="zbutton" />
 &nbsp;&nbsp;&nbsp;
     <asp:Button ID="btn_Cancel" runat="server" onclick="btn_Cancel_Click" 
-        Text="否" />
+        Text="否" CssClass="zbutton" />
     <br />
 </asp:Content>
 

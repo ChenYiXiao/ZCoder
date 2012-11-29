@@ -22,6 +22,11 @@ public class CommentOperation
 	{
 	
 	}
+    public static void EditComment(String commenttitle, String context, int agree, int disagree,int id) {
+        DataBase db = new DataBase();
+        String sql = "update tb_comment set commenttitle='" + commenttitle + "',context='" + context + "',agree='" + agree + "',disagree='" + disagree + "' where id=" +id;
+        db.ExCommandNoBack(sql);
+    }
     public static void DelComment(int id) {
         DataBase db = new DataBase();
         String sql = "delete from dbo.tb_comment where id=" + id + "";
@@ -48,4 +53,5 @@ public class CommentOperation
         }
         return null;
     }
+    
 }
