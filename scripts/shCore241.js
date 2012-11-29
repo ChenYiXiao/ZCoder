@@ -1303,9 +1303,8 @@ var SyntaxHighlighter = function () {
         getLineHtml: function (lineIndex, lineNumber, code) {
             var classes = [
 			'line',
-			'numbers' + lineNumber,
+			'number' + lineNumber,
 			'index' + lineIndex,
-
 			'alt' + (lineNumber % 2 == 0 ? 1 : 2).toString()
 		];
 
