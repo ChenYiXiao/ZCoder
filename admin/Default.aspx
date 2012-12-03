@@ -99,6 +99,12 @@
                         <li><a href="NoteList.aspx" onclick="setCurrent(this)" target="maincontent">注释列表</a></li>
                     </ul>
                 </li>
+                    <li><a class="collapsed heading">评论管理</a>
+                    <ul class="navigation">
+                        <li><a href="CommentList.aspx" target="maincontent" title="首页" onclick="setCurrent(this)">
+                            评论列表</a></li>
+                            </ul>
+                </li>
                 <li><a class="collapsed heading">其他</a>
                     <ul class="navigation">
                         <li><a href="Enviroment.aspx" target="maincontent" title="首页" onclick="setCurrent(this)">

@@ -62,7 +62,8 @@
     <asp:Label ID="Label3" runat="server" Text="工程描述："></asp:Label>
             </td>
             <td>
-    <asp:TextBox ID="tb_description" runat="server" CssClass="inputbox"></asp:TextBox>
+    <asp:TextBox ID="tb_description" runat="server" CssClass="inputbox" Height="81px" 
+                    TextMode="MultiLine" Width="292px"></asp:TextBox>
                 <br />
                 <br />
             </td>
