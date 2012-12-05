@@ -1,0 +1,241 @@
+实验五 哈希表
+
+[实验目的]
+1、哈希函数的选择
+2、用链表创建哈希表
+3、输出哈希表
+
+[题目]
+假设人名为中国人姓名的汉语拼音形式。待填入哈希表的人名共有30个，取平均查找长度的上限为2。哈希函数用除留取余数法构造。用链表来处理冲突。
+
+[源程序]
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+
+#define MAXNAMENUM	100	/*最多处理100个名字*/
+#define MAXLISTLEN	49
+#define MAXNAME	80		/*最长的姓名*/
+
+typedef struct record		/*结构体定义*/
+{
+	int key;
+	char name[MAXNAME];
+	struct record *next;
+}Record,RECF[MAXLISTLEN];
+
+int modh(int,int);			/*Hash函数(除留余数法)*/
+void chainh(char *name ,RECF ,int,int (*hash)(int,int));
+void prhashlist(int,RECF ); /*输出散列表*/
+int NameToKey(char *name);	/*将字符串转换为关键字*/
+void InputAndCreateHR(int num,int listlen,RECF r);	/*输入姓名并创建哈希表*/
+int HashLen(int n);	/*计算实际表长*/
+int is(int x);		/*判断x是否为素数*/
+int InputNum();		/*确定姓名个数 */
+
+main()
+{
+	int num;				/*姓名个数*/
+	RECF r;					/*哈希表*/
+	int listlen;				/*实际哈希表的长度*/
+
+	num=InputNum();				/*输入姓名个数*/
+	listlen=HashLen(num);			/*确定哈希表实际长度*/
+	InputAndCreateHR(num,listlen,r);	/*输入姓名并创建哈希表*/
+	prhashlist(listlen,r);			/*显示哈希表*/
+}
+
+/*
+   用链地址法解决冲突的散列造表算法，根据(*hash)()函数造散列表
+   其中参数int(*hash)()是指向函数的指针，它返回一个整数（散列地址）
+*/	
+void chainh(char *name,RECF r,int listlen,int (*hash)(int,int))
+{
+	int addr;
+	Record *p,*q;
+	int k;
+	k=NameToKey(name);			/*把拼音转换为关键字*/
+	addr=(*hash)(k,listlen);
+	if (!r[addr].key)			/*建立链表，地址相等的情况*/
+	{
+		r[addr].key=k;			/*插入*/
+		strcpy(r[addr].name,name);
+	}
+	else if(r[addr].key!=k)			/*建立链表地址没有冲突的情况*/
+	{
+		p=r[addr].next; 
+		q=&r[addr];
+		while(p && p->key!=k)		/*内容不空且其地址与该地址不等*/
+		{
+			q=p; p=p->next;		/*插入*/
+		}
+		if(!p)	/*建立地址内容为空的链表结点*/
+		{
+			p=(Record *)malloc(sizeof(Record));  
+			p->key=k;  
+			strcpy(p->name,name);
+			p->next=NULL; 
+			q->next=p;
+		}
+	}
+}
+
+/* Hash函数(除留余数法) */
+int modh(int k,int listlen)			
+{
+	return(k % listlen);	/*返回模的值*/
+}
+
+/* 输出散列表  */
+void prhashlist(int listlen,RECF r)
+{
+	int i; 
+    Record *p;
+    printf("哈希地址\t链表\n");
+    for(i=0;i<listlen;i++)			/*按顺序输出关键字的地址位置，值，建立的链表*/
+    {
+	if(!r[i].key)			/*如果该地址中内容为空*/
+	    printf("%d\t\t^\n",i);
+        else
+	{
+	    printf("%d\t%s(%d)-->",i,r[i].name,r[i].key);
+            p=r[i].next;
+            while(p)
+            {
+		printf("%s(%d)-->",p->name,p->key); 
+                p=p->next;          
+	    }
+            printf("^\n");
+	}
+    }
+}
+
+/* 把名称的拼音字符转换对应的ASCII，累加后作为关键字 */
+int NameToKey(char *name)
+{
+	int value=0;
+	int i,len;
+	len=strlen(name);
+	for(i=0;i<len;i++)
+		value+=*(name+i);
+	return value;
+}
+
+/* 确定姓名个数 */
+int InputNum()
+{
+	int n;
+	printf("待处理的名字有多少个(3--%d):",MAXNAMENUM);
+	do{
+		scanf("%d",&n);
+	}while(n<=2 && n>MAXNAMENUM);
+	return n;
+}
+
+int is(int x)		/*判断x是否为素数*/
+{
+	int i,k;
+	k=(int)sqrt(x);
+	for(i=2;i<=k;i++)
+		if(x%k==0)return 0;
+	return 1;
+}
+
+/*
+  根据数据量n，限定平均查找次数为2，故哈希查找表中关键字的
+  最大个数为不大于n/2的最大素数
+*/
+int HashLen(int n)
+{
+	int m;
+	m=n/2;
+	while(m>2 && !is(m))m--;
+	return m;
+}
+
+void InputAndCreateHR(int num,int listlen,RECF r)
+{
+	int i;
+	char name[MAXNAME];
+
+    for(i = 0;i < listlen;i++)		/*初始化哈希表*/
+    {
+		r[i].key = 0; 
+		r[i].name[0]='\0';
+		r[i].next = NULL;
+	}
+	printf("输入%d个姓名(每行一个):\n",num);
+	for(i=0;i<num;i++)
+	{
+		gets(name);	/*输入名字*/
+		chainh(name,r,listlen,modh);	/*用除留余数法确定关键字在链表中的位置*/
+	}
+}
+
+[程序运行结果]
+待处理的名字有多少个(3--100):36
+输入36个姓名(每行一个):
+Hao liu
+Liu yang
+Liu xiangguan
+Chen zhi
+Zhang zhiqiang
+Shun xiangdong
+Gao ming
+Li he
+Fan shenjun
+Wang shouxin
+Yang fan
+Ding xianglong
+Ji zhongxian
+Yin rongji
+Zhao yu
+Song peng
+Zhen jieyun
+Wang xi
+Li chong
+Cheng zhongbo
+Cao minggang
+Lan xinhai
+Li jie
+Cao shilong
+Li na
+Li hongxin
+Li linlin
+Chen ying
+Li lihua
+Zhang jianping
+Zhang hui
+Feng qian
+Jin shan
+Guo zhidong
+Shen chen
+Jiao xin
+
+哈希地址	链表
+0	Gao ming(738)-->^
+1	Shun xiangdong(1405)-->Song peng(865)-->Cao shilong(1063)-->^
+2	Yang fan(740)-->Lan xinhai(956)-->^
+3	Li jie(525)-->^
+4	Li he(418)-->Li hongxin(976)-->^
+5	Liu yang(761)-->Wang shouxin(1211)-->Ji zhongxian(1193)-->^
+6	Zhao yu(672)-->Wang xi(654)-->Li na(420)-->Li lihua(744)-->Guo zhidong(1086)-->^
+7	Chen zhi(745)-->Chen ying(853)-->^
+8		^
+9	Zhang zhiqiang(1395)-->Jin shan(747)-->^
+10	Fan shenjun(1072)-->^
+11		^
+12	Hao liu(642)-->^
+13	Yin rongji(985)-->Cao minggang(1147)-->Li linlin(859)-->Feng qian(841)-->^
+14	Liu xiangguan(1292)-->^
+15		^
+16	Cheng zhongbo(1276)-->Zhang jianping(1384)-->Zhang hui(862)-->Shen chen(844)-->^
+17	Ding xianglong(1385)-->Zhen jieyun(1097)-->^
+
+★★★★★★★★★★★★★★★★★★★★★★
+★  作者:抚顺职业技术学院  闫会昌  
+★  网址: yanhuichang.myoow.com
+★            559465.tomore.com
+★  QQ  :274376812
+★★★★★★★★★★★★★★★★★★★★★★
