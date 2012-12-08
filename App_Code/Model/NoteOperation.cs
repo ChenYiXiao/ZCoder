@@ -30,7 +30,7 @@ public class NoteOperation
         DataBase db = new DataBase();
         try
         {
-            string sql =string.Format( "INSERT INTO tb_note ( noteName, uid, upTime, startLine, endLine, cid, agree, disagree )VALUES  ( '{0}', '{1}','{2}', {3}, {4},{5},{6},{7},{8})",ne.NoteName, ne.Uid,ne.UpTime,ne.StartLine,ne.EndLine,ne.Cid,ne.Agree,ne.Disagree);
+            string sql =string.Format( "INSERT INTO tb_note ( noteName, uid, upTime, startLine, endLine, cid, agree, disagree,context )VALUES  ( '{0}', '{1}','{2}', {3}, {4},{5},{6},{7},'{8}')",ne.NoteName, ne.Uid,ne.UpTime.ToString(),ne.StartLine,ne.EndLine,ne.Cid,ne.Agree,ne.Disagree,ne.Context.Trim().Replace(" ",""));
             db.ExCommandNoBack(sql);
             return true;
         }

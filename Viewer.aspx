@@ -52,11 +52,13 @@
     function Highlight() {
         for (var i = parent.startLine; i <= parent.endLine; i++) {
             $('[id=LineNum' + i + ']').css('background-color', '#eee');
+            parent.cid=<%=Request.QueryString["id"].ToString() %>;
         }
     }
     function Lowlight() {
         for (var i = parent.startLine; i <= parent.endLine; i++) {
             $('[id=LineNum' + i + ']').css('background-color', '');
+            parent.cid=<%=Request.QueryString["id"].ToString() %>;
         }
     }
 </script>

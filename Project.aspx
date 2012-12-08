@@ -52,7 +52,7 @@
             <span id="startLine">起始行号：0</span> <span id="endLine">终止行号：0</span>
             <p id="tip">
                 请再次点击某个行号按钮获得终止行的行号。也可直接填写注释。</p>
-            <textarea name="noteContext" style="width: 260px; height: 60px"></textarea>
+            <textarea id="noteContext" name="noteContext" style="width: 260px; height: 60px"></textarea>
             <script type="text/javascript" src="Window/_Window.js"></script>
             <script type="text/javascript" src="Window/index.js"></script>
             <script type="text/javascript">
@@ -61,16 +61,29 @@
                 var endLine = -1;
                 var isClicked = false;
                 var popWindow;
+                var cid = 0;
                 function ClickLineNum(Num) {
                     if (typeof (popWindow) != 'undefined') {
+                        $('#noteContext').show();
                         popWindow.OnCANCEL = function () {
                             isClicked = false;
                             popWindow.Close();
                             window.frames['sourceFrame'].Lowlight();
                         }
+                        popWindow.OnOK = function () {
+                            $('#tip').load(window.encodeURI('addnote.aspx?cid=' + cid + '&startline=' + startLine + '&endline=' + endLine + '&context=' + $('#noteContext').val()));
+                            if ($('#tip').text() == "注释添加成功。") {
+                                isClicked = false;
+                                $('#tip').text("注释添加成功。点击确定，关闭本窗口。");
+                                $('#noteContext').val("");
+                                window.frames['sourceFrame'].Lowlight();
+                                popWindow.OnOK = popWindow.Close();
+
+                            }
+                        }
                     }
                     if (!isClicked) {
-                        $('#tip').text('请再次点击某个行号按钮获得终止行的行号。也可直接填写注释。');
+                        $('#tip').text('请再次点击某个行号按钮获得终止行的行号。');
                         isClicked = true;
                         startLine = Num;
                         endLine = Num;
@@ -85,7 +98,7 @@
                         }
                         else {
                             window.frames['sourceFrame'].Lowlight();
-                            $('#tip').text('请再次点击某个行号按钮获得终止行的行号。也可直接填写注释。');
+                            $('#tip').text('请再次点击某个行号按钮获得终止行的行号。');
                             endLine = Num;
                             $('#endLine').html('终止行号：<strong>' + Num + '</strong>');
                             window.frames['sourceFrame'].Highlight();

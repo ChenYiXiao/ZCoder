@@ -78,5 +78,12 @@ public class NoteEntity
             get { return disagree; }
             set { disagree = value; }
         }
+        string context = "";
+
+        public string Context
+        {
+            get { return context; }
+            set { context = value; }
+        }
 
  }
