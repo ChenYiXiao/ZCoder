@@ -61,6 +61,12 @@
             parent.cid=<%=Request.QueryString["id"].ToString() %>;
         }
     }
+    $(document).load=function()
+    {
+        var LineNum=<%=jsaLineNum %>;
+        var LineCount=<%=jsaLineCount %>;
+
+    }
 </script>
 </body>
 </html>
