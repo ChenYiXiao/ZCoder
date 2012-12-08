@@ -66,7 +66,7 @@
                         popWindow.OnCANCEL = function () {
                             isClicked = false;
                             popWindow.Close();
-
+                            window.frames['sourceFrame'].Lowlight();
                         }
                     }
                     if (!isClicked) {
@@ -76,6 +76,7 @@
                         endLine = Num;
                         $('#startLine').html('起始行号：<strong>' + Num + '</strong>');
                         $('#endLine').html('终止行号：<strong>' + Num + '</strong>');
+                        window.frames['sourceFrame'].Highlight();
                     }
                     else {
                         if (Num < startLine) {
@@ -83,9 +84,11 @@
                             return;
                         }
                         else {
+                            window.frames['sourceFrame'].Lowlight();
                             $('#tip').text('请再次点击某个行号按钮获得终止行的行号。也可直接填写注释。');
                             endLine = Num;
                             $('#endLine').html('终止行号：<strong>' + Num + '</strong>');
+                            window.frames['sourceFrame'].Highlight();
                         }
                     }
                 }

@@ -577,3 +577,8 @@ text-align: -webkit-auto;
 text-decoration: none;
 width: 28px;
 }
+.LineNumHighlight
+{
+      background-color: #eee !important ;
+      
+}

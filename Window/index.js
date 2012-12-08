@@ -61,7 +61,7 @@ function OpenWindow(id, url, name,obj) {
     else { content = "[id]" + id; title = windows[id].title; }
     
     features = windows[id].features;
-    windows[id].x = obj.clientX+150;
+    windows[id].x = 20;
     windows[id].y = obj.clientY;
     var win = windows[id].object, mode = 0;
     if (win) switch (win.status) {

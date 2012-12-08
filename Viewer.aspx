@@ -47,5 +47,18 @@
     <script type="syntaxhighlighter" class="brush: <%=langEntity.BrushAliases %>;"><![CDATA[
 <%=Pre %>
 ]]></script>
+
+<script type="text/jscript">
+    function Highlight() {
+        for (var i = parent.startLine; i <= parent.endLine; i++) {
+            $('[id=LineNum' + i + ']').css('background-color', '#eee');
+        }
+    }
+    function Lowlight() {
+        for (var i = parent.startLine; i <= parent.endLine; i++) {
+            $('[id=LineNum' + i + ']').css('background-color', '');
+        }
+    }
+</script>
 </body>
 </html>
