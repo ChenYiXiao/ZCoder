@@ -339,8 +339,12 @@ if (typeof (SyntaxHighlighter) == 'undefined') var SyntaxHighlighter = function 
             attachEvent(
 			window,
 			'load',
-			function () { sh.highlight(params); }
+			function () {
+			    sh.highlight(params);
+			    Inte();
+			}
 		);
+            
         }
     }; // end of sh
 

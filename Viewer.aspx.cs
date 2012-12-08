@@ -57,7 +57,11 @@ public partial class Viewer : System.Web.UI.Page
             jsaLineNum = complieArray(index);
             jsaLineCount = complieArray(indexCount);
             /* Pre += "</pre>";*/
-
+            if (index.Count == 0)
+            {
+                jsaLineNum = "[]";
+                jsaLineCount = "[]";
+            }
         }
         catch { }
     }

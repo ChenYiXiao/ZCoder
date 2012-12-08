@@ -582,3 +582,16 @@ width: 28px;
       background-color: #eee !important ;
       
 }
+.LineDiv
+{
+   
+    z-index: 10;
+    top: 0px;
+    margin-left: 0px;
+    margin-top: 0px;
+    float: left;
+}
+.LineDivA
+{
+   color:Red;
+}

@@ -73,6 +73,7 @@
                         popWindow.OnOK = function () {
                             $('#tip').load(window.encodeURI('addnote.aspx?cid=' + cid + '&startline=' + startLine + '&endline=' + endLine + '&context=' + $('#noteContext').val()));
                             if ($('#tip').text() == "注释添加成功。") {
+                                window.frames['sourceFrame'].document.location.reload();
                                 isClicked = false;
                                 $('#tip').text("注释添加成功。点击确定，关闭本窗口。");
                                 $('#noteContext').val("");
@@ -90,19 +91,23 @@
                         $('#startLine').html('起始行号：<strong>' + Num + '</strong>');
                         $('#endLine').html('终止行号：<strong>' + Num + '</strong>');
                         window.frames['sourceFrame'].Highlight();
+                        return;
                     }
                     else {
+                        window.frames['sourceFrame'].Lowlight();
                         if (Num < startLine) {
-                            $('#tip').html('<font color="red">' + '终止行号必须大于等于起始行号，关闭本窗口可重新选择起始行号。</font>');
-                            return;
+                            var t = startLine;
+                            startLine = Num;
+                            endLine = t;
                         }
                         else {
-                            window.frames['sourceFrame'].Lowlight();
-                            $('#tip').text('请再次点击某个行号按钮获得终止行的行号。');
                             endLine = Num;
-                            $('#endLine').html('终止行号：<strong>' + Num + '</strong>');
-                            window.frames['sourceFrame'].Highlight();
                         }
+                        $('#tip').text('请再次点击某个行号按钮获得终止行的行号。');
+                        $('#startLine').html('起始行号：<strong>' + startLine + '</strong>');
+                        $('#endLine').html('终止行号：<strong>' + endLine + '</strong>');
+                        window.frames['sourceFrame'].Highlight();
+
                     }
                 }
 
