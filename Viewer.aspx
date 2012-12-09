@@ -14,14 +14,14 @@
     <link type="text/css" rel="stylesheet" href="styles/shCore.css" />
     <link type="text/css" rel="stylesheet" href="styles/shThemeDefault.css" />
     <script type="text/javascript">
-     function Inte()
-    {
+     function Inte() {
+        parent.cid=<%=Request.QueryString["id"].ToString() %>;
         var LineNum= <%=jsaLineNum %>;
         var LineCount= <%=jsaLineCount %>;
         for(var i=0;i<LineNum.length;i++)
         {
            
-                $('[id=LineNum'+LineNum[i]+']:odd').prepend($('<div class="LineDiv" style="position: absolute;left:-8px;"><span> <a class="LineDivA"><img src="images/note.png"'+'title="共有'+LineCount[i]+'条注释以改行为起始行"></img></a></span></div>'));
+                $('[id=LineNum'+LineNum[i]+']:odd').prepend($('<div class="LineDiv" style="position: absolute;left:-8px;"><span> <a class="LineDivA"><img src="images/note.png"'+'title="共有'+LineCount[i]+'条注释以改行为起始行" onClick="parent.SetLoadLine('+LineNum[i]+');parent.ClickNote(event);"></img></a></span></div>'));
                
         }
     };
@@ -61,18 +61,16 @@
 <%=Pre %>
 ]]></script>
     <script type="text/jscript">
-    function Highlight() {
-        for (var i = parent.startLine; i <= parent.endLine; i++) {
-            $('[id=LineNum' + i + ']').css('background-color', '#eee');
-            parent.cid=<%=Request.QueryString["id"].ToString() %>;
+        function Highlight() {
+            for (var i = parent.startLine; i <= parent.endLine; i++) {
+                $('[id=LineNum' + i + ']').css('background-color', '#eee');
+            }
         }
-    }
-    function Lowlight() {
-        for (var i = parent.startLine; i <= parent.endLine; i++) {
-            $('[id=LineNum' + i + ']').css('background-color', '');
-            parent.cid=<%=Request.QueryString["id"].ToString() %>;
+        function Lowlight() {
+            for (var i = parent.startLine; i <= parent.endLine; i++) {
+                $('[id=LineNum' + i + ']').css('background-color', '');
+            }
         }
-    }
    
     </script>
 </body>

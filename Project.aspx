@@ -53,67 +53,75 @@
             <p id="tip">
                 请再次点击某个行号按钮获得终止行的行号。也可直接填写注释。</p>
             <textarea id="noteContext" name="noteContext" style="width: 260px; height: 60px"></textarea>
-            <script type="text/javascript" src="Window/_Window.js"></script>
-            <script type="text/javascript" src="Window/index.js"></script>
-            <script type="text/javascript">
-
-                var startLine = -1;
-                var endLine = -1;
-                var isClicked = false;
-                var popWindow;
-                var cid = 0;
-                function ClickLineNum(Num) {
-                    if (typeof (popWindow) != 'undefined') {
-                        $('#noteContext').show();
-                        popWindow.OnCANCEL = function () {
-                            isClicked = false;
-                            popWindow.Close();
-                            window.frames['sourceFrame'].Lowlight();
-                        }
-                        popWindow.OnOK = function () {
-                            $('#tip').load(window.encodeURI('addnote.aspx?cid=' + cid + '&startline=' + startLine + '&endline=' + endLine + '&context=' + $('#noteContext').val()));
-                            if ($('#tip').text().indexOf('注释添加成功。点击确定，关闭本窗口。') == '注释添加成功。点击确定，关闭本窗口。'.indexOf($('#tip').text())) {
-                                $('#noteContext').val("");
-                                popWindow.OnOK = function () {
-                                    window.frames['sourceFrame'].document.location.reload();
-                                    isClicked = false;
-                                    window.frames['sourceFrame'].Lowlight();
-                                    popWindow.Close();
-                                }
-                                return;
-
-                            }
-                        }
-                    }
-                    if (!isClicked) {
-                        $('#tip').text('请再次点击某个行号按钮获得终止行的行号。');
-                        isClicked = true;
-                        startLine = Num;
-                        endLine = Num;
-                        $('#startLine').html('起始行号：<strong>' + Num + '</strong>');
-                        $('#endLine').html('终止行号：<strong>' + Num + '</strong>');
-                        window.frames['sourceFrame'].Highlight();
-                        return;
-                    }
-                    else {
+        </div>
+        
+        <script type="text/javascript" src="Window/_Window.js"></script>
+        <script type="text/javascript" src="Window/index.js"></script>
+        <script type="text/javascript">
+            var startLine = -1;
+            var endLine = -1;
+            var isClicked = false;
+            var popWindow;
+            var cid = 0;
+            var loadLine = 0;
+            function SetLoadLine(num) {
+                loadLine = num;
+            }
+            function ClickNote(event) {
+                _window.Open('[url]loadnotes.aspx?startline=' + loadLine + "&cid=" + cid, "第"+ loadLine+"行的全部注释", "width=430,height=250;");
+                event.stopPropagation();
+            }
+            function ClickLineNum(Num) {
+                if (typeof (popWindow) != 'undefined') {
+                    $('#noteContext').show();
+                    popWindow.OnCANCEL = function () {
+                        isClicked = false;
+                        popWindow.Close();
                         window.frames['sourceFrame'].Lowlight();
-                        if (Num < startLine) {
-                            var t = startLine;
-                            startLine = Num;
-                            endLine = t;
-                        }
-                        else {
-                            endLine = Num;
-                        }
-                        $('#tip').text('请再次点击某个行号按钮获得终止行的行号。');
-                        $('#startLine').html('起始行号：<strong>' + startLine + '</strong>');
-                        $('#endLine').html('终止行号：<strong>' + endLine + '</strong>');
-                        window.frames['sourceFrame'].Highlight();
+                    }
+                    popWindow.OnOK = function () {
+                        $('#tip').load(window.encodeURI('addnote.aspx?cid=' + cid + '&startline=' + startLine + '&endline=' + endLine + '&context=' + $('#noteContext').val()));
+                        if ($('#tip').text().indexOf('注释添加成功。点击确定，关闭本窗口。') == '注释添加成功。点击确定，关闭本窗口。'.indexOf($('#tip').text())) {
+                            $('#noteContext').val("");
+                            popWindow.OnOK = function () {
+                                window.frames['sourceFrame'].document.location.reload();
+                                isClicked = false;
+                                window.frames['sourceFrame'].Lowlight();
+                                popWindow.Close();
+                            }
+                            return;
 
+                        }
                     }
                 }
+                if (!isClicked) {
+                    $('#tip').text('请再次点击某个行号按钮获得终止行的行号。');
+                    isClicked = true;
+                    startLine = Num;
+                    endLine = Num;
+                    $('#startLine').html('起始行号：<strong>' + Num + '</strong>');
+                    $('#endLine').html('终止行号：<strong>' + Num + '</strong>');
+                    window.frames['sourceFrame'].Highlight();
+                    return;
+                }
+                else {
+                    window.frames['sourceFrame'].Lowlight();
+                    if (Num < startLine) {
+                        var t = startLine;
+                        startLine = Num;
+                        endLine = t;
+                    }
+                    else {
+                        endLine = Num;
+                    }
+                    $('#tip').text('请再次点击某个行号按钮获得终止行的行号。');
+                    $('#startLine').html('起始行号：<strong>' + startLine + '</strong>');
+                    $('#endLine').html('终止行号：<strong>' + endLine + '</strong>');
+                    window.frames['sourceFrame'].Highlight();
 
-            </script>
-        </div>
+                }
+            }
+
+        </script>
     </div>
 </asp:Content>

@@ -7,7 +7,7 @@
 <body>
     <% foreach (NoteEntity ne in assNotes)
        { %>
-    <div style=" background-color:#f7f7f7">
+    <div style=" border-bottom-style: solid; border-bottom-width:1px; border-bottom-color:#f7f7f7; margin-bottom:5px">
         <div class="qoute" style="float: left">
             <div style="margin-left: 28px; float: left;">
                 <p class="text">
