@@ -7,12 +7,12 @@ using System.Web.UI.WebControls;
 
 public partial class LoadNotes : System.Web.UI.Page
 {
+    public List<NoteEntity> assNotes = null;
     protected void Page_Load(object sender, EventArgs e)
     {
-        List<NoteEntity> assNotes= NoteOperation.GetNotesBySartLine(3, 6199);
-        foreach(NoteEntity ne in  assNotes)
-        {
-           Response.Write(ne.Context);
-        }
+        int startline =int.Parse( Request.QueryString["startline"].ToString());
+        int cid = int.Parse(Request.QueryString["cid"].ToString());
+        assNotes = NoteOperation.GetNotesBySartLine(startline, cid);
+        
     }
 }

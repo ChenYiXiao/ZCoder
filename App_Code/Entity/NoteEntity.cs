@@ -85,5 +85,12 @@ public class NoteEntity
             get { return context; }
             set { context = value; }
         }
+        private UserEntity user = null;
+
+        public UserEntity User
+        {
+            get { return user; }
+            set { user = value; }
+        }
 
  }

@@ -103,6 +103,7 @@ public class NoteOperation
             ne.Agree = int.Parse(rs.Tables[0].Rows[i]["agree"].ToString());
             ne.Disagree = int.Parse(rs.Tables[0].Rows[i]["disagree"].ToString());
             ne.Context = rs.Tables[0].Rows[i]["Context"].ToString();
+            ne.User = UserOperation.GetUser(ne.Uid);
             notes.Add(ne);
         }
         return notes;
