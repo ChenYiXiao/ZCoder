@@ -19,6 +19,10 @@
                 <p style="background-color: #f7f7f7; font-size: 14px; font-weight: bold; color: #ccc;
                     padding: 10px;">
                     <%=ne.Context %></p>
+                    <p class="text">
+                    起始行：<%=ne.StartLine %> 终止行：<%=ne.EndLine %>
+                    <img src="images/sign.png" title="点击标记出该注释所在行" onclick="parent.PointLines(<%=ne.StartLine %>,<%=ne.EndLine %>)" /> <img src="images/eraser.png" title="点击擦除已被标注的行。" onclick="parent.CleanLines(<%=ne.StartLine %>,<%=ne.EndLine %>)" /></p>
+                   
             </div>
         </div>
         <div style="margin-bottom: 0px; bottom: 0px;">

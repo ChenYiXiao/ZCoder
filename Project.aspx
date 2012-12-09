@@ -54,7 +54,6 @@
                 请再次点击某个行号按钮获得终止行的行号。也可直接填写注释。</p>
             <textarea id="noteContext" name="noteContext" style="width: 260px; height: 60px"></textarea>
         </div>
-        
         <script type="text/javascript" src="Window/_Window.js"></script>
         <script type="text/javascript" src="Window/index.js"></script>
         <script type="text/javascript">
@@ -64,15 +63,27 @@
             var popWindow;
             var cid = 0;
             var loadLine = 0;
+            function PointLines(mystartline, myendline) {
+                startLine = mystartline;
+                endLine = myendline;
+                window.frames['sourceFrame'].Highlight();
+            }
+            function CleanLines(mystartline, myendline) {
+                startLine = mystartline;
+                endLine = myendline;
+                window.frames['sourceFrame'].Lowlight();
+            }
             function SetLoadLine(num) {
                 loadLine = num;
             }
+
             function ClickNote(event) {
-                _window.Open('[url]loadnotes.aspx?startline=' + loadLine + "&cid=" + cid, "第"+ loadLine+"行的全部注释", "width=430,height=250,left=10");
+                _window.Open('[url]loadnotes.aspx?startline=' + loadLine + "&cid=" + cid, "第" + loadLine + "行的全部注释", "width=460,height=250,left=5");
                 event.stopPropagation();
             }
             function ClickLineNum(Num) {
                 if (typeof (popWindow) != 'undefined') {
+                    window.frames['sourceFrame'].Lowlight();
                     $('#noteContext').show();
                     popWindow.OnCANCEL = function () {
                         isClicked = false;
@@ -105,7 +116,6 @@
                     return;
                 }
                 else {
-                    window.frames['sourceFrame'].Lowlight();
                     if (Num < startLine) {
                         var t = startLine;
                         startLine = Num;
