@@ -27,7 +27,7 @@ public partial class AddNote : System.Web.UI.Page
         ne.UpTime = DateTime.Now;
         if (NoteOperation.AddNote(ne))
         {
-            Response.Write("注释添加成功。");
+            Response.Write("注释添加成功。点击确定，关闭本窗口。");
             return;
         }
         else

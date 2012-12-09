@@ -72,13 +72,15 @@
                         }
                         popWindow.OnOK = function () {
                             $('#tip').load(window.encodeURI('addnote.aspx?cid=' + cid + '&startline=' + startLine + '&endline=' + endLine + '&context=' + $('#noteContext').val()));
-                            if ($('#tip').text() == "注释添加成功。") {
-                                window.frames['sourceFrame'].document.location.reload();
-                                isClicked = false;
-                                $('#tip').text("注释添加成功。点击确定，关闭本窗口。");
+                            if ($('#tip').text().indexOf('注释添加成功。点击确定，关闭本窗口。') == '注释添加成功。点击确定，关闭本窗口。'.indexOf($('#tip').text())) {
                                 $('#noteContext').val("");
-                                window.frames['sourceFrame'].Lowlight();
-                                popWindow.OnOK = popWindow.Close();
+                                popWindow.OnOK = function () {
+                                    window.frames['sourceFrame'].document.location.reload();
+                                    isClicked = false;
+                                    window.frames['sourceFrame'].Lowlight();
+                                    popWindow.Close();
+                                }
+                                return;
 
                             }
                         }
