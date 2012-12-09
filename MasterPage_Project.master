@@ -30,11 +30,8 @@
             </div>
         </div>
     </div>
-    <div id="LoginPanel1_Panel2">
-        <span id="LoginPanel1_Label2">Label</span>
-    </div>
     <div id="container">
-        <div id="menu" style="visibility: ">
+        <div id="menu" >
             <!--ul id="menuhead">
                 <li></li>
                 <li><a id="menu_active" href="#">Ê×Ò³</a></li>

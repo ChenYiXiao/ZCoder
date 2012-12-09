@@ -9,35 +9,31 @@ body
 
 #container
 {
+    margin: 50px auto auto auto;
     width: 960px;
-    margin-top: 0;
-    margin-right: auto;
-    margin-bottom: 0;
-    margin-left: auto;
 }
 #header
 {
+    padding: 0px;
     background-attachment: scroll;
-background-clip: border-box;
-background-color: #488FCE;
-background-image: none;
-background-origin: padding-box;
-box-shadow: rgba(0, 0, 0, 0.296875) 0px 1px 3px 0px;
-color: #333;
-display: block;
-font-family: Arial;
-font-size: 12px;
-font-style: normal;
-font-variant: normal;
-font-weight: normal;
-height: 45px;
-left: 0px;
-line-height: 18px;
-padding-top: 0px;
-position: fixed;
-top: 0px;
-width: 1351px;
-z-index: 10;
+    background-clip: border-box;
+    background-color: #488FCE;
+    background-image: none;
+    background-origin: padding-box;
+    box-shadow: rgba(0, 0, 0, 0.296875) 0px 1px 3px 0px;
+    color: #333;
+    display: block;
+    font-family: Arial;
+    font-size: 12px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    height: 45px;
+    line-height: 18px;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 10;
 }
 #menu
 {
