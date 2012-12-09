@@ -50,7 +50,8 @@ public partial class rePassword : System.Web.UI.Page
         /*获取用户ID*/
         string ID = Session["uid"].ToString(); 
         string PassWord = tb_PassWord.Text;
-        string sql = "UPDATE tb_user SET  password ='" + PassWord + "' where id=" + ID.ToString();
+        String str = Encrypt.encrypt(PassWord);
+        string sql = "UPDATE tb_user SET  password ='" + str + "' where id=" + ID.ToString();
         try
         {
             db1.ExCommandNoBack(sql);

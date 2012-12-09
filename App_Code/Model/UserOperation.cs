@@ -39,11 +39,10 @@ public class UserOperation
     public static bool Reg(string userName, string password, string email, string qq, bool sex, bool isadmin, DateTime regTime)
     {
         DataBase db = new DataBase();
-
         if (db.RunProc("INSERT INTO tb_user (userName, password, email, qq)VALUES   (@username,@password,@email,@qq)",
              new SqlParameter[]{
           db.MakeInParam("username",System.Data.SqlDbType.VarChar,20,userName),
-          db.MakeInParam("password",System.Data.SqlDbType.VarChar,50,password),
+          db.MakeInParam("password",System.Data.SqlDbType.VarChar,200,password),
           db.MakeInParam("email",System.Data.SqlDbType.VarChar,50,email),
         db.MakeInParam("qq",System.Data.SqlDbType.VarChar,15,qq)
         }) == 0)
@@ -85,9 +84,10 @@ public class UserOperation
             return false;
         }
         DataBase db = new DataBase(); /*实例化一个数据库。*/
+        String str = Encrypt.encrypt(password);
         DataSet result = db.RunProcReturn("select * from tb_user where username=@username and password=@password", new SqlParameter[] {
         db.MakeInParam("username",System.Data.SqlDbType.VarChar,20,userName),
-        db.MakeInParam("password",System.Data.SqlDbType.VarChar,50,password)
+        db.MakeInParam("password",System.Data.SqlDbType.VarChar,200,str)
         }, "tb_user");     /*查询数据库中与输入的用户名密码相同的集。*/
         if (result.Tables[0].Rows.Count != 0)    /*  如数据库中有用户名密码与输入的用户名密码相同，则将username和password、uid放入session中。*/
         {
@@ -147,14 +147,14 @@ public class UserOperation
     *\Log           2012.11.01    Ver 1.0    陈斌
     *               创建函数。
     ***************************************************************************************************/
-    
-    public static void EditUser(string UserName, string PassWord, string Email,bool Sex,string QQ,bool IsAdmin,int ID)
+
+    public static void EditUser(string UserName, string PassWord, string Email, bool Sex, string QQ, bool IsAdmin, int ID)
     {
         DataBase db = new DataBase();
         string sql = "UPDATE tb_user SET userName ='" + UserName + "', password ='" + PassWord + "', email ='" + Email + "', sex =" + (Sex ? 1 : 0).ToString() + ", qq ='" + QQ + "', isadmin=" + (IsAdmin ? 1 : 0).ToString() + " where id=" + ID.ToString();
         db.ExCommandNoBack(sql);
     }
-    
+
     /***************************************************************************************************
      *\Function      DelUser
      *\Description   用于后台删除用户
@@ -164,7 +164,7 @@ public class UserOperation
      *\Log           2012.11.01    Ver 1.0   陈斌
      *               创建函数。
      ***************************************************************************************************/
-    
+
     public static void DelUser(String id)
     {
         DataBase db = new DataBase();

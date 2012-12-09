@@ -32,4 +32,8 @@ public partial class Login : System.Web.UI.Page
             SmallScript.goRedirect(Response, Session, "用户名或密码错误。", "login.aspx");  
         }
     }
+    protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
+    {
+
+    }
 }

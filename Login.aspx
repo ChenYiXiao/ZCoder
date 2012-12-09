@@ -55,7 +55,8 @@
                 &nbsp;</td>
             <td height="60">
                 &nbsp;&nbsp;
-                <asp:CheckBox ID="CheckBox1" runat="server" Text="一周内免登陆" />
+                <asp:CheckBox ID="CheckBox1" runat="server" Text="一周内免登陆" 
+                    oncheckedchanged="CheckBox1_CheckedChanged" />
             </td>
             <td width="40%">
                 &nbsp;</td>
