@@ -68,7 +68,7 @@
                 loadLine = num;
             }
             function ClickNote(event) {
-                _window.Open('[url]loadnotes.aspx?startline=' + loadLine + "&cid=" + cid, "第"+ loadLine+"行的全部注释", "width=430,height=250;");
+                _window.Open('[url]loadnotes.aspx?startline=' + loadLine + "&cid=" + cid, "第"+ loadLine+"行的全部注释", "width=430,height=250,left=10");
                 event.stopPropagation();
             }
             function ClickLineNum(Num) {
