@@ -37,7 +37,8 @@
             <td width="20%">
                 上传用户:
             </td>
-            <td>
+            <td width="20%">
+            <%=userEntity.UserName %>
             </td>
             <td>
                 语言：
@@ -45,16 +46,7 @@
             <td>
                 <%= langEntity.Name %>
             </td>
-        </tr>
-        <tr>
-            <td width="20%">
-            </td>
-            <td>
-            </td>
-            <td>
-            </td>
-            <td>
-            </td>
+            <td width="50%"></td>
         </tr>
     </table>
     <script type="syntaxhighlighter" class="brush: <%=langEntity.BrushAliases %>;"><![CDATA[
