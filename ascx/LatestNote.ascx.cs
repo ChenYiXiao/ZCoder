@@ -22,7 +22,7 @@ public partial class ascx_LatestNote : System.Web.UI.UserControl
         lbPage.Text = page.ToString();
         DataBase db = new DataBase();
         /*查询语句*/
-        DataSet ds = db.ExCommand("SELECT  tb_note.id, tb_note.uid, tb_note.cid, tb_code.pid, tb_note.upTime, tb_note.context, tb_note.startLine, tb_note.endLine, tb_note.agree, tb_note.disagree, tb_code.path, tb_project.projectName, tb_user.userName FROM tb_code INNER JOIN tb_note ON tb_code.id = tb_note.cid INNER JOIN tb_user ON tb_note.uid = tb_user.id INNER JOIN tb_project ON tb_code.pid = tb_project.id");
+        DataSet ds = db.ExCommand("SELECT  tb_note.id, tb_note.uid, tb_note.cid, tb_code.pid, tb_note.upTime, tb_note.context, tb_note.startLine, tb_note.endLine, tb_note.agree, tb_note.disagree, tb_code.path, tb_project.projectName, tb_user.userName FROM tb_code INNER JOIN tb_note ON tb_code.id = tb_note.cid INNER JOIN tb_user ON tb_note.uid = tb_user.id INNER JOIN tb_project ON tb_code.pid = tb_project.id ORDER BY tb_note.upTime DESC");
         DataOperate.dlBind(6, ds, lbPage, lbtpage, lbtnUp, lbtnnext, lbtnback, lbtnone, this.DataList1);
         base.DataBind();
     }
