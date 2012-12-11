@@ -12,7 +12,7 @@ public partial class ascx_LatestProjects : System.Web.UI.UserControl
     {
         lbPage.Text = page.ToString();
         DataBase db = new DataBase();
-        DataSet ds = db.ExCommand("SELECT tb_project.projectName, tb_user.userName, tb_project.id, tb_project.uid, tb_project.description, tb_project.upTime, tb_type.typeName, tb_project.tid FROM tb_project INNER JOIN tb_type ON tb_project.tid = tb_type.id INNER JOIN tb_user ON tb_project.uid = tb_user.id");
+        DataSet ds = db.ExCommand("SELECT tb_project.projectName, tb_user.userName, tb_project.id, tb_project.uid, tb_project.description, tb_project.upTime, tb_type.typeName, tb_project.tid FROM tb_project INNER JOIN tb_type ON tb_project.tid = tb_type.id INNER JOIN tb_user ON tb_project.uid = tb_user.id ORDER BY upTime DESC");
         DataOperate.dlBind(8, ds, lbPage, lbtpage, lbtnUp, lbtnnext, lbtnback, lbtnone, this.DataList1);
         base.DataBind();
     }

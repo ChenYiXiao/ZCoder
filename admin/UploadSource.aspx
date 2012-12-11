@@ -13,7 +13,7 @@
                 'uploadLimit' : 1,
              'removeCompleted' : false,
                 'fileTypeDesc': '选择压缩包',
-                'fileTypeExts': '*.zip',
+                'fileTypeExts': '*.zip;*.rar',
                 'formData': { 'ASPSESSID':<%=  Request.Cookies[FormsAuthentication.FormsCookieName]==null ? "''" : Request.Cookies[FormsAuthentication.FormsCookieName].Value %>, 'AUTHID':'<%= Session.SessionID %>'},
                 'multi': false,
 
