@@ -55,4 +55,26 @@ public class CodeOperation
             return null;
         }
     }
+    public static List<NoteEntity> GetAssNotes(int cid)
+    {
+        DataBase db = new DataBase();
+        DataSet ds = db.ExCommand("select * from tb_note where cid =" + cid);
+        List<NoteEntity> assNotes = new List<NoteEntity>();
+        foreach (DataRow dr in ds.Tables[0].Rows)
+        {
+            NoteEntity ne = new NoteEntity();
+            ne.Agree = int.Parse(dr["agree"].ToString());
+            ne.Cid = int.Parse(dr["cid"].ToString());
+            ne.Context = dr["context"].ToString();
+            ne.Disagree = int.Parse(dr["disagree"].ToString());
+            ne.EndLine = int.Parse(dr["endline"].ToString());
+            ne.Id = int.Parse(dr["id"].ToString());
+            ne.NoteName = dr["noteName"].ToString();
+            ne.StartLine = int.Parse(dr["startline"].ToString());
+            ne.Uid = int.Parse(dr["uid"].ToString());
+            ne.UpTime = DateTime.Parse(dr["uptime"].ToString());
+            assNotes.Add(ne);
+        }
+        return assNotes;
+    }
 }

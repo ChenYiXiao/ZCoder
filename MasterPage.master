@@ -15,23 +15,24 @@
 <body>
     <div id="header">
         <div id="navhead">
-            <img id="logo" src="images/logo.png" />
-            <ul id="ulhead" style="padding: 0px; margin: 0px 0px 0px 54px; height: 50px;">
-                <li></li>
-                <li class="zMenuSelected"><a href="default.aspx" class="zMenuSeletcedA">首页</a></li>
-                <li><a href="Projects.aspx">工程</a></li>
-                <li><a>注释</a></li>
-                <li><a>评论</a></li>
-                <li><a>帮助</a></li>
-                <li><a href="About.aspx">关于</a></li>
-            </ul>
+            <div style="float: left">
+                <img id="logo" src="images/logo.png" />
+                <ul id="ulhead" style="padding: 0px; margin: 0px 0px 0px 54px; height: 50px;">
+                    <li></li>
+                    <li class="zMenuSelected"><a href="default.aspx" class="zMenuSeletcedA">首页</a></li>
+                    <li><a href="Projects.aspx">工程</a></li>
+                    <li><a>注释</a></li>
+                    <li><a>评论</a></li>
+                    <li><a>帮助</a></li>
+                    <li><a href="About.aspx">关于</a></li>
+                </ul>
+            </div>
             <div style="float: right; margin-top: 15px; font-size: 12px">
                 <uc1:LoginPanel ID="LoginPanel1" runat="server" />
             </div>
+            <div style="clear: both">
+            </div>
         </div>
-    </div>
-    <div id="LoginPanel1_Panel2">
-        <span id="LoginPanel1_Label2">Label</span>
     </div>
     <div id="container">
         <div id="menu" style="visibility: ">

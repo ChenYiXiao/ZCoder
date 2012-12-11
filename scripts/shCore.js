@@ -339,8 +339,12 @@ if (typeof (SyntaxHighlighter) == 'undefined') var SyntaxHighlighter = function 
             attachEvent(
 			window,
 			'load',
-			function () { sh.highlight(params); }
+			function () {
+			    sh.highlight(params);
+			    Inte();
+			}
 		);
+            
         }
     }; // end of sh
 
@@ -1301,7 +1305,7 @@ if (typeof (SyntaxHighlighter) == 'undefined') var SyntaxHighlighter = function 
             if (lineNumber == 0)
                 classes.push('break');
 
-            return '<div' + ' id="MyOn" class="' + classes.join(' ') + '">' + code + '</div>';
+            return '<div' + ' id="LineNum' + lineNumber + '"onclick="parent.popWindow=parent.OpenWindow(\'Works\',null,null,event);parent.ClickLineNum(' + lineNumber + '); " class="' + classes.join(' ') + '">' + code + '</div>';
         },
 
         /**
@@ -1327,7 +1331,7 @@ if (typeof (SyntaxHighlighter) == 'undefined') var SyntaxHighlighter = function 
 				code = lineNumber == 0 ? sh.config.space : padNumber(lineNumber, pad)
 				;
 
-                html += this.getLineHtml(i, lineNumber, code + '<img src="/images/regright.png"  onclick="parent.popWindow=parent.OpenWindow(\'Works\',null,null,event);parent.ClickLineNum(' + lineNumber + '); " id="myhaha" />');
+                html += this.getLineHtml(i, lineNumber, code );
             }
 
             return html;

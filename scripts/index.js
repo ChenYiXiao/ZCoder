@@ -44,7 +44,7 @@ function UseVistaInIE6(obj)
 }
 
 var windows = new Array();
-windows["Works"]       = { object:null, type:0, title:"填写注释", features:"move=no,resize=no,left=0,top=300,width=305,height=-1", x:0, y:0 };
+windows["Works"]       = { object:null, type:0, title:"填写注释", features:"move=no,resize=no,left=0,top=300,width=305,height=800", x:0, y:0 };
 windows["UpLoadClass"] = { object:null, type:0, title:"风声 ASP 无组件上传类", features:"height=-1", x:335, y:parseInt(Math.random() * 300) };
 windows["FonshenASP"]  = { object:null, type:0, title:"风声 ASP 上传组件", features:"height=-1", x:335, y:parseInt(Math.random() * 300) };
 windows["ListPager"]   = { object:null, type:0, title:"风声 ASP 列表分页类", features:"height=-1", x:335, y:parseInt(Math.random() * 300) };

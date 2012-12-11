@@ -1,0 +1,31 @@
+﻿table
+{
+    border-collapse: collapse;
+    border: 1px solid #CCCCCC;
+    background-color: #F3F3F3;
+}
+tr
+{
+    border: 1px solid #999999;
+    text-align: center;
+    line-height: 28px;
+    font-size: 12px;
+    color: #808080;
+}
+.qoute
+{
+    background-image: url('../images/icon_quote_s.gif');
+    background-repeat: no-repeat;
+}
+.text
+{
+    display: block;
+    margin-right: 0px;
+    font-size: 12px;
+    color: #999999;
+}
+.qouteEnd
+{
+    float: right;
+    clip: rect(auto, auto, 0px, auto);
+}

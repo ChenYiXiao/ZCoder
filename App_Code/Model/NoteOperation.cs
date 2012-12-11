@@ -18,19 +18,20 @@ using System.Web.UI;
 /// </summary>
 public class NoteOperation
 {
-	
-	public NoteOperation()
-	{
-		//
-		//TODO: 在此处添加构造函数逻辑
-		//
-	}
-    public static bool AddNote(NoteEntity ne){
+
+    public NoteOperation()
+    {
+        //
+        //TODO: 在此处添加构造函数逻辑
+        //
+    }
+    public static bool AddNote(NoteEntity ne)
+    {
         /*注释的添加*/
         DataBase db = new DataBase();
         try
         {
-            string sql =string.Format( "INSERT INTO tb_note ( noteName, uid, upTime, startLine, endLine, cid, agree, disagree )VALUES  ( '{0}', '{1}','{2}', {3}, {4},{5},{6},{7},{8})",ne.NoteName, ne.Uid,ne.UpTime,ne.StartLine,ne.EndLine,ne.Cid,ne.Agree,ne.Disagree);
+            string sql = string.Format("INSERT INTO tb_note ( noteName, uid, upTime, startLine, endLine, cid, agree, disagree,context )VALUES  ( '{0}', '{1}','{2}', {3}, {4},{5},{6},{7},'{8}')", ne.NoteName, ne.Uid, ne.UpTime.ToString(), ne.StartLine, ne.EndLine, ne.Cid, ne.Agree, ne.Disagree, ne.Context.Trim().Replace(" ", ""));
             db.ExCommandNoBack(sql);
             return true;
         }
@@ -50,7 +51,7 @@ public class NoteOperation
         db.ExCommandNoBack(sql);
     }
 
-   
+
 
     public static void DelNote(String id)
     {
@@ -60,7 +61,7 @@ public class NoteOperation
         db.ExCommandNoBack(sql);
 
     }
-   
+
     public static NoteEntity GetNote(int noteId)
     {
         /*获取工程信息*/
@@ -78,8 +79,33 @@ public class NoteOperation
             ne.EndLine = int.Parse(rs.Tables[0].Rows[0]["endLine"].ToString());
             ne.Agree = int.Parse(rs.Tables[0].Rows[0]["agree"].ToString());
             ne.Disagree = int.Parse(rs.Tables[0].Rows[0]["disagree"].ToString());
+            ne.Context = rs.Tables[0].Rows[0]["Context"].ToString();
             return ne;
         }
         return null;
+    }
+    public static List<NoteEntity> GetNotesBySartLine(int startline, int cid)
+    {
+        /*获取工程信息*/
+        DataBase db = new DataBase();
+        DataSet rs = db.RunProcReturn("select * from tb_note where startline=" + startline.ToString() + " and cid=" + cid.ToString(), "tb_note");
+        List<NoteEntity> notes = new List<NoteEntity>();
+        for (int i = 0; i < rs.Tables[0].Rows.Count; i++)
+        {
+            NoteEntity ne = new NoteEntity();
+            ne.NoteName = rs.Tables[0].Rows[i]["noteName"].ToString();
+            ne.Uid = int.Parse(rs.Tables[0].Rows[i]["uid"].ToString());
+            ne.Cid = int.Parse(rs.Tables[0].Rows[i]["cid"].ToString());
+            ne.UpTime = DateTime.Parse(rs.Tables[0].Rows[i]["upTime"].ToString());
+            ne.Id = int.Parse(rs.Tables[0].Rows[i]["id"].ToString());
+            ne.StartLine = int.Parse(rs.Tables[0].Rows[i]["startLine"].ToString());
+            ne.EndLine = int.Parse(rs.Tables[0].Rows[i]["endLine"].ToString());
+            ne.Agree = int.Parse(rs.Tables[0].Rows[i]["agree"].ToString());
+            ne.Disagree = int.Parse(rs.Tables[0].Rows[i]["disagree"].ToString());
+            ne.Context = rs.Tables[0].Rows[i]["Context"].ToString();
+            ne.User = UserOperation.GetUser(ne.Uid);
+            notes.Add(ne);
+        }
+        return notes;
     }
 }

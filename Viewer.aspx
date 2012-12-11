@@ -13,9 +13,22 @@
     <script type="text/javascript" src="scripts/<%=langEntity.BrushFile %>"></script>
     <link type="text/css" rel="stylesheet" href="styles/shCore.css" />
     <link type="text/css" rel="stylesheet" href="styles/shThemeDefault.css" />
-    <script type="text/javascript">        SyntaxHighlighter.all();   </script>
+    <script type="text/javascript">
+     function Inte() {
+        parent.cid=<%=Request.QueryString["id"].ToString() %>;
+        var LineNum= <%=jsaLineNum %>;
+        var LineCount= <%=jsaLineCount %>;
+        for(var i=0;i<LineNum.length;i++)
+        {
+           
+                $('[id=LineNum'+LineNum[i]+']:odd').prepend($('<div class="LineDiv" style="position: absolute;left:-8px;"><span> <a class="LineDivA"><img src="images/note.png"'+'title="共有'+LineCount[i]+'条注释以改行为起始行" onClick="parent.SetLoadLine('+LineNum[i]+');parent.ClickNote(event);"></img></a></span></div>'));
+               
+        }
+    };
+    
+            SyntaxHighlighter.all(); </script>
 </head>
-<body style="background:white;">
+<body style="background: white;">
     <span style="font-size: small; color: #999999; font-weight: bold">源码文件名:<%=codeEntity.Path.Substring(codeEntity.Path.LastIndexOf("\\")+1,codeEntity.Path.Length-codeEntity.Path.LastIndexOf("\\")-1) %></span>
     <hr />
     <table width="100%" style="color: #999999font-size: small; margin: auto; font-size: 12px;
@@ -24,7 +37,8 @@
             <td width="20%">
                 上传用户:
             </td>
-            <td>
+            <td width="20%">
+            <%=userEntity.UserName %>
             </td>
             <td>
                 语言：
@@ -32,20 +46,24 @@
             <td>
                 <%= langEntity.Name %>
             </td>
-        </tr>
-        <tr>
-            <td width="20%">
-            </td>
-            <td>
-            </td>
-            <td>
-            </td>
-            <td>
-            </td>
+            <td width="50%"></td>
         </tr>
     </table>
     <script type="syntaxhighlighter" class="brush: <%=langEntity.BrushAliases %>;"><![CDATA[
 <%=Pre %>
 ]]></script>
+    <script type="text/jscript">
+        function Highlight() {
+            for (var i = parent.startLine; i <= parent.endLine; i++) {
+                $('[id=LineNum' + i + ']').css('background-color', '#eee');
+            }
+        }
+        function Lowlight() {
+            for (var i = parent.startLine; i <= parent.endLine; i++) {
+                $('[id=LineNum' + i + ']').css('background-color', '');
+            }
+        }
+   
+    </script>
 </body>
 </html>
