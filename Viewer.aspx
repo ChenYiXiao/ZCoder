@@ -21,7 +21,7 @@
         for(var i=0;i<LineNum.length;i++)
         {
            
-                $('[id=LineNum'+LineNum[i]+']:odd').prepend($('<div class="LineDiv" style="position: absolute;left:-8px;"><span> <a class="LineDivA"><img src="images/note.png"'+'title="共有'+LineCount[i]+'条注释以改行为起始行" onClick="parent.SetLoadLine('+LineNum[i]+');parent.ClickNote(event);"></img></a></span></div>'));
+                $('[id=LineNum'+LineNum[i]+']:odd').prepend($('<div class="LineDiv" style="position: absolute;left:-8px;"><span> <a class="LineDivA"><img src="images/note.png"'+'title="共有'+LineCount[i]+'条注释以该行为起始行" onClick="parent.SetLoadLine('+LineNum[i]+');parent.ClickNote(event);"></img></a></span></div>'));
                
         }
     };
