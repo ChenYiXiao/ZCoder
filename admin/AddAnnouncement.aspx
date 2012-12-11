@@ -1,8 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="AddAnnouncement.aspx.cs" Inherits="admin_AddAnnouncement" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/admin/MasterPage.master" AutoEventWireup="true" CodeFile="AddAnnouncement.aspx.cs" Inherits="admin_AddAnnouncement" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+
+<asp:Content ID="Content2" ContentPlaceHolderID="Ct2" Runat="Server">
     <asp:Label ID="Label1" runat="server" Text="公告标题："></asp:Label>
     <asp:TextBox ID="tb_amtitle" runat="server"></asp:TextBox>
     <br />

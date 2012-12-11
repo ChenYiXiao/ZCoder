@@ -196,5 +196,8 @@ public class UserOperation
         }
         return null;
     }
-
+    public static int GetCurrentUid(System.Web.SessionState.HttpSessionState session)
+    {
+        return int.Parse(session["uid"].ToString());
+    }
 }
