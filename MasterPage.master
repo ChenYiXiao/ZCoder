@@ -1,6 +1,7 @@
 <%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
 
 <%@ Register Src="LoginPanel.ascx" TagName="LoginPanel" TagPrefix="uc1" %>
+<%@ Register src="ascx/announcement.ascx" tagname="announcement" tagprefix="uc2" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -9,6 +10,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
     <link href="layout.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="images/jquery.min.js"></script>
+    <script type="text/javascript">        jQuery.noConflict();
+    </script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -46,113 +49,11 @@
                 <li><a href="about.jsp">关于</a></li>
             </ul-->
             <span class="zBroadcast">
-                <head>
-                    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-                    <style type="text/css">
-                        .cls_container
-                        {
-                           
-                            font-size: 22px;
-                            height: 24px;
-                            overflow: hidden;
-                        }
-                        .cls_container ul
-                        {
-                            list-style-type: none;
-                            margin: 0;
-                            padding: 0;
-                            margin-left: 10px;
-                        }
-                        .cls_container ul li
-                        {
-                            height: 24px;
-                            line-height: 24px;
-                            
-                            float: left;
-                            display: inline;
-                        }
-                    </style>
-                </head>
-                <body>
-                    <div id="myscroll" style="width:100%;" class="cls_container">
-                        <ul >
-                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:db_ConnectionString %>"
-                                SelectCommand="SELECT [amtitle], [essay] FROM [tb_announcement]" 
-                                OnSelecting="SqlDataSource1_Selecting">
-                            </asp:SqlDataSource>
-                            <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
-                                <ItemTemplate>
-                                  <span title="<%# Eval("essay") %> ">   <%# Eval("amtitle") %>   </span>  
-                                        <br />
-                                </ItemTemplate>
-                            </asp:Repeater>
-                        </ul>
-                    </div>
-                    <div id="showhint">
-                    </div>
-                    <script type="text/javascript">
-                        function $(element) {
-                            if (arguments.length > 1) {
-                                for (var i = 0, length = arguments.length, elements = []; i < length; i++) {
-                                    elements.push($(arguments[i]));
-                                }
-                                return elements;
-                            }
-                            if (typeof element == "string") {
-                                return document.getElementById(element);
-                            } else {
-                                return element;
-                            }
-                        }
-                        var Class = {
-                            create: function () {
-                                return function () {
-                                    this.initialize.apply(this, arguments);
-                                }
-                            }
-                        }
-                        Function.prototype.bind = function (object) {
-                            var method = this;
-                            return function () {
-                                method.apply(object, arguments);
-                            }
-                        }
-                        var Scroll = Class.create();
-                        Scroll.prototype = {
-                            initialize: function (element, height) {
-                                this.element = $(element);
-                                this.element.innerHTML += this.element.innerHTML;
-                                this.height = height;
-                                this.maxHeight = this.element.scrollHeight / 2;
-                                this.counter = 0;
-                                this.scroll();
-                                this.timer = "";
-                                this.element.onmouseover = this.stop.bind(this);
-                                this.element.onmouseout = function () { this.timer = setTimeout(this.scroll.bind(this), 1000); } .bind(this);
-                            },
-                            scroll: function () {
-                                if (this.element.scrollTop < this.maxHeight) {
-                                    this.element.scrollTop++;
-                                    this.counter++;
-                                } else {
-                                    this.element.scrollTop = 0;
-                                    this.counter = 0;
-                                }
-
-                                if (this.counter < this.height) {
-                                    this.timer = setTimeout(this.scroll.bind(this), 22);
-                                } else {
-                                    this.counter = 0;
-                                    this.timer = setTimeout(this.scroll.bind(this), 3126);
-                                }
-                            },
-                            stop: function () {
-                                clearTimeout(this.timer);
-                            }
-                        }
-                        var myscroll = new Scroll("myscroll", 28);
-                    </script>
-                </body>
+                
+               
+            <uc2:announcement ID="announcement1" runat="server" />
+                
+               
             </span>
         </div>
         <div style="clear: both;">
