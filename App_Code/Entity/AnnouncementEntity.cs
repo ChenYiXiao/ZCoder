@@ -22,6 +22,13 @@ public class AnnouncementEntity
         set { id = value; }
     }
 
+    int uid = 0;
+        public int Uid
+    {
+        get { return uid; }
+        set { uid = value; }
+    }
+
     string essay = "";
     public string Essay
     {

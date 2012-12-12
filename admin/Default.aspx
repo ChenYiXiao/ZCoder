@@ -111,6 +111,8 @@
                             运行环境</a></li>
                         <li><a href="Counter.aspx" target="maincontent" title="首页" onclick="setCurrent(this)">
                             统计信息</a></li>
+                        <li><a href="Announcement.aspx" target="maincontent" title="首页" onclick="setCurrent(this)">
+                            公告</a></li>
                         <li><a href="CopyRight.aspx" target="maincontent" title="首页" 
                                 onclick="setCurrent(this)">版权信息</a></li>
                     </ul>
