@@ -49,8 +49,8 @@
            
 
 
-
-       
+  
+ 
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
@@ -68,15 +68,14 @@
 
 
 
- <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:db_ConnectionString %>"
+ <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString=""
         SelectCommand="SELECT essay FROM tb_announcement"
         OnSelecting="SqlDataSource1_Selecting"></asp:SqlDataSource>  
  
-   <ItemTemplate>
-           <asp:Label ID="idLabel1" runat="server" Text='<%# Eval("id") %>'></asp:Label><br />
-
-</ItemTemplate>
-<li> nima   </li>   
+  <li> <ItemTemplate>
+           <%# Eval("essay") %> <br />vbhng
+     </ItemTemplate>
+  </li>   
 
  </ul>
 </div>
@@ -144,20 +143,6 @@
     var myscroll = new Scroll("myscroll", 26);
 </script>
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
