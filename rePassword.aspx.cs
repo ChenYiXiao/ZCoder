@@ -63,7 +63,7 @@ public partial class rePassword : System.Web.UI.Page
             return;
         }
         /*修改失败，页面跳出提示*/
-        SmallScript.MessageBox(Page, "修改用户成功。"); 
+        SmallScript.MessageBox(Page, "修改密码成功。"); 
         return;
 
     }
