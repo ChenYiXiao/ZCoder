@@ -45,40 +45,33 @@
                 <li><a>帮助</a></li>
                 <li><a href="about.jsp">关于</a></li>
             </ul-->
-            <!--<span class="zBroadcast">通知：本站新成立</span>-->
-           
-
-
-  
- 
-
-<head>
+ <span class="zBroadcast">
+ <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
 <style type="text/css">
-.cls_container{border:1px solid #eee;width:668px;font-size:12px;height:24px;overflow:hidden;}
+.cls_container{border:1px solid #eee;width:668px;font-size:22px;height:24px;overflow:hidden;}
 .cls_container ul{list-style-type:none;margin:0;padding:0;margin-left:32px;}
-.cls_container ul li{height:26px;line-height:26px;width:320px;float:left;display:inline;}
+.cls_container ul li{height:24px;line-height:24px;width:364px;
+float:left;display:inline;
+}
 </style>
 </head>
 <body>
 <div id="myscroll" class="cls_container">
  <ul>
-
-
-
-
-
- <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString=""
-        SelectCommand="SELECT essay FROM tb_announcement"
+  <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:db_ConnectionString %>"
+        SelectCommand="SELECT [essay] FROM [tb_announcement]"
         OnSelecting="SqlDataSource1_Selecting"></asp:SqlDataSource>  
  
-  <li> <ItemTemplate>
-           <%# Eval("essay") %> <br />vbhng
+  <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
+      <ItemTemplate>
+           </asp:Label> 
+           <asp:Label ID="Label1" runat="server" Text='<%# Eval("essay") %>' /> <br />  
      </ItemTemplate>
-  </li>   
-
+      </asp:Repeater>
  </ul>
 </div>
+
 <div id="showhint"></div>
 <script type="text/javascript">
     function $(element) {
@@ -140,17 +133,10 @@
             clearTimeout(this.timer);
         }
     }
-    var myscroll = new Scroll("myscroll", 26);
+    var myscroll = new Scroll("myscroll", 28);
 </script>
 </body>
-
-
-
-
-
-
-
-
+</span>
         </div>
         <div style="clear: both;">
         </div>
