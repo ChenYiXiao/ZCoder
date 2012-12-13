@@ -8,7 +8,7 @@
                     <img alt="注释" width="50" height="50" src="/images/project.png" />
                 </td>
                 <td colspan="2" style="padding: 5px;">
-                    <asp:HyperLink ID="projectNameLabel" runat="server" Text='<%# Eval("projectName","[{0}]") %>' NavigateUrl='<%# Eval ("pid") %>'
+                    <asp:HyperLink ID="projectNameLabel" runat="server" Text='<%# Eval("projectName","[{0}]") %>' NavigateUrl='<%# Eval("id","~/project.aspx?id={0}") %>'
                         Font-Size="14px" ForeColor="#105CB6" /> <asp:HyperLink ID="NoteContextLabel" runat="server" 
                             Text='<%# Eval("context") %>' Font-Size="14px" ForeColor="#105CB6" />
                 </td>
