@@ -1,6 +1,7 @@
 <%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
 
 <%@ Register Src="LoginPanel.ascx" TagName="LoginPanel" TagPrefix="uc1" %>
+<%@ Register src="ascx/announcement.ascx" tagname="announcement" tagprefix="uc2" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -41,7 +42,9 @@
                 <li><a>帮助</a></li>
                 <li><a href="about.jsp">关于</a></li>
             </ul-->
-            <span class="zBroadcast">通知：本站新成立</span>
+            <span class="zBroadcast"> 
+            <uc2:announcement ID="announcement1" runat="server" />
+            </span>
         </div>
         <div style="clear: both;">
         </div>
