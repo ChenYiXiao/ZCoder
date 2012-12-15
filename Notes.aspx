@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage_Project.master" AutoEventWireup="true" CodeFile="Notes.aspx.cs" Inherits="Notes"   Inherits="U_P_List" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage_Project.master" AutoEventWireup="true" CodeFile="Notes.aspx.cs" Inherits="Notes" %>
 
 <%@ Register Src="ascx/LatestNote.ascx" TagName="LatestNote" TagPrefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
