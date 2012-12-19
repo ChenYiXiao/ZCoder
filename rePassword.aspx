@@ -15,6 +15,8 @@
                 <br />
             </td>
             <td height="60">
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                        ControlToValidate="tb_PassWord" ErrorMessage="用户密码必填。"></asp:RequiredFieldValidator>
                     <asp:CustomValidator ID="CustomValidator1" runat="server" ControlToValidate="tb_Password"
                         
                         ErrorMessage="&lt;img src=&quot;/images/regwrong.png&quot;&gt;密码长度必须大于6小于18。" OnServerValidate="CustomValidator1_ServerValidate"

@@ -39,7 +39,7 @@ public partial class rePassword : System.Web.UI.Page
     }
     protected void btnEdit_Click(object sender, EventArgs e)
     {
-         Validate();
+        Validate();
         if (!Page.IsValid)  
         {
             //如果页面验证没通过则返回
