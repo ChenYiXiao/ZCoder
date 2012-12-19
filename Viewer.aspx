@@ -55,7 +55,7 @@
     <script type="text/jscript">
         function Highlight() {
             for (var i = parent.startLine; i <= parent.endLine; i++) {
-                $('[id=LineNum' + i + ']').css('background-color', '#eee');
+                $('[id=LineNum' + i + ']').css('background-color', '#ddd');
             }
         }
         function Lowlight() {

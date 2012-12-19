@@ -16,7 +16,7 @@
                     <%=ne.UpTime %><img src="images/comment.gif" title="评论" />
                     [<%=ne.Agree %>]<img src="images/approve.gif" />
                     [<%=ne.Disagree %>]<img src="images/disapprove.gif" /></p>
-                <p style="background-color: #f7f7f7; font-size: 14px; font-weight: bold; color: #ccc;
+                <p style="background-color: #f7f7f7; font-size: 14px; font-weight: bold; color: #333333;
                     padding: 10px;">
                     <%=ne.Context %></p>
                     <p class="text">
