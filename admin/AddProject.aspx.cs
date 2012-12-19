@@ -29,6 +29,11 @@ public partial class admin_AddProject : System.Web.UI.Page
         pe.UpTime = DateTime.Now;
         pe.Description = tb_Description.Text;
         /*添加工程，并返回是否成功*/
+        if (pe.ProjectName == "")
+        {
+            SmallScript.goRedirect(Response, Session, "工程信息请填写完整！", "/admin/addproject.aspx");
+            return;
+        }
         if (ProjectOperation.AddProject(pe) == true)
         {
             SmallScript.goRedirect(Response,Session,"工程已成功添加！","/admin/projectlist.aspx");
