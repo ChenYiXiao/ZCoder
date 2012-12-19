@@ -20,6 +20,11 @@ public partial class admin_AddAnnouncement : System.Web.UI.Page
         ae.Essay = tb_essay.Text;
         ae.Uid = UserOperation.GetCurrentUid(Session);
         /*添加工程，并返回是否成功*/
+        if (ae.Essay == "" || ae.AmTitle == "")
+        {
+            SmallScript.goRedirect(Response, Session, "请输入完整公告信息！", "/admin/addAnnouncement.aspx");
+            return;
+        }
         if (AnnouncementOperation.AddAnnouncement(ae) == true)
         {
             SmallScript.goRedirect(Response, Session, "公告已成功添加！", "/admin/Announcement.aspx");
