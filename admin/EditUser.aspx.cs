@@ -118,7 +118,8 @@ public partial class admin_EditUser : System.Web.UI.Page
         {//修改用户信息
         int ID = int.Parse(Request.QueryString["id"].ToString());
         string UserName = tb_UserName.Text;
-        string PassWord = tb_PassWord.Text;
+        String str = Encrypt.encrypt(tb_PassWord.Text);
+        string PassWord = str;
         string Email = tb_Email.Text;
         bool Sex = (rb_Sex.SelectedIndex == 0);
         string QQ = tb_QQ.Text;
@@ -136,7 +137,7 @@ public partial class admin_EditUser : System.Web.UI.Page
         SmallScript.MessageBox(Page, "修改用户成功。");
         SmallScript.goRedirect(Response,Session,"跳转到用户列表 ","~/admin/UserList.aspx");
         return;
-    }
+        }
         else
         {
             SmallScript.MessageBox(Page, "修改失败！ QQ不能为汉字或特殊字符！");

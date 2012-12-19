@@ -32,7 +32,7 @@
     <asp:Label ID="Label2" runat="server" Text="密码："></asp:Label>
             </td>
             <td>
-    <asp:TextBox ID="tb_PassWord" runat="server" CssClass="zTextBox"></asp:TextBox>
+    <asp:TextBox ID="tb_PassWord" runat="server" CssClass="zTextBox" TextMode="Password"></asp:TextBox>
                 <br />
                 <br />
             </td>
