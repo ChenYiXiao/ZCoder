@@ -20,6 +20,11 @@ public partial class admin_AddUser: System.Web.UI.Page
     }
     protected void A_Button1_Click(object sender, EventArgs e)
     {
+        this.Validate();
+        if (!IsValid)
+        {
+            return;
+        }
         DataBase db = new DataBase();
         //从表单中取出数据
         string userName = tb_UserName.Text;

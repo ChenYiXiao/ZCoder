@@ -31,6 +31,8 @@
 &nbsp;&nbsp;
     <asp:TextBox ID="tb_UserName" runat="server" OnTextChanged="A_TB1_TextChanged" 
                 CssClass="inputbox"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                ControlToValidate="tb_UserName" ErrorMessage="用户名不能为空。"></asp:RequiredFieldValidator>
         </td>
     </tr>
     <tr>
@@ -51,6 +53,11 @@
             <br />
 &nbsp;&nbsp;
     <asp:TextBox ID="tb_Email" runat="server" CssClass="inputbox"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                ControlToValidate="tb_Email" ErrorMessage="邮箱不能为空。"></asp:RequiredFieldValidator>
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                ControlToValidate="tb_Email" ErrorMessage="请输入正确的邮箱。" 
+                ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
         </td>
     </tr>
     <tr>
