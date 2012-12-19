@@ -8,7 +8,7 @@
                     <img alt="工程" width="50" height="50" src="/images/project.png" />
                 </td>
                 <td colspan="2" style="padding: 5px;">
-                    <asp:HyperLink ID="typeNameLabel" runat="server" Text='<%# Eval("typeName","[{0}]") %>' NavigateUrl='<%# Eval ("tid") %>'
+                    <asp:HyperLink ID="typeNameLabel" runat="server" Text='<%# Eval("typeName","[{0}]") %>' NavigateUrl='<%# Eval ("id","~/project.aspx?id={0}") %>'
                         Font-Size="14px" ForeColor="#105CB6" /> <asp:HyperLink ID="projectNameLabel" runat="server" NavigateUrl='<%# Eval("id","~/project.aspx?id={0}") %>'
                             Text='<%# Eval("projectName") %>' Font-Size="14px" ForeColor="#105CB6" />
                 </td>
