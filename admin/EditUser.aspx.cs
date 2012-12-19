@@ -51,6 +51,12 @@ public partial class admin_EditUser : System.Web.UI.Page
     }
     protected void btnEdit_Click(object sender, EventArgs e)
     {
+        this.Validate();
+        if(!this.IsValid)
+        {
+            return;
+        }
+       
         //修改用户信息
         int ID = int.Parse(Request.QueryString["id"].ToString());
         string UserName = tb_UserName.Text;

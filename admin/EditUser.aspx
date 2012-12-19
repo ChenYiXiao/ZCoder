@@ -22,6 +22,7 @@
             <td>
                 <br />
     <asp:TextBox ID="tb_UserName" runat="server" CssClass="zTextBox"></asp:TextBox>
+                <asp:Label ID="lb_tip" runat="server"></asp:Label>
                 <br />
                 <br />
             </td>
@@ -42,6 +43,9 @@
             </td>
             <td>
     <asp:TextBox ID="tb_Email" runat="server" CssClass="zTextBox"></asp:TextBox>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
+                    ControlToValidate="tb_Email" ErrorMessage="请正确填写邮箱。" 
+                    ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
                 <br />
                 <br />
             </td>
