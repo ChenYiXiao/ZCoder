@@ -63,7 +63,8 @@
                     完整工程上传：
                 </td>
                 <td class="layPadding" align="center">
-                    <input type="file" name="file_upload" id="file_upload" />
+                    <asp:FileUpload ID="FileUpload1" runat="server" CssClass="inputbox" />
+                   <!--屏蔽 <input type="file" name="file_upload" id="file_upload" />-->
                 </td>
                 <td class="layPadding">
                     请将整个项目打包成一个zip压缩文件。<br />
@@ -86,16 +87,16 @@
                     上传进度：
                 </td>
                 <td align="center">
-                    <asp:ScriptManager ID="ScriptManager1" runat="server">
+               <!--     <asp:ScriptManager ID="ScriptManager1" runat="server">
                     </asp:ScriptManager>
                     <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                        <ContentTemplate>
+                        <ContentTemplate>-->
                             <asp:TextBox ID="tb_Progess" runat="server" CssClass="inputbox" Height="104px" TextMode="MultiLine"></asp:TextBox>
                             <br />
                             <asp:Button ID="btn_OK" runat="server" CssClass="searchbtn" OnClick="btn_OK_Click"
                                 Text="开始上传" />
-                        </ContentTemplate>
-                    </asp:UpdatePanel>
+                    <!--    </ContentTemplate>
+                    </asp:UpdatePanel>-->
                 </td>
                 <td rowspan="2" align="left">
                     已支持的语言： </br>

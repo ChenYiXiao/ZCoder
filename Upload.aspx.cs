@@ -38,7 +38,7 @@ public partial class admin_Upload : System.Web.UI.Page
             string savePath = uploadpath + DateTime.Now.ToFileTime() + ".zip";
             file.SaveAs(savePath);
             /*在Session中存入保存文件路径*/
-            Session["savePath"] = savePath;
+          /*  CookiesHelper.SetCookie("savePath", savePath,DateTime.Now.AddHours(1));*/
            
         }
         else
