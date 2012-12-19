@@ -25,9 +25,14 @@ public partial class AddNote : System.Web.UI.Page
         ne.Context = Request.QueryString["context"].ToString();
         ne.Uid = int.Parse(Session["uid"].ToString());
         ne.UpTime = DateTime.Now;
+        if (ne.Context == "")
+        {
+            Response.Write("请填写注释！");
+            return;
+        }
         if (NoteOperation.AddNote(ne))
         {
-            Response.Write("注释添加成功。点击确定，关闭本窗口。");
+            Response.Write("注释添加成功。");
             return;
         }
         else

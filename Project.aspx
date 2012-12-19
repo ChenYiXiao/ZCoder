@@ -40,7 +40,7 @@
                     if (win && !window.opera) {
                         win.height = 0;
                         if (win.contentDocument && win.contentDocument.body.offsetHeight)
-                            win.height = win.contentDocument.body.offsetHeight +10;
+                            win.height = win.contentDocument.body.offsetHeight + 10;
                         else if (win.Document && win.Document.body.scrollHeight)
                             win.height = win.Document.body.scrollHeight;
                     }
@@ -92,17 +92,15 @@
                     }
                     popWindow.OnOK = function () {
                         $('#tip').load(window.encodeURI('addnote.aspx?cid=' + cid + '&startline=' + startLine + '&endline=' + endLine + '&context=' + $('#noteContext').val()));
-                        if ($('#tip').text().indexOf('注释添加成功。点击确定，关闭本窗口。') == '注释添加成功。点击确定，关闭本窗口。'.indexOf($('#tip').text())) {
+                        
                             $('#noteContext').val("");
-                            popWindow.OnOK = function () {
-                                window.frames['sourceFrame'].document.location.reload();
-                                isClicked = false;
-                                window.frames['sourceFrame'].Lowlight();
-                                popWindow.Close();
-                            }
+                            popWindow.Close();
+                            window.frames['sourceFrame'].document.location.reload();
+                            isClicked = false;
+                            window.frames['sourceFrame'].Lowlight();
                             return;
 
-                        }
+                        
                     }
                 }
                 if (!isClicked) {
