@@ -18,6 +18,14 @@ public partial class Redirect : System.Web.UI.Page
     static int time = 3;
     static string tip = "";
     static string url = "";
+    protected override void OnPreInit(EventArgs e)
+    {
+        if (Request.UrlReferrer.AbsoluteUri.LastIndexOf("admin") != -1)
+        {
+            this.MasterPageFile = "/admin/MasterPage.master";
+        }
+        base.OnPreInit(e);
+    }
     protected void Page_Load(object sender, EventArgs e)
     {
         url = url.Replace("~", "");
@@ -36,15 +44,15 @@ public partial class Redirect : System.Web.UI.Page
             }
         }
     }
-/***************************************************************************************************
-*\Function      Timer1_Tick
-*\Description   通过传入两个系统默认参数进行页面跳转。
-*\Parameter     url 目标页面的链接
-*\Return        void
-*\Note          无
-*\Log           2012.11.01    Ver 1.0    陈斌
-*               创建函数。
-***************************************************************************************************/
+    /***************************************************************************************************
+    *\Function      Timer1_Tick
+    *\Description   通过传入两个系统默认参数进行页面跳转。
+    *\Parameter     url 目标页面的链接
+    *\Return        void
+    *\Note          无
+    *\Log           2012.11.01    Ver 1.0    陈斌
+    *               创建函数。
+    ***************************************************************************************************/
     protected void Timer1_Tick(object sender, EventArgs e)
     {
         try
