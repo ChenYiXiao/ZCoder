@@ -16,6 +16,10 @@ public partial class admin_MasterPage : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Request.Url.AbsoluteUri.IndexOf("redirect.aspx")!= -1)
+        {
+            return;
+        }
         /*检查是否已登陆*/
         if (UserOperation.CheckLoged(Session) == false)
         {

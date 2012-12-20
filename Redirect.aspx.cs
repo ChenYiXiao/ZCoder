@@ -29,6 +29,10 @@ public partial class Redirect : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         url = url.Replace("~", "");
+        if (string.IsNullOrEmpty(url))
+        {
+            url = "/default.aspx";
+        }
         if (!IsPostBack)
         {
             try

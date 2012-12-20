@@ -62,7 +62,7 @@
                 <p class="userbtn">
                     <a href="/" title="" target="_blank">前台</a></p>
                 <p class="userbtn">
-                    <a href="#" title="">注销</a></p>
+                    <a href="/logout.aspx" title="">注销</a></p>
             </div>
             <div class="notifications">
                 <p class="notifycount">
