@@ -86,7 +86,7 @@ public class NoteOperation
     }
     public static List<NoteEntity> GetNotesBySartLine(int startline, int cid)
     {
-        /*获取工程信息*/
+        /*获取信息*/
         DataBase db = new DataBase();
         DataSet rs = db.RunProcReturn("select * from tb_note where startline=" + startline.ToString() + " and cid=" + cid.ToString(), "tb_note");
         List<NoteEntity> notes = new List<NoteEntity>();
@@ -108,4 +108,6 @@ public class NoteOperation
         }
         return notes;
     }
+    
+  
 }

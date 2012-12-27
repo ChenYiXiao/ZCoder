@@ -19,18 +19,19 @@ using System.Web.UI;
 /// </summary>
 public class ProjectOperation
 {
-	public ProjectOperation()
-	{
-		//
-		//TODO: 在此处添加构造函数逻辑
-		//
-	}
-    public static bool AddProject(ProjectEntity pe){
+    public ProjectOperation()
+    {
+        //
+        //TODO: 在此处添加构造函数逻辑
+        //
+    }
+    public static bool AddProject(ProjectEntity pe)
+    {
         /*增加一个工程*/
         DataBase db = new DataBase();
         try
         {
-            string sql =string.Format( "INSERT INTO tb_project ( projectName, description, upTime, tid, uid)VALUES  ( '{0}', '{1}','{2}', {3}, {4})",pe.ProjectName,pe.Description,pe.UpTime,pe.Tid,pe.Uid);
+            string sql = string.Format("INSERT INTO tb_project ( projectName, description, upTime, tid, uid)VALUES  ( '{0}', '{1}','{2}', {3}, {4})", pe.ProjectName, pe.Description, pe.UpTime, pe.Tid, pe.Uid);
             db.ExCommandNoBack(sql);
             return true;
         }
@@ -39,18 +40,30 @@ public class ProjectOperation
             return false;
         }
     }
+    public static bool CheckProjectNameExist(string ProjectName,int ProjectId)
+    {
+        DataBase db = new DataBase();
+        string sql = string.Format("select * from tb_project where projectName='{0}' and id != {1}", ProjectName,ProjectId);
+        if (db.ExCommand(sql).Tables[0].Rows.Count > 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
 
-
-    public static void EditProject(string ProjectName, string description, int type,int ID)
+    public static void EditProject(string ProjectName, string description, int type, int ID)
     {
         /*工程的修改*/
         DataBase db = new DataBase();
-        string sql = "UPDATE tb_project SET projectName ='" + ProjectName + "',description ='" + description + "',Tid = "+ type +" where id=" + ID.ToString();
+        string sql = "UPDATE tb_project SET projectName ='" + ProjectName + "',description ='" + description + "',Tid = " + type + " where id=" + ID.ToString();
         db.ExCommandNoBack(sql);
     }
 
-   
+
 
     public static void DelProject(String id)
     {
@@ -60,7 +73,7 @@ public class ProjectOperation
         db.ExCommandNoBack(sql);
 
     }
-   
+
     public static ProjectEntity GetProject(int projectId)
     {
         /*获取工程信息*/

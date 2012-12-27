@@ -2,17 +2,22 @@
     CodeFile="NoteList.aspx.cs" Inherits="admin_NoteList" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Ct1" runat="Server">
+    <style type="text/css">
+        .auto-style1 {
+            height: 32px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Ct2" runat="Server">
     <h2>
         注释列表</h2>
     <hr />
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:db_ConnectionString %>"
-        SelectCommand="SELECT     tb_note.id, tb_note.noteName, tb_project.projectName, tb_user.userName, tb_note.upTime, tb_note.agree, tb_note.disagree
+        SelectCommand="SELECT     tb_note.context,tb_note.id, tb_note.noteName, tb_project.projectName, tb_user.userName, tb_note.upTime, tb_note.agree, tb_note.disagree
 FROM         tb_note INNER JOIN
                       tb_code ON tb_note.cid = tb_code.id INNER JOIN
                       tb_user ON tb_note.uid = tb_user.id INNER JOIN
-                      tb_project ON tb_code.pid = tb_project.id" OnSelecting="SqlDataSource1_Selecting">
+                      tb_project ON tb_code.pid = tb_project.id">
     </asp:SqlDataSource>
     <br />
     <table width="95%" class="zTable" style="margin: auto">
@@ -49,7 +54,7 @@ FROM         tb_note INNER JOIN
                         <asp:Label ID="idLabel" runat="server" Text='<%# Eval("id") %>' />
                     </td>
                     <td>
-                        <asp:Label ID="userNameLabel" runat="server" Text='<%# Eval("noteName") %>' />
+                        <asp:HyperLink ID="userNameLabel" runat="server" Text='<%# Eval("context") %>'  NavigateUrl='<%# Eval("id")%>' OnDataBinding="fixUrl" />
                     </td>
                     <td>
                         <asp:Label ID="Label3" runat="server" Text='<%# Eval("projectName") %>' />

@@ -95,10 +95,12 @@ public class UserOperation
             Session.Add("password", password);
             Session.Add("uid", result.Tables[0].Rows[0]["id"].ToString());
             Session.Add("isadmin", result.Tables[0].Rows[0]["isadmin"]);
+            Session.Remove("loginerror");
             return true;
         }
         else
         {
+            Session.Add("loginerror", true);
             return false;
         }
     }

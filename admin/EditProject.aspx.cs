@@ -51,8 +51,20 @@ public partial class admin_EditProject : System.Web.UI.Page
     protected void btnEdit_Click(object sender, EventArgs e)
     {
         //修改工程信息
+   
         int ID = int.Parse(Request.QueryString["id"].ToString());
         string ProjectName = tb_ProjectName.Text;
+        if (ProjectName == "")
+        {
+            SmallScript.MessageBox(Page, "工程名不能为空！");
+            return;
+        }
+        if (ProjectOperation.CheckProjectNameExist(ProjectName,ID) == true)
+        {
+            SmallScript.MessageBox(Page, "工程名重复。");
+            return;
+        }
+
         int Type = Convert.ToInt32(db_Type.SelectedItem.Value);
         string description = tb_description.Text;  
         try
