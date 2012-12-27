@@ -23,7 +23,7 @@
                 <li><a href="Projects.aspx" class="zMenuSeletcedA">工程</a></li>
                 <li><a>注释</a></li>
                 <li><a>评论</a></li>
-                <li><a>帮助</a></li>
+                <li><a href="help.htm">帮助</a></li>
                 <li><a href="About.aspx">关于</a></li>
             </ul>
             <div style="float: right; margin-top: 15px; font-size: 12px">
