@@ -29,7 +29,7 @@ public partial class admin_NoteList : System.Web.UI.Page
     {
         HyperLink hl=(HyperLink)sender;
         NoteEntity ne=NoteOperation.GetNote(int.Parse(hl.NavigateUrl));
-        hl.NavigateUrl = string.Format("../loadnotes.aspx?startline={0}&cid={1}", ne.StartLine, ne.Cid);
+        hl.NavigateUrl = string.Format("../loadnotes.aspx?startline={0}&cid={1}&isDing=2", ne.StartLine, ne.Cid);
     }
    
 }
