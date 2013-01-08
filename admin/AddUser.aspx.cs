@@ -28,7 +28,7 @@ public partial class admin_AddUser: System.Web.UI.Page
         DataBase db = new DataBase();
         //从表单中取出数据
         string userName = tb_UserName.Text;
-        string password = tb_Password.Text;
+        string password = Encrypt.encrypt(tb_Password.Text);
         string email = tb_Email.Text;
         bool isAdmin = false;
         isAdmin = cb_IsAdmin.Checked;
