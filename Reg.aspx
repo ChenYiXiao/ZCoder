@@ -91,8 +91,9 @@
                 </asp:UpdatePanel>
                 <td height="60">
                     <asp:CustomValidator ID="CustomValidator1" runat="server" ControlToValidate="tb_Password"
-                        ErrorMessage="&lt;img src=&quot;/images/regwrong.png&quot;&gt;密码长度必须大于6小于18。"
-                        OnServerValidate="CustomValidator1_ServerValidate" ValidateEmptyText="True" ValidationGroup="a"></asp:CustomValidator>
+                        ErrorMessage="&lt;img src=&quot;/images/regwrong.png&quot;&gt;密码长度必须在6至18位之间"
+                        OnServerValidate="CustomValidator1_ServerValidate" 
+                        ValidateEmptyText="True" ValidationGroup="a"></asp:CustomValidator>
                 </td>
                 <td height="60" width="10%">
                     &nbsp;
@@ -139,6 +140,9 @@
                 </td>
                 <td height="60">
                     &nbsp;
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
+                        ControlToValidate="tb_QQ" ErrorMessage="QQ号不正确" ValidationExpression="\w{0,}" 
+                        ViewStateMode="Disabled"></asp:RegularExpressionValidator>
                 </td>
                 <td height="60" width="10%">
                     &nbsp;

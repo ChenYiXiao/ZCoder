@@ -10,7 +10,8 @@
                 <asp:Label ID="label" runat="server" Text="密码："></asp:Label>
             </td>
             <td>
-    <asp:TextBox ID="tb_PassWord" runat="server" CssClass="zTextBox" TextMode=Password></asp:TextBox>
+    <asp:TextBox ID="tb_PassWord" runat="server" CssClass="zTextBox" TextMode=Password 
+                    ontextchanged="tb_PassWord_TextChanged"></asp:TextBox>
                 <br />
                 <br />
             </td>
@@ -19,7 +20,8 @@
                         ControlToValidate="tb_PassWord" ErrorMessage="用户密码必填。"></asp:RequiredFieldValidator>
                     <asp:CustomValidator ID="CustomValidator1" runat="server" ControlToValidate="tb_Password"
                         
-                        ErrorMessage="&lt;img src=&quot;/images/regwrong.png&quot;&gt;密码长度必须大于6小于18。" OnServerValidate="CustomValidator1_ServerValidate"
+                        
+                        ErrorMessage="&lt;img src=&quot;/images/regwrong.png&quot;&gt;密码长度必须大于6小于18" OnServerValidate="CustomValidator1_ServerValidate"
                         ValidateEmptyText="True" ValidationGroup="a"></asp:CustomValidator>
                 </td>
             </tr>
@@ -33,7 +35,9 @@
                 <br />
             </td>
              <td height="60">
-                    &nbsp;<asp:CompareValidator ID="CompareValidator1" 
+                    &nbsp;<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                        ControlToValidate="tb_confirm_password" ErrorMessage="两次输入密码不一致"></asp:RequiredFieldValidator>
+                    <asp:CompareValidator ID="CompareValidator1" 
                         runat="server" ControlToCompare="tb_Password"
                         ControlToValidate="tb_confirm_password" 
                         ErrorMessage="&lt;img src=&quot;/images/regwrong.png&quot;&gt;两次输入的密码不一致。" 
@@ -51,4 +55,5 @@
             </td>
         </tr>
             </table>
-            </asp:Content>
+            </div>
+</asp:Content>

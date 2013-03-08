@@ -70,7 +70,7 @@ public partial class rePassword : System.Web.UI.Page
     protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args) 
     {
         /*对密码长度判断，要求密码在6到18位之间*/
-        if (args.Value.Length >= 6 && (args.Value.Length <= 18))
+        if (args.Value.Length > 6 && (args.Value.Length < 18))
         {
             args.IsValid = true;
         }
@@ -78,5 +78,9 @@ public partial class rePassword : System.Web.UI.Page
         {
             args.IsValid = false;
         }
+    }
+    protected void tb_PassWord_TextChanged(object sender, EventArgs e)
+    {
+
     }
 }

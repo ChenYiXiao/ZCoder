@@ -43,6 +43,8 @@
             <br />
 &nbsp;&nbsp;
     <asp:TextBox ID="tb_Password" runat="server" CssClass="inputbox"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                ControlToValidate="tb_Password" ErrorMessage="密码不能为空"></asp:RequiredFieldValidator>
         </td>
     </tr>
     <tr>
