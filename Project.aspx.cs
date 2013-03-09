@@ -17,7 +17,10 @@ public partial class Project : System.Web.UI.Page
     public string ProjectNodes = "";
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (UserOperation.CheckLoged(Session) == false)
+        {
+            SmallScript.goRedirect(Response, Session, "请登录后再浏览本页", "/Login.aspx");
+        }
         if (!IsPostBack)
         {
             if (!Directory.Exists(Server.MapPath(AppConfiger.GetProjectsDir(Server) + "\\" + Request.QueryString["id"].ToString())))
