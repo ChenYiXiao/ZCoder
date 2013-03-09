@@ -24,10 +24,15 @@ public partial class admin_AddProject : System.Web.UI.Page
         /*初始化工程，并设置属性*/
         ProjectEntity pe = new ProjectEntity();
         pe.ProjectName = tb_ProjectName.Text;
-        pe.Tid =int.Parse( ddl_Type.SelectedValue);
-        pe.Uid =int.Parse( Session["uid"].ToString());
+        if (ProjectOperation.CheckProjectNameExist(pe.ProjectName, -1) == true)
+        {
+            SmallScript.MessageBox(Page, "已存在该名称的工程。请使用其他名称。");
+            return;
+        }
+        pe.Tid = int.Parse(ddl_Type.SelectedValue);
+        pe.Uid = int.Parse(Session["uid"].ToString());
         pe.UpTime = DateTime.Now;
-        pe.Description = tb_Description.Text;
+        pe.Description = Server.HtmlEncode(tb_Description.Text);
         /*添加工程，并返回是否成功*/
         if (pe.ProjectName == "")
         {
@@ -36,10 +41,11 @@ public partial class admin_AddProject : System.Web.UI.Page
         }
         if (ProjectOperation.AddProject(pe) == true)
         {
-            SmallScript.goRedirect(Response,Session,"工程已成功添加！","/admin/projectlist.aspx");
+            SmallScript.goRedirect(Response, Session, "工程已成功添加！", "/admin/projectlist.aspx");
         }
-        else{
-            SmallScript.MessageBox(Page,"添加工程失败！");
+        else
+        {
+            SmallScript.MessageBox(Page, "添加工程失败！");
         };
     }
 }
