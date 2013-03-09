@@ -77,10 +77,10 @@
                 <%=Environment.WorkingSet %>
             </td>
             <td>
-                系统已运行时间：
+                
             </td>
             <td>
-                <%=Environment.TickCount/1000/60 %> 分
+               
             </td>
         </tr>
         <tr>
