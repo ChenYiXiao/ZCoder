@@ -59,6 +59,12 @@ public partial class admin_EditProject : System.Web.UI.Page
             SmallScript.MessageBox(Page, "工程名不能为空！");
             return;
         }
+        if (ProjectOperation.CheckProjectNameExist(ProjectName,ID) == true)
+        {
+            SmallScript.MessageBox(Page, "工程名重复。");
+            return;
+        }
+
         int Type = Convert.ToInt32(db_Type.SelectedItem.Value);
         string description = tb_description.Text;  
         try
