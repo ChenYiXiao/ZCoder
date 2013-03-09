@@ -47,7 +47,7 @@ public partial class Reg : System.Web.UI.Page
         }
         String str = Encrypt.encrypt(tb_Password.Text);
         
-         if (UserOperation.Reg(tb_UserName.Text, str, tb_Email.Text, tb_QQ.Text, true, false, DateTime.Now))
+         if (UserOperation.Reg(tb_UserName.Text.Trim(), str, tb_Email.Text, tb_QQ.Text, true, false, DateTime.Now))
      
          {
              UserOperation.Login(Session, tb_UserName.Text, tb_Password.Text);
