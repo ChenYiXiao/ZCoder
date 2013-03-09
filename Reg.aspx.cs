@@ -27,6 +27,11 @@ public partial class Reg : System.Web.UI.Page
     protected void btn_Submit_Click(object sender, EventArgs e)
     /*对用户点击注册按钮后进行信息验证*/
     {
+        if (tb_UserName.Text.Length == 0)
+        {
+            lb_CkTip.Text = "<img src=\"/images/regwrong.png\">请输入用户名。";
+            return;
+        }
         if (tb_UserName.Text.Length > 10)
         {
             lb_CkTip.Text = "<img src=\"/images/regwrong.png\">用户名过长！";
@@ -61,6 +66,11 @@ public partial class Reg : System.Web.UI.Page
     protected void tb_UserName_TextChanged(object sender, EventArgs e)
     /*判断用户名是否存在*/
     {
+        if (tb_UserName.Text.Length == 0)
+        {
+            lb_CkTip.Text = "<img src=\"/images/regwrong.png\">请输入用户名。";
+            return;
+        }
         if (tb_UserName.Text.Length > 10)
         {
             lb_CkTip.Text = "<img src=\"/images/regwrong.png\">用户名过长！";
