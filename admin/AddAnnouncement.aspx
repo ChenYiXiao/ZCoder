@@ -18,7 +18,6 @@
     <asp:Button ID="tb_submit" runat="server" CssClass="searchbtn" Text="提交" 
         onclick="tb_submit_Click" />
     &nbsp;&nbsp;
-    <asp:Button ID="tb_clear" runat="server" CssClass="searchbtn" Text="清空" />
     <br />
     <br />
 </asp:Content>
