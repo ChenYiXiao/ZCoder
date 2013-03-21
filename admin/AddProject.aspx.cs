@@ -24,6 +24,11 @@ public partial class admin_AddProject : System.Web.UI.Page
         /*初始化工程，并设置属性*/
         ProjectEntity pe = new ProjectEntity();
         pe.ProjectName = tb_ProjectName.Text;
+        if (pe.ProjectName == "")
+        {
+            SmallScript.MessageBox(Page, "请输入工程名！");
+            return;
+        }
         if (ProjectOperation.CheckProjectNameExist(pe.ProjectName, -1) == true)
         {
             SmallScript.MessageBox(Page, "已存在该名称的工程。请使用其他名称。");
