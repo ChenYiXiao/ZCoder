@@ -44,7 +44,7 @@ public class UserOperation
           db.MakeInParam("username",System.Data.SqlDbType.VarChar,20,userName),
           db.MakeInParam("password",System.Data.SqlDbType.VarChar,200,password),
           db.MakeInParam("email",System.Data.SqlDbType.VarChar,50,email),
-        db.MakeInParam("qq",System.Data.SqlDbType.VarChar,15,qq)
+          db.MakeInParam("qq",System.Data.SqlDbType.VarChar,15,qq)
         }) == 0)
         {
             return false;

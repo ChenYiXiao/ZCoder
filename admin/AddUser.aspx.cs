@@ -28,15 +28,14 @@ public partial class admin_AddUser: System.Web.UI.Page
         DataBase db = new DataBase();
         //从表单中取出数据
         string userName = tb_UserName.Text;
-        string password = tb_Password.Text;
+        string password = Encrypt.encrypt(tb_Password.Text);
         string email = tb_Email.Text;
-        bool isAdmin = false;
-        isAdmin = cb_IsAdmin.Checked;
+        bool isAdmin = cb_IsAdmin.Checked;
         //新增用户的数据库操作
         if (UserOperation.Reg(userName, password, email, "", true, isAdmin, DateTime.Now))
         {
             //添加成功后显示
-            SmallScript.MessageBox(Page, "添加用户成功。");
+            SmallScript.MessageBox(Page, "添加用户成功。"+isAdmin); 
             return;
         }
         else

@@ -59,6 +59,29 @@ public partial class Default2 : System.Web.UI.Page
             }
         }
     }
+
+
+
+
+    public bool IsChina(string CString)
+          {
+        
+              for (int i = 0; i < CString.Length; i++)
+              {
+
+                  if (CString[i] >= '0' && CString[i] <= '9')
+                      continue;
+                  else
+                      return true;
+              }
+              return false;
+             
+          }
+
+
+
+
+ 
     protected void btnEdit_Click(object sender, EventArgs e)
     {
         Validate();
@@ -68,7 +91,18 @@ public partial class Default2 : System.Web.UI.Page
             /*如果页面验证没通过则返回*/
             return;
         }
-        else
+        else if (tb_Email.Text == "")
+        {
+
+            SmallScript.MessageBox(Page, "修改失败！邮箱不能为空！");
+            return;
+        }
+        else if (tb_QQ.Text == "") {
+            SmallScript.MessageBox(Page, "修改失败！ QQ不能为空！");
+            return;
+        }
+
+        else if (!IsChina(tb_QQ.Text))
         {
             DataBase db1 = new DataBase(); /*实例化一个数据库*/
             string ID = Session["uid"].ToString(); /*获取用户ID*/
@@ -92,9 +126,18 @@ public partial class Default2 : System.Web.UI.Page
             SmallScript.MessageBox(Page, "修改用户成功。"); /*修改成功，页面跳出提示*/
             return;
         }
+        else 
+        {
+            SmallScript.MessageBox(Page, "修改失败！ QQ不能为汉字或特殊字符！");
+            return;
+        }
     }
     protected void tb_Password_TextChanged(object sender, EventArgs e)
     {
 
     }
 }
+
+
+
+

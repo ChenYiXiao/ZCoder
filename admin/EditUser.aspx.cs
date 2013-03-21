@@ -49,18 +49,77 @@ public partial class admin_EditUser : System.Web.UI.Page
             }
         }
     }
+    public bool IsChina(string CString)
+    {
+
+        for (int i = 0; i < CString.Length; i++)
+        {
+
+            if (CString[i] >= '0' && CString[i] <= '9')
+                continue;
+            else
+                return true;
+        }
+        return false;
+
+    }
+
+
     protected void btnEdit_Click(object sender, EventArgs e)
     {
         this.Validate();
         if(!this.IsValid)
         {
+            SmallScript.MessageBox(Page, "修改失败！"); /*修改失败，页面跳出提示*/
+            /*如果页面验证没通过则返回*/
             return;
         }
-       
-        //修改用户信息
+        else if (tb_Email.Text == "")
+        {
+
+            SmallScript.MessageBox(Page, "修改失败！邮箱不能为空！");
+            return;
+        }
+        else if (tb_QQ.Text == "")
+        {
+            SmallScript.MessageBox(Page, "修改失败！ QQ不能为空！");
+            return;
+        }
+        else if (tb_UserName.Text == "")
+        {
+
+            SmallScript.MessageBox(Page, "修改失败！用户名不能为空！");
+            return;
+        }
+
+
+        else if (tb_PassWord.Text == "")
+        {
+
+            SmallScript.MessageBox(Page, "修改失败！密码不能为空！");
+            return;
+        }
+        else if (tb_PassWord.Text.Length >18)
+        {
+
+            SmallScript.MessageBox(Page, "修改失败！密码不能超过18位！");
+            return;
+        }
+        else if (tb_PassWord.Text.Length < 6 )
+        {
+
+            SmallScript.MessageBox(Page, "修改失败！密码不能小于6位！");
+            return;
+        }
+
+
+        else if (!IsChina(tb_QQ.Text))
+        
+        {//修改用户信息
         int ID = int.Parse(Request.QueryString["id"].ToString());
         string UserName = tb_UserName.Text;
-        string PassWord = tb_PassWord.Text;
+        String str = Encrypt.encrypt(tb_PassWord.Text);
+        string PassWord = str;
         string Email = tb_Email.Text;
         bool Sex = (rb_Sex.SelectedIndex == 0);
         string QQ = tb_QQ.Text;
@@ -78,5 +137,11 @@ public partial class admin_EditUser : System.Web.UI.Page
         SmallScript.MessageBox(Page, "修改用户成功。");
         SmallScript.goRedirect(Response,Session,"跳转到用户列表 ","~/admin/UserList.aspx");
         return;
-    }
+        }
+        else
+        {
+            SmallScript.MessageBox(Page, "修改失败！ QQ不能为汉字或特殊字符！");
+            return;
+        }
+}
 }
