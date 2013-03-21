@@ -91,14 +91,6 @@ public partial class admin_EditUser : System.Web.UI.Page
             SmallScript.MessageBox(Page, "修改失败！用户名不能为空！");
             return;
         }
-
-
-        else if (tb_PassWord.Text == "")
-        {
-
-            SmallScript.MessageBox(Page, "修改失败！密码不能为空！");
-            return;
-        }
         else if (tb_PassWord.Text.Length >18)
         {
 
