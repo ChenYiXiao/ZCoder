@@ -17,44 +17,53 @@ public partial class LoadNotes : System.Web.UI.Page
         int startline = int.Parse(Request.QueryString["startline"].ToString());
         int cid = int.Parse(Request.QueryString["cid"].ToString());
         assNotes = NoteOperation.GetNotesBySartLine(startline, cid);
+        int isDing = int.Parse(Request.QueryString["isDing"]);
+        if (isDing ==1)
+        {
+            Ding(isDing);
+        }
+        else if(isDing == 0)
+        {
+            Ding(isDing);
+        }
+
         
     }
     
 
 
-    private void Ding(int Nid)
+    private void Ding(int isDing)
     {
         DingEntity de = new DingEntity();
-       
         de.Uid = UserOperation.GetCurrentUid(Session);
-        de.Nid = Nid;
-        if (DingOperation.AddDing(de))
+        de.Nid = int.Parse(Request.QueryString["nid"].ToString());
+        de.isDing = isDing;
+        if (DingOperation.AddDing(de)==true)
         {
-            int ID = 1;   /*int.Parse(Request.QueryString["id"].ToString());*/
             DingOperation.GetDing(de.Nid, de.Uid,de.isDing);
-            SmallScript.MessageBox(Page, "添加公告失败！");
+            Response.AddHeader("Refresh", "10"); 
         }
         else {
-            SmallScript.MessageBox(Page, "添加sdf 失败！");
+            SmallScript.MessageBox(Page, "添加发广告会更好的 失败！");
         }
+
+      
     }
 
     
-    protected void Dig_Click(object sender, EventArgs e)
+   /* protected void Dig_Click(object sender, EventArgs e)
     {
-        LinkButton lb = (LinkButton)sender;
-        int a = 0;
-        a = int.Parse(lb.CommandArgument.ToString());
+        string Id = (((LinkButton)sender).CommandArgument.ToString()).ToString();
+        int a = int.Parse(Id); 
         Ding(a);
         
     }
     protected void Cai_Click(object sender, EventArgs e)
     {
-        Button lb = (Button)sender;
-        int a = 0;
-        a = int.Parse(lb.CommandArgument.ToString());
+        string Id = (((LinkButton)sender).CommandArgument.ToString()).ToString();
+        int a = int.Parse(Id);
         Ding(a);
-    }
+    }*/
    /* protected void Button_Command(object sender, CommandEventArgs e)
     {
         int a=0;
@@ -71,6 +80,7 @@ public partial class LoadNotes : System.Web.UI.Page
            
         }
     }*/
+
    
 }
 

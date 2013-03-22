@@ -40,9 +40,10 @@ public class DingEntity
             get { return nid; }
             set { nid = value; }
         }
-        public bool isDing
+        int isding = -1;
+        public int isDing
         {
-            get { return isDing; }
-            set { isDing = value; }
+            get { return isding; }
+            set { isding = value; }
         }
  }

@@ -28,7 +28,7 @@
                     <li><a href="Projects.aspx">工程</a></li>
                     <li><a>注释</a></li>
                     <li><a>评论</a></li>
-                    <li><a>帮助</a></li>
+                    <li><a href="help.htm">帮助</a></li>
                     <li><a href="About.aspx">关于</a></li>
                 </ul>
             </div>
