@@ -53,11 +53,15 @@ public partial class admin_RSManager_RSManager : System.Web.UI.UserControl
         dt.Columns.Add("type");
 
         DataRow Fdr = dt.NewRow();
+        if (Request.QueryString["dir"].ToString().Split('\\').Length>4) { 
+       
         Fdr["name"] = "..";
         Fdr["size"] = 0;
         Fdr["mTime"] = "";
         Fdr["type"] = "";
         dt.Rows.Add(Fdr);
+        }
+     
         foreach (RSObject ro in RSObjects)
         {
             DataRow dr = dt.NewRow();
@@ -115,7 +119,7 @@ public partial class admin_RSManager_RSManager : System.Web.UI.UserControl
         HyperLink hl = (HyperLink)sender;
         if (hl.NavigateUrl == "..")
         {
-            string tempDir = Dir.Substring(0, Dir.LastIndexOf("\\") + 1);
+            string tempDir = Dir.Substring(0, Dir.LastIndexOf("\\") );
             if (tempDir == AppConfiger.GetProjectsDir(Server))
             {
                 hl.NavigateUrl = "";

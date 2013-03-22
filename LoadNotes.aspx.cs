@@ -17,70 +17,13 @@ public partial class LoadNotes : System.Web.UI.Page
         int startline = int.Parse(Request.QueryString["startline"].ToString());
         int cid = int.Parse(Request.QueryString["cid"].ToString());
         assNotes = NoteOperation.GetNotesBySartLine(startline, cid);
-        int isDing = int.Parse(Request.QueryString["isDing"]);
-        if (isDing ==1)
+        int isDing = int.Parse(Request.QueryString["isDing"].ToString()); 
+        if (isDing == 3) 
         {
-            Ding(isDing);
+            SmallScript.MessageBox(Page, "同一用户不能顶或踩同一个评论两次！");
         }
-        else if(isDing == 0)
-        {
-            Ding(isDing);
-        }
-
-        
+       
     }
-    
-
-
-    private void Ding(int isDing)
-    {
-        DingEntity de = new DingEntity();
-        de.Uid = UserOperation.GetCurrentUid(Session);
-        de.Nid = int.Parse(Request.QueryString["nid"].ToString());
-        de.isDing = isDing;
-        if (DingOperation.AddDing(de)==true)
-        {
-            DingOperation.GetDing(de.Nid, de.Uid,de.isDing);
-            Response.AddHeader("Refresh", "10"); 
-        }
-        else {
-            SmallScript.MessageBox(Page, "添加发广告会更好的 失败！");
-        }
-
-      
-    }
-
-    
-   /* protected void Dig_Click(object sender, EventArgs e)
-    {
-        string Id = (((LinkButton)sender).CommandArgument.ToString()).ToString();
-        int a = int.Parse(Id); 
-        Ding(a);
-        
-    }
-    protected void Cai_Click(object sender, EventArgs e)
-    {
-        string Id = (((LinkButton)sender).CommandArgument.ToString()).ToString();
-        int a = int.Parse(Id);
-        Ding(a);
-    }*/
-   /* protected void Button_Command(object sender, CommandEventArgs e)
-    {
-        int a=0;
-         switch (e.CommandName)
-        {
-            case "Dig":
-                a = int.Parse(e.CommandArgument.ToString());
-                Ding(a);
-                break;
-            case "Cai":
-                a = int.Parse(e.CommandArgument.ToString());
-                Ding(a);
-                break;
-           
-        }
-    }*/
-
    
 }
 

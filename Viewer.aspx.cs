@@ -23,6 +23,10 @@ public partial class Viewer : System.Web.UI.Page
     public string jsaLineCount = "";
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (UserOperation.CheckLoged(Session) == false)
+        {
+           SmallScript.goRedirect(Response,Session,"请登录后再浏览本页","/Login.aspx"); 
+        }
         string id = Request.QueryString["id"].ToString();
         try
         {

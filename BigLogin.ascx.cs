@@ -34,7 +34,15 @@ public partial class BigLogin : System.Web.UI.UserControl
             return;
         }
         else
-        {
+        {  
+            if( Session["loginerror"] ==null)
+            {
+               
+            }
+            else if ((bool.Parse(Session["loginerror"].ToString()) == true))
+            {
+                tb_tip.Visible = true;
+            }
             /*登陆面板可见，用户面板不可见*/
             pnl_Login.Visible = true;
             pnl_User.Visible = false;

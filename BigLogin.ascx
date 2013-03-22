@@ -1,10 +1,11 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="BigLogin.ascx.cs" Inherits="BigLogin" %>
 <link href="layout.css" rel="stylesheet" type="text/css" />
-<asp:Panel ID="pnl_Login" runat="server">
+<asp:Panel ID="pnl_Login" runat="server" Visible="False">
     <asp:TextBox ID="tb_UserName" runat="server" CssClass="zTextBox"></asp:TextBox>
     <br>
     <br>
     <asp:TextBox ID="tb_Password" runat="server" CssClass="zTextBox" TextMode="Password"></asp:TextBox>
+    <p><asp:Label runat="server" ID="tb_tip" Font-Size="12px" ForeColor="Red" Visible="False">密码输入错误。</asp:Label> </p>
     <p>
         <asp:CheckBox ID="CheckBox1" runat="server" Font-Size="12px" ForeColor="#999999"
             Text="自动登录" />

@@ -30,14 +30,14 @@ public partial class Default2 : System.Web.UI.Page
             if (Session["uid"] == null)
             {
                 SmallScript.MessageBox(Page, "不存在该用户！点击返回！");
-                SmallScript.GoBack(Page);
+                
                 return;
             }
             UserEntity ue = UserOperation.GetUser(int.Parse(Session["uid"].ToString()));  /*获取用户ID*/
             if (ue == null)  /*用户id为空返回*/
             {
                 SmallScript.MessageBox(Page, "不存在该用户！点击返回！"); 
-                SmallScript.GoBack(Page);
+                
                 return;
             }
             else

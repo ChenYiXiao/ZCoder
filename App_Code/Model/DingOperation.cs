@@ -35,7 +35,7 @@ public class DingOperation
             db.ExCommandNoBack(sql);
             DataSet rs = db.RunProcReturn("select * from tb_Ding where nid=" + de.Nid + "and uid=" + de.Uid, "tb_Ding");
             int ID = int.Parse(rs.Tables[0].Rows[0]["id"].ToString());
-            if (rs.Tables[0].Rows.Count > 1)
+            if (rs.Tables[0].Rows.Count == 1)
             {
                 return true;
             }
@@ -62,14 +62,12 @@ public class DingOperation
         DataBase db = new DataBase();
         DataSet rs = db.RunProcReturn("select * from tb_Ding where nid=" + nId +"and uid=" + uId, "tb_Ding");
         DataSet rs1 = db.RunProcReturn("select * from tb_note where id=" + nId , "tb_note");
-
-
         int ding = int.Parse(rs1.Tables[0].Rows[0]["agree"].ToString());
         int cai = int.Parse(rs1.Tables[0].Rows[0]["disagree"].ToString());
         int ID = int.Parse(rs.Tables[0].Rows[0]["id"].ToString());
         ding = ding + 1;
         cai = cai + 1;
-        if (rs.Tables[0].Rows.Count > 1)
+        if (rs.Tables[0].Rows.Count >= 1)
         {
             if (isDing ==1 )
             {
