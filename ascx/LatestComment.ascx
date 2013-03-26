@@ -7,11 +7,7 @@
                 <td rowspan="2" style="width: 60px;">
                     <img alt="工程" width="50" height="50" src="/images/project.png" />
                 </td>
-                <td colspan="2" style="padding: 5px;">
-                    <asp:HyperLink ID="typeNameLabel" runat="server" Text='<%# Eval("typeName","[{0}]") %>' NavigateUrl='<%# Eval ("tid") %>'
-                        Font-Size="14px" ForeColor="#105CB6" /> <asp:HyperLink ID="projectNameLabel" runat="server" NavigateUrl='<%# Eval("id","~/project.aspx?id={0}") %>'
-                            Text='<%# Eval("projectName") %>' Font-Size="14px" ForeColor="#105CB6" />
-                </td>
+               
                 <td>
                 </td>
             </tr>
@@ -19,8 +15,8 @@
                 <td>
                 </td>
                 <td style="font-size: 12px; color: #999; padding-top: 3px;">
-                    作者：<asp:Label ID="userNameLabel" runat="server" Text='<%# Eval("userName") %>' />
-                    上传日期：<asp:Label ID="upTimeLabel" runat="server" Text='<%# Eval("upTime") %>' />
+                    评论标题：<asp:Label ID="userNameLabel" runat="server" Text='<%# Eval("commentTitle") %>' />
+                    评论正文：<asp:Label ID="upTimeLabel" runat="server" Text='<%# Eval("context") %>' />
                 </td>
                 <td>
                 </td>

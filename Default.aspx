@@ -4,6 +4,7 @@
 <%@ Register Src="BigLogin.ascx" TagName="BigLogin" TagPrefix="uc1" %>
 <%@ Register Src="ascx/LatestProjects.ascx" TagName="LatestProjects" TagPrefix="uc2" %>
 <%@ Register Src="ascx/LatestNote.ascx" TagName="LatestNote" TagPrefix="uc2" %>
+<%@ Register Src="ascx/LatestComment.ascx" TagName="LatestComment" TagPrefix="uc2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <link href="css/Tabs.css" rel="stylesheet" type="text/css" />
     <script src="js/tabs.js" type="text/javascript"></script>
@@ -30,15 +31,20 @@
                             </ContentTemplate>
                         </asp:UpdatePanel>
                     </div>
-                    <div class="hide">
+                    <div>
                         <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                             <ContentTemplate>
                                 <uc2:LatestNote ID="LatestNote1" runat="server" />
                             </ContentTemplate>
                         </asp:UpdatePanel>
                     </div>
-                    <div class="hide">
-                        最新评论尚待完成</div>
+                      <div>
+                        <asp:UpdatePanel ID="UpdatePanel3" runat="server">
+                            <ContentTemplate>
+                                <uc2:LatestComment ID="LatestComment1" runat="server" />
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
+                    </div>
                 </div>
             </div>
         </div>
