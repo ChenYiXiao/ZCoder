@@ -16,81 +16,88 @@ using System.Web;
 public class NoteEntity
 {
 
-        int id = -1;
-        public int Id
-        {
-            get { return id; }
-            set { id = value; }
-        }
+    int id = -1;
+    public int Id
+    {
+        get { return id; }
+        set { id = value; }
+    }
 
-        string noteName = "";
-        public string NoteName
-        {
-            get { return noteName; }
-            set { noteName = value; }
-        }
+    string noteName = "";
+    public string NoteName
+    {
+        get { return noteName; }
+        set { noteName = value; }
+    }
 
-        int uid = -1;
-        public int Uid
-        {
-            get { return uid; }
-            set { uid = value; }
-        }
+    int uid = -1;
+    public int Uid
+    {
+        get { return uid; }
+        set { uid = value; }
+    }
 
-        int startLine = -1;
-        public int StartLine
-        {
-            get { return startLine; }
-            set { startLine = value; }
-        }
+    int startLine = -1;
+    public int StartLine
+    {
+        get { return startLine; }
+        set { startLine = value; }
+    }
 
-        int endLine = -1;
-        public int EndLine
-        {
-            get { return endLine; }
-            set { endLine = value; }
-        }
+    int endLine = -1;
+    public int EndLine
+    {
+        get { return endLine; }
+        set { endLine = value; }
+    }
 
-        DateTime upTime = DateTime.Now;
-        public DateTime UpTime
-        {
-            get { return upTime; }
-            set { upTime = value; }
-        }
+    DateTime upTime = DateTime.Now;
+    public DateTime UpTime
+    {
+        get { return upTime; }
+        set { upTime = value; }
+    }
 
-        int cid = -1;
-        public int Cid
-        {
-            get { return cid; }
-            set { cid = value; }
-        }
+    int cid = -1;
+    public int Cid
+    {
+        get { return cid; }
+        set { cid = value; }
+    }
 
-        int agree = -1;
-        public int Agree
-        {
-            get { return agree; }
-            set { agree = value; }
-        }
+    int agree = -1;
+    public int Agree
+    {
+        get { return agree; }
+        set { agree = value; }
+    }
 
-        int disagree = -1;
-        public int Disagree
-        {
-            get { return disagree; }
-            set { disagree = value; }
-        }
-        string context = "";
+    int disagree = -1;
+    public int Disagree
+    {
+        get { return disagree; }
+        set { disagree = value; }
+    }
+    string context = "";
 
-        public string Context
-        {
-            get { return context; }
-            set { context = value; }
-        }
-        private UserEntity user = null;
+    public string Context
+    {
+        get { return context; }
+        set { context = value; }
+    }
 
-        public UserEntity User
-        {
-            get { return user; }
-            set { user = value; }
-        }
+    int recommend = 0;
+    public int Recommend
+    {
+        get { return recommend; }
+        set { recommend = value; }
+    }
+    private UserEntity user = null;
 
- }
+    public UserEntity User
+    {
+        get { return user; }
+        set { user = value; }
+    }
+
+}

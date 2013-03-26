@@ -108,6 +108,11 @@ public class NoteOperation
         }
         return notes;
     }
+    public static void recommend(int i) {
+        DataBase db = new DataBase();
+        string sql = "update tb_note set recommend='" + 1 + "' where id='" + i + "'";
+        db.ExCommandNoBack(sql);
+    }
     
   
 }

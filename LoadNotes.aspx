@@ -18,10 +18,10 @@
                     发表于
                     <%=ne.UpTime %><img src="images/comment.gif" title="评论"/>
                     [<%=ne.Agree %>]<a href="Do_Ding.aspx?id=<%=ne.Id %>&cid=<%=ne.Cid %>&startline=<%=ne.StartLine%>"><img src="images/approve.gif" /></a>
-                    [<%=ne.Disagree %>]<a href="Do_Cai.aspx?id=<%=ne.Id %>&cid=<%=ne.Cid %>&startline=<%=ne.StartLine%>"><img src="images/disapprove.gif" /></a></p>
+                    [<%=ne.Disagree %>]<a href="Do_Cai.aspx?id=<%=ne.Id %>&cid=<%=ne.Cid %>&startline=<%=ne.StartLine%>"><img src="images/disapprove.gif" /></a><%if (UserOperation.CheckIsAdmin(Session)){ %><a  href="doSuggest.aspx?id=<%=ne.Id %>">设为推荐</a><%} %></p>
                 <p style="background-color: #f7f7f7; font-size: 14px; font-weight: bold; color: #333333;
                     padding: 10px;">
-                    <%=ne.Context %></p>
+                    &nbsp;<%=ne.Context %></p>
                     <p class="text">
                     起始行：<%=ne.StartLine %> 终止行：<%=ne.EndLine %>
                     <img src="images/sign.png" title="点击标记出该注释所在行" onclick="parent.PointLines(<%=ne.StartLine %>,<%=ne.EndLine %>)" /> <img src="images/eraser.png" title="点击擦除已被标注的行。" onclick="parent.CleanLines(<%=ne.StartLine %>,<%=ne.EndLine %>)" /></p>

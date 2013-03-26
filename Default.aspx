@@ -31,14 +31,14 @@
                             </ContentTemplate>
                         </asp:UpdatePanel>
                     </div>
-                    <div>
+                    <div class="hide">
                         <asp:UpdatePanel ID="UpdatePanel2" runat="server">
                             <ContentTemplate>
                                 <uc2:LatestNote ID="LatestNote1" runat="server" />
                             </ContentTemplate>
                         </asp:UpdatePanel>
                     </div>
-                      <div>
+                      <div class="hide">
                         <asp:UpdatePanel ID="UpdatePanel3" runat="server">
                             <ContentTemplate>
                                 <uc2:LatestComment ID="LatestComment1" runat="server" />
