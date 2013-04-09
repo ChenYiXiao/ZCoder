@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <div class="zRadioRec" style="color:Black; background-color:White;">
 <style type="text/css">
         p.MsoNormal {
             color:#333;
@@ -128,5 +129,6 @@ src="images\help/image026.jpg" v:shapes="_x0000_i1042"><![endif]></p>
 <p class="MsoNormal" align=left style='text-align:left'>&nbsp;</p>
 <p class="MsoNormal"><a name="_Toc351617011"><p>&nbsp;</p><p>&nbsp;</p><strong>评价模块</strong></a></p>
 <p class="MsoNormal">（功能没实现，所以没写）</p>
+        </div>
 </asp:Content>
 
