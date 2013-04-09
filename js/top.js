@@ -38,6 +38,6 @@ IMYUAN || (IMYUAN = {});
 
 (function() {
 
-    $("#returnTop").returntop()
+    jQuery("#returnTop").returntop()
 });
   
