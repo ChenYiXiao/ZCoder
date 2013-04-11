@@ -11,14 +11,16 @@
        { %>
     <div style=" border-bottom-style: solid; border-bottom-width:1px; border-bottom-color:#f7f7f7; margin-bottom:5px">
         <div class="qoute" style="float: left">
-            <div style="margin-left: 28px; float: left;">
+            <div style="margin-left: 28px; float: left; width: 265px;">
                 <p class="text">
                 
                     <%=ne.User.UserName %>  <%=ne.Id %>
                     发表于
                     <%=ne.UpTime %><img src="images/comment.gif" title="评论"/>
                     [<%=ne.Agree %>]<a href="Do_Ding.aspx?id=<%=ne.Id %>&cid=<%=ne.Cid %>&startline=<%=ne.StartLine%>"><img src="images/approve.gif" /></a>
-                    [<%=ne.Disagree %>]<a href="Do_Cai.aspx?id=<%=ne.Id %>&cid=<%=ne.Cid %>&startline=<%=ne.StartLine%>"><img src="images/disapprove.gif" /></a><%if (UserOperation.CheckIsAdmin(Session)){ %><a  href="doSuggest.aspx?id=<%=ne.Id %>">设为推荐</a><%} %></p>
+                    [<%=ne.Disagree %>]<a href="Do_Cai.aspx?id=<%=ne.Id %>&cid=<%=ne.Cid %>&startline=<%=ne.StartLine%>"><img src="images/disapprove.gif" /></a><%if (UserOperation.CheckIsAdmin(Session)){ %><a  href="doSuggest.aspx?id=<%=ne.Id %>">设为推荐</a>&nbsp<a  href="CancelSuggest.aspx?id=<%=ne.Id %>">取消推荐</a>  <%} %>
+                    
+                </p>
                 <p style="background-color: #f7f7f7; font-size: 14px; font-weight: bold; color: #333333;
                     padding: 10px;">
                     &nbsp;<%=ne.Context %></p>

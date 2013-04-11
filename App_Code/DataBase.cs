@@ -115,7 +115,7 @@ public class DataBase
     /// <param name="procName">命令文本</param>
     /// <param name="prams">参数对象</param>
     /// <returns></returns>
-    public int RunProc(string procName, SqlParameter[] prams)
+    public int RunProc(string procName, SqlParameter[] prams)  
     {
         int rs = 0;
         SqlCommand cmd = CreateCommand(procName, prams);
