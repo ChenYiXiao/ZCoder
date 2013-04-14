@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="JsonHelper" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>App_Code\Common\JsonHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnPackHelper" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAAAAAAACAABBAAACAAAA=</HashCode>
+      <FileName>App_Code\Common\UnPackHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AppConfiger" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAIAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAg=</HashCode>
+      <FileName>App_Code\Const\AppConfiger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CookiesHelper" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgARAAABAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>App_Code\CookieManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataBase" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAEAAAAADAAIIAAAAAEgQAAAAAAAAAAAAABAACAAAE=</HashCode>
+      <FileName>App_Code\DataBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataOperate" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAABAAAAIAAAAACAgAAAYAAAACBACAEAgAAAAAAAAAA=</HashCode>
+      <FileName>App_Code\DataOperate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Encrypt" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Code\Encrypt.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AnnouncementEntity" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADAAAAAAAAEAAAABAAAAAAAAAAAAAAABAQAAAQEwA=</HashCode>
+      <FileName>App_Code\Entity\AnnouncementEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CodeEntity" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgEAIAIBACAAAAAAAAAAAAAIAAAACAAgA=</HashCode>
+      <FileName>App_Code\Entity\CodeEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CommentEntity" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAgCAECAAgBAAQAAAAAAQAAAAEIAAAASAIgA=</HashCode>
+      <FileName>App_Code\Entity\CommentEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DingEntity" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAACAAAAAACAEAAAgBAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>App_Code\Entity\DingEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LangEntity" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAEAAAgAAAAIAAAEAQAABAEAAAAEAACAAAAAgA=</HashCode>
+      <FileName>App_Code\Entity\LangEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NoteEntity" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAjAQAAIgAEEBAABBAQAAAgAAAQIAAAEIAAAACAAwE=</HashCode>
+      <FileName>App_Code\Entity\NoteEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectEntity" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgMAAAKDAAAAgAAAAAAAAAAIAAAACAAgA=</HashCode>
+      <FileName>App_Code\Entity\ProjectEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TreeNodeEntity" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACIQAAAAEAIAQEACAEAAQAAAAMAAAgCAAAAAAAAgA=</HashCode>
+      <FileName>App_Code\Entity\TreeNodeEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UserEntity" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAgACAABAAgAAUAAAABCAAAAAgCASAAAgEAAgA=</HashCode>
+      <FileName>App_Code\Entity\UserEntity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectManager" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgEAAEAAAAAAAAICCAAAoA=</HashCode>
+      <FileName>App_Code\lib\ProjectManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AnnouncementOperation" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAEAAAAAAAAAIAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>App_Code\Model\AnnouncementOperation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CodeOperation" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAIAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>App_Code\Model\CodeOperation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CommentOperation" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQEAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>App_Code\Model\CommentOperation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DingOperation" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Code\Model\DingOperation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LangOperation" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Code\Model\LangOperation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NoteOperation" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAACAAAAAQAAAAEAAAAAQAAAAAAAAIAAA=</HashCode>
+      <FileName>App_Code\Model\NoteOperation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProjectOperation" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAgAAIAAAAAAAAAAAAgAAAAABAAA=</HashCode>
+      <FileName>App_Code\Model\ProjectOperation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UserOperation" Collapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAiAgAAAAAAAAAAAAgAAAgAEAAQAAAAAgA=</HashCode>
+      <FileName>App_Code\Model\UserOperation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SessionRest" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Code\Part\SessionRestr.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmallScript" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAIAAAAAAAAAAAAAAAAAAAAAAEAAAEAAAAAAAA=</HashCode>
+      <FileName>App_Code\SmallScript.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UserCent" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Code\UserCenter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="微软雅黑" Size="9" />
+</ClassDiagram>
