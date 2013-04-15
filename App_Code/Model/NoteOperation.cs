@@ -104,15 +104,36 @@ public class NoteOperation
             ne.Disagree = int.Parse(rs.Tables[0].Rows[i]["disagree"].ToString());
             ne.Context = rs.Tables[0].Rows[i]["Context"].ToString();
             ne.User = UserOperation.GetUser(ne.Uid);
+            ne.Recommend = int.Parse(rs.Tables[0].Rows[i]["recommend"].ToString());
             notes.Add(ne);
         }
         return notes;
     }
-    public static void recommend(int i) {
+    public static void recommend(int i)
+    {
         DataBase db = new DataBase();
         string sql = "update tb_note set recommend='" + 1 + "' where id='" + i + "'";
         db.ExCommandNoBack(sql);
     }
-    
-  
+
+
+    /*取消推荐操作*/
+    public static int cancelrecommend(int i)
+    {
+        DataBase db = new DataBase();
+        string sql = "select recommend from tb_note where id='" + i + "'";
+        string sql1 = "update tb_note set recommend='" + 0 + "' where id='" + i + "'";
+        DataSet ds = db.RunProcReturn(sql, "tb_note");
+        /*如果本就违背推荐，则返回0*/
+        if (int.Parse(ds.Tables[0].Rows[0]["recommend"].ToString()) == 0)
+        {
+            return 0;
+        }
+        /*如果已被推荐，则返回1*/
+        else
+        {
+            db.ExCommandNoBack(sql1);
+            return 1;
+        }
+    }
 }

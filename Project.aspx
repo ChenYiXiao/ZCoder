@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage_Project.master" AutoEventWireup="true"
-    CodeFile="Project.aspx.cs" Inherits="Project" %>
+    CodeFile="Project.aspx.cs" Inherits="Project"%>
 
 <%@ Register Src="admin/RSManager/RSManager.ascx" TagName="RSManager" TagPrefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
@@ -8,6 +8,7 @@
     <script type="text/javascript" src="/Com/zTree/js/jquery-1.4.4.min.js"></script>
     <script type="text/javascript" src="/Com/zTree/js/jquery.ztree.core-3.5.js"></script>
     <link rel="stylesheet" type="text/css" href="styles/_Window.css" />
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <div class="zBlockLeft" style="width: 235px">
