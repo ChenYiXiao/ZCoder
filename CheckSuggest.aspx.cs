@@ -1,4 +1,11 @@
-﻿using System;
+﻿/***************************************************************************************************
+ *
+ *\File          CheckSuggest.aspx.cs
+ *\Description   推荐
+ *\Log           2013.4.15    Ver 1.0    陈一枭
+ *               创建文件。
+ ***************************************************************************************************/
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;

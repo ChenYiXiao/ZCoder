@@ -3,9 +3,6 @@
  *                                       All Rights Reserved
  *
 <<<<<<< HEAD
- *\File          usdl_xxx.h
- *\Description   XXXXXXXXXXXXX
- *\Log           2008.XX.XX    Ver 1.0    王晓晴
 =======
  *\File          toAlert.aspx.cs
  *\Description   用户个人资料的修改。

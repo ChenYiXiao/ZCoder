@@ -1,4 +1,11 @@
-﻿using System;
+﻿/***************************************************************************************************
+ *
+ *\File          CancelSuggest.aspx.cs
+ *\Description   取消推荐
+ *\Log           2013.4.15    Ver 1.0    陈一枭
+ *               创建文件。
+ ***************************************************************************************************/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;

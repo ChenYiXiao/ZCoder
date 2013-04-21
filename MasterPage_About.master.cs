@@ -1,4 +1,11 @@
-﻿using System;
+﻿/***************************************************************************************************
+ *
+ *\File          MasterPage_About.aspx.cs
+ *\Description   关于页面的母板页
+ *\Log           2013.4.13    Ver 1.0    肖骏涛
+ *               创建文件。
+ ***************************************************************************************************/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
