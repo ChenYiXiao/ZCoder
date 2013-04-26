@@ -3,14 +3,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div class="zRadioRec" style="color:Black; background-color:White;">
+    <div class="zRadioRec" style="color:Black; background-color:White;padding:20px;">
 <style type="text/css">
         p.MsoNormal {
             color:#333;
         }
         U {
         color:#333;
-        font-size:20px;
+        font-size:18px;
         }
         strong {
         color:#333;

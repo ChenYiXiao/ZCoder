@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="toAlert.aspx.cs" Inherits="Default2"  MasterPageFile="~/MasterPage.master" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <div class="zRadioRec" style=" background-color:White">
+    <div class="zRadioRec" style=" background-color:White;padding:20px;">
      <table>
             <tr>
                 <td align="right">
@@ -13,11 +13,11 @@
             </tr>
             <tr>
                 <td align="right" class="style1">
-                    &nbsp;性别：</td>
+                    &nbsp;性别：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
                 <td  align="center">
                     <br />
                  <asp:RadioButtonList ID="rb_Sex" runat="server" RepeatDirection="Horizontal" 
-                        style="color: #999999">
+                        style="color: #999999" Height="30px" Width="125px">
         <asp:ListItem Value="man">男</asp:ListItem>
         <asp:ListItem Value="woman">女</asp:ListItem>
     </asp:RadioButtonList>
@@ -42,7 +42,7 @@
             </tr>
             <tr>
                 <td align="right">
-                    <span class="style1">QQ</span>：
+                    <span class="style1">QQ</span>：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </td>
                 <td  style="height:60px" align="right" >
                     <asp:TextBox ID="tb_QQ" runat="server" TabIndex="5" CssClass="zTextBox"></asp:TextBox>
