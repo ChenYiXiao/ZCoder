@@ -28,6 +28,12 @@
                 <li><a href="Projects.aspx" >工程</a></li>
                 <li><a href="help.aspx"  >帮助</a></li>
                 <li><a href="About.aspx" class="zMenuSeletcedA">关于</a></li>
+                <li>
+                        <form id="searchForm" action="code_List.aspx">
+                            <input type="text" name="path" />
+                            <input type="submit" value="搜索" />
+                        </form>
+                     </li>
             </ul>
             <div style="float: right; margin-top: 15px; font-size: 12px">
                 <uc1:LoginPanel ID="LoginPanel1" runat="server" />

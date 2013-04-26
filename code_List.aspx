@@ -14,7 +14,7 @@
     <br />
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
         ConnectionString="<%$ ConnectionStrings:db_ConnectionString %>" 
-        SelectCommand="SELECT tb_code.id, tb_code.upTime, tb_project.projectName, tb_code.path FROM tb_code INNER JOIN tb_project ON tb_code.pid = tb_project.id WHERE (tb_code.path LIKE '%' + @path + '%')" 
+        SelectCommand="SELECT tb_code.id, tb_code.upTime,tb_project.id as tpid, tb_project.projectName, tb_code.path FROM tb_code INNER JOIN tb_project ON tb_code.pid = tb_project.id WHERE (tb_code.path LIKE '%' + @path + '%')" 
         onselecting="SqlDataSource1_Selecting">
         <SelectParameters>
             <asp:QueryStringParameter Name="path" QueryStringField="path" />
@@ -37,20 +37,26 @@
                 上传日期
             </th>
         </tr>
+        <style>
+            td a
+            {
+                color:Black;
+             }
+        </style>
         <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
             <ItemTemplate>
                 <tr>
                     <td>
-                        <asp:Label ID="idLabel" runat="server" Text='<%# Eval("id") %>' />
+                        <asp:Hyperlink ID="idHp" runat="server" Text='<%# Eval("id") %>' />
                     </td>
                     <td>
-                        <asp:Label ID="userNameLabel" runat="server" Text='<%# Eval("path") %>' />
+                        <asp:Hyperlink ID="userNameHp" runat="server" NavigateUrl='<%# "Viewer.aspx?id=" + Eval("id") %>' Text='<%# Eval("path") %>' />
                     </td>
                        <td>
-                        <asp:Label ID="Label1" runat="server" Text='<%# Eval("projectName") %>' />
+                        <asp:Hyperlink ID="projectHp" runat="server" NavigateUrl='<%# "project.aspx?id=" + Eval(" tpid") %>' Text='<%# Eval("projectName") %>' />
                     </td>
                     <td>
-                        <asp:Label ID="regTimeLabel" runat="server" Text='<%# Eval("upTime") %>' />
+                        <asp:Hyperlink ID="regTimeHp" runat="server" Text='<%# Eval("upTime") %>' />
                     </td>
                 </tr>
             </ItemTemplate>
