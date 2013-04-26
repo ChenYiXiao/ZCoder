@@ -30,6 +30,12 @@
                 <li><a>ÆÀÂÛ</a></li>
                 <li><a href="help.aspx"  class="zMenuSeletcedA">°ïÖú</a></li>
                 <li><a href="About.aspx">¹ØÓÚ</a></li>
+                <li>
+                        <form id="searchForm" action="code_List.aspx">
+                            <input type="text" name="path" />
+                            <input type="submit" value="ËÑË÷" />
+                        </form>
+                     </li>
             </ul>
             <div style="float: right; margin-top: 15px; font-size: 12px">
                 <uc1:LoginPanel ID="LoginPanel1" runat="server" />
