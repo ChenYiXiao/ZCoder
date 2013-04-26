@@ -14,11 +14,10 @@
         <div class="zBlockLeft" style="width: 636px; float: left;">
             <div class="tab">
                 <div class="tab_menu">
-                    
                     <ul>
-                        <li class="selected" >最新工程</li>
-                        <li >最新注释</li>
-                        <li >最新评论</li>
+                        <li class="selected">最新工程</li>
+                        <li>最新注释</li>
+                        <li>最新评论</li>
                     </ul>
                 </div>
                 <div class="tab_box">
@@ -38,7 +37,7 @@
                             </ContentTemplate>
                         </asp:UpdatePanel>
                     </div>
-                      <div class="hide">
+                    <div class="hide">
                         <asp:UpdatePanel ID="UpdatePanel3" runat="server">
                             <ContentTemplate>
                                 <uc2:LatestComment ID="LatestComment1" runat="server" />
