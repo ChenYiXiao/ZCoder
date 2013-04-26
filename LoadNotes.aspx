@@ -11,14 +11,17 @@
        { %>
     <div style=" border-bottom-style: solid; border-bottom-width:1px; border-bottom-color:#f7f7f7; margin-bottom:5px">
         <div class="qoute" style="float: left">
-            <div style="margin-left: 28px; float: left; width: 265px;">
+            <div style="margin-left: 28px; float: left; width: 279px;">
                 <p class="text">
                 
                     <%=ne.User.UserName %>  <%=ne.Id %>
                     发表于
                     <%=ne.UpTime %><img src="images/comment.gif" title="评论"/>
+                     </p>
+                <p class="text">
                     [<%=ne.Agree %>]<a href="Do_Ding.aspx?id=<%=ne.Id %>&cid=<%=ne.Cid %>&startline=<%=ne.StartLine%>"><img src="images/approve.gif" /></a>
-                    [<%=ne.Disagree %>]<a href="Do_Cai.aspx?id=<%=ne.Id %>&cid=<%=ne.Cid %>&startline=<%=ne.StartLine%>"><img src="images/disapprove.gif" /></a><%if (UserOperation.CheckIsAdmin(Session)){ %><a <%if(ne.Recommend==1){Response.Write("style=display:none");}%> href="doSuggest.aspx?id=<%=ne.Id %>">设为推荐</a>&nbsp<a <%if(ne.Recommend==0){Response.Write("style=display:none");} %> href="CancelSuggest.aspx?id=<%=ne.Id %>">取消推荐</a>  <%} %>
+                    [<%=ne.Disagree %>]<a href="Do_Cai.aspx?id=<%=ne.Id %>&cid=<%=ne.Cid %>&startline=<%=ne.StartLine%>"><img src="images/disapprove.gif" /></a>
+                    <%if (UserOperation.CheckIsAdmin(Session)){ %>&nbsp; <a <%if(ne.Recommend==1){Response.Write("style=display:none");}%> href="doSuggest.aspx?id=<%=ne.Id %>&cid=<%=ne.Cid %>&startline=<%=ne.StartLine%>">设为推荐</a><a <%if(ne.Recommend==0){Response.Write("style=display:none");} %> href="CancelSuggest.aspx?id=<%=ne.Id %>&cid=<%=ne.Cid %>&startline=<%=ne.StartLine%>">取消推荐</a>  <%} %>
                     
                 </p>
                 <p style="background-color: #f7f7f7; font-size: 14px; font-weight: bold; color: #333333;

@@ -19,16 +19,22 @@ public partial class CancelSuggest : System.Web.UI.Page
     static string url = "";
     protected void Page_Load(object sender, EventArgs e)
     {
+
+        int isDing = 5;
+        int startline = 0;
+        startline = int.Parse(Request.QueryString["startline"].ToString());
+        int cid = int.Parse(Request.QueryString["cid"].ToString());
+        int Nid = int.Parse(Request.QueryString["id"].ToString());
+       
         string str = Request.QueryString["id"];
         int i = int.Parse(str);
         int j = NoteOperation.cancelrecommend(i);
-        string url = "/admin/NoteList.aspx";
         if (j == 0)
         {
-            SmallScript.goRedirect(Response, Session, "该注释未被推荐,无需取消", url);
+            Response.Redirect("LoadNotes.aspx?nid=" + Nid + "&cid=" + cid + "&startline=" + startline + "&isDing=" + isDing);
         }
         else {
-            SmallScript.goRedirect(Response, Session, "该注释已被取消推荐", url);
+            Response.Redirect("LoadNotes.aspx?nid=" + Nid + "&cid=" + cid + "&startline=" + startline + "&isDing=" + isDing);
         }
     }
 }

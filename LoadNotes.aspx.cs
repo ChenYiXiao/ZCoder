@@ -35,6 +35,14 @@ public partial class LoadNotes : System.Web.UI.Page
         {
             SmallScript.MessageBox(Page, "同一用户不能顶或踩同一个评论两次！");
         }
+        if (isDing == 5)
+        {
+            SmallScript.MessageBox(Page, "取消推荐成功！");
+        }
+        if (isDing == 4)
+        {
+            SmallScript.MessageBox(Page, "推荐成功！");
+        }
 
     }
 

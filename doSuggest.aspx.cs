@@ -14,15 +14,21 @@ using System.Web.UI.WebControls;
 
 public partial class doSuggest : System.Web.UI.Page
 {
-    static int time = 3;
+    static int time = 4;
     static string tip = "";
     static string url = "";
     protected void Page_Load(object sender, EventArgs e)
     {
+
+        int isDing = 4;
+        int startline = 0;
+        startline = int.Parse(Request.QueryString["startline"].ToString());
+        int cid = int.Parse(Request.QueryString["cid"].ToString());
+        int Nid = int.Parse(Request.QueryString["id"].ToString());
+
         string str = Request.QueryString["id"];
         int i = int.Parse(str);
         NoteOperation.recommend(i);
-        string url = "/admin/NoteList.aspx";
-        SmallScript.goRedirect(Response, Session, "推荐成功", url); 
+        Response.Redirect("LoadNotes.aspx?nid=" + Nid + "&cid=" + cid + "&startline=" + startline + "&isDing=" + isDing);
     }
 }
