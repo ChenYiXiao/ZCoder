@@ -28,7 +28,7 @@ public class CommentOperation
         DataBase db = new DataBase();
         try
         {
-            string sql = string.Format("INSERT INTO tb_comment ( commentTitle, context, agree, disagree, uid, nid, upTime, )VALUES  ( '{0}', '{1}','{2}', '{3}', '{4}','{5}','{6}','{7}')", ce.CommentTitle, ce.ConText, ce.Agree, ce.DisAgree,ce.uid,ce.nid, ce.UpTime);
+            string sql = string.Format("INSERT INTO tb_comment ( commentTitle, context, agree, disagree, uid, nid, uptime)VALUES  ( '{0}', '{1}','{2}', '{3}', '{4}','{5}','{6}')", ce.CommentTitle, ce.ConText, ce.Agree, ce.DisAgree, ce.uid, ce.nid, ce.UpTime);
             db.ExCommandNoBack(sql);
             return true;
         }

@@ -22,7 +22,7 @@ public partial class admin_EditComment : System.Web.UI.Page
             if (ce != null)
             {
                 lb_id.Text = ce.Id.ToString();
-                tb_ct.Text = ce.CommetTitle;
+                tb_ct.Text = ce.CommentTitle;
                 tb_context.Text = ce.ConText;
                 tb_agree.Text = ce.Agree.ToString();
                 tb_disagree.Text = ce.DisAgree.ToString();

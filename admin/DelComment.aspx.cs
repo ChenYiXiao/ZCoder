@@ -23,7 +23,7 @@ public partial class admin_DelComment : System.Web.UI.Page
             if (ce != null)
             {
                 lb_id.Text = ce.Id.ToString();
-                lb_ct.Text = ce.CommetTitle;
+                lb_ct.Text = ce.CommentTitle;
                 lb_context.Text = ce.ConText;
                 lb_agree.Text = ce.Agree.ToString();
                 lb_disagree.Text = ce.DisAgree.ToString();

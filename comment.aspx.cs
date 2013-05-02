@@ -24,16 +24,17 @@ public partial class comment : System.Web.UI.Page
             Response.Write("请登录后再填写注释。");
             return;
         }
-        DataBase db = new DataBase();
+       
     }
     protected void submit_Click(object sender, EventArgs e)
     {
+        DataBase db = new DataBase();
         CommentEntity ce = new CommentEntity();
         ce.Agree = 0;
         ce.nid = int.Parse(Request.QueryString["nid"].ToString());
         ce.DisAgree = 0;
         ce.CommentTitle = "";
-        ce.ConText = tb_comment.Text.ToString();
+        ce.ConText = tb_comment.Text;
         ce.uid = int.Parse(Session["uid"].ToString());
         ce.UpTime = DateTime.Now;
         if (ce.ConText == "")
