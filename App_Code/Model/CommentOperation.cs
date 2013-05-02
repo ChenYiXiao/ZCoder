@@ -22,6 +22,21 @@ public class CommentOperation
 	{
 	
 	}
+    public static bool AddComment(CommentEntity ce)
+    {
+        /*评论的添加*/
+        DataBase db = new DataBase();
+        try
+        {
+            string sql = string.Format("INSERT INTO tb_comment ( commentTitle, context, agree, disagree, uid, nid, upTime, )VALUES  ( '{0}', '{1}','{2}', '{3}', '{4}','{5}','{6}','{7}')", ce.CommentTitle, ce.ConText, ce.Agree, ce.DisAgree,ce.uid,ce.nid, ce.UpTime);
+            db.ExCommandNoBack(sql);
+            return true;
+        }
+        catch
+        {
+            return false;
+        }
+    }
     public static void EditComment(String commenttitle, String context, int agree, int disagree,int id) {
         DataBase db = new DataBase();
         String sql = "update tb_comment set commenttitle='" + commenttitle + "',context='" + context + "',agree='" + agree + "',disagree='" + disagree + "' where id=" +id;
@@ -41,7 +56,7 @@ public class CommentOperation
         {
             CommentEntity ce = new CommentEntity();
             ce.Id = int.Parse(rs.Tables[0].Rows[0]["id"].ToString());
-            ce.CommetTitle = rs.Tables[0].Rows[0]["commenttitle"].ToString();
+            ce.CommentTitle = rs.Tables[0].Rows[0]["commenttitle"].ToString();
             ce.ConText = rs.Tables[0].Rows[0]["context"].ToString();
             ce.Agree = int.Parse(rs.Tables[0].Rows[0]["agree"].ToString());
             ce.DisAgree = int.Parse(rs.Tables[0].Rows[0]["disagree"].ToString());

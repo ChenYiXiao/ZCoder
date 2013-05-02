@@ -16,7 +16,7 @@
                 
                     <%=ne.User.UserName %>  <%=ne.Id %>
                     发表于
-                    <%=ne.UpTime %><img src="images/comment.gif" title="评论"/>
+                    <%=ne.UpTime %><a href="comment.aspx?nid=<%=ne.Id %>"><img src="images/comment.gif" title="评论"/>
                      </p>
                 <p class="text">
                     [<%=ne.Agree %>]<a href="Do_Ding.aspx?id=<%=ne.Id %>&cid=<%=ne.Cid %>&startline=<%=ne.StartLine%>"><img src="images/approve.gif" /></a>

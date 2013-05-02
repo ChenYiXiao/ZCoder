@@ -22,7 +22,7 @@ public class CommentEntity
     }
 
     String commentTitle = "";
-    public String CommetTitle {
+    public String CommentTitle {
         get { return commentTitle; }
         set { commentTitle = value; }
     }
