@@ -1,4 +1,12 @@
-﻿using System;
+﻿/***************************************************************************************************
+ *            
+ *
+ *\File          LangOperation
+ *\Description   获取程序所使用语言的类型
+ *\Log           2012.11.2    Ver 1.0    
+ *               创建文件。
+ ***************************************************************************************************/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,6 +23,7 @@ public class LangOperation
         //TODO: 在此处添加构造函数逻辑
         //
     }
+   /*获取Lang实体*/
     public static LangEntity GetLang(int id)
     {
         DataBase db = new DataBase();

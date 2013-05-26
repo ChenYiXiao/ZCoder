@@ -40,10 +40,10 @@ public class ProjectOperation
             return false;
         }
     }
-    public static bool CheckProjectNameExist(string ProjectName,int ProjectId)
+    public static bool CheckProjectNameExist(string projectName,int projectId)
     {
         DataBase db = new DataBase();
-        string sql = string.Format("select * from tb_project where projectName='{0}' and id != {1}", ProjectName,ProjectId);
+        string sql = string.Format("select * from tb_project where projectName='{0}' and id != {1}", projectName,projectId);
         if (db.ExCommand(sql).Tables[0].Rows.Count > 0)
         {
             return true;
@@ -55,21 +55,21 @@ public class ProjectOperation
     }
 
 
-    public static void EditProject(string ProjectName, string description, int type, int ID)
+    public static void EditProject(string projectName, string description, int type, int projectId)
     {
         /*工程的修改*/
         DataBase db = new DataBase();
-        string sql = "UPDATE tb_project SET projectName ='" + ProjectName + "',description ='" + description + "',Tid = " + type + " where id=" + ID.ToString();
+        string sql = "UPDATE tb_project SET projectName ='" + projectName + "',description ='" + description + "',Tid = " + type + " where id=" + projectId.ToString();
         db.ExCommandNoBack(sql);
     }
 
 
 
-    public static void DelProject(String id)
+    public static void DelProject(String projectId)
     {
         /*删除工程*/
         DataBase db = new DataBase();
-        string sql = "delete from dbo.tb_project where id=" + id + "";
+        string sql = "delete from dbo.tb_project where id=" + projectId + "";
         db.ExCommandNoBack(sql);
 
     }

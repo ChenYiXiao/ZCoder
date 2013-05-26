@@ -36,13 +36,13 @@ public class UserOperation
     /// <param name="isadmin">是否管理员</param>
     /// <param name="regTime">注册日期</param>
     /// <returns></returns>
-    public static bool Reg(string userName, string password, string email, string qq, bool sex, bool isadmin, DateTime regTime)
+    public static bool Reg(string userName, string passWord, string email, string qq, bool sex, bool isadmin, DateTime regTime)
     {
         DataBase db = new DataBase();
-        if (db.RunProc("INSERT INTO tb_user (userName, password, email, qq)VALUES   (@username,@password,@email,@qq)",
+        if (db.RunProc("INSERT INTO tb_user (userName, passWord, email, qq)VALUES   (@username,@password,@email,@qq)",
              new SqlParameter[]{
           db.MakeInParam("username",System.Data.SqlDbType.VarChar,20,userName),
-          db.MakeInParam("password",System.Data.SqlDbType.VarChar,200,password),
+          db.MakeInParam("password",System.Data.SqlDbType.VarChar,200,passWord),
           db.MakeInParam("email",System.Data.SqlDbType.VarChar,50,email),
           db.MakeInParam("qq",System.Data.SqlDbType.VarChar,15,qq)
         }) == 0)
@@ -60,7 +60,10 @@ public class UserOperation
     /// </summary>
     /// <param name="userName">用户名</param>
     /// <returns>注册成功为true,失败为false</returns>
-    public static bool CheckUser(string userName)    /* 用户名密码验证  */
+   
+    /* 用户名密码验证  */
+    
+    public static bool CheckUser(string userName)  
     {
         DataBase db = new DataBase();
         if (db.ExCommand("select * from tb_user where username='" + userName + "'").Tables[0].Rows.Count > 0)
@@ -68,7 +71,9 @@ public class UserOperation
             return true;
         }
         else
-        { return false; }
+        { 
+            return false;
+        }
     }
     /// <summary>
     /// 登陆

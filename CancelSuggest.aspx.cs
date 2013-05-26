@@ -28,7 +28,7 @@ public partial class CancelSuggest : System.Web.UI.Page
        
         string str = Request.QueryString["id"];
         int i = int.Parse(str);
-        int j = NoteOperation.cancelrecommend(i);
+        int j = NoteOperation.CancelRecommend(i);
         if (j == 0)
         {
             Response.Redirect("LoadNotes.aspx?nid=" + Nid + "&cid=" + cid + "&startline=" + startline + "&isDing=" + isDing);
