@@ -1,11 +1,12 @@
-﻿/***************************************************************************************************
- *            
- *
- *\File          ProjectOperation.cs
- *\Description   工程的操作，包括工程的添加，工程的编辑，工程的删除。
- *\Log           2012.11.27    Ver 1.0    
- *               创建文件。
- ***************************************************************************************************/
+﻿//--------------------------------------------------------------------------------------
+//
+//FileName:         ProjectOperation.cs
+//Depiction:        工程的操作，包括工程的添加，工程的编辑，工程的删除。
+//Author:	           
+//CDT:	            2012-12-13
+//Version:	        Ver 1.0    
+//                  创建文件。
+//--------------------------------------------------------------------------------------
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,7 @@ using System.Data;
 using System.Web.UI;
 
 /// <summary>
-///ProjectOperation 的摘要说明
+///工程的操作
 /// </summary>
 public class ProjectOperation
 {
@@ -25,6 +26,11 @@ public class ProjectOperation
         //TODO: 在此处添加构造函数逻辑
         //
     }
+    /// <summary>
+    /// 添加工程
+    /// </summary>
+    /// <param name="pe">工程的实例</param>
+    /// <returns>成功返回true 失败返回false</returns>
     public static bool AddProject(ProjectEntity pe)
     {
         /*增加一个工程*/
@@ -40,6 +46,12 @@ public class ProjectOperation
             return false;
         }
     }
+    /// <summary>
+    /// 检查工程名是否存在
+    /// </summary>
+    /// <param name="ProjectName">工程名</param>
+    /// <param name="ProjectId">工程ID</param>
+    /// <returns></returns>
     public static bool CheckProjectNameExist(string ProjectName,int ProjectId)
     {
         DataBase db = new DataBase();
@@ -54,29 +66,41 @@ public class ProjectOperation
         }
     }
 
-
+    /// <summary>
+    /// 修改工程信息
+    /// </summary>
+    /// <param name="ProjectName">工程名 </param>
+    /// <param name="description">工程描述</param>
+    /// <param name="type">工程类型</param>
+    /// <param name="ID">工程ID</param>
     public static void EditProject(string ProjectName, string description, int type, int ID)
     {
-        /*工程的修改*/
+        
         DataBase db = new DataBase();
         string sql = "UPDATE tb_project SET projectName ='" + ProjectName + "',description ='" + description + "',Tid = " + type + " where id=" + ID.ToString();
         db.ExCommandNoBack(sql);
     }
 
 
-
+    /// <summary>
+    /// 删除工程
+    /// </summary>
+    /// <param name="id">工程ID</param>
     public static void DelProject(String id)
     {
-        /*删除工程*/
+       
         DataBase db = new DataBase();
         string sql = "delete from dbo.tb_project where id=" + id + "";
         db.ExCommandNoBack(sql);
 
     }
-
+    /// <summary>
+    /// 获取工程信息
+    /// </summary>
+    /// <param name="projectId">工程ID</param>
+    /// <returns>返回工程实例</returns>
     public static ProjectEntity GetProject(int projectId)
     {
-        /*获取工程信息*/
         DataBase db = new DataBase();
         DataSet rs = db.RunProcReturn("select * from tb_project where id=" + projectId, "tb_project");
         if (rs.Tables[0].Rows.Count > 0)

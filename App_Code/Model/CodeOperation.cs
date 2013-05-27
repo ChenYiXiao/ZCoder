@@ -1,11 +1,20 @@
-﻿using System;
+﻿//--------------------------------------------------------------------------------------
+//
+//FileName:         CodeOperation.cs
+//Depiction:        
+//Author:	           
+//CDT:	            2012-12-13
+//Version:	        Ver 1.0    
+//                  创建文件。
+//--------------------------------------------------------------------------------------
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data;
 
 /// <summary>
-///CodeOperation 的摘要说明
+///源代码的操作
 /// </summary>
 public class CodeOperation
 {
@@ -15,6 +24,11 @@ public class CodeOperation
         //TODO: 在此处添加构造函数逻辑
         //
     }
+    /// <summary>
+    /// 获取源代码信息
+    /// </summary>
+    /// <param name="id">源码ID</param>
+    /// <returns>返回源码的实例</returns>
     public static CodeEntity GetCode(int id)
     {
         DataBase db = new DataBase();
@@ -35,6 +49,11 @@ public class CodeOperation
             return null;
         }
     }
+    /// <summary>
+    /// 利用源代码路径获取源代码信息
+    /// </summary>
+    /// <param name="path">源码路径</param>
+    /// <returns>返回源码的实例</returns>
     public static CodeEntity GetCodeFromPath(string path)
     {
         DataBase db = new DataBase();
@@ -55,6 +74,11 @@ public class CodeOperation
             return null;
         }
     }
+    /// <summary>
+    /// 用源代码ID获取注释信息
+    /// </summary>
+    /// <param name="cid">源码ID</param>
+    /// <returns>返回注释列表</returns>
     public static List<NoteEntity> GetAssNotes(int cid)
     {
         DataBase db = new DataBase();

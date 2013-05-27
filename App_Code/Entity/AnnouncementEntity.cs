@@ -1,21 +1,26 @@
-﻿/***************************************************************************************************
- *
- *\File          AnnouncementEntity.cs
- *\Description   
- *\Log           2012.12.10    Ver 1.0     陈斌
- *               创建文件。
- ***************************************************************************************************/
+﻿//--------------------------------------------------------------------------------------
+//
+//FileName:         AnnouncementEntity.cs
+//Depiction:        
+//Author:	        陈斌
+//CDT:	            2012-12-13
+//Version:	        Ver 1.0    
+//                  创建文件。
+//--------------------------------------------------------------------------------------
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
 /// <summary>
-///AnnouncementEntity 的摘要说明
+/// 公告实体，用于存储和获取公告信息
 /// </summary>
 public class AnnouncementEntity
 {
     int id = -1;
+    /// <summary>
+    /// 公告的ID （Id）
+    /// </summary>
     public int Id
     {
         get { return id; }
@@ -23,6 +28,9 @@ public class AnnouncementEntity
     }
 
     int uid = 0;
+    /// <summary>
+    /// 添加公告的用户的ID （Uid）
+    /// </summary>
         public int Uid
     {
         get { return uid; }
@@ -30,6 +38,9 @@ public class AnnouncementEntity
     }
 
     string essay = "";
+    /// <summary>
+    /// 公告的内容 （Essay）
+    /// </summary>
     public string Essay
     {
         get { return essay; }
@@ -37,6 +48,9 @@ public class AnnouncementEntity
     }
 
     string amtitle = "";
+    /// <summary>
+    /// 公告的标题 （AmTitle）
+    /// </summary>
     public string AmTitle
     {
         get { return amtitle; }
@@ -44,6 +58,9 @@ public class AnnouncementEntity
     }
 
     DateTime time = DateTime.Now;
+    /// <summary>
+    /// 添加公告的时间 （Time）
+    /// </summary>
     public DateTime Time
     {
         get { return time; }

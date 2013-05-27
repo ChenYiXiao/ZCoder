@@ -51,7 +51,7 @@ if (!document.createElement('canvas').getContext) {
   var Z = 10;
   var Z2 = Z / 2;
 
-  /**
+  /--
    * This funtion is assigned to the <canvas> elements as element.getContext().
    * @this {HTMLElement}
    * @return {CanvasRenderingContext2D_}
@@ -63,7 +63,7 @@ if (!document.createElement('canvas').getContext) {
 
   var slice = Array.prototype.slice;
 
-  /**
+  /--
    * Binds a function to an object. The returned function will always use the
    * passed in {@code obj} as {@code this}.
    *
@@ -138,7 +138,7 @@ if (!document.createElement('canvas').getContext) {
       }
     },
 
-    /**
+    /--
      * Public initializes a canvas element so that it can be used as canvas
      * element from now on. This is called automatically before the page is
      * loaded but if you are creating elements using createElement you need to
@@ -292,7 +292,7 @@ if (!document.createElement('canvas').getContext) {
     }
   }
 
-  /**
+  /--
    * This class implements CanvasRenderingContext2D interface as described by
    * the WHATWG.
    * @param {HTMLElement} surfaceElement The element that the 2D context should
@@ -786,7 +786,7 @@ if (!document.createElement('canvas').getContext) {
     this.currentPath_.push({type: 'close'});
   };
 
-  /**
+  /--
    * @private
    */
   contextPrototype.getCoords_ = function(aX, aY) {
@@ -892,7 +892,7 @@ if (!document.createElement('canvas').getContext) {
     setM(this, m, true);
   };
 
-  /******** STUBS ********/
+  /-------- STUBS --------/
   contextPrototype.clip = function() {
     // TODO: Implement
   };

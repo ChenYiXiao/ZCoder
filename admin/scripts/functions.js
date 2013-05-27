@@ -13,11 +13,11 @@ $(document).ready(function () {
 
 // Notifications Pop-Up Code
 
-/************************************************************************
+/------------------------------------------------------------------------
  * @name: bPopup
  * @author: Bjoern Klinggaard (http://dinbror.dk/bpopup)
  * @version: 0.4.1.min
- ************************************************************************/ 
+ ------------------------------------------------------------------------/ 
 (function(a){a.fn.bPopup=function(f,j){function s(){var b=a("input[type=text]",c).length!=0,k=o.vStart!=null?o.vStart:d.scrollTop()+g;c.css({left:d.scrollLeft()+h,position:"absolute",top:k,"z-index":o.zIndex}).appendTo(o.appendTo).hide(function(){b&&c.each(function(){c.find("input[type=text]").val("")});if(o.loadUrl!=null){o.contentContainer=o.contentContainer==null?c:a(o.contentContainer);switch(o.content){case "ajax":o.contentContainer.load(o.loadUrl);break;case "iframe":a('<iframe width="100%" height="100%"></iframe>').attr("src",
 o.loadUrl).appendTo(o.contentContainer);break;case "xlink":a("a#bContinue").attr({href:o.loadUrl});a("a#bContinue .btnLink").text(a("a.xlink").attr("title"))}}}).fadeIn(o.fadeSpeed,function(){b&&c.find("input[type=text]:first").focus();a.isFunction(j)&&j()});t()}function i(){o.modal&&a("#bModal").fadeOut(o.fadeSpeed,function(){a("#bModal").remove()});c.fadeOut(o.fadeSpeed,function(){o.loadUrl!=null&&o.content!="xlink"&&o.contentContainer.empty()});o.scrollBar||a("html").css("overflow","auto");a("."+
 o.closeClass).die("click");a("#bModal").die("click");d.unbind("keydown.bPopup");e.unbind(".bPopup");c.data("bPopup",null);return false}function u(){if(m){var b=[d.height(),d.width()];return{"background-color":o.modalColor,height:b[0],left:l(),opacity:0,position:"absolute",top:0,width:b[1],"z-index":o.zIndex-1}}else return{"background-color":o.modalColor,height:"100%",left:0,opacity:0,position:"fixed",top:0,width:"100%","z-index":o.zIndex-1}}function t(){a("."+o.closeClass).live("click",i);o.modalClose&&

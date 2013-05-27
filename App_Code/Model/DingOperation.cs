@@ -1,10 +1,12 @@
-﻿/***************************************************************************************************        
- *
- *\File          DingOperation
- *\Description   
- *\Log           2013.03.19    Ver 1.0     肖骏涛
- *               创建文件。
- ***************************************************************************************************/
+﻿//--------------------------------------------------------------------------------------
+//
+//FileName:         DingOperation
+//Depiction:        
+//Author:	           肖骏涛
+//CDT:	            2012-12-13
+//Version:	        Ver 1.0    
+//                  创建文件。
+//--------------------------------------------------------------------------------------
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +16,7 @@ using System.Data;
 using System.Web.UI;
 
 /// <summary>
-/// DingOperation 的摘要说明
+///顶或踩的操作
 /// </summary>
 public class DingOperation
 {
@@ -25,7 +27,11 @@ public class DingOperation
 		//
 	}
 
-
+    /// <summary>
+    /// 添加顶操作
+    /// </summary>
+    /// <param name="de">顶的实例</param>
+    /// <returns>添加成功返回true 失败返回false</returns>
     public static bool AddDing(DingEntity de)
     {
         DataBase db = new DataBase();
@@ -54,11 +60,15 @@ public class DingOperation
             return false;
         }
     }
-
+    /// <summary>
+    /// 获取顶的信息
+    /// </summary>
+    /// <param name="nId">注释的ID</param>
+    /// <param name="uId">用户的ID </param>
+    /// <param name="isDing">顶操作的类型 1为顶 0为踩</param>
+    /// <returns></returns>
     public static DingEntity GetDing(int nId,int uId, int isDing)
-    {
-        /*获取信息*/
-      
+    {     
         DataBase db = new DataBase();
         DataSet rs = db.RunProcReturn("select * from tb_Ding where nid=" + nId +"and uid=" + uId, "tb_Ding");
         DataSet rs1 = db.RunProcReturn("select * from tb_note where id=" + nId , "tb_note");

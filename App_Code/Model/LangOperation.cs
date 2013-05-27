@@ -1,11 +1,20 @@
-﻿using System;
+﻿//--------------------------------------------------------------------------------------
+//
+//FileName:         LangOperation.cs
+//Depiction:        
+//Author:	           
+//CDT:	            2012-12-13
+//Version:	        Ver 1.0    
+//                  创建文件。
+//--------------------------------------------------------------------------------------
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data;
 
 /// <summary>
-///LangOperation 的摘要说明
+///源码类型的操作
 /// </summary>
 public class LangOperation
 {
@@ -15,6 +24,11 @@ public class LangOperation
         //TODO: 在此处添加构造函数逻辑
         //
     }
+    /// <summary>
+    /// 获取源码类型的信息
+    /// </summary>
+    /// <param name="id">类型的ID</param>
+    /// <returns>返回类型的实例</returns>
     public static LangEntity GetLang(int id)
     {
         DataBase db = new DataBase();

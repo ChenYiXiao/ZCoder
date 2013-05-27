@@ -1,25 +1,25 @@
-﻿/***************************************************************************************************
- *                    (c) Copyright 1992-2009 Embedded Products Research Center
- *                                       All Rights Reserved
- *
- *\File          usdl_xxx.h
- *\Description   XXXXXXXXXXXXX
- *\Log           2008.XX.XX    Ver 1.0    张三
- *               创建文件。
- ***************************************************************************************************/
+﻿//--------------------------------------------------------------------------------------
+//
+//FileName:         UserEntity.cs
+//Depiction:        
+//Author:	           
+//CDT:	            2012-12-13
+//Version:	        Ver 1.0    
+//                  创建文件。
+//--------------------------------------------------------------------------------------
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
 /// <summary>
-///UserEntity 的摘要说明
+///用户的实体，用于存储和获取用户的信息
 /// </summary>
 public class UserEntity
 {
     int id = -1;
     /// <summary>
-    /// 用户ID
+    /// 用户ID　（Id）
     /// </summary>
     public int Id
     {
@@ -28,7 +28,7 @@ public class UserEntity
     }
     string userName = "";
     /// <summary>
-    /// 用户名
+    /// 用户名　（UserName）
     /// </summary>
     public string UserName
     {
@@ -37,7 +37,7 @@ public class UserEntity
     }
     string password = "";
     /// <summary>
-    /// 密码
+    /// 密码 （Password）
     /// </summary>
     public string Password
     {
@@ -46,7 +46,7 @@ public class UserEntity
     }
     string email = "";
     /// <summary>
-    /// 电子邮箱
+    /// 电子邮箱 （Email）
     /// </summary>
     public string Email
     {
@@ -55,7 +55,7 @@ public class UserEntity
     }
     string qq = "";
     /// <summary>
-    /// QQ
+    /// QQ （Qq）
     /// </summary>
     public string Qq
     {
@@ -64,7 +64,7 @@ public class UserEntity
     }
     bool sex = true;
     /// <summary>
-    /// 男是true，0，女是false，1
+    /// 男是true，0，女是false，1  （Sex）
     /// </summary>
     public bool Sex
     {
@@ -73,7 +73,7 @@ public class UserEntity
     }
     bool isadmin = false;
     /// <summary>
-    /// 是否管理员
+    /// 是否管理员 （Isadmin）
     /// </summary>
     public bool Isadmin
     {
@@ -82,7 +82,7 @@ public class UserEntity
     }
     DateTime regTime = DateTime.Now;
     /// <summary>
-    /// 注册日期
+    /// 注册日期 （RegTime）
     /// </summary>
     public DateTime RegTime
     {

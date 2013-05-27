@@ -1,4 +1,4 @@
-/**
+/--
  * WYSIWYG - jQuery plugin 0.5
  *
  * Copyright (c) 2008-2009 Juan M Martinez
@@ -62,7 +62,7 @@
 
         var controls = {};
 
-        /**
+        /--
          * If the user set custom controls, we catch it, and merge with the
          * defaults controls later.
          */
@@ -351,7 +351,7 @@
                     this.editor
                         .css('height', ( newY ).toString() + 'px');
 
-                    /**
+                    /--
                     var editor = $('<span></span>').css({
                         width     : ( newX - 6 ).toString() + 'px',
                         height    : ( newY - 8 ).toString() + 'px'
@@ -381,7 +381,7 @@
 
             this.initialHeight = newY - 8;
 
-            /**
+            /--
              * @link http://code.google.com/p/jwysiwyg/issues/detail?id=52
              */
             this.initialContent = $(element).val();
@@ -406,7 +406,7 @@
             var self = this;
             var style = '';
 
-            /**
+            /--
              * @link http://code.google.com/p/jwysiwyg/issues/detail?id=14
              */
             if ( this.options.css && this.options.css.constructor == String )
@@ -439,7 +439,7 @@
 
             if ( $.browser.msie )
             {
-                /**
+                /--
                  * Remove the horrible border it has on IE.
                  */
                 setTimeout(function() { $(self.editorDoc.body).css('border', 'none'); }, 0);
@@ -450,7 +450,7 @@
                 self.checkTargets( event.target ? event.target : event.srcElement);
             });
 
-            /**
+            /--
              * @link http://code.google.com/p/jwysiwyg/issues/detail?id=20
              */
             $(this.original).focus(function()
@@ -460,7 +460,7 @@
 
             if ( this.options.autoSave )
             {
-                /**
+                /--
                  * @link http://code.google.com/p/jwysiwyg/issues/detail?id=11
                  */
                 $(this.editorDoc).keydown(function() { self.saveContent(); })
@@ -474,7 +474,7 @@
                 {
                     if ( self.options.css.constructor == String )
                     {
-                        /**
+                        /--
                          * $(self.editorDoc)
                          * .find('head')
                          * .append(
@@ -638,7 +638,7 @@
 
                 if ( $.browser.msie )
                 {
-                    /** IE add full path, so I check by the last chars. */
+                    /-- IE add full path, so I check by the last chars. */
                     value = value.substr(value.length - attributeValue.length);
                 }
 

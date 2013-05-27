@@ -1,10 +1,12 @@
-﻿/***************************************************************************************************
- * 
- *\File          UserOperation.cs
- *\Description   关于用户的一些操作，包括用户的添加，修改，删除，和获取用户信息。
- *\Log           2012.11.01    Ver 1.0    
- *               创建文件。
- ***************************************************************************************************/
+﻿//--------------------------------------------------------------------------------------
+//
+//FileName:         UserOperation.cs
+//Depiction:        关于用户的一些操作，包括用户的添加，修改，删除，和获取用户信息。
+//Author:	           
+//CDT:	            2012-12-13
+//Version:	        Ver 1.0    
+//                  创建文件。
+//--------------------------------------------------------------------------------------
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -133,40 +135,27 @@ public class UserOperation
         return false;
     }
 
-    /***************************************************************************************************
-    *\Function      EditUser
-    *\Description   用于后台用户信息的修改
-    *\Parameter     src     源数据
-    *\Parameter     len     数据长度
-    *\Parameter     UserName 新用户名
-    *\Parameter     PassWord 新密码
-    *\Parameter     Email 新邮箱
-    *\Parameter     Sex 用户性别
-    *\Parameter     QQ 用户新QQ信息
-    *\Parameter     IsAdmin 用户权限
-    *\Return        void
-    *\Note          无
-    *\Log           2012.11.01    Ver 1.0    陈斌
-    *               创建函数。
-    ***************************************************************************************************/
-
+    
+    /// <summary>
+    /// 编辑用户信息
+    /// </summary>
+    /// <param name="UserName">用户名</param>
+    /// <param name="PassWord">密码</param>
+    /// <param name="Email">邮箱</param>
+    /// <param name="Sex">性别</param>
+    /// <param name="QQ">QQ</param>
+    /// <param name="IsAdmin">是否是管理员</param>
+    /// <param name="ID">用户ID</param>
     public static void EditUser(string UserName, string PassWord, string Email, bool Sex, string QQ, bool IsAdmin, int ID)
     {
         DataBase db = new DataBase();
         string sql = "UPDATE tb_user SET userName ='" + UserName + "', password ='" + PassWord + "', email ='" + Email + "', sex =" + (Sex ? 1 : 0).ToString() + ", qq ='" + QQ + "', isadmin=" + (IsAdmin ? 1 : 0).ToString() + " where id=" + ID.ToString();
         db.ExCommandNoBack(sql);
     }
-
-    /***************************************************************************************************
-     *\Function      DelUser
-     *\Description   用于后台删除用户
-     *\Parameter     id  用户ID
-     *\Return        void
-     *\Note          无
-     *\Log           2012.11.01    Ver 1.0   陈斌
-     *               创建函数。
-     ***************************************************************************************************/
-
+    /// <summary>
+    /// 删除用户
+    /// </summary>
+    /// <param name="id">用户ID</param>
     public static void DelUser(String id)
     {
         DataBase db = new DataBase();
@@ -198,6 +187,11 @@ public class UserOperation
         }
         return null;
     }
+    /// <summary>
+    /// 获取用户的ID
+    /// </summary>
+    /// <param name="session">session</param>
+    /// <returns>返回uid</returns>
     public static int GetCurrentUid(System.Web.SessionState.HttpSessionState session)
     {
         return int.Parse(session["uid"].ToString());

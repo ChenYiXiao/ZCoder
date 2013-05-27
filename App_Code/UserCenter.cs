@@ -1,12 +1,12 @@
-﻿/***************************************************************************************************
- *                    (c) Copyright 1992-2009 Embedded Products Research Center
- *                                       All Rights Reserved
- *
- *\File          usdl_xxx.h
- *\Description   XXXXXXXXXXXXX
- *\Log           2008.XX.XX    Ver 1.0    张三
- *               创建文件。
- ***************************************************************************************************/
+﻿//--------------------------------------------------------------------------------------
+//
+//FileName:         UserCenter.cs
+//Depiction:        
+//Author:	           
+//CDT:	            2012-12-13
+//Version:	        Ver 1.0    
+//                  创建文件。
+//--------------------------------------------------------------------------------------
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -62,7 +62,11 @@ public class UserCent
 
         return dtActions;
     }
-
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="dt"></param>
+    /// <returns></returns>
     public static string complieToUL(DataTable dt)
     {
         string rs = "<p>关于TA的动态总共有 " + dt.Rows.Count.ToString() + " 条。以下为详细情况。</p>";

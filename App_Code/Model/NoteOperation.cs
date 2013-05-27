@@ -1,10 +1,12 @@
-﻿/***************************************************************************************************        
- *
- *\File          NoteOperation
- *\Description   注释的操作，包括注释的添加，注释的编辑，注释的删除。
- *\Log           2012.11.27    Ver 1.0     肖骏涛
- *               创建文件。
- ***************************************************************************************************/
+﻿//--------------------------------------------------------------------------------------
+//
+//FileName:         NoteOperation.cs
+//Depiction:        注释的操作，包括注释的添加，注释的编辑，注释的删除。
+//Author:	           肖骏涛
+//CDT:	            2012-12-13
+//Version:	        Ver 1.0    
+//                  创建文件。
+//--------------------------------------------------------------------------------------
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +16,7 @@ using System.Data;
 using System.Web.UI;
 
 /// <summary>
-///NoteOperation 的摘要说明
+///注释的操作
 /// </summary>
 public class NoteOperation
 {
@@ -25,9 +27,13 @@ public class NoteOperation
         //TODO: 在此处添加构造函数逻辑
         //
     }
+    /// <summary>
+    /// 添加注释
+    /// </summary>
+    /// <param name="ne">注释的实例</param>
+    /// <returns>添加成功返回true 失败返回false</returns>
     public static bool AddNote(NoteEntity ne)
     {
-        /*注释的添加*/
         DataBase db = new DataBase();
         try
         {
@@ -40,19 +46,21 @@ public class NoteOperation
             return false;
         }
     }
-
-
-
+/// <summary>
+/// 修改注释信息
+/// </summary>
+/// <param name="NoteName">注释名</param>
+/// <param name="ID">注释ID</param>
     public static void EditNote(string NoteName, int ID)
     {
-        /*注释的修改*/
         DataBase db = new DataBase();
         string sql = "UPDATE tb_project SET projectName ='" + NoteName + "'where id=" + ID.ToString();
         db.ExCommandNoBack(sql);
     }
-
-
-
+    /// <summary>
+    /// 删除注释
+    /// </summary>
+    /// <param name="id">注释ID</param>
     public static void DelNote(String id)
     {
         /*删除注释*/
@@ -61,10 +69,13 @@ public class NoteOperation
         db.ExCommandNoBack(sql);
 
     }
-
+/// <summary>
+/// 获取注释信息
+/// </summary>
+/// <param name="noteId">注释ID</param>
+/// <returns>返回注释实例</returns>
     public static NoteEntity GetNote(int noteId)
     {
-        /*获取工程信息*/
         DataBase db = new DataBase();
         DataSet rs = db.RunProcReturn("select * from tb_note where id=" + noteId, "tb_note");
         if (rs.Tables[0].Rows.Count > 0)
@@ -84,9 +95,14 @@ public class NoteOperation
         }
         return null;
     }
+    /// <summary>
+    /// 利用起始行获取注释信息
+    /// </summary>
+    /// <param name="startline">注释的起始行</param>
+    /// <param name="cid">注释所属源码ID</param>
+    /// <returns>返回注释</returns>
     public static List<NoteEntity> GetNotesBySartLine(int startline, int cid)
     {
-        /*获取信息*/
         DataBase db = new DataBase();
         DataSet rs = db.RunProcReturn("select * from tb_note where startline=" + startline.ToString() + " and cid=" + cid.ToString(), "tb_note");
         List<NoteEntity> notes = new List<NoteEntity>();
@@ -109,15 +125,21 @@ public class NoteOperation
         }
         return notes;
     }
+    /// <summary>
+    /// 注释是否被推荐
+    /// </summary>
+    /// <param name="i">注释的ID</param>
     public static void recommend(int i)
     {
         DataBase db = new DataBase();
         string sql = "update tb_note set recommend='" + 1 + "' where id='" + i + "'";
         db.ExCommandNoBack(sql);
     }
-
-
-    /*取消推荐操作*/
+    /// <summary>
+    /// 取消推荐操作
+    /// </summary>
+    /// <param name="i">注释的ID</param>
+    /// <returns></returns>
     public static int cancelrecommend(int i)
     {
         DataBase db = new DataBase();

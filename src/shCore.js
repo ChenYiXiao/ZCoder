@@ -1,4 +1,4 @@
-/**
+/--
 * SyntaxHighlighter
 * http://alexgorbatchev.com/SyntaxHighlighter
 *
@@ -29,13 +29,13 @@ var SyntaxHighlighter = function () {
     // references to SyntaxHighlighter.whatever...
     var sh = {
         defaults: {
-            /** Additional CSS class names to be added to highlighter elements. */
+            /-- Additional CSS class names to be added to highlighter elements. */
             'class-name': '',
 
-            /** First line number. */
+            /-- First line number. */
             'first-line': 1,
 
-            /**
+            /--
             * Pads line numbers. Possible values are:
             *
             *   false - don't pad line numbers.
@@ -44,34 +44,34 @@ var SyntaxHighlighter = function () {
             */
             'pad-line-numbers': false,
 
-            /** Lines to highlight. */
+            /-- Lines to highlight. */
             'highlight': null,
 
-            /** Title to be displayed above the code block. */
+            /-- Title to be displayed above the code block. */
             'title': null,
 
-            /** Enables or disables smart tabs. */
+            /-- Enables or disables smart tabs. */
             'smart-tabs': true,
 
-            /** Gets or sets tab size. */
+            /-- Gets or sets tab size. */
             'tab-size': 4,
 
-            /** Enables or disables gutter. */
+            /-- Enables or disables gutter. */
             'gutter': true,
 
-            /** Enables or disables toolbar. */
+            /-- Enables or disables toolbar. */
             'toolbar': true,
 
-            /** Enables quick code copy and paste from double click. */
+            /-- Enables quick code copy and paste from double click. */
             'quick-code': true,
 
-            /** Forces code view to be collapsed. */
+            /-- Forces code view to be collapsed. */
             'collapse': false,
 
-            /** Enables or disables automatic links. */
+            /-- Enables or disables automatic links. */
             'auto-links': true,
 
-            /** Gets or sets light mode. Equavalent to turning off gutter and toolbar. */
+            /-- Gets or sets light mode. Equavalent to turning off gutter and toolbar. */
             'light': false,
 
             'html-script': false
@@ -80,15 +80,15 @@ var SyntaxHighlighter = function () {
         config: {
             space: '&nbsp;',
 
-            /** Enables use of <SCRIPT type="syntaxhighlighter" /> tags. */
+            /-- Enables use of <SCRIPT type="syntaxhighlighter" /> tags. */
             useScriptTags: true,
 
-            /** Blogger mode flag. */
+            /-- Blogger mode flag. */
             bloggerMode: false,
 
             stripBrs: false,
 
-            /** Name of the tag that SyntaxHighlighter will automatically look for. */
+            /-- Name of the tag that SyntaxHighlighter will automatically look for. */
             tagName: 'pre',
 
             strings: {
@@ -103,16 +103,16 @@ var SyntaxHighlighter = function () {
             }
         },
 
-        /** Internal 'global' variables. */
+        /-- Internal 'global' variables. */
         vars: {
             discoveredBrushes: null,
             highlighters: {}
         },
 
-        /** This object is populated by user included external brush files. */
+        /-- This object is populated by user included external brush files. */
         brushes: {},
 
-        /** Common regular expressions. */
+        /-- Common regular expressions. */
         regexLib: {
             multiLineCComments: /\/\*[\s\S]*?\*\//gm,
             singleLineCComments: /\/\/.*$/gm,
@@ -124,18 +124,18 @@ var SyntaxHighlighter = function () {
             xmlComments: /(&lt;|<)!--[\s\S]*?--(&gt;|>)/gm,
             url: /\w+:\/\/[\w-.\/?%&=:@;]*/g,
 
-            /** <?= ?> tags. */
+            /-- <?= ?> tags. */
             phpScriptTags: { left: /(&lt;|<)\?=?/g, right: /\?(&gt;|>)/g },
 
-            /** <%= %> tags. */
+            /-- <%= %> tags. */
             aspScriptTags: { left: /(&lt;|<)%=?/g, right: /%(&gt;|>)/g },
 
-            /** <script></script> tags. */
+            /-- <script></script> tags. */
             scriptScriptTags: { left: /(&lt;|<)\s*script.*?(&gt;|>)/gi, right: /(&lt;|<)\/\s*script\s*(&gt;|>)/gi }
         },
 
         toolbar: {
-            /**
+            /--
             * Generates HTML markup for the toolbar.
             * @param {Highlighter} highlighter Highlighter instance.
             * @return {String} Returns HTML markup.
@@ -158,7 +158,7 @@ var SyntaxHighlighter = function () {
                 return html;
             },
 
-            /**
+            /--
             * Generates HTML markup for a regular button in the toolbar.
             * @param {Highlighter} highlighter Highlighter instance.
             * @param {String} commandName		Command name that would be executed.
@@ -173,7 +173,7 @@ var SyntaxHighlighter = function () {
 				;
             },
 
-            /**
+            /--
             * Event handler for a toolbar anchor.
             */
             handler: function (e) {
@@ -201,7 +201,7 @@ var SyntaxHighlighter = function () {
                 e.preventDefault();
             },
 
-            /** Collection of toolbar items. */
+            /-- Collection of toolbar items. */
             items: {
                 // Ordered lis of items in the toolbar. Can't expect `for (var n in items)` to be consistent.
                 list: ['expandSource', 'help'],
@@ -221,7 +221,7 @@ var SyntaxHighlighter = function () {
                     }
                 },
 
-                /** Command to display the about dialog window. */
+                /-- Command to display the about dialog window. */
                 help: {
                     execute: function (highlighter) {
                         var wnd = popup('', '_blank', 500, 250, 'scrollbars=0'),
@@ -236,7 +236,7 @@ var SyntaxHighlighter = function () {
             }
         },
 
-        /**
+        /--
         * Finds all elements on the page which should be processes by SyntaxHighlighter.
         *
         * @param {Object} globalParams		Optional parameters which override element's 
@@ -277,7 +277,7 @@ var SyntaxHighlighter = function () {
             return result;
         },
 
-        /**
+        /--
         * Shorthand to highlight all elements on the page that are marked as 
         * SyntaxHighlighter source code.
         * 
@@ -345,7 +345,7 @@ var SyntaxHighlighter = function () {
             }
         },
 
-        /**
+        /--
         * Main entry point for the SyntaxHighlighter.
         * @param {Object} params Optional params to apply to all highlighted elements.
         */
@@ -361,7 +361,7 @@ var SyntaxHighlighter = function () {
     sh['all'] = sh.all;
     sh['highlight'] = sh.highlight;
 
-    /**
+    /--
     * Checks if target DOM elements has specified CSS class.
     * @param {DOMElement} target Target DOM element to check.
     * @param {String} className Name of the CSS class to check for.
@@ -371,7 +371,7 @@ var SyntaxHighlighter = function () {
         return target.className.indexOf(className) != -1;
     };
 
-    /**
+    /--
     * Adds CSS class name to the target DOM element.
     * @param {DOMElement} target Target DOM element.
     * @param {String} className New CSS class to add.
@@ -381,7 +381,7 @@ var SyntaxHighlighter = function () {
             target.className += ' ' + className;
     };
 
-    /**
+    /--
     * Removes CSS class name from the target DOM element.
     * @param {DOMElement} target Target DOM element.
     * @param {String} className CSS class to remove.
@@ -390,7 +390,7 @@ var SyntaxHighlighter = function () {
         target.className = target.className.replace(className, '');
     };
 
-    /**
+    /--
     * Converts the source to array object. Mostly used for function arguments and 
     * lists returned by getElementsByTagName() which aren't Array objects.
     * @param {List} source Source list.
@@ -405,7 +405,7 @@ var SyntaxHighlighter = function () {
         return result;
     };
 
-    /**
+    /--
     * Splits block of text into lines.
     * @param {String} block Block of text.
     * @return {Array} Returns array of lines.
@@ -414,7 +414,7 @@ var SyntaxHighlighter = function () {
         return block.split('\n');
     }
 
-    /**
+    /--
     * Generates HTML ID for the highlighter.
     * @param {String} highlighterId Highlighter ID.
     * @return {String} Returns HTML ID.
@@ -424,7 +424,7 @@ var SyntaxHighlighter = function () {
         return id.indexOf(prefix) == 0 ? id : prefix + id;
     };
 
-    /**
+    /--
     * Finds Highlighter instance by ID.
     * @param {String} highlighterId Highlighter ID.
     * @return {Highlighter} Returns instance of the highlighter.
@@ -433,7 +433,7 @@ var SyntaxHighlighter = function () {
         return sh.vars.highlighters[getHighlighterId(id)];
     };
 
-    /**
+    /--
     * Finds highlighter's DIV container.
     * @param {String} highlighterId Highlighter ID.
     * @return {Element} Returns highlighter's DIV element.
@@ -442,7 +442,7 @@ var SyntaxHighlighter = function () {
         return document.getElementById(getHighlighterId(id));
     };
 
-    /**
+    /--
     * Stores highlighter so that getHighlighterById() can do its thing. Each
     * highlighter must call this method to preserve itself.
     * @param {Highilghter} highlighter Highlighter instance.
@@ -451,7 +451,7 @@ var SyntaxHighlighter = function () {
         sh.vars.highlighters[getHighlighterId(highlighter.id)] = highlighter;
     };
 
-    /**
+    /--
     * Looks for a child or parent node which has specified classname.
     * Equivalent to jQuery's $(container).find(".className")
     * @param {Element} target Target element.
@@ -484,7 +484,7 @@ var SyntaxHighlighter = function () {
         return found;
     };
 
-    /**
+    /--
     * Looks for a parent node which has specified classname.
     * This is an alias to <code>findElement(container, className, true)</code>.
     * @param {Element} target Target element.
@@ -495,7 +495,7 @@ var SyntaxHighlighter = function () {
         return findElement(target, className, true);
     };
 
-    /**
+    /--
     * Finds an index of element in the array.
     * @ignore
     * @param {Object} searchElement
@@ -512,14 +512,14 @@ var SyntaxHighlighter = function () {
         return -1;
     };
 
-    /**
+    /--
     * Generates a unique element ID.
     */
     function guid(prefix) {
         return (prefix || '') + Math.round(Math.random() * 1000000).toString();
     };
 
-    /**
+    /--
     * Merges two objects. Values from obj2 override values in obj1.
     * Function is NOT recursive and works only for one dimensional objects.
     * @param {Object} obj1 First object.
@@ -538,7 +538,7 @@ var SyntaxHighlighter = function () {
         return result;
     };
 
-    /**
+    /--
     * Attempts to convert string to boolean.
     * @param {String} value Input string.
     * @return {Boolean} Returns true if input was "true", false if input was "false" and value otherwise.
@@ -548,7 +548,7 @@ var SyntaxHighlighter = function () {
         return result == null ? value : result;
     };
 
-    /**
+    /--
     * Opens up a centered popup window.
     * @param {String} url		URL to open in the window.
     * @param {String} name		Popup name.
@@ -574,7 +574,7 @@ var SyntaxHighlighter = function () {
         return win;
     };
 
-    /**
+    /--
     * Adds event handler to the target object.
     * @param {Object} obj		Target object.
     * @param {String} type		Name of the event.
@@ -602,7 +602,7 @@ var SyntaxHighlighter = function () {
         }
     };
 
-    /**
+    /--
     * Displays an alert.
     * @param {String} str String to display.
     */
@@ -610,7 +610,7 @@ var SyntaxHighlighter = function () {
         window.alert(sh.config.strings.alert + str);
     };
 
-    /**
+    /--
     * Finds a brush by its alias.
     *
     * @param {String} alias		Brush alias.
@@ -652,7 +652,7 @@ var SyntaxHighlighter = function () {
         return result;
     };
 
-    /**
+    /--
     * Executes a callback on each line and replaces each line with result from the callback.
     * @param {Object} str			Input string.
     * @param {Object} callback		Callback function taking one string argument and returning a string.
@@ -666,7 +666,7 @@ var SyntaxHighlighter = function () {
         return lines.join('\n');
     };
 
-    /**
+    /--
     * This is a special trim which only removes first and last empty lines
     * and doesn't affect valid leading space on the first line.
     * 
@@ -677,7 +677,7 @@ var SyntaxHighlighter = function () {
         return str.replace(/^[ ]*[\n]+|[\n]*[ ]*$/g, '');
     };
 
-    /**
+    /--
     * Parses key/value pairs into hash object.
     * 
     * Understands the following formats:
@@ -726,7 +726,7 @@ var SyntaxHighlighter = function () {
         return result;
     };
 
-    /**
+    /--
     * Wraps each line of the string into <code/> tag with given style applied to it.
     * 
     * @param {String} str   Input string.
@@ -772,7 +772,7 @@ var SyntaxHighlighter = function () {
         return str;
     };
 
-    /**
+    /--
     * Pads number with zeros until it's length is the same as given length.
     * 
     * @param {Number} number	Number to pad.
@@ -788,7 +788,7 @@ var SyntaxHighlighter = function () {
         return result;
     };
 
-    /**
+    /--
     * Replaces tabs with spaces.
     * 
     * @param {String} code		Source code.
@@ -804,7 +804,7 @@ var SyntaxHighlighter = function () {
         return code.replace(/\t/g, tab);
     };
 
-    /**
+    /--
     * Replaces tabs with smart spaces.
     * 
     * @param {String} code    Code to fix the tabs in.
@@ -852,7 +852,7 @@ var SyntaxHighlighter = function () {
         return code;
     };
 
-    /**
+    /--
     * Performs various string fixes based on configuration.
     */
     function fixInputString(str) {
@@ -867,7 +867,7 @@ var SyntaxHighlighter = function () {
         return str;
     };
 
-    /**
+    /--
     * Removes all white space at the begining and end of a string.
     * 
     * @param {String} str   String to trim.
@@ -877,7 +877,7 @@ var SyntaxHighlighter = function () {
         return str.replace(/^\s+|\s+$/g, '');
     };
 
-    /**
+    /--
     * Unindents a block of text by the lowest common indent amount.
     * @param {String} str   Text to unindent.
     * @return {String}      Returns unindented text block.
@@ -914,7 +914,7 @@ var SyntaxHighlighter = function () {
         return lines.join('\n');
     };
 
-    /**
+    /--
     * Callback method for Array.sort() which sorts matches by
     * index position and then by length.
     * 
@@ -939,7 +939,7 @@ var SyntaxHighlighter = function () {
         return 0;
     };
 
-    /**
+    /--
     * Executes given regular expression on provided code and returns all
     * matches that are found.
     * 
@@ -970,7 +970,7 @@ var SyntaxHighlighter = function () {
         return matches;
     };
 
-    /**
+    /--
     * Turns all URLs in the code into <a/> tags.
     * @param {String} code Input code.
     * @return {String} Returns code with </a> tags.
@@ -996,7 +996,7 @@ var SyntaxHighlighter = function () {
         });
     };
 
-    /**
+    /--
     * Finds all <SCRIPT TYPE="syntaxhighlighter" /> elementss.
     * @return {Array} Returns array of all found SyntaxHighlighter tags.
     */
@@ -1012,7 +1012,7 @@ var SyntaxHighlighter = function () {
         return result;
     };
 
-    /**
+    /--
     * Strips <![CDATA[]]> from <SCRIPT /> content because it should be used
     * there in most cases for XHTML compliance.
     * @param {String} original	Input code.
@@ -1044,7 +1044,7 @@ var SyntaxHighlighter = function () {
     };
 
 
-    /**
+    /--
     * Quick code mouse double click handler.
     */
     function quickCodeHandler(e) {
@@ -1090,7 +1090,7 @@ var SyntaxHighlighter = function () {
         });
     };
 
-    /**
+    /--
     * Match object.
     */
     sh.Match = function (value, index, css) {
@@ -1105,7 +1105,7 @@ var SyntaxHighlighter = function () {
         return this.value;
     };
 
-    /**
+    /--
     * Simulates HTML code with a scripting language embedded.
     * 
     * @param {String} scriptBrushName Brush name of the scripting language.
@@ -1185,7 +1185,7 @@ var SyntaxHighlighter = function () {
         }
     };
 
-    /**
+    /--
     * Main Highlither class.
     * @constructor
     */
@@ -1194,7 +1194,7 @@ var SyntaxHighlighter = function () {
     };
 
     sh.Highlighter.prototype = {
-        /**
+        /--
         * Returns value of the parameter passed to the highlighter.
         * @param {String} name				Name of the parameter.
         * @param {Object} defaultValue		Default value.
@@ -1205,7 +1205,7 @@ var SyntaxHighlighter = function () {
             return toBoolean(result == null ? defaultValue : result);
         },
 
-        /**
+        /--
         * Shortcut to document.createElement().
         * @param {String} name		Name of the element to create (DIV, A, etc).
         * @return {HTMLElement}	Returns new HTML element.
@@ -1214,7 +1214,7 @@ var SyntaxHighlighter = function () {
             return document.createElement(name);
         },
 
-        /**
+        /--
         * Applies all regular expression to the code and stores all found
         * matches in the `this.matches` array.
         * @param {Array} regexList		List of regular expressions.
@@ -1234,7 +1234,7 @@ var SyntaxHighlighter = function () {
             return this.removeNestedMatches(result.sort(matchesSortCallback));
         },
 
-        /**
+        /--
         * Checks to see if any of the matches are inside of other matches. 
         * This process would get rid of highligted strings inside comments, 
         * keywords inside strings and so on.
@@ -1266,7 +1266,7 @@ var SyntaxHighlighter = function () {
             return matches;
         },
 
-        /**
+        /--
         * Creates an array containing integer line numbers starting from the 'first-line' param.
         * @return {Array} Returns array of integers.
         */
@@ -1282,7 +1282,7 @@ var SyntaxHighlighter = function () {
             return lines;
         },
 
-        /**
+        /--
         * Determines if specified line number is in the highlighted list.
         */
         isLineHighlighted: function (lineNumber) {
@@ -1294,7 +1294,7 @@ var SyntaxHighlighter = function () {
             return indexOf(list, lineNumber.toString()) != -1;
         },
 
-        /**
+        /--
         * Generates HTML markup for a single line of code while determining alternating line style.
         * @param {Integer} lineNumber	Line number.
         * @param {String} code Line	HTML markup.
@@ -1318,7 +1318,7 @@ var SyntaxHighlighter = function () {
             return '<div class="' + classes.join(' ') + '">' + code + '</div>';
         },
 
-        /**
+        /--
         * Generates HTML markup for line number column.
         * @param {String} code			Complete code HTML markup.
         * @param {Array} lineNumbers	Calculated line numbers.
@@ -1347,7 +1347,7 @@ var SyntaxHighlighter = function () {
             return html;
         },
 
-        /**
+        /--
         * Splits block of text into individual DIV lines.
         * @param {String} code			Code to highlight.
         * @param {Array} lineNumbers	Calculated line numbers.
@@ -1391,14 +1391,14 @@ var SyntaxHighlighter = function () {
             return html;
         },
 
-        /**
+        /--
         * Returns HTML for the table title or empty string if title is null.
         */
         getTitleHtml: function (title) {
             return title ? '<caption>' + title + '</caption>' : '';
         },
 
-        /**
+        /--
         * Finds all matches in the source code.
         * @param {String} code		Source code to process matches in.
         * @param {Array} matches	Discovered regex matches.
@@ -1440,7 +1440,7 @@ var SyntaxHighlighter = function () {
             return result;
         },
 
-        /**
+        /--
         * Generates HTML markup for the whole syntax highlighter.
         * @param {String} code Source code.
         * @return {String} Returns HTML markup.
@@ -1525,7 +1525,7 @@ var SyntaxHighlighter = function () {
             return html;
         },
 
-        /**
+        /--
         * Highlights the code and returns complete HTML.
         * @param {String} code     Code to highlight.
         * @return {Element}        Returns container DIV element with all markup.
@@ -1551,7 +1551,7 @@ var SyntaxHighlighter = function () {
             return div;
         },
 
-        /**
+        /--
         * Initializes the highlighter/brush.
         *
         * Constructor isn't used for initialization so that nothing executes during necessary
@@ -1573,7 +1573,7 @@ var SyntaxHighlighter = function () {
                 this.params.toolbar = this.params.gutter = false;
         },
 
-        /**
+        /--
         * Converts space separated list of keywords into a regular expression string.
         * @param {String} str    Space separated keywords.
         * @return {String}       Returns regular expression string.
@@ -1587,7 +1587,7 @@ var SyntaxHighlighter = function () {
             return '\\b(?:' + str + ')\\b';
         },
 
-        /**
+        /--
         * Makes a brush compatible with the `html-script` functionality.
         * @param {Object} regexGroup Object containing `left` and `right` regular expressions.
         */
