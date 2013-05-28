@@ -46,14 +46,14 @@ public class ProjectOperation
             return false;
         }
     }
-  public static bool CheckProjectNameExist(string projectName,int projectId)
+  
     /// <summary>
     /// 检查工程名是否存在
     /// </summary>
     /// <param name="ProjectName">工程名</param>
     /// <param name="ProjectId">工程ID</param>
     /// <returns></returns>
-    public static bool CheckProjectNameExist(string ProjectName,int ProjectId)
+    public static bool CheckProjectNameExist(string projectName, int projectId)
     {
         DataBase db = new DataBase();
         string sql = string.Format("select * from tb_project where projectName='{0}' and id != {1}", projectName,projectId);

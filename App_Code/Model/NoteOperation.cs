@@ -63,7 +63,7 @@ public class NoteOperation
     /// <param name="id">注释ID</param>
     public static void DelNote(String noteId)
     {
-        /*删除注释*/
+       
         DataBase db = new DataBase();
         string sql = "delete from dbo.tb_note where id=" + noteId + "";
         db.ExCommandNoBack(sql);
@@ -125,12 +125,12 @@ public class NoteOperation
         }
         return notes;
     }
-  public static void Recommend(int noteId)
+ 
     /// <summary>
     /// 注释是否被推荐
     /// </summary>
     /// <param name="i">注释的ID</param>
-    public static void recommend(int i)
+    public static void Recommend(int noteId)
     {
         DataBase db = new DataBase();
         string sql = "update tb_note set recommend='" + 1 + "' where id='" + noteId + "'";
