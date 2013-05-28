@@ -30,7 +30,7 @@ public partial class doSuggest : System.Web.UI.Page
 
         string str = Request.QueryString["id"];
         int i = int.Parse(str);
-        NoteOperation.recommend(i);
+        NoteOperation.Recommend(i);
         Response.Redirect("LoadNotes.aspx?nid=" + Nid + "&cid=" + cid + "&startline=" + startline + "&isDing=" + isDing);
     }
 }

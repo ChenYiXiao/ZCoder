@@ -61,11 +61,11 @@ public class NoteOperation
     /// 删除注释
     /// </summary>
     /// <param name="id">注释ID</param>
-    public static void DelNote(String id)
+    public static void DelNote(String noteId)
     {
         /*删除注释*/
         DataBase db = new DataBase();
-        string sql = "delete from dbo.tb_note where id=" + id + "";
+        string sql = "delete from dbo.tb_note where id=" + noteId + "";
         db.ExCommandNoBack(sql);
 
     }
@@ -125,6 +125,7 @@ public class NoteOperation
         }
         return notes;
     }
+  public static void Recommend(int noteId)
     /// <summary>
     /// 注释是否被推荐
     /// </summary>
@@ -132,7 +133,7 @@ public class NoteOperation
     public static void recommend(int i)
     {
         DataBase db = new DataBase();
-        string sql = "update tb_note set recommend='" + 1 + "' where id='" + i + "'";
+        string sql = "update tb_note set recommend='" + 1 + "' where id='" + noteId + "'";
         db.ExCommandNoBack(sql);
     }
     /// <summary>
@@ -140,13 +141,13 @@ public class NoteOperation
     /// </summary>
     /// <param name="i">注释的ID</param>
     /// <returns></returns>
-    public static int cancelrecommend(int i)
+    public static int CancelRecommend(int noteId)
     {
         DataBase db = new DataBase();
-        string sql = "select recommend from tb_note where id='" + i + "'";
-        string sql1 = "update tb_note set recommend='" + 0 + "' where id='" + i + "'";
+        string sql = "select recommend from tb_note where id='" + noteId + "'";
+        string sql1 = "update tb_note set recommend='" + 0 + "' where id='" + noteId + "'";
         DataSet ds = db.RunProcReturn(sql, "tb_note");
-        /*如果本就违背推荐，则返回0*/
+        /*如果本就未被推荐，则返回0*/
         if (int.Parse(ds.Tables[0].Rows[0]["recommend"].ToString()) == 0)
         {
             return 0;

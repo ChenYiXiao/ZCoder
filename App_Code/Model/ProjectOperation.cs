@@ -46,6 +46,7 @@ public class ProjectOperation
             return false;
         }
     }
+  public static bool CheckProjectNameExist(string projectName,int projectId)
     /// <summary>
     /// 检查工程名是否存在
     /// </summary>
@@ -55,7 +56,7 @@ public class ProjectOperation
     public static bool CheckProjectNameExist(string ProjectName,int ProjectId)
     {
         DataBase db = new DataBase();
-        string sql = string.Format("select * from tb_project where projectName='{0}' and id != {1}", ProjectName,ProjectId);
+        string sql = string.Format("select * from tb_project where projectName='{0}' and id != {1}", projectName,projectId);
         if (db.ExCommand(sql).Tables[0].Rows.Count > 0)
         {
             return true;
@@ -73,11 +74,11 @@ public class ProjectOperation
     /// <param name="description">工程描述</param>
     /// <param name="type">工程类型</param>
     /// <param name="ID">工程ID</param>
-    public static void EditProject(string ProjectName, string description, int type, int ID)
+    public static void EditProject(string projectName, string description, int type, int projectId)
     {
         
         DataBase db = new DataBase();
-        string sql = "UPDATE tb_project SET projectName ='" + ProjectName + "',description ='" + description + "',Tid = " + type + " where id=" + ID.ToString();
+        string sql = "UPDATE tb_project SET projectName ='" + projectName + "',description ='" + description + "',Tid = " + type + " where id=" + projectId.ToString();
         db.ExCommandNoBack(sql);
     }
 
@@ -86,11 +87,11 @@ public class ProjectOperation
     /// 删除工程
     /// </summary>
     /// <param name="id">工程ID</param>
-    public static void DelProject(String id)
+    public static void DelProject(String projectId)
     {
        
         DataBase db = new DataBase();
-        string sql = "delete from dbo.tb_project where id=" + id + "";
+        string sql = "delete from dbo.tb_project where id=" + projectId + "";
         db.ExCommandNoBack(sql);
 
     }
