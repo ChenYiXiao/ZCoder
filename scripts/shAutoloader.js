@@ -2,7 +2,7 @@
 
 var sh = SyntaxHighlighter;
 
-/--
+/**
  * Provides functionality to dynamically load only the brushes that a needed to render the current page.
  *
  * There are two syntaxes that autoload understands. For example:
