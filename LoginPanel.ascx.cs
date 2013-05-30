@@ -13,9 +13,16 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+/// <summary>
+/// 用户登录功能
+/// </summary>
 public partial class LoginPanel : System.Web.UI.UserControl
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void Page_Load(object sender, EventArgs e)
     {
             /*检验用户是否已登陆*/

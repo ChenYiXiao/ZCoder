@@ -19,6 +19,9 @@ using System.Data;
 /// </summary>
 public class CommentOperation
 {
+    /// <summary>
+    /// 
+    /// </summary>
 	public CommentOperation()
 	{
 	

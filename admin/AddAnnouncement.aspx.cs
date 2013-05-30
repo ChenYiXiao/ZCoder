@@ -61,8 +61,4 @@ public partial class admin_AddAnnouncement : System.Web.UI.Page
             SmallScript.MessageBox(Page, "添加公告失败！");
         };
     }
-
-    
-
-
 }

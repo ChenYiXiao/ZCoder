@@ -15,10 +15,16 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
-
+/// <summary>
+/// 后台修改工程信息
+/// </summary>
 public partial class admin_EditProject : System.Web.UI.Page
 {
-
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -51,6 +57,11 @@ public partial class admin_EditProject : System.Web.UI.Page
             }
         }
     }
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void btnEdit_Click(object sender, EventArgs e)
     {
         //修改工程信息

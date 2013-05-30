@@ -14,9 +14,14 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
-
+/// <summary>
+/// 最新工程列表
+/// </summary>
 public partial class ascx_LatestProjects : System.Web.UI.UserControl
 {
+    /// <summary>
+    /// 获取数据库中project的内容
+    /// </summary>
     public override void DataBind()
     {
         lbPage.Text = page.ToString();
@@ -25,6 +30,11 @@ public partial class ascx_LatestProjects : System.Web.UI.UserControl
         DataOperate.dlBind(8, ds, lbPage, lbtpage, lbtnUp, lbtnnext, lbtnback, lbtnone, this.DataList1);
         base.DataBind();
     }
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -46,18 +56,38 @@ public partial class ascx_LatestProjects : System.Web.UI.UserControl
             Session["page"] = value;
         }
     }
+    /// <summary>
+    /// 上一页
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void lbtnUp_Click(object sender, EventArgs e)
     {
         this.page--; DataBind();
     }
+    /// <summary>
+    /// 下一页
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void lbtnnext_Click(object sender, EventArgs e)
     {
         this.page++; DataBind();
     }
+    /// <summary>
+    /// 最后一页
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void lbtnback_Click(object sender, EventArgs e)
     {
         this.page = int.Parse(this.lbtpage.Text); DataBind();
     }
+    /// <summary>
+    /// 第一页
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void lbtnone_Click(object sender, EventArgs e)
     {
         this.page = 1; DataBind();

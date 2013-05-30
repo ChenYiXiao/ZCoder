@@ -13,18 +13,25 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+/// <summary>
+/// 后台工程列表
+/// </summary>
 public partial class admin_ProjectList : System.Web.UI.Page
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void Page_Load(object sender, EventArgs e)
     {
 
     }
-    protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
-    {
-
-    }
-    /*修正链接*/
+ /// <summary>
+ /// 
+ /// </summary>
+ /// <param name="sender"></param>
+ /// <param name="e"></param>
     protected void FixNameUrl(object sender, EventArgs e)
     {
         HyperLink hl = (HyperLink)sender;

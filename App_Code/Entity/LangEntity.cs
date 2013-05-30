@@ -97,6 +97,9 @@ public class LangEntity
             return exts;
         }
     }
+    /// <summary>
+    /// 
+    /// </summary>
     public LangEntity()
     {
         //

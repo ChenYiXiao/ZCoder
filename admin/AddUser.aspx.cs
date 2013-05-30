@@ -13,13 +13,16 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+/// <summary>
+/// 后台管理员，添加用户
+/// </summary>
 public partial class admin_AddUser: System.Web.UI.Page
 {
-    protected void Page_Load(object sender, EventArgs e)
-    {
-
-    }
+/// <summary>
+/// 添加用户
+/// </summary>
+/// <param name="sender"></param>
+/// <param name="e"></param>
     protected void A_Button1_Click(object sender, EventArgs e)
     {
         this.Validate();
@@ -46,10 +49,5 @@ public partial class admin_AddUser: System.Web.UI.Page
             SmallScript.MessageBox(Page, "添加用户失败。");
             return;
         }
-    }
-
-    protected void A_TB1_TextChanged(object sender, EventArgs e)
-    {
-
     }
 }

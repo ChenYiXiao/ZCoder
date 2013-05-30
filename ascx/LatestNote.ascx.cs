@@ -14,10 +14,14 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
-
+/// <summary>
+/// 最新注释列表
+/// </summary>
 public partial class ascx_LatestNote : System.Web.UI.UserControl
 {
-   
+   /// <summary>
+   /// 获取数据库中note的内容
+   /// </summary>
     public override void DataBind()
     {
         /*实例化数据库*/
@@ -28,6 +32,11 @@ public partial class ascx_LatestNote : System.Web.UI.UserControl
         DataOperate.dlBind(6, ds, lbPage, lbtpage, lbtnUp, lbtnnext, lbtnback, lbtnone, this.DataList1);
         base.DataBind();
     }
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -49,21 +58,41 @@ public partial class ascx_LatestNote : System.Web.UI.UserControl
             Session["page"] = value;
         }
     }
+    /// <summary>
+    /// 上一页
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void lbtnUp_Click(object sender, EventArgs e)
     {
         /*跳转上一页*/
         this.page--; DataBind();
     }
+    /// <summary>
+    /// 下一页
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void lbtnnext_Click(object sender, EventArgs e)
     {
         /*跳转下一页*/
         this.page++; DataBind();
     }
+    /// <summary>
+    /// 最后一页
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void lbtnback_Click(object sender, EventArgs e)
     {
         /*跳转最后一页*/
         this.page = int.Parse(this.lbtpage.Text); DataBind();
     }
+    /// <summary>
+    /// 第一页
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void lbtnone_Click(object sender, EventArgs e)
     {
         /*跳转第一页*/

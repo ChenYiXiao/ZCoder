@@ -14,13 +14,25 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
-
+/// <summary>
+///  上传源码页面
+/// </summary>
 public partial class admin_UploadSource : System.Web.UI.Page
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void Page_Load(object sender, EventArgs e)
     {
 
     }
+   /// <summary>
+   /// 
+   /// </summary>
+   /// <param name="sender"></param>
+   /// <param name="e"></param>
     protected void btn_OK_Click(object sender, EventArgs e)
     {
         if (btn_OK.Text == "完成")
@@ -94,7 +106,11 @@ public partial class admin_UploadSource : System.Web.UI.Page
         Response.Cookies["savepath"].Expires = DateTime.Now;
 
     }
-
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="fileName"></param>
+    /// <returns></returns>
     private string GetExt(string fileName)
     {
         return fileName.Substring(fileName.LastIndexOf(".") + 1, fileName.Length - fileName.LastIndexOf(".") - 1);

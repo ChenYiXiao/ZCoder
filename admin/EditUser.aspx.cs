@@ -14,10 +14,16 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
-
+/// <summary>
+/// 后台修改用户信息
+/// </summary>
 public partial class admin_EditUser : System.Web.UI.Page
 {
-
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -51,6 +57,11 @@ public partial class admin_EditUser : System.Web.UI.Page
             }
         }
     }
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="CString"></param>
+    /// <returns></returns>
     public bool IsChina(string CString)
     {
 
@@ -65,7 +76,11 @@ public partial class admin_EditUser : System.Web.UI.Page
         return false;
 
     }
-
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
 
     protected void btnEdit_Click(object sender, EventArgs e)
     {

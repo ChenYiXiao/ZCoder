@@ -14,9 +14,16 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
-
+/// <summary>
+///  页面信息，包括评论数，注释数，用户数等统计信息
+/// </summary>
 public partial class admin_Counter : System.Web.UI.Page
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void Page_Load(object sender, EventArgs e)
     {
         /*实例化一个数据库*/

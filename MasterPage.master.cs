@@ -14,17 +14,20 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+/// <summary>
+///  前台母板页
+/// </summary>
 public partial class MasterPage : System.Web.UI.MasterPage
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void Page_Load(object sender, EventArgs e)
     {
 
     }
 
-
-    protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
-    {
-
-    }
+  
 }

@@ -20,6 +20,9 @@ using System.Web.UI;
 /// </summary>
 public class DingOperation
 {
+    /// <summary>
+    /// 
+    /// </summary>
 	public DingOperation()
 	{
 		//

@@ -13,12 +13,19 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+/// <summary>
+/// 前台取消推荐
+/// </summary>
 public partial class CancelSuggest : System.Web.UI.Page
 {
     static int time = 3;
     static string tip = "";
     static string url = "";
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void Page_Load(object sender, EventArgs e)
     {
 

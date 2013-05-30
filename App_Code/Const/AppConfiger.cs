@@ -18,7 +18,13 @@ using System.Configuration;
 /// </summary>
 public class AppConfiger
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public const string SiteConfigPath = "/config/site.config";
+    /// <summary>
+    /// 
+    /// </summary>
     public AppConfiger()
     {
         //

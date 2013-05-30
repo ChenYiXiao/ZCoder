@@ -15,12 +15,21 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Configuration;
 using System.Data;
-
-
+/// <summary>
+///  前台注释页面
+/// </summary>
 public partial class LoadNotes : System.Web.UI.Page
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public List<NoteEntity> assNotes = null;
     //public int[] isSuggest = null;
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void Page_Load(object sender, EventArgs e)
     {
         int startline = int.Parse(Request.QueryString["startline"].ToString());

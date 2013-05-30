@@ -18,12 +18,20 @@ using System.Web.Security;
 /// </summary>
 public class Encrypt
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public Encrypt()
     {
         //
         //TODO: 在此处添加构造函数逻辑
         //
     }
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="str"></param>
+    /// <returns></returns>
     public static String encrypt(String str)
     {
         String str1 = FormsAuthentication.HashPasswordForStoringInConfigFile(str, "SHA1");

@@ -18,6 +18,9 @@ using System.Data;
 /// </summary>
 public class CodeOperation
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public CodeOperation()
     {
         //

@@ -20,7 +20,9 @@ using System.Web.UI;
 /// </summary>
 public class NoteOperation
 {
-
+    /// <summary>
+    /// 
+    /// </summary>
     public NoteOperation()
     {
         //
@@ -60,7 +62,7 @@ public class NoteOperation
     /// <summary>
     /// 删除注释
     /// </summary>
-    /// <param name="id">注释ID</param>
+    /// <param name="noteId">注释ID</param>
     public static void DelNote(String noteId)
     {
        
@@ -129,7 +131,7 @@ public class NoteOperation
     /// <summary>
     /// 注释是否被推荐
     /// </summary>
-    /// <param name="i">注释的ID</param>
+    /// <param name="noteId">注释的ID</param>
     public static void Recommend(int noteId)
     {
         DataBase db = new DataBase();
@@ -139,7 +141,7 @@ public class NoteOperation
     /// <summary>
     /// 取消推荐操作
     /// </summary>
-    /// <param name="i">注释的ID</param>
+    /// <param name="noteId">注释的ID</param>
     /// <returns></returns>
     public static int CancelRecommend(int noteId)
     {

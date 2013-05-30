@@ -13,9 +13,16 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+/// <summary>
+///  用户个人资料的修改。
+/// </summary>
 public partial class Default2 : System.Web.UI.Page
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void Page_Load(object sender, EventArgs e) 
     {
         
@@ -55,7 +62,11 @@ public partial class Default2 : System.Web.UI.Page
     }
 
 
-
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="CString"></param>
+    /// <returns></returns>
 
     public bool IsChina(string CString)
           {
@@ -75,7 +86,11 @@ public partial class Default2 : System.Web.UI.Page
 
 
 
- 
+ /// <summary>
+ /// 
+ /// </summary>
+ /// <param name="sender"></param>
+ /// <param name="e"></param>
     protected void btnEdit_Click(object sender, EventArgs e)
     {
         Validate();
@@ -126,10 +141,7 @@ public partial class Default2 : System.Web.UI.Page
             return;
         }
     }
-    protected void tb_Password_TextChanged(object sender, EventArgs e)
-    {
 
-    }
 }
 
 

@@ -89,6 +89,9 @@ public class UserEntity
         get { return regTime; }
         set { regTime = value; }
     }
+    /// <summary>
+    /// 
+    /// </summary>
 	public UserEntity()
 	{
 	}

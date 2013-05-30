@@ -20,6 +20,9 @@ using System.Text;
 /// </summary>
 public class JsonHelper
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public JsonHelper()
     {
     }

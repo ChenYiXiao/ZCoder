@@ -20,6 +20,9 @@ using System.Web.UI;
 /// </summary>
 public class ProjectOperation
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public ProjectOperation()
     {
         //
@@ -50,8 +53,8 @@ public class ProjectOperation
     /// <summary>
     /// 检查工程名是否存在
     /// </summary>
-    /// <param name="ProjectName">工程名</param>
-    /// <param name="ProjectId">工程ID</param>
+    /// <param name="projectName">工程名</param>
+    /// <param name="projectId">工程ID</param>
     /// <returns></returns>
     public static bool CheckProjectNameExist(string projectName, int projectId)
     {
@@ -70,10 +73,10 @@ public class ProjectOperation
     /// <summary>
     /// 修改工程信息
     /// </summary>
-    /// <param name="ProjectName">工程名 </param>
+    /// <param name="projectName">工程名 </param>
     /// <param name="description">工程描述</param>
     /// <param name="type">工程类型</param>
-    /// <param name="ID">工程ID</param>
+    /// <param name="projectId">工程ID</param>
     public static void EditProject(string projectName, string description, int type, int projectId)
     {
         
@@ -86,7 +89,7 @@ public class ProjectOperation
     /// <summary>
     /// 删除工程
     /// </summary>
-    /// <param name="id">工程ID</param>
+    /// <param name="projectId">工程ID</param>
     public static void DelProject(String projectId)
     {
        

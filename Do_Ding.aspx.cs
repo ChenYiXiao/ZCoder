@@ -15,10 +15,16 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Configuration;
 using System.Data;
-
-
+/// <summary>
+/// 顶一下
+/// </summary>
 public partial class Do_Ding : System.Web.UI.Page
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void Page_Load(object sender, EventArgs e)
     {
         int isDing = 1;
@@ -39,7 +45,5 @@ public partial class Do_Ding : System.Web.UI.Page
             isDing = 3;
             Response.Redirect("LoadNotes.aspx?nid=" + de.Nid + "&cid=" + cid + "&startline=" + startline + "&isDing=" + isDing);  
         }
-
-      
     }
 }

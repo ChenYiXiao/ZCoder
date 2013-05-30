@@ -23,6 +23,9 @@ using System.Data.SqlClient;
 /// </summary>
 public class DataBase
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public DataBase()
     {
     }

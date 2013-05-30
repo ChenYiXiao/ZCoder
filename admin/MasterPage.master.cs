@@ -13,9 +13,16 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+/// <summary>
+/// 后台母板页
+/// </summary>
 public partial class admin_MasterPage : System.Web.UI.MasterPage
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void Page_Load(object sender, EventArgs e)
     {
         if (Request.Url.AbsoluteUri.IndexOf("redirect.aspx")!= -1)

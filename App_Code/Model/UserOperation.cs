@@ -31,7 +31,7 @@ public class UserOperation
     /// 注册用户方法
     /// </summary>
     /// <param name="userName">注册名</param>
-    /// <param name="password">密码</param>
+    /// <param name="passWord">密码</param>
     /// <param name="email">电子邮箱</param>
     /// <param name="qq">QQ</param>
     /// <param name="sex">性别，true为男，false为女</param>

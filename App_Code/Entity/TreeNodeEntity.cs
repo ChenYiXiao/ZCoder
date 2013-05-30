@@ -20,28 +20,36 @@ using System.Runtime.Serialization.Json;
 public class TreeNodeEntity
 {
     string targetName = "";
-
+    /// <summary>
+    /// 
+    /// </summary>
     public string TargetName
     {
         get { return targetName; }
         set { targetName = value; }
     }
     string name = "";
-
+    /// <summary>
+    /// 
+    /// </summary>
     public string Name
     {
         get { return name; }
         set { name = value; }
     }
     bool open = false;
-
+    /// <summary>
+    /// 
+    /// </summary>
     public bool Open
     {
         get { return open; }
         set { open = value; }
     }
     string url = "";
-
+    /// <summary>
+    /// 
+    /// </summary>
     public string Url
     {
         get { return url; }
@@ -50,12 +58,17 @@ public class TreeNodeEntity
     int id =-1;
 
     string urlFormat = "";
-
+    /// <summary>
+    /// 
+    /// </summary>
     public string UrlFormat
     {
         get { return urlFormat; }
         set { urlFormat = value; }
     }
+    /// <summary>
+    /// 
+    /// </summary>
     public int Id
     {
         get { return id; }
@@ -63,14 +76,18 @@ public class TreeNodeEntity
     }
 
     List<TreeNodeEntity> children =new List<TreeNodeEntity>();
-
+    /// <summary>
+    /// 
+    /// </summary>
     public List<TreeNodeEntity> Children
     {
         get { return children; }
         set { children = value; }
     }
 
-  
+  /// <summary>
+  /// 
+  /// </summary>
 	public TreeNodeEntity()
 	{
 	}

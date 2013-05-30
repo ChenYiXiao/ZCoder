@@ -13,13 +13,25 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+/// <summary>
+///  前台用户登录
+/// </summary>
 public partial class Login : System.Web.UI.Page
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void Page_Load(object sender, EventArgs e)
     {
 
     }
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void Log_Click(object sender, EventArgs e)
     {
         /* 对用户名密码和数据库中的用户名密码进行对比验证*/
@@ -33,9 +45,5 @@ public partial class Login : System.Web.UI.Page
             /*登录失败，跳转到登录界面*/
             SmallScript.goRedirect(Response, Session, "用户名或密码错误。", "login.aspx");  
         }
-    }
-    protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
-    {
-
     }
 }

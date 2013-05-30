@@ -19,6 +19,10 @@ using System.Data;
 public class ProjectManager
 {
     string projectPath = "";
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="projectPath"></param>
     public ProjectManager(string projectPath = "")
     {
         this.projectPath = projectPath;
@@ -46,7 +50,11 @@ public class ProjectManager
         }
         return langs;
     }
-
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="langs"></param>
+    /// <returns></returns>
     public List<FileInfo> GetSourcs(List<string> langs)
     {
 
@@ -72,6 +80,12 @@ public class ProjectManager
         }
         return false;
     }
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="langs"></param>
+    /// <param name="ext"></param>
+    /// <returns></returns>
     public static int GetLid(List<LangEntity> langs, string ext)
     {
         /*循环监测是否在支持的源码列表中*/

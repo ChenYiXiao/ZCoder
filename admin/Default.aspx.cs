@@ -13,9 +13,16 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+/// <summary>
+/// 后台主页
+/// </summary>
 public partial class _Default : System.Web.UI.Page
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void Page_Load(object sender, EventArgs e)
     {
         /*检查是否已登陆*/
@@ -33,41 +40,58 @@ public partial class _Default : System.Web.UI.Page
         }
     }
 }
+/// <summary>
+/// 
+/// </summary>
 public class Message
 {
     string url = "";
-
+    /// <summary>
+    /// 
+    /// </summary>
     public string Url
     {
         get { return url; }
         set { url = value; }
     }
     string title = "";
-
+    /// <summary>
+    /// 
+    /// </summary>
     public string Title
     {
         get { return title; }
         set { title = value; }
     }
     string content = "";
-
+    /// <summary>
+    /// 
+    /// </summary>
     public string Content
     {
         get { return content; }
         set { content = value; }
     }
 }
+/// <summary>
+/// 
+/// </summary>
 public class Section
 {
     string title = "";
 
+    /// <summary>
+    /// 
+    /// </summary>
     public string Title
     {
         get { return title; }
         set { title = value; }
     }
     string url = "";
-
+    /// <summary>
+    /// 
+    /// </summary>
     public string Url
     {
         get { return url; }

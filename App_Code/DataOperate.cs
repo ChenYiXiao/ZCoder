@@ -23,24 +23,24 @@ using System.Text;
 /// </summary>
 public class DataOperate
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public DataOperate()
     {
         //
         //TODO: 在此处添加构造函数逻辑
         //
     }
-    /// <summary>
-    /// 自动生成编号
-    /// </summary>
-    /// <param name="tbName"></param>
-    /// <param name="ds"></param>
-    /// <returns></returns>
+
+    
     #region 自动生成编号
-    /// <summary>
-    /// 自动生成编号
-    /// </summary>
-    /// <param name="tbName">数据表名</param>
-    /// <returns></returns>
+/// <summary>
+///  自动生成编号
+/// </summary>
+/// <param name="tbName">数据表名</param>
+/// <param name="ds">数据集</param>
+/// <returns></returns>
     public string getID(string tbName, DataSet ds)
     {
         string P_Str_ID = "";
@@ -135,6 +135,7 @@ public class DataOperate
     /// <param name="upload">FileUpload控件对象</param>
     /// <param name="img">Image控件对象</param>
     /// <param name="strPath">虚拟路径</param>
+    ///  /// <param name="userId">用户ID</param>
     public string UpPhoto(FileUpload upload, System.Web.UI.WebControls.Image img, string strPath, string userId)
     {
         string filePath = upload.PostedFile.FileName;
@@ -153,7 +154,11 @@ public class DataOperate
     }
     #endregion
 
-
+    /// <summary>
+    /// 获取MD5Hash
+    /// </summary>
+    /// <param name="file">文件</param>
+    /// <returns></returns>
     public static string getFilesMD5Hash(string file)
     {
         //MD5 hash provider for computing the hash of the file

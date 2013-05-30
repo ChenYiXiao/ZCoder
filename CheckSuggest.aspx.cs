@@ -14,9 +14,16 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+/// <summary>
+/// 前台推荐
+/// </summary>
 public partial class CheckSuggest : System.Web.UI.Page
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void Page_Load(object sender, EventArgs e)
     {
         DataBase db = new DataBase();
@@ -34,10 +41,18 @@ public partial class CheckSuggest : System.Web.UI.Page
         Response.Write("{\"data\":\"" + Request.QueryString["startline"].ToString() + "\",\"status\":\"" + rs + "\",\"count\":\"" +
             Request.QueryString["count"].ToString() + "\"}");
     }
+    /// <summary>
+    /// 
+    /// </summary>
     public class result
     {
         int data = 0;
         int stat = 0;
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="stat"></param>
         public result(int data, int stat)
         {
             this.data = data;

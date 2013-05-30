@@ -15,9 +15,16 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Configuration;
 using System.Data;
-
+/// <summary>
+/// 评论页面
+/// </summary>
 public partial class comment : System.Web.UI.Page
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -28,6 +35,11 @@ public partial class comment : System.Web.UI.Page
         }
        
     }
+    /// <summary>
+    /// 添加评论确定按钮
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void submit_Click(object sender, EventArgs e)
     {
         DataBase db = new DataBase();
@@ -56,6 +68,11 @@ public partial class comment : System.Web.UI.Page
 
 
     }
+    /// <summary>
+    /// 清楚按钮
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void clear_Click(object sender, EventArgs e)
     {
         tb_comment.Text="";

@@ -13,10 +13,16 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+/// <summary>
+/// 用户注册
+/// </summary>
 public partial class Reg : System.Web.UI.Page
 {
-
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -25,6 +31,11 @@ public partial class Reg : System.Web.UI.Page
 
         }
     }
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void btn_Submit_Click(object sender, EventArgs e)
     /*对用户点击注册按钮后进行信息验证*/
     {
@@ -63,7 +74,11 @@ public partial class Reg : System.Web.UI.Page
          }
        
     }
-    
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void tb_UserName_TextChanged(object sender, EventArgs e)
     /*判断用户名是否存在*/
     {
@@ -86,10 +101,11 @@ public partial class Reg : System.Web.UI.Page
             lb_CkTip.Text = "<img src=\"/images/regright.png\">该用户名可以使用。";
         }
     }
-    protected void tb_ConfirmPwd_TextChanged(object sender, EventArgs e)
-    {
-
-    }
+ /// <summary>
+ /// 
+ /// </summary>
+ /// <param name="source"></param>
+ /// <param name="args"></param>
     protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
     /*对密码长度判断，要求密码在6到18位之间*/
     {

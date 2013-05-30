@@ -14,9 +14,16 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
-
+/// <summary>
+/// 后台删除评论
+/// </summary>
 public partial class admin_DelComment : System.Web.UI.Page
 {
+    /// <summary>
+    /// page load
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -35,10 +42,20 @@ public partial class admin_DelComment : System.Web.UI.Page
             }
         }
     }
+    /// <summary>
+    /// 取消删除
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void btn_Cancel_Click(object sender, EventArgs e)
     {
         Response.Redirect("~/admin/CommentList.aspx");
     }
+    /// <summary>
+    /// 确认删除
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void btn_ok_Click(object sender, EventArgs e)
     {
         try

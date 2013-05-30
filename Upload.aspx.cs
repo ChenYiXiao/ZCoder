@@ -15,9 +15,16 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
-
+/// <summary>
+/// 
+/// </summary>
 public partial class admin_Upload : System.Web.UI.Page
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void Page_Load(object sender, EventArgs e)
     {
         /*用于保持Session，解决发置换Session的问题*/

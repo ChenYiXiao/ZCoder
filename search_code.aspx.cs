@@ -16,10 +16,16 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
-
+/// <summary>
+/// 用户搜索源代码
+/// </summary>
 public partial class search_code : System.Web.UI.Page
 {
-    
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void search_Click(object sender, EventArgs e)
     {
         string message = search_textbox.Text;

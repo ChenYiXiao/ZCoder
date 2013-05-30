@@ -1,7 +1,7 @@
 ﻿//--------------------------------------------------------------------------------------
 //
-//FileName:         DelProject.aspx.cs
-//Depiction:        后台管理模块。用于后台删除工程。
+//FileName:         DelNote.aspx.cs
+//Depiction:        后台管理模块。用于后台删除注释。
 //Author:	           肖骏涛
 //CDT:	            2012-12-13
 //Version:	        Ver 1.0    
@@ -14,9 +14,16 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
-
+/// <summary>
+/// 后台删除注释
+/// </summary>
 public partial class admin_DelNote : System.Web.UI.Page
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -40,10 +47,20 @@ public partial class admin_DelNote : System.Web.UI.Page
             }
         }
     }
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void Button2_Click(object sender, EventArgs e)
     {
         Response.Redirect("~/admin/Notelist.aspx");
     }
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void Button1_Click(object sender, EventArgs e)
     {
         try

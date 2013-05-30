@@ -13,9 +13,16 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+/// <summary>
+///  后台修改评论信息
+/// </summary>
 public partial class admin_EditComment : System.Web.UI.Page
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -34,10 +41,20 @@ public partial class admin_EditComment : System.Web.UI.Page
             }
         }
     }
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void btn_cancel_Click(object sender, EventArgs e)
     {
         Response.Redirect("/admin/CommentList.aspx");
     }
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void btn_edit_Click(object sender, EventArgs e)
     {
         int id = int.Parse(Request.QueryString["id"].ToString());

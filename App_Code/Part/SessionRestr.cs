@@ -23,6 +23,11 @@ public class SessionRest
 		//TODO: 在此处添加构造函数逻辑
 		//
 	}
+    /// <summary>
+    /// 更新session
+    /// </summary>
+    /// <param name="appsesssid"></param>
+    /// <param name="cookies"></param>
     public static void Rest(string appsesssid,HttpCookieCollection cookies)
     {
         try
@@ -63,6 +68,13 @@ public class SessionRest
         }
 
     }
+
+    /// <summary>
+    /// 更新cookie
+    /// </summary>
+    /// <param name="cookie_name"></param>
+    /// <param name="cookie_value"></param>
+    /// <param name="cookies"></param>
     private static void UpdateCookie(string cookie_name, string cookie_value, HttpCookieCollection cookies)
     {
         HttpCookie cookie = cookies.Get(cookie_name);

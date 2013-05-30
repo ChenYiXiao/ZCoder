@@ -14,12 +14,18 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+/// <summary>
+/// 跳转功能实现
+/// </summary>
 public partial class Redirect : System.Web.UI.Page
 {
     static int time = 3;
     static string tip = "";
     static string url = "";
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="e"></param>
     protected override void OnPreInit(EventArgs e)
     {
         if (Request.UrlReferrer.AbsoluteUri.LastIndexOf("admin") != -1)
@@ -28,6 +34,11 @@ public partial class Redirect : System.Web.UI.Page
         }
         base.OnPreInit(e);
     }
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void Page_Load(object sender, EventArgs e)
     {
         url = url.Replace("~", "");
@@ -50,7 +61,11 @@ public partial class Redirect : System.Web.UI.Page
             }
         }
     }
- 
+ /// <summary>
+ /// 
+ /// </summary>
+ /// <param name="sender"></param>
+ /// <param name="e"></param>
     protected void Timer1_Tick(object sender, EventArgs e)
     {
         try

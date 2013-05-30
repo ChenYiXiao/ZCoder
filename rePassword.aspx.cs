@@ -13,9 +13,16 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+/// <summary>
+/// 用户修改用户密码
+/// </summary>
 public partial class rePassword : System.Web.UI.Page
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void Page_Load(object sender, EventArgs e)
     {
 
@@ -38,6 +45,11 @@ public partial class rePassword : System.Web.UI.Page
             }
         }
     }
+    /// <summary>
+    /// 点击修改
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void btnEdit_Click(object sender, EventArgs e)
     {
         Validate();
@@ -68,6 +80,11 @@ public partial class rePassword : System.Web.UI.Page
         return;
 
     }
+    /// <summary>
+    /// 对密码长度判断，要求密码在6到18位之间
+    /// </summary>
+    /// <param name="source"></param>
+    /// <param name="args"></param>
     protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args) 
     {
         /*对密码长度判断，要求密码在6到18位之间*/
@@ -80,8 +97,5 @@ public partial class rePassword : System.Web.UI.Page
             args.IsValid = false;
         }
     }
-    protected void tb_PassWord_TextChanged(object sender, EventArgs e)
-    {
-
-    }
+    
 }

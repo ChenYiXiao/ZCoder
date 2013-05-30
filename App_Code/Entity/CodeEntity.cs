@@ -13,7 +13,7 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-//源代码的实体，用于存储和获取源代码的信息
+///源代码的实体，用于存储和获取源代码的信息
 /// </summary>
 public class CodeEntity
 {
@@ -71,6 +71,9 @@ public class CodeEntity
         get { return lid; }
         set { lid = value; }
     }
+    /// <summary>
+    /// 
+    /// </summary>
 	public CodeEntity()
 	{
 		//

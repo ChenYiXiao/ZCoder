@@ -14,9 +14,16 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
-
+/// <summary>
+/// 后台管理员删除公告
+/// </summary>
 public partial class admin_DelAnnouncement : System.Web.UI.Page
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
@@ -38,10 +45,20 @@ public partial class admin_DelAnnouncement : System.Web.UI.Page
             }
         }
     }
+    /// <summary>
+    /// 删除公告选否
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void Button2_Click(object sender, EventArgs e)
     {
         Response.Redirect("~/admin/Announcement.aspx");
     }
+    /// <summary>
+    /// 删除公告选是
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void Button1_Click(object sender, EventArgs e)
     {
         try

@@ -18,6 +18,9 @@ using System.Data;
 /// </summary>
 public class LangOperation
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public LangOperation()
     {
         //

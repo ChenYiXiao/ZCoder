@@ -1,7 +1,7 @@
 ﻿//--------------------------------------------------------------------------------------
 //
-//FileName:          UploadSource.aspx.cs
-//Depiction:        工程资源管理器
+//FileName:          Viewer.aspx.cs
+//Depiction:        源码信息
 //Author:	        陈一枭   
 //CDT:	            2012-12-13
 //Version:	        Ver 1.0    
@@ -14,15 +14,40 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
-
+/// <summary>
+/// 源码信息
+/// </summary>
 public partial class Viewer : System.Web.UI.Page
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public LangEntity langEntity = null;
+    /// <summary>
+    /// 
+    /// </summary>
     public CodeEntity codeEntity = null;
+    /// <summary>
+    /// 
+    /// </summary>
     public UserEntity userEntity = null;
+    /// <summary>
+    /// 
+    /// </summary>
     public string Pre = "";
+    /// <summary>
+    /// 
+    /// </summary>
     public string jsaLineNum = "";
+    /// <summary>
+    /// 
+    /// </summary>
     public string jsaLineCount = "";
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void Page_Load(object sender, EventArgs e)
     {
         if (UserOperation.CheckLoged(Session) == false)
@@ -71,6 +96,11 @@ public partial class Viewer : System.Web.UI.Page
         }
         catch { }
     }
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="array"></param>
+    /// <returns></returns>
     string complieArray(List<int> array)
     {
         string rs = "[";
