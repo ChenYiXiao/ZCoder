@@ -22,7 +22,7 @@ using System.Configuration;
 public partial class search_code : System.Web.UI.Page
 {
     /// <summary>
-    /// 
+    /// 搜索按钮
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>

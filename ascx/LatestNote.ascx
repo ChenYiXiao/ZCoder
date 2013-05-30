@@ -9,8 +9,8 @@
                 </td>
                 <td colspan="2" style="padding: 5px;">
                     <asp:HyperLink ID="projectNameLabel" runat="server" Text='<%# Eval("projectName","[{0}]") %>' NavigateUrl='<%# Eval("pid","~/project.aspx?id={0}") %>'
-                        Font-Size="14px" ForeColor="#105CB6" /> <asp:HyperLink ID="NoteContextLabel" runat="server" 
-                            Text='<%# Eval("context") %>'  NavigateUrl='<%# Eval("id","~/CommentList1.aspx?id={0}") %>' Font-Size="14px" ForeColor="#105CB6" />
+                        Font-Size="14px" ForeColor="#105CB6" />  <a href ="LoadNotes.aspx?nid=<%#Eval("id")%>&cid=<%#Eval("cid")%>&startline=<%#Eval("startline")%>&isDing=2"> <u><asp:Label ID="Label1" runat="server" Text='<%# Eval("context") %>' /></u></a>
+
                 </td>
                 <td>
                 </td>

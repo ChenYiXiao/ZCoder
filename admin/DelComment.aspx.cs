@@ -1,8 +1,8 @@
 ﻿//--------------------------------------------------------------------------------------
 //
-//FileName:         DelComment.aspx.cs
+//FileName:         DelComment.aspx
 //Depiction:        后台管理模块。用于后台删除评论。
-//Author:	        陈斌 
+//Author:	         陈斌   
 //CDT:	            2012-12-13
 //Version:	        Ver 1.0    
 //                  创建文件。
@@ -20,7 +20,7 @@ using System.Data;
 public partial class admin_DelComment : System.Web.UI.Page
 {
     /// <summary>
-    /// page load
+    /// Page_Load
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -43,7 +43,7 @@ public partial class admin_DelComment : System.Web.UI.Page
         }
     }
     /// <summary>
-    /// 取消删除
+    /// 取消删除按钮
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -52,7 +52,7 @@ public partial class admin_DelComment : System.Web.UI.Page
         Response.Redirect("~/admin/CommentList.aspx");
     }
     /// <summary>
-    /// 确认删除
+    /// 确认删除按钮
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>

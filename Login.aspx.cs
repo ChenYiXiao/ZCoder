@@ -13,13 +13,25 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+/// <summary>
+/// 用户登录
+/// </summary>
 public partial class Login : System.Web.UI.Page
 {
+    /// <summary>
+    /// Page_Load
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void Page_Load(object sender, EventArgs e)
     {
 
     }
+    /// <summary>
+    /// 登录按钮
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void Log_Click(object sender, EventArgs e)
     {
         /* 对用户名密码和数据库中的用户名密码进行对比验证*/

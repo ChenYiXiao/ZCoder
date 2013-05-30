@@ -23,7 +23,7 @@ public partial class Redirect : System.Web.UI.Page
     static string tip = "";
     static string url = "";
     /// <summary>
-    /// 
+    /// 判断是否管理员
     /// </summary>
     /// <param name="e"></param>
     protected override void OnPreInit(EventArgs e)
@@ -35,7 +35,7 @@ public partial class Redirect : System.Web.UI.Page
         base.OnPreInit(e);
     }
     /// <summary>
-    /// 
+    /// Page_Load
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>

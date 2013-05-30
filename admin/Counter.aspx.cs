@@ -1,9 +1,9 @@
 ﻿//--------------------------------------------------------------------------------------
 //
-//FileName:       Counter.aspx.cs
+//FileName:          Counter.aspx.cs
 //Depiction:        页面信息
-//Author:	        肖骏涛    
-//CDT:	            2012-11-13
+//Author:	         肖骏涛 
+//CDT:	            2012-12-13
 //Version:	        Ver 1.0    
 //                  创建文件。
 //--------------------------------------------------------------------------------------
@@ -15,12 +15,12 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 /// <summary>
-///  页面信息，包括评论数，注释数，用户数等统计信息
+/// 页面信息，统计代码数，注释数，评论数，会员数
 /// </summary>
 public partial class admin_Counter : System.Web.UI.Page
 {
     /// <summary>
-    /// 
+    /// Page_Load
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>

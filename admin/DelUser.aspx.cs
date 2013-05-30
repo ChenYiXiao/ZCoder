@@ -1,8 +1,8 @@
 ﻿//--------------------------------------------------------------------------------------
 //
-//FileName:         DelUser.aspx.cs
+//FileName:         DelUser.aspx
 //Depiction:        后台管理模块。用于后台删除用户。
-//Author:	           陈斌
+//Author:	         陈斌 
 //CDT:	            2012-12-13
 //Version:	        Ver 1.0    
 //                  创建文件。
@@ -19,7 +19,7 @@ using System.Web.UI.WebControls;
 public partial class admin_DelUser : System.Web.UI.Page
 {
     /// <summary>
-    /// 
+    /// Page_Load
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -40,7 +40,7 @@ public partial class admin_DelUser : System.Web.UI.Page
         }
     }
     /// <summary>
-    /// 
+    /// 取消删除按钮
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -49,7 +49,7 @@ public partial class admin_DelUser : System.Web.UI.Page
         Response.Redirect("~/admin/userlist.aspx");
     }
     /// <summary>
-    /// 
+    /// 确认删除按钮
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>

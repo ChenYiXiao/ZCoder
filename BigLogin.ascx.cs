@@ -13,9 +13,16 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+/// <summary>
+/// 快捷登录面板
+/// </summary>
 public partial class BigLogin : System.Web.UI.UserControl
 {
+    /// <summary>
+    /// Page_Load
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void Page_Load(object sender, EventArgs e)
     {
         /*检查是否已登陆*/
@@ -50,6 +57,11 @@ public partial class BigLogin : System.Web.UI.UserControl
             pnl_User.Visible = false;
         }
     }
+    /// <summary>
+    /// 登录按钮
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void btn_Login_Click(object sender, EventArgs e)
     {
         /*登陆*/

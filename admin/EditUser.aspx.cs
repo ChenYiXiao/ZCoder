@@ -2,7 +2,7 @@
 //
 //FileName:         EditUser.aspx
 //Depiction:        后台管理模块。用于后台修改用户个人信息。
-//Author:	            陈斌
+//Author:	        陈斌  
 //CDT:	            2012-12-13
 //Version:	        Ver 1.0    
 //                  创建文件。
@@ -15,12 +15,12 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 /// <summary>
-/// 后台修改用户信息
+/// 后台修改用户个人信息
 /// </summary>
 public partial class admin_EditUser : System.Web.UI.Page
 {
     /// <summary>
-    /// 
+    /// Page_Load
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -58,7 +58,7 @@ public partial class admin_EditUser : System.Web.UI.Page
         }
     }
     /// <summary>
-    /// 
+    /// 判断是否是中文
     /// </summary>
     /// <param name="CString"></param>
     /// <returns></returns>
@@ -76,12 +76,12 @@ public partial class admin_EditUser : System.Web.UI.Page
         return false;
 
     }
+
     /// <summary>
-    /// 
+    /// 确认修改按钮
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-
     protected void btnEdit_Click(object sender, EventArgs e)
     {
         this.Validate();

@@ -1,8 +1,8 @@
 ﻿//--------------------------------------------------------------------------------------
 //
-//FileName:         DelAnnouncement.aspx.cs
+//FileName:          DelAnnouncement.aspx
 //Depiction:        后台管理模块。用于后台删除公告。
-//Author:	        肖骏涛    
+//Author:	          肖骏涛 
 //CDT:	            2012-12-13
 //Version:	        Ver 1.0    
 //                  创建文件。
@@ -15,12 +15,12 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 /// <summary>
-/// 后台管理员删除公告
+/// 后台删除公告
 /// </summary>
 public partial class admin_DelAnnouncement : System.Web.UI.Page
 {
     /// <summary>
-    /// 
+    /// Page_Load
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -46,7 +46,7 @@ public partial class admin_DelAnnouncement : System.Web.UI.Page
         }
     }
     /// <summary>
-    /// 删除公告选否
+    /// 取消删除按钮
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -55,7 +55,7 @@ public partial class admin_DelAnnouncement : System.Web.UI.Page
         Response.Redirect("~/admin/Announcement.aspx");
     }
     /// <summary>
-    /// 删除公告选是
+    /// 确认删除按钮
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>

@@ -22,7 +22,7 @@ public partial class CancelSuggest : System.Web.UI.Page
     static string tip = "";
     static string url = "";
     /// <summary>
-    /// 
+    /// Page_Load
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>

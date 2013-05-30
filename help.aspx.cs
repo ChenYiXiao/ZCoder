@@ -19,7 +19,7 @@ using System.Web.UI.WebControls;
 public partial class help : System.Web.UI.Page
 {
     /// <summary>
-    /// 
+    /// Page_Load
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>

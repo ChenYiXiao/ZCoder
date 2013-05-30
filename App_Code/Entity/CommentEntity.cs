@@ -90,4 +90,13 @@ public class CommentEntity
         get { return upTime; }
         set { upTime = value; }
     }
+    private UserEntity user = null;
+    /// <summary>
+    /// 评论者的用户名 （User）
+    /// </summary>
+    public UserEntity User
+    {
+        get { return user; }
+        set { user = value; }
+    }
 }

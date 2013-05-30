@@ -19,7 +19,7 @@ using System.Web.UI.WebControls;
 public partial class Default2 : System.Web.UI.Page
 {
     /// <summary>
-    /// 
+    /// Page_Load
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -63,7 +63,7 @@ public partial class Default2 : System.Web.UI.Page
 
 
     /// <summary>
-    /// 
+    /// 判断是否是中文
     /// </summary>
     /// <param name="CString"></param>
     /// <returns></returns>

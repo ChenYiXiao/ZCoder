@@ -19,7 +19,7 @@ using System.Web.UI.WebControls;
 public partial class Reg : System.Web.UI.Page
 {
     /// <summary>
-    /// 
+    /// Page_Load
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -32,7 +32,7 @@ public partial class Reg : System.Web.UI.Page
         }
     }
     /// <summary>
-    /// 
+    /// 注册按钮
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -75,7 +75,7 @@ public partial class Reg : System.Web.UI.Page
        
     }
     /// <summary>
-    /// 
+    /// 判定用户名是否存在
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -102,7 +102,7 @@ public partial class Reg : System.Web.UI.Page
         }
     }
  /// <summary>
- /// 
+ /// 判断密码长度
  /// </summary>
  /// <param name="source"></param>
  /// <param name="args"></param>

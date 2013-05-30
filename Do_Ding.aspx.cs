@@ -21,7 +21,7 @@ using System.Data;
 public partial class Do_Ding : System.Web.UI.Page
 {
     /// <summary>
-    /// 
+    /// Page_Load
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>

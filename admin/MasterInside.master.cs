@@ -1,8 +1,8 @@
 ﻿//--------------------------------------------------------------------------------------
 //
-//FileName:         
-//Depiction:        
-//Author:	           
+//FileName:         MasterInside.master.cs
+//Depiction:        后台母板页
+//Author:	          
 //CDT:	            2012-12-13
 //Version:	        Ver 1.0    
 //                  创建文件。
@@ -14,12 +14,12 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 /// <summary>
-///  后台母板页
+/// 后台母板页
 /// </summary>
 public partial class admin_MasterInside : System.Web.UI.MasterPage
 {
     /// <summary>
-    /// 
+    /// Page_Load
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>

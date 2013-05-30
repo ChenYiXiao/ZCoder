@@ -1,8 +1,8 @@
 ﻿//--------------------------------------------------------------------------------------
 //
-//FileName:         UploadSource.aspx.cs
+//FileName:         UploadSource.aspx.cs 
 //Depiction:        上传源码页面
-//Author:	            陈一枭
+//Author:	         陈一枭  
 //CDT:	            2012-12-13
 //Version:	        Ver 1.0    
 //                  创建文件。
@@ -15,12 +15,12 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
 /// <summary>
-///  上传源码页面
+/// 上传源码页面
 /// </summary>
 public partial class admin_UploadSource : System.Web.UI.Page
 {
     /// <summary>
-    /// 
+    /// Page_Load
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -28,11 +28,11 @@ public partial class admin_UploadSource : System.Web.UI.Page
     {
 
     }
-   /// <summary>
-   /// 开始上传按钮
-   /// </summary>
-   /// <param name="sender"></param>
-   /// <param name="e"></param>
+    /// <summary>
+    /// 上传按钮
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
     protected void btn_OK_Click(object sender, EventArgs e)
     {
         if (btn_OK.Text == "完成")

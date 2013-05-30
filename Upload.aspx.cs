@@ -16,7 +16,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
 /// <summary>
-/// 
+/// 上传文件
 /// </summary>
 public partial class admin_Upload : System.Web.UI.Page
 {

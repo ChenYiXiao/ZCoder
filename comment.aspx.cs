@@ -21,11 +21,10 @@ using System.Data;
 public partial class comment : System.Web.UI.Page
 {
     /// <summary>
-    /// 
+    /// Page_Load
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    
     protected void Page_Load(object sender, EventArgs e)
     {
         if (Session["uid"] == null)
@@ -58,7 +57,7 @@ public partial class comment : System.Web.UI.Page
         }
         if (CommentOperation.AddComment(ce))
         {
-            Response.Write("评论添加成功。");
+            Response.Redirect("LoadComment.aspx?nid=" + ce.nid );  
             return;
         }
         else

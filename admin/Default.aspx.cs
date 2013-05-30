@@ -2,7 +2,7 @@
 //
 //FileName:         Default.aspx.cs
 //Depiction:        后台首页
-//Author:	        陈一枭
+//Author:	          陈一枭 
 //CDT:	            2012-12-13
 //Version:	        Ver 1.0    
 //                  创建文件。
@@ -14,12 +14,12 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 /// <summary>
-/// 后台主页
+/// 后台首页
 /// </summary>
 public partial class _Default : System.Web.UI.Page
 {
     /// <summary>
-    /// 
+    /// Page_Load
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -40,58 +40,41 @@ public partial class _Default : System.Web.UI.Page
         }
     }
 }
-/// <summary>
-/// 
-/// </summary>
 public class Message
 {
     string url = "";
-    /// <summary>
-    /// 
-    /// </summary>
+
     public string Url
     {
         get { return url; }
         set { url = value; }
     }
     string title = "";
-    /// <summary>
-    /// 
-    /// </summary>
+
     public string Title
     {
         get { return title; }
         set { title = value; }
     }
     string content = "";
-    /// <summary>
-    /// 
-    /// </summary>
+
     public string Content
     {
         get { return content; }
         set { content = value; }
     }
 }
-/// <summary>
-/// 
-/// </summary>
 public class Section
 {
     string title = "";
 
-    /// <summary>
-    /// 
-    /// </summary>
     public string Title
     {
         get { return title; }
         set { title = value; }
     }
     string url = "";
-    /// <summary>
-    /// 
-    /// </summary>
+
     public string Url
     {
         get { return url; }

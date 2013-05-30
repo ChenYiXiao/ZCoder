@@ -21,12 +21,12 @@ using System.Data;
 public partial class LoadNotes : System.Web.UI.Page
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public List<NoteEntity> assNotes = null;
     //public int[] isSuggest = null;
     /// <summary>
-    /// 
+    /// Page_Load
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>

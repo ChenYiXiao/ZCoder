@@ -26,7 +26,7 @@ public partial class ascx_LatestComment : System.Web.UI.UserControl
     {
         lbPage.Text = page.ToString();
         DataBase db = new DataBase();
-        DataSet ds = db.ExCommand("SELECT tb_comment.commentTitle, tb_comment.context, tb_comment.agree, tb_comment.disagree FROM tb_comment");
+        DataSet ds = db.ExCommand("SELECT  tb_comment.context AS c_context, tb_comment.agree, tb_comment.disagree, tb_user.userName, tb_comment.id, tb_comment.uptime, tb_note.context AS n_context , tb_comment.nid , tb_note.cid,tb_note.startLine FROM  tb_note INNER JOIN tb_comment ON tb_note.id = tb_comment.nid INNER JOIN tb_user ON tb_comment.uid = tb_user.id");
         DataOperate.dlBind(8, ds, lbPage, lbtpage, lbtnUp, lbtnnext, lbtnback, lbtnone, this.DataList1);
         base.DataBind();
     }

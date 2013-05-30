@@ -2,7 +2,7 @@
 //
 //FileName:         NoteList.aspx.cs
 //Depiction:        后台查看注释列表
-//Author:	           肖骏涛
+//Author:	         肖骏涛 
 //CDT:	            2012-12-13
 //Version:	        Ver 1.0    
 //                  创建文件。
@@ -17,12 +17,12 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
 /// <summary>
-///  后台注释列表
+/// 后台注释列表
 /// </summary>
 public partial class admin_NoteList : System.Web.UI.Page
 {
     /// <summary>
-    /// 
+    /// Page_Load
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -30,9 +30,17 @@ public partial class admin_NoteList : System.Web.UI.Page
     {
        
     }
- 
     /// <summary>
     /// 
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+    {
+
+    }
+    /// <summary>
+    /// 修正链接
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>

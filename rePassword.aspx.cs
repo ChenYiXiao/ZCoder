@@ -19,7 +19,7 @@ using System.Web.UI.WebControls;
 public partial class rePassword : System.Web.UI.Page
 {
     /// <summary>
-    /// 
+    /// Page_Load
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
@@ -97,5 +97,9 @@ public partial class rePassword : System.Web.UI.Page
             args.IsValid = false;
         }
     }
-    
+
+    protected void tb_PassWord_TextChanged(object sender, EventArgs e)
+    {
+
+    }
 }

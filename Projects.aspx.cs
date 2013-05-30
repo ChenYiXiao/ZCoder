@@ -14,12 +14,12 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 /// <summary>
-/// 
+/// 工程 资源管理器
 /// </summary>
 public partial class U_P_List : System.Web.UI.Page
 {
     /// <summary>
-    /// 
+    /// Page_Load
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>

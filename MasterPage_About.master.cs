@@ -19,7 +19,7 @@ using System.Web.UI.WebControls;
 public partial class MasterPage_About : System.Web.UI.MasterPage
 {
     /// <summary>
-    /// 
+    /// Page_Load
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>

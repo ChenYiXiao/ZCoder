@@ -2,6 +2,7 @@
 
 <table width="100%" style="border-collapse: collapse;">
     <asp:Repeater ID="DataList1" runat="server">
+   
         <ItemTemplate>
             <tr style="border-style: dashed none none none; border-width: 1px; border-color: #dddddd;">
                 <td rowspan="2" style="width: 60px;">
@@ -15,8 +16,22 @@
                 <td>
                 </td>
                 <td style="font-size: 12px; color: #999; padding-top: 3px;">
-                    评论标题：<asp:Label ID="userNameLabel" runat="server" Text='<%# Eval("commentTitle") %>' />
-                    评论正文：<asp:Label ID="upTimeLabel" runat="server" Text='<%# Eval("context") %>' />
+                         <style type="text/css">
+        p.MsoNormal {
+            color:#333;
+        }
+        U {
+        color:#333;
+        font-size:18px;
+        }
+        strong {
+        color:#333;
+        font-size:20px;
+        }        
+</style>
+                    评论正文：<a href="LoadComment.aspx?nid=<%#Eval("nid")%>"><U><asp:Label ID="upTimeLabel" runat="server" Text='<%# Eval("c_context") %>' /></U></a><br/>
+                    评论者：<asp:Label ID="Label1" runat="server" Text='<%# Eval("userName") %>' />
+                    注释正文：<a href ="LoadNotes.aspx?nid=<%#Eval("nid")%>&cid=<%#Eval("cid")%>&startline=<%#Eval("startline")%>&isDing=2"><U><asp:Label ID="Label2" runat="server" Text='<%# Eval("n_context") %>' /></U></a><br/>
                 </td>
                 <td>
                 </td>

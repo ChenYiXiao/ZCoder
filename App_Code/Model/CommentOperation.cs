@@ -94,5 +94,30 @@ public class CommentOperation
         }
         return null;
     }
-    
+    /// <summary>
+    /// 利用Nid获取评论信息
+    /// </summary>
+    /// <param name="nid"></param>
+    /// <returns></returns>
+    public static List<CommentEntity> GetCommentsByNid(int nid)
+    {
+        DataBase db = new DataBase();
+        DataSet rs = db.RunProcReturn("select * from tb_comment where nid=" + nid.ToString(), "tb_comment");
+        List<CommentEntity> comments = new List<CommentEntity>();
+        for (int i = 0; i < rs.Tables[0].Rows.Count; i++)
+        {
+            CommentEntity ce = new CommentEntity();
+            ce.CommentTitle = rs.Tables[0].Rows[i]["commentTitle"].ToString();
+            ce.UpTime = DateTime.Parse(rs.Tables[0].Rows[i]["upTime"].ToString());
+            ce.Id = int.Parse(rs.Tables[0].Rows[i]["id"].ToString());
+            ce.Agree = int.Parse(rs.Tables[0].Rows[i]["agree"].ToString());
+            ce.DisAgree = int.Parse(rs.Tables[0].Rows[i]["disagree"].ToString());
+            ce.ConText = rs.Tables[0].Rows[i]["Context"].ToString();
+            ce.uid = int.Parse(rs.Tables[0].Rows[i]["uid"].ToString());
+            ce.User = UserOperation.GetUser(ce.uid);
+            comments.Add(ce);
+        }
+        return comments;
+    }
+
 }
