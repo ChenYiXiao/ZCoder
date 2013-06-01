@@ -21,9 +21,11 @@ using System.Data;
 public partial class LoadComment : System.Web.UI.Page
 {
     public List<CommentEntity> assComments = null;
+    public int nid = 0;
+
     protected void Page_Load(object sender, EventArgs e)
     {
-        int nid = int.Parse(Request.QueryString["nid"].ToString());
+        this.nid = int.Parse(Request.QueryString["nid"].ToString());
         assComments = CommentOperation.GetCommentsByNid(nid);
 
     }
