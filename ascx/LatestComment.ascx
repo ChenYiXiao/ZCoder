@@ -21,8 +21,8 @@
             color:#333;
         }
         U {
-        color:#333;
-        font-size:18px;
+        color:#105CB6;
+        font-size:14px;
         }
         strong {
         color:#333;

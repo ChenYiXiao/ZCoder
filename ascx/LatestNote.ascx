@@ -8,8 +8,21 @@
                     <img alt="注释" width="50" height="50" src="/images/project.png" />
                 </td>
                 <td colspan="2" style="padding: 5px;">
+                                      <style type="text/css">
+        p.MsoNormal {
+            color:#333;
+        }
+        U {
+        color:#105CB6;
+        font-size:14px;
+        }
+        strong {
+        color:#333;
+        font-size:20px;
+        }        
+</style>
                     <asp:HyperLink ID="projectNameLabel" runat="server" Text='<%# Eval("projectName","[{0}]") %>' NavigateUrl='<%# Eval("pid","~/project.aspx?id={0}") %>'
-                        Font-Size="14px" ForeColor="#105CB6" />  <a href ="LoadNotes.aspx?nid=<%#Eval("id")%>&cid=<%#Eval("cid")%>&startline=<%#Eval("startline")%>&isDing=2"> <u><asp:Label ID="Label1" runat="server" Text='<%# Eval("context") %>' /></u></a>
+                        Font-Size="14px" ForeColor="#105CB6" />  <a href ="LoadNotes.aspx?nid=<%#Eval("id")%>&cid=<%#Eval("cid")%>&startline=<%#Eval("startline")%>&isDing=2"> <U><asp:Label ID="Label1" runat="server" Text='<%# Eval("context") %>' /></U></a>
 
                 </td>
                 <td>
